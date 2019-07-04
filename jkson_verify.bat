@@ -72,7 +72,8 @@ echo		Usually the front lights will turn on or off to indicate ADB has been enab
 Echo *****************************************************************************************************
 pause 
 cd ..
-call deleteTools.bat 		
+call deleteTools.bat
+exit 		
 
 :nofcc
 @echo off
@@ -117,6 +118,7 @@ cls
 Echo Bye!
 cd ..
 call deleteTools.bat
+exit
 
 :jkson
 @echo off
@@ -256,6 +258,7 @@ Echo ***************************************************************************
 Echo *****************************************************************************************************
 Echo Radio Power and frequency settings sent to aircraft!
 timeout 5
+cls
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
 ECHO					JKSON FCC MOD
