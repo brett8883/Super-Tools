@@ -1,5 +1,6 @@
 @echo off
-del tools
+cls
+rd tools
 timeout 1
 java -version >nul 2>&1 && ( GOTO:MAIN
   ) || ( call )
