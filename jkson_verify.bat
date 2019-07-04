@@ -54,8 +54,6 @@ If Errorlevel 1 Goto success
 :nopatch
 @echo off
 cls 
-cd .. 
-del tools
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
 ECHO 					SUPER-PATCHER %appver%
@@ -73,6 +71,8 @@ ECHO	-When doing the "enable ADB" steps not waiting until ABD has been enabled.
 echo		Usually the front lights will turn on or off to indicate ADB has been enabled 
 Echo *****************************************************************************************************
 pause 
+del tools
+timeout 2
 exit 		
 
 :nofcc
@@ -91,7 +91,6 @@ Goto verify
 :success
 @echo off
 cd ..
-del tools
 cls 
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
@@ -117,7 +116,8 @@ echo Thanks for using Super-Patcher!
 pause
 cls
 Echo Bye!
-timeout 3
+del tools
+timeout 2
 exit
 
 :jkson
