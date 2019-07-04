@@ -251,9 +251,10 @@ adb push check_1860_state.sh /vendor/bin/check_1860_state.sh
 adb shell chmod 755 /vendor/bin/check_1860_state.sh
 @echo off
 echo(
-echo Please restart your aircraft and reconnect to this PC Once it has fully restarted and connected
-echo you may continue  
+echo Restart your aircraft and reconnect to this PC Once it has fully restarted and connected
+echo Please continue  
 echo(
+pause
 Goto verify
 
 :AdbRemove
