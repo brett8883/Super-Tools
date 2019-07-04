@@ -72,7 +72,7 @@ echo		Usually the front lights will turn on or off to indicate ADB has been enab
 Echo *****************************************************************************************************
 pause 
 cd ..
-call deleteTools.bat
+call end.bat
 exit 		
 
 :nofcc
@@ -117,7 +117,7 @@ pause
 cls
 Echo Bye!
 cd ..
-call deleteTools.bat
+call end.bat
 exit
 
 :jkson
