@@ -3,8 +3,8 @@ SET APPVER=1.3
 cls
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
-ECHO 					SUPER-PATCHER %appver%
-echo 					By Brett8883
+ECHO SUPER-PATCHER %appver%
+echo By Brett8883
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
 ECHO PLEASE TAKE CARE TO FOLLOW INSTRUCTIONS EXACTLY 
@@ -15,8 +15,8 @@ pause
 cls
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
-ECHO 					SUPER-PATCHER %appver%
-echo 					By Brett8883
+ECHO SUPER-PATCHER %appver%
+echo By Brett8883
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
 Echo Please turn on the Mavic and after it has fully started, connect to the PC
@@ -26,15 +26,17 @@ Pause
 cls
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
-ECHO 					SUPER-PATCHER %appver%
-echo 					By Brett8883
+ECHO SUPER-PATCHER %appver%
+echo By Brett8883
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
-Echo Please ensure DUMLdore says you are on firmware v01.04.0300 
-echo and that this is stock version 
+Echo Please ensure DUMLdore says you are on firmware v01.04.0300 and that this is stock version 
+echo. 
 echo Then click "Enable ADB" in DUMLdore and wait for ADB to enable 
 Echo The front lights will usually flash, turn on, or turn off
-echo then close DUMLdore 
+echo.
+echo then close DUMLdore
+Echo. 
 Echo Continue once ADB has been enabled and DUMLdore is closed
 start DUMLdoreV3.exe
 Echo *****************************************************************************************************
@@ -42,8 +44,8 @@ pause
 cls
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
-ECHO 					SUPER-PATCHER %appver%
-echo 					By Brett8883
+ECHO SUPER-PATCHER %appver%
+echo By Brett8883
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
 Echo WORKING PLEASE WAIT... 
@@ -55,8 +57,8 @@ adb shell mount -o remount,ro /vendor
 cls
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
-ECHO 					SUPER-PATCHER %appver%
-echo 					By Brett8883
+ECHO SUPER-PATCHER %appver%
+echo By Brett8883
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
 Echo please restart your aircraft
@@ -67,8 +69,8 @@ Echo ***************************************************************************
 cls
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
-ECHO 					SUPER-PATCHER %appver%
-echo 					By Brett8883
+ECHO SUPER-PATCHER %appver%
+echo By Brett8883
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
 echo click "Enable ADB" in DUMLdore and then close DUMLdore before proceeding
@@ -80,23 +82,28 @@ adb shell mount -o bind /vendor/bin/dummy_verify.sh /sbin/dji_verify
 cls
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
-ECHO 					SUPER-PATCHER %appver%
-echo 					By Brett8883
+ECHO SUPER-PATCHER %appver%
+echo By Brett8883
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
 echo DO NOT TURN OFF AIRCRAFT!
 Echo *****************************************************************************************************
-echo please click "Load Firmware" button in DUMLdore 
-echo and choose the file "custom_306_super_patcher_MavicPro_MPP_dji_system.bin"
-echo (  
-ECHO then click "Flash Firmware" in DUMLdore
-echo (
-ECHO Please allow DUMLdore to do its thing and do not disconnect the Mavic untill DUMLdore says it is ok to
-Echo ******************************************************************************************************* 
-echo Once DUMLdore is finished please restart the aircraft
+echo 1. Please click "Load Firmware" button in DUMLdore 
+echo. 
+echo 2. Choose the file "_SuperPatcher_dji_system.bin"
+echo.  
+ECHO 3. Then click "Flash Firmware" in DUMLdore
+echo.
 Echo ******************************************************************************************************
-echo Once aircraft has restarted fully and connected to PC 
-echo Then you may continue
+ECHO 4.	Please allow DUMLdore to flash to the aircraft 
+echo	Do not disconnect the Mavic until DUMLdore says it is ok to
+Echo ******************************************************************************************************
+echo. 
+echo 5. Once DUMLdore is finished please restart the aircraft
+Echo 
+Echo.
+echo 6. Once aircraft has restarted fully and connected to PC. Please continue
+echo. 
 start DUMLdoreV3.exe
 Echo *****************************************************************************************************
 pause
