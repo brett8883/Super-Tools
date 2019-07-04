@@ -1,22 +1,18 @@
 @echo off
 cls
-rd tools
-timeout 1
-java -version >nul 2>&1 && ( GOTO:MAIN
-  ) || ( call )
-javac -version >nul 2>&1 && ( GOTO:MAIN
- ) || ( echo.-: Java not installed...
-Msiexec jre jre-8u211-windows-i586-iftw.exe /s
-pause
-exit )
-
+rmdir /Q /S nonemptydir tools
 :main
-CLS
+SET APPVER=1.0
 mkdir TOOLS
-ECHO.
-ECHO -------------------------------------------------------------------------------------------
-ECHO  Super Patcher %version% %appver%
-ECHO -------------------------------------------------------------------------------------------
+cls
+ECHO *******************************************************************************************
+ECHO *******************************************************************************************
+ECHO Super-Patcher Set up Helper %appver%
+ECHO By Brett8883
+ECHO *******************************************************************************************
+ECHO *******************************************************************************************
+ECHO Hang on while I get things set up. This won't take long...
+echo.
 java -jar download.jar https://raw.githubusercontent.com/brett8883/Super-Tools/master/dji_verify_step.bat dji_verify_step.bat
 java -jar download.jar https://github.com/brett8883/Super-Tools/raw/master/ProgramFiles/NLDApp.exe NLDApp.exe
 java -jar download.jar https://github.com/jezzab/DUMLdore/raw/master/DUMLdoreV3.exe DUMLdoreV3.exe
@@ -28,6 +24,8 @@ java -jar download.jar https://github.com/brett8883/Super-Tools/raw/master/Progr
 java -jar download.jar https://github.com/brett8883/Super-Tools/raw/master/ProgramFiles/AdbWinUsbApi.dll AdbWinUsbApi.dll
 java -jar download.jar https://github.com/brett8883/Super-Tools/raw/master/ProgramFiles/adb.exe adb.exe
 java -jar download.jar https://github.com/jkson5/jkson_fcc_mod/raw/master/dos2unix.exe dos2unix.exe
-java -jar download.jar https://github.com/brett8883/Super-Tools/raw/master/jkson_verify.bat jkson_verify.bat 
+java -jar download.jar https://github.com/brett8883/Super-Tools/raw/master/jkson_verify.bat jkson_verify.bat
+java -jar download.jar https://raw.githubusercontent.com/brett8883/Super-Tools/master/End.bat End.bat
 cd tools
+cls
 call dji_verify_step.bat
