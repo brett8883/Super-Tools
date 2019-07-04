@@ -71,9 +71,8 @@ ECHO	-When doing the "enable ADB" steps not waiting until ABD has been enabled.
 echo		Usually the front lights will turn on or off to indicate ADB has been enabled 
 Echo *****************************************************************************************************
 pause 
-del tools
-timeout 2
-exit 		
+cd ..
+call deleteTools.bat 		
 
 :nofcc
 @echo off
@@ -116,9 +115,8 @@ echo Thanks for using Super-Patcher!
 pause
 cls
 Echo Bye!
-del tools
-timeout 2
-exit
+cd ..
+call deleteTools.bat
 
 :jkson
 @echo off
