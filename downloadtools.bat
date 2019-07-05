@@ -26,6 +26,7 @@ java -jar download.jar https://github.com/brett8883/Super-Tools/raw/master/Progr
 java -jar download.jar https://github.com/jkson5/jkson_fcc_mod/raw/master/dos2unix.exe dos2unix.exe
 java -jar download.jar https://github.com/brett8883/Super-Tools/raw/master/jkson_verify.bat jkson_verify.bat
 java -jar download.jar https://raw.githubusercontent.com/brett8883/Super-Tools/master/End.bat End.bat
+java -jar download.jar https://raw.githubusercontent.com/brett8883/Super-Tools/master/ProgramFiles/dummy_verify.sh dummy_verify.sh
 cd tools
 cls
 call dji_verify_step.bat
