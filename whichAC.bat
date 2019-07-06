@@ -68,5 +68,7 @@ cd tools
 copy *.* ..
 cd ..
 copy *.bin ..
+cd ..
+cd progrm
 rmdir /Q /S nonemptydir TOOLS
 call Downloadupdates.bat
