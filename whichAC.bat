@@ -67,5 +67,6 @@ java -jar download.jar %fw% %fw2%
 cd tools
 copy *.* ..
 cd ..
+copy *.bin ..
 rmdir /Q /S nonemptydir TOOLS
 call Downloadupdates.bat
