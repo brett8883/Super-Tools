@@ -289,8 +289,17 @@ echo(
 Goto End
 
 :Sorry
-echo Sorry, but this mod compatible only with listed devices... 
+cls
+Echo *****************************************************************************************************
+Echo *****************************************************************************************************
+ECHO SUPER-PATCHER %appver% 
+echo By Brett8883
+Echo *****************************************************************************************************
+Echo *****************************************************************************************************
+echo Sorry, but jkson mod is only compatible MP1 and P4PV2... 
 echo(
+echo Lets skip to verifing Super Patcher has worked
+timeout 8
 Goto verify
 :End
 Pause
