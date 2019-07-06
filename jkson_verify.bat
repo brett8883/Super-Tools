@@ -1,7 +1,7 @@
 @echo off 
 cd ProgramFiles
 cls
-if %AC%==%Mavic% goto askjkson ELSE goto verify
+if %AC%==Mavic goto askjkson ELSE goto verify
 
 :askjkson
 Echo *****************************************************************************************************
