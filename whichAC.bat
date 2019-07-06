@@ -1,6 +1,7 @@
 @echo off 
 cls 
-SET APPVER=2.0
+SET version=2.0
+set appver=BETA
 ECHO -------------------------------------------------------------------------------------------
 ECHO Super Patcher %version% %appver%
 ECHO By Brett8883
@@ -33,7 +34,7 @@ Echo.
 ECHO Super-Patcher does not support your aircraft just yet but check back soon becasue it is almost ready!
 ECHO.
 ECHO See you soon! 
-timeout 10 
+pause 
 exit 
 
 :MP 
@@ -41,13 +42,29 @@ exit
 cls
 set AC=MavicPro
 set verify_type=MPSPK
+set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/MavicPro_MPP_super_patcher_03.02.44.10_dji_system.bin
+set fw2=MavicPro_MPP_super_patcher_03.02.44.10_dji_system.bin
+java -jar %fw% %fw2%
 cls
-call downloadtools.bat
+goto download
 
 :SPK
 cls
 @echo off
 set AC=Spark
 set verify_type=MPSPK
+set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/Spark_Super_Patcher_03.02.44.09_dji_sytem.bin
+set fw2=Spark_Super_Patcher_03.02.44.09_dji_sytem.bin
 cls
+goto download
+
+:download 
+@echo off 
+cls
+mkdir tools
+java -jar download.jar %fw% %fw2%
+cd tools
+copy *.* ..
+cd ..
+pause
 call downloadtools.bat
