@@ -70,6 +70,5 @@ cd tools
 copy *.* ..
 cd ..
 copy *.bin ..
-cd ..
 cd program
 call Downloadupdates.bat
