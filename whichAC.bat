@@ -61,7 +61,9 @@ goto download
 :download 
 @echo off 
 cls
+cd ..
 del *.bin
+cd program
 mkdir tools
 java -jar download.jar %fw% %fw2%
 cd tools
@@ -70,5 +72,4 @@ cd ..
 copy *.bin ..
 cd ..
 cd program
-rmdir /Q /S nonemptydir TOOLS
 call Downloadupdates.bat
