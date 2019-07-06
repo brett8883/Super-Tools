@@ -38,12 +38,16 @@ exit
 
 :MP 
 @Echo off
+cls
 set AC=MavicPro
 set verify_type=MPSPK
-call CheckJAVA.bat
+cls
+call downloadtools.bat
 
 :SPK
+cls
 @echo off
 set AC=Spark
 set verify_type=MPSPK
-call CheckJAVA.bat
+cls
+call downloadtools.bat

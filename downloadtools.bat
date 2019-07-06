@@ -4,6 +4,12 @@ rmdir /Q /S nonemptydir tools
 :main
 SET APPVER=1.0
 mkdir TOOLS
+if %AC%=="mavic" set fw=https://github.com/brett8883/DJI_Super-Patcher/raw/master/custom_306_super_patcher_MavicPro_MPP_dji_system.bin custom_306_super_patcher_MavicPro_MPP_dji_system.bin
+if %AC%=="spark" set fw=https://github.com/brett8883/Spark_SP-STANDARD_custom_FC/raw/master/Spark_wm100_SP_custom_standard_0306_03.02.44.09_dji_sytem.bin Spark_wm100_SP_custom_standard_0306_03.02.44.09_dji_sytem.bin
+echo %fw%
+pause
+set Mavic=https://github.com/brett8883/DJI_Super-Patcher/raw/master/custom_306_super_patcher_MavicPro_MPP_dji_system.bin custom_306_super_patcher_MavicPro_MPP_dji_system.bin
+set Spark=https://github.com/brett8883/Spark_SP-STANDARD_custom_FC/raw/master/Spark_wm100_SP_custom_standard_0306_03.02.44.09_dji_sytem.bin Spark_wm100_SP_custom_standard_0306_03.02.44.09_dji_sytem.bin
 cls
 ECHO *******************************************************************************************
 ECHO *******************************************************************************************
