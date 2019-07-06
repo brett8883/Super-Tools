@@ -68,4 +68,4 @@ copy *.* ..
 cd ..
 rmdir /Q /S nonemptydir TOOLS
 pause
-call downloadtools.bat
+call downloadupdates.bat
