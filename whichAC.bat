@@ -71,4 +71,5 @@ copy *.* ..
 cd ..
 copy *.bin ..
 cd program
+cls
 call Downloadupdates.bat
