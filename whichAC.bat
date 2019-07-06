@@ -68,6 +68,7 @@ mkdir tools
 java -jar download.jar %fw% %fw2%
 cd tools
 copy *.* ..
+del *.bin
 cd ..
 copy *.bin ..
 cd program
