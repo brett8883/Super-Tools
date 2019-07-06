@@ -61,6 +61,7 @@ goto download
 :download 
 @echo off 
 cls
+del *.bin
 mkdir tools
 java -jar download.jar %fw% %fw2%
 cd tools
