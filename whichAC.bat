@@ -66,5 +66,6 @@ java -jar download.jar %fw% %fw2%
 cd tools
 copy *.* ..
 cd ..
+rmdir /Q /S nonemptydir TOOLS
 pause
 call downloadtools.bat
