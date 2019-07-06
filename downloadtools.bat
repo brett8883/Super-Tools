@@ -20,9 +20,9 @@ java -jar download.jar https://github.com/jezzab/DUMLdore/raw/master/payload.bin
 java -jar download.jar https://github.com/jezzab/DUMLdore/raw/master/payload_new.bin payload_new.bin
 java -jar download.jar https://github.com/jezzab/DUMLdore/raw/master/root.bin root.bin
 java -jar download.jar https://github.com/jezzab/DUMLdore/raw/master/root_new.bin root_new.bin
-java -jar download.jar https://github.com/brett8883/Super-Tools/master/ProgramFiles/AdbWinApi.dll AdbWinApi.dll
-java -jar download.jar https://github.com/brett8883/Super-Tools/master/ProgramFiles/AdbWinUsbApi.dll AdbWinUsbApi.dll
-java -jar download.jar https://github.com/brett8883/Super-Tools/master/ProgramFiles/adb.exe adb.exe
+java -jar download.jar https://github.com/brett8883/Super-Tools/raw/master/ProgramFiles/AdbWinApi.dll AdbWinApi.dll
+java -jar download.jar https://github.com/brett8883/Super-Tools/raw/master/ProgramFiles/AdbWinUsbApi.dll AdbWinUsbApi.dll
+java -jar download.jar https://github.com/brett8883/Super-Tools/raw/master/ProgramFiles/adb.exe adb.exe
 java -jar download.jar https://github.com/jkson5/jkson_fcc_mod/raw/master/dos2unix.exe dos2unix.exe
 java -jar download.jar https://github.com/brett8883/Super-Tools/raw/master/jkson_verify.bat jkson_verify.bat
 java -jar download.jar https://raw.githubusercontent.com/brett8883/Super-Tools/master/End.bat End.bat
