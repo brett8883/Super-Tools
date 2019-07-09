@@ -92,7 +92,7 @@ ECHO SUPER-PATCHER %appver%
 echo By Brett8883
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
-ECHO Congradulations! You have Super-Patcher was sucessfull
+ECHO Congradulations! Super-Patcher was sucessfull
 ECHO *****************************************************************************************************
 ECHO You can optionally Connect to Assistant 2 or DJI Go 4 and use the simulator to ensure 
 Echo 		proper working order in the sim before testing outside.  
