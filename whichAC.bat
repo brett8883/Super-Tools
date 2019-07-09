@@ -111,6 +111,7 @@ set stock=1.00.0128
 set vt=2
 set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/P4Advanced_Super_Patcher%20FC/P4Advanced_wm332_Super_Patcher_FC_0306_03.02.35.32_dji_system.bin
 set fw2=P4Advanced_wm332_Super_Patcher_FC_0306_03.02.35.32_dji_system.bin
+pause
 cls
 wget %fw%
 copy *.bin ..
