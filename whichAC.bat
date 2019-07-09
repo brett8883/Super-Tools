@@ -53,7 +53,7 @@ wget %fw%
 copy *.bin ..
 del *.bin
 cd ..
-cd program
+cd Super-Tools-master
 echo %vt%
 echo %AC%
 echo %stock%
@@ -74,7 +74,7 @@ wget %fw%
 copy *.bin ..
 del *.bin
 cd ..
-cd program
+cd Super-Tools-master
 echo %vt%
 echo %AC%
 echo %stock%
@@ -95,7 +95,7 @@ wget %fw%
 copy *.bin ..
 del *.bin
 cd ..
-cd program
+cd Super-Tools-master
 echo %vt%
 echo %AC%
 echo %stock%
@@ -116,7 +116,7 @@ wget %fw%
 copy *.bin ..
 del *.bin
 cd ..
-cd program
+cd Super-Tools-master
 echo %vt%
 echo %AC%
 echo %stock%
@@ -137,7 +137,7 @@ wget %fw%
 copy *.bin ..
 del *.bin
 cd ..
-cd program
+cd Super-Tools-master
 echo %vt%
 echo %AC%
 echo %stock%
