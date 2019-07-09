@@ -1,24 +1,7 @@
 @echo off 
 cd ProgramFiles
 cls
-if %AC%==Mavic goto askjkson ELSE goto verify
-
-:askjkson
-Echo *****************************************************************************************************
-Echo *****************************************************************************************************
-ECHO ECHO SUPER-PATCHER %appver% for %AC%
-echo By Brett8883
-Echo *****************************************************************************************************
-Echo *****************************************************************************************************
-Echo You have completed the Super-Patcher process!
-Echo *****************************************************************************************************
-ECHO Would you like to enable jkson fcc radio mod to enable fixed FCC or fixed Boost? 
-echo you can find out more about jkson fcc mod at http://github.com/jkson5/jkson_fcc_mod
-Echo [1] Yes 
-echo [2] No
-choice /C 12 /D 1 /T 99 /M "Enable jkson mod?"
-If Errorlevel 2 Goto nofcc
-If Errorlevel 1 Goto jkson
+if "%AC%"=="MavicPro" goto askjkson
 
 :verify
 @echo off
@@ -53,6 +36,23 @@ choice /C 123 /D 1 /T 99 /M "correct FC number indicated?"
 If Errorlevel 3 Goto verify
 If Errorlevel 2 Goto nopatch
 If Errorlevel 1 Goto success
+
+:askjkson
+Echo *****************************************************************************************************
+Echo *****************************************************************************************************
+ECHO ECHO SUPER-PATCHER %appver% for %AC%
+echo By Brett8883
+Echo *****************************************************************************************************
+Echo *****************************************************************************************************
+Echo You have completed the Super-Patcher process!
+Echo *****************************************************************************************************
+ECHO Would you like to enable jkson fcc radio mod to enable fixed FCC or fixed Boost? 
+echo you can find out more about jkson fcc mod at http://github.com/jkson5/jkson_fcc_mod
+Echo [1] Yes 
+echo [2] No
+choice /C 12 /D 1 /T 99 /M "Enable jkson mod?"
+If Errorlevel 2 Goto nofcc
+If Errorlevel 1 Goto jkson
 
 :nopatch
 @echo off
