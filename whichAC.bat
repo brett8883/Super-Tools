@@ -113,11 +113,9 @@ set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/P4Advanced_S
 set fw2=P4Advanced_wm332_Super_Patcher_FC_0306_03.02.35.32_dji_system.bin
 cls
 wget %fw%
-pause
 copy *.bin ..
 del *.bin
 cd ..
-pause
 cd Super-Tools-master
 echo %vt%
 echo %AC%
