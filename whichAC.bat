@@ -104,7 +104,7 @@ ECHO THIS STOP HAS BEEN ADDED FOR DEBUGGING PURPOSES,
 Echo.
 ECHO SOME USERS ARE REPORTING THAT FOR THE P4P THE FILE IS NOT DOWNLOADING TO THEIR SUPER-PATCHER FOLDER. 
 ECHO PLEASE LOOK TO SEE IF THE FILE "P4P_wm331_Super_Patcher_0306_03.02.44.31_dji_system.bin"
-ECHO is in your Super-Patcher folder alone side the "auto-install.bat". 
+ECHO is in your Super-Patcher folder along side the "auto-install.bat". 
 Echo.
 Echo If it is not please screen shot what is currently displayed in the command line so I can debug the problem.
 Echo.
