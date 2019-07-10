@@ -100,6 +100,14 @@ echo %vt%
 echo %AC%
 echo %stock%
 echo %fc%
+ECHO THIS STOP HAS BEEN ADDED FOR DEBUGGING PURPOSES, 
+ECHO SOME USERS ARE REPORTING THAT FOR THE P4P THE FILE IS NOT DOWNLOADING TO THEIR SUPER-PATCHER FOLDER. 
+ECHO PLEASE LOOK TO SEE IF THE FILE "P4P_wm331_Super_Patcher_0306_03.02.44.31_dji_system.bin"
+ECHO is in your Super-Patcher folder alone side the "auto-install.bat". 
+Echo If it is not please screen shot what is currently displayed in the command line so I can debug the problem. 
+echo It currently works for me and if this file is in your Super-Patcher folder then you are not affected by this bug and can continue normally. 
+echo Sorry for the inconveience. 
+pause
 call phantom_verify.bat
 
 :p4a
