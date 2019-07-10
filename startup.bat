@@ -1,5 +1,5 @@
 @echo off
 cls
 SETLOCAL EnableDelayedExpansion
-set appver=2.0
+set appver=1.7
 call whichAC.bat
