@@ -83,7 +83,7 @@ start DUMLdoreV3.exe
 Echo *****************************************************************************************************
 Pause
 cls
-adb shell mount -o bind /vendor/bin/dummy_verify.sh /sbin/dji_verify
+adb shell mount -o bind /vendor/bin/dummy_verify.sh /system/bin/dji_verify
 cls
 Echo *****************************************************************************************************
 Echo Phantom Verify
