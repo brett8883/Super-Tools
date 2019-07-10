@@ -85,7 +85,7 @@ call mpspk_verify.bat
 @echo off
 cls
 set AC=P4P
-set fc=03.02.44.09
+set fc=03.02.44.31
 set stock=1.05.0600  
 set vt=2
 set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/P4P_Super-Patcher_FC/P4P_wm331_Super_Patcher_0306_03.02.44.31_dji_system.bin
