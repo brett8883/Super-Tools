@@ -57,6 +57,7 @@ adb shell mkdir /vendor/bin
 adb push dummy_verify.sh /vendor/bin/
 adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /system/bin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd /
 adb shell mount -o remount,ro /vendor
+adb kill-server
 cls
 Echo *****************************************************************************************************
 Echo Phantom Verify
@@ -83,7 +84,16 @@ start DUMLdoreV3.exe
 Echo *****************************************************************************************************
 Pause
 cls
+Echo *****************************************************************************************************
+Echo Phantom Verify
+Echo *****************************************************************************************************
+ECHO SUPER-PATCHER %appver% for %AC%
+echo By Brett8883
+Echo *****************************************************************************************************
+Echo *****************************************************************************************************
+ECHO WORKING PLEASE WAIT...
 adb shell mount -o bind /vendor/bin/dummy_verify.sh /system/bin/dji_verify
+adb kill-server
 cls
 Echo *****************************************************************************************************
 Echo Phantom Verify
