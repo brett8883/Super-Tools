@@ -154,6 +154,7 @@ set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/P4Pv2_FLIGHT
 set fw2=P4Pv2_!!v01.00.2200!!_Super_Patcher_standard_latest_fw_required_0306_03.03.13.99_wm335_dji_system.bin
 cls
 wget %fw%
+pause
 copy *.bin ..
 del *.bin
 cd ..
