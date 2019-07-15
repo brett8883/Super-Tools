@@ -2,6 +2,7 @@
 cd ProgramFiles
 cls
 if "%AC%"=="MavicPro" goto askjkson
+if "%AC%"=="P4Pv2" goto askjkson
 
 :verify
 @echo off

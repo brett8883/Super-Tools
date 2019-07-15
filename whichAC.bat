@@ -18,7 +18,7 @@ ECHO	7) Inspire 2
 ECHO.
 choice /C 1234567 /D 1 /T 99 /M "Please select connected device"
 If Errorlevel 7 goto Sorry
-If Errorlevel 6 goto Sorry
+If Errorlevel 6 goto P4Pv2
 If Errorlevel 5 goto p4a
 If Errorlevel 4 goto p4s
 If Errorlevel 3 goto p4p
@@ -132,6 +132,26 @@ set stock=2.00.0700
 set vt=2
 set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/P4Standard_Super_Patcher_FC/P4Standard_wm330_0306_03.02.44.33_Super_Patcher_dji_system.bin
 set fw2=P4Standard_wm330_0306_03.02.44.33_Super_Patcher_dji_system_.bin
+cls
+wget %fw%
+copy *.bin ..
+del *.bin
+cd ..
+cd Super-Tools-master
+echo %vt%
+echo %AC%
+echo %stock%
+echo %fc%
+call phantom_verify.bat
+
+:P4Pv2
+cls 
+set AC=P4Pv2
+set fc=
+stock=
+set vt=
+set fw=
+set fw2=
 cls
 wget %fw%
 copy *.bin ..
