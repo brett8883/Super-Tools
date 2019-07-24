@@ -6,5 +6,5 @@ ECHO ---------------------------------------------------------------------------
 adb kill-server
 cls
 SETLOCAL EnableDelayedExpansion
-set appver=1.7.1
+set appver=1.7.2
 call whichAC.bat
