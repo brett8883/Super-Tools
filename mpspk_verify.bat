@@ -93,6 +93,7 @@ Echo ***************************************************************************
 ECHO WORKING. PLEASE WAIT...
 adb shell mount -o bind /vendor/bin/dummy_verify.sh /sbin/dji_verify || goto error2
 if %errorlevel%==0 echo MPSK BIND STEP success!
+adb kill-server
 timeout 5
 cls
 Echo *****************************************************************************************************
@@ -126,6 +127,7 @@ cls
 Call jkson_verify.bat
 
 :error2
+adb kill-server
 cls 
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
@@ -145,6 +147,7 @@ echo I'll take you back to DUMLdore and we'll give it another go
 pause 
 goto bind 
 :error1
+adb kill-server
 cls 
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
