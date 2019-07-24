@@ -57,6 +57,8 @@ adb push dummy_verify.sh /vendor/bin/
 adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /sbin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd /
 adb shell mount -o remount,ro /vendor || goto error1
 adb kill-server
+if %errorlevel%==0 echo dummy_verify.sh step success!
+timeout5
 cls
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
@@ -90,6 +92,8 @@ Echo ***************************************************************************
 Echo *****************************************************************************************************
 ECHO WORKING. PLEASE WAIT...
 adb shell mount -o bind /vendor/bin/dummy_verify.sh /sbin/dji_verify || goto error2
+if %errorlevel%==0 echo MPSK BIND STEP success!
+timeout 5
 cls
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
