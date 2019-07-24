@@ -1,6 +1,7 @@
 @Echo off
 cls
 cd tools
+:main
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
 ECHO SUPER-PATCHER %appver% for %AC%
@@ -49,11 +50,11 @@ echo By Brett8883
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
 Echo WORKING PLEASE WAIT... 
-adb shell mount -o remount,rw /vendor
+adb shell mount -o remount,rw /vendor || goto error1
 adb shell mkdir /vendor/bin
-adb push dummy_verify.sh /vendor/bin/
+adb push dummy_verify.sh /vendor/bin/ 
 adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /sbin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd /
-adb shell mount -o remount,ro /vendor
+adb shell mount -o remount,ro /vendor || goto error1
 adb kill-server
 cls
 Echo *****************************************************************************************************
@@ -68,6 +69,7 @@ echo Once fully restarted and connected please continue
 pause
 Echo *****************************************************************************************************
 cls
+:bind
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
 ECHO SUPER-PATCHER %appver% for %AC%
@@ -86,8 +88,7 @@ echo By Brett8883
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
 ECHO WORKING. PLEASE WAIT...
-adb shell mount -o bind /vendor/bin/dummy_verify.sh /sbin/dji_verify
-adb kill-server
+adb shell mount -o bind /vendor/bin/dummy_verify.sh /sbin/dji_verify || goto error2
 cls
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
@@ -118,3 +119,43 @@ Echo ***************************************************************************
 pause
 cls 
 Call jkson_verify.bat
+
+:error2
+cls 
+Echo *****************************************************************************************************
+Echo *****************************************************************************************************
+ECHO SUPER-PATCHER Error handling Wizard %appver% 
+echo By Brett8883
+Echo *****************************************************************************************************
+Echo *****************************************************************************************************
+echo ERROR CODE MSPK-2 UNABLE TO REACH AIRCRAFT VIA ADB AT BIND STEP
+echo.
+echo HEY! WOAH! Sorry! There was an issue with that last step. 
+echo. 
+echo Best I can tell the aircraft is either not connected to this PC or 
+echo that "Enable ADB" with DUMLdore didn't get done right
+echo. 
+ECHO Make sure the aircraft is connected and turned on then continue
+echo I'll take you back to DUMLdore and we'll give it another go 
+pause 
+goto bind 
+:error1
+cls 
+Echo *****************************************************************************************************
+Echo *****************************************************************************************************
+ECHO SUPER-PATCHER Error handling Wizard %appver% 
+echo By Brett8883
+Echo *****************************************************************************************************
+Echo *****************************************************************************************************
+Echo ERROR CODE MSPK-1 UNABLE TO REACH AIRCRAFT VIA ADB 
+echo.
+echo HEY! WOAH! Sorry! There was an issue with that last step. 
+echo. 
+echo Best I can tell the aircraft is either not connected to this PC or 
+echo that "Enable ADB" with DUMLdore didn't get done right
+echo. 
+ECHO Make sure the aircraft is connected and turned on and then continue and 
+echo I'll take you back to DUMLdore and we'll give it another go 
+echo.
+pause
+goto main 
