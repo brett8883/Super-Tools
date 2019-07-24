@@ -1,6 +1,7 @@
 @Echo off
 cls
 cd Tools
+:main
 Echo *****************************************************************************************************
 Echo Phantom Verify
 Echo *****************************************************************************************************
@@ -43,6 +44,7 @@ Echo Continue once ADB has been enabled and DUMLdore is closed
 start DUMLdoreV3.exe
 Echo *****************************************************************************************************
 pause
+:P4verify
 cls
 Echo *****************************************************************************************************
 Echo Phantom Verify
@@ -52,12 +54,14 @@ echo By Brett8883
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
 Echo WORKING PLEASE WAIT... 
-adb shell mount -o remount,rw /vendor
+adb shell mount -o remount,rw /vendor || goto error1
 adb shell mkdir /vendor/bin
 adb push dummy_verify.sh /vendor/bin/
 adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /system/bin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd /
-adb shell mount -o remount,ro /vendor
+adb shell mount -o remount,ro /vendor || goto error1
 adb kill-server
+if %errorlevel%==0 echo P4 dummy_verify.sh step success!
+timeout 5
 cls
 Echo *****************************************************************************************************
 Echo Phantom Verify
@@ -72,6 +76,7 @@ echo Once fully restarted and connected please continue
 pause
 Echo *****************************************************************************************************
 cls
+:bind
 Echo *****************************************************************************************************
 Echo Phantom Verify
 Echo *****************************************************************************************************
@@ -92,7 +97,9 @@ echo By Brett8883
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
 ECHO WORKING PLEASE WAIT...
-adb shell mount -o bind /vendor/bin/dummy_verify.sh /system/bin/dji_verify
+adb shell mount -o bind /vendor/bin/dummy_verify.sh /system/bin/dji_verify || goto error2
+if %errorlevel%==0 echo P4 BIND STEP success!
+timeout 5
 adb kill-server
 cls
 Echo *****************************************************************************************************
@@ -125,3 +132,45 @@ Echo ***************************************************************************
 pause
 cls 
 Call jkson_verify.bat
+
+:error2
+adb kill-server
+cls 
+Echo *****************************************************************************************************
+Echo *****************************************************************************************************
+ECHO SUPER-PATCHER Error handling Wizard %appver% 
+echo By Brett8883
+Echo *****************************************************************************************************
+Echo *****************************************************************************************************
+echo ERROR CODE P4VFY-2 UNABLE TO REACH AIRCRAFT VIA ADB AT BIND STEP
+echo.
+echo HEY! WOAH! Sorry! There was an issue with that last step. 
+echo. 
+echo Best I can tell the aircraft is either not connected to this PC or 
+echo that "Enable ADB" with DUMLdore didn't get done right
+echo. 
+ECHO Make sure the aircraft is connected and turned on then continue
+echo I'll take you back to DUMLdore and we'll give it another go 
+pause 
+goto bind 
+:error1
+adb kill-server
+cls 
+Echo *****************************************************************************************************
+Echo *****************************************************************************************************
+ECHO SUPER-PATCHER Error handling Wizard %appver% 
+echo By Brett8883
+Echo *****************************************************************************************************
+Echo *****************************************************************************************************
+Echo ERROR CODE P4VFY-1 UNABLE TO REACH AIRCRAFT VIA ADB 
+echo.
+echo HEY! WOAH! Sorry! There was an issue with that last step. 
+echo. 
+echo Best I can tell the aircraft is either not connected to this PC or 
+echo that "Enable ADB" with DUMLdore didn't get done right
+echo. 
+ECHO Make sure the aircraft is connected and turned on and then continue and 
+echo I'll take you back to DUMLdore and we'll give it another go 
+echo.
+pause
+goto main 
