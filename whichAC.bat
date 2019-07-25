@@ -168,6 +168,7 @@ call phantom_verify.bat
 
 :Error
 cls
+cd ..
 Echo -----------------------------------------------------------------------------------------------------
 ECHO SUPER-PATCHER Set Up Widget
 echo By Brett8883
@@ -196,6 +197,7 @@ echo.
 echo If all else fails you can manually download the file from %fw% and then ignore this error
 echo. 
 echo Sorry there! 
+cd Super-Tools-%branch%
 ECHO. 
 echo Would you like to ignore this error?
 ECHO	1) Yes ignore and continue

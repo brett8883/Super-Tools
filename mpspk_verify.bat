@@ -1,6 +1,8 @@
 @Echo off
 cls
+cd ..
 ECHO %AC% %DATE%-%TIME%-%mpspk% >> log.txt
+cd Super-Tools-%branch%
 cd tools
 :main
 cls
@@ -130,6 +132,8 @@ Call jkson_verify.bat
 
 :error2
 adb kill-server
+cd ..
+cd ..
 cls 
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
@@ -147,11 +151,16 @@ echo that "Enable ADB" with DUMLdore didn't get done right
 echo. 
 ECHO Make sure the aircraft is connected and turned on then continue
 echo I'll take you back to DUMLdore and we'll give it another go 
-pause 
+pause
+cd Super-Tools-%branch%
+cd tools
 goto bind 
+
 :error1
 adb kill-server
-cls 
+cls
+cd ..
+cd ..
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
 ECHO SUPER-PATCHER Error handling Wizard %appver% 
@@ -168,6 +177,8 @@ echo that "Enable ADB" with DUMLdore didn't get done right
 echo. 
 ECHO Make sure the aircraft is connected and turned on and then continue and 
 echo I'll take you back to DUMLdore and we'll give it another go 
+cd Super-Tools-%branch%
+cd tools
 echo.
 pause
 goto main 
