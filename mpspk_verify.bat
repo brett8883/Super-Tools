@@ -53,7 +53,7 @@ ECHO SUPER-PATCHER %appver% for %AC%
 echo By Brett8883
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
-Echo Start mpspk-upload_dummy %date%_%time% 
+Echo Start mpspk-upload_dummy %date%_%time% >> log.txt
 Echo WORKING PLEASE WAIT... 
 adb shell mount -o remount,rw /vendor || goto error1
 adb shell mkdir /vendor/bin || >> log.txt
@@ -142,6 +142,7 @@ echo By Brett8883
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
 echo ERROR CODE MSPK-2 UNABLE TO REACH AIRCRAFT VIA ADB AT BIND STEP-%DATE%-%time%-%appver% >> log.txt
+echo ERROR CODE MSPK-2 UNABLE TO REACH AIRCRAFT VIA ADB AT BIND STEP-%DATE%-%time%-%appver% >> errorlog.txt
 echo ERROR CODE MSPK-2 UNABLE TO REACH AIRCRAFT VIA ADB AT BIND STEP
 echo.
 echo HEY! WOAH! Sorry! There was an issue with that last step. 
@@ -168,6 +169,7 @@ echo By Brett8883
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
 echo ERROR CODE MSPK-1 UNABLE TO REACH AIRCRAFT VIA ADB_%date%_%time%_%appver% >> log.txt
+echo ERROR CODE MSPK-1 UNABLE TO REACH AIRCRAFT VIA ADB_%date%_%time%_%appver% >> errorlog.txt
 Echo ERROR CODE MSPK-1 UNABLE TO REACH AIRCRAFT VIA ADB 
 echo.
 echo HEY! WOAH! Sorry! There was an issue with that last step. 
