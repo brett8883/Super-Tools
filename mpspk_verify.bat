@@ -53,7 +53,7 @@ ECHO SUPER-PATCHER %appver% for %AC%
 echo By Brett8883
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
-Echo Start 
+Echo Start mpspk-upload_dummy %date%_%time% 
 Echo WORKING PLEASE WAIT... 
 adb shell mount -o remount,rw /vendor || goto error1
 adb shell mkdir /vendor/bin || >> log.txt
