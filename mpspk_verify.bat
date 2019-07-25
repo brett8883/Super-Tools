@@ -1,10 +1,11 @@
 @Echo off
+:main
 cls
 cd ..
-ECHO %AC% %DATE%-%TIME%-%mpspk% >> log.txt
+Echo STARTED-mpspk_for_%AC% >> log.txt
+echo %DATE%_%TIME% >> log.txt
 cd Super-Tools-%branch%
 cd tools
-:main
 cls
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
@@ -97,6 +98,12 @@ Echo ***************************************************************************
 ECHO WORKING. PLEASE WAIT...
 adb shell mount -o bind /vendor/bin/dummy_verify.sh /sbin/dji_verify || goto error2
 if %errorlevel%==0 echo MPSK BIND STEP success!
+cd ..
+cd ..
+echo MPSK BIND STEP SUCCESS >> log.txt
+echo %DATE%_%TIME%
+cd Super-Tools-%branch%
+cd tools
 adb kill-server
 timeout 5
 cls
@@ -126,6 +133,12 @@ echo 6. Once aircraft has restarted fully and connected to PC. Please continue
 echo. 
 start DUMLdoreV3.exe
 Echo *****************************************************************************************************
+cd ..
+cd ..
+ECHO STARTED_LOAD_AND_FLASH >> log.txt
+echo %DATE%_%TIME% >> log.txt
+cd Super-Tools_%branch%
+cd tools
 pause
 cls 
 Call jkson_verify.bat
@@ -141,8 +154,10 @@ ECHO SUPER-PATCHER Error handling Wizard %appver%
 echo By Brett8883
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
-echo ERROR CODE MSPK-2 UNABLE TO REACH AIRCRAFT VIA ADB AT BIND STEP-%DATE%-%time%-%appver% >> log.txt
-echo ERROR CODE MSPK-2 UNABLE TO REACH AIRCRAFT VIA ADB AT BIND STEP-%DATE%-%time%-%appver% >> errorlog.txt
+echo ERROR_CODE_MSPK-2_UNABLE_TO_REACH_AIRCRAFT_VIA_AD_AT_BIND_STEP_%appver% >> log.txt
+echo %DATE%_%TIME% >> log.txt
+echo ERROR_CODE_MSPK-2_UNABLE_TO_REACH_AIRCRAFT_VIA_AD_AT_BIND_STEP_%appver% >> errorlog.txt
+echo %DATE%_%TIME% >> errorlog.txt
 echo ERROR CODE MSPK-2 UNABLE TO REACH AIRCRAFT VIA ADB AT BIND STEP
 echo.
 echo HEY! WOAH! Sorry! There was an issue with that last step. 

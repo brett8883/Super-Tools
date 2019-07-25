@@ -1,11 +1,22 @@
 @echo off 
-cd ProgramFiles
+cd ..
+cd ..
+ECHO STARTED_jkson_verify >> log.txt
+echo %DATE%_%TIME% >> log.txt
+cd Super-Tools_%branch%
+cd tools
 cls
 if "%AC%"=="MavicPro" goto askjkson
 if "%AC%"=="P4Pv2" goto askjkson
 
 :verify
 @echo off
+cd ..
+cd ..
+ECHO STARTED VERIFY WITH NLD >> log.txt
+echo %DATE%_%TIME% >> log.txt
+cd Super-Tools_%branch%
+cd tools
 cls
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
@@ -80,12 +91,21 @@ exit
 
 :nofcc
 @echo off
+cd ..
+cd ..
+ECHO OPTED FOR NO JKSON>> log.txt
+echo %DATE%_%TIME% >> log.txt
+cd Super-Tools_%branch%
+cd tools
 cls
 Goto verify
 
 :success
 @echo off
 cd ..
+cd ..
+ECHO USER_INDICATED_SUCCESS >> log.txt
+echo %DATE%_%TIME% >> log.txt
 cls 
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
@@ -109,12 +129,18 @@ Echo Aircraft may ask you to recalibrate sensors but if it does not then it is n
 echo(
 echo Thanks for using Super-Patcher!
 pause
-cls
-Echo Bye!
+ECHO SUPER_PATCHER_ENDED_WITH_COMPLETION>> log.txt
+echo %DATE%_%TIME% >> log.txt
 exit
 
 :jkson
 @echo off
+cd ..
+cd ..
+ECHO OPTED_YES_FOR_JKSON >> log.txt
+echo %DATE%_%TIME% >> log.txt
+cd Super-Tools_%branch%
+cd tools
 cls
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
@@ -249,6 +275,12 @@ ECHO JKSON FCC MOD
 echo On loan from JKSON5
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
+cd ..
+cd ..
+ECHO JKSON_MOD_UPLOADED >> log.txt
+echo %DATE%_%TIME% >> log.txt
+cd Super-Tools_%branch%
+cd tools
 Echo Radio Power and frequency settings sent to aircraft!
 timeout 5
 cls
@@ -273,8 +305,14 @@ adb shell rm /vendor/bin/check_1860_state.sh
 @echo off
 echo(
 echo Jkson Mod has been removed! Please restart your device.
+cd ..
+cd ..
+echo JKSON_WAS_REMOVED >> log.txt
+echo %DATE%_%TIME% >> log.txt
+cd Super-Tools_%branch%
+cd tools
 echo(
-Goto End
+Goto verify
 
 :Sorry
 cls
