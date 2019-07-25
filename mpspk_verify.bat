@@ -1,5 +1,6 @@
 @Echo off
 cls
+ECHO %AC% %DATE%-%TIME%-%mpspk% >> log.txt
 cd tools
 :main
 cls
@@ -50,15 +51,16 @@ ECHO SUPER-PATCHER %appver% for %AC%
 echo By Brett8883
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
+Echo Start 
 Echo WORKING PLEASE WAIT... 
 adb shell mount -o remount,rw /vendor || goto error1
-adb shell mkdir /vendor/bin
-adb push dummy_verify.sh /vendor/bin/ 
-adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /sbin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd /
+adb shell mkdir /vendor/bin || >> log.txt
+adb push dummy_verify.sh /vendor/bin/ || >> log.txt
+adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /sbin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd / || >>log.txt
 adb shell mount -o remount,ro /vendor || goto error1
 adb kill-server
 if %errorlevel%==0 echo dummy_verify.sh step success!
-timeout5
+timeout 5
 cls
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
@@ -135,6 +137,7 @@ ECHO SUPER-PATCHER Error handling Wizard %appver%
 echo By Brett8883
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
+echo ERROR CODE MSPK-2 UNABLE TO REACH AIRCRAFT VIA ADB AT BIND STEP-%DATE%-%time%-%appver% >> log.txt
 echo ERROR CODE MSPK-2 UNABLE TO REACH AIRCRAFT VIA ADB AT BIND STEP
 echo.
 echo HEY! WOAH! Sorry! There was an issue with that last step. 
@@ -155,6 +158,7 @@ ECHO SUPER-PATCHER Error handling Wizard %appver%
 echo By Brett8883
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
+echo ERROR CODE MSPK-1 UNABLE TO REACH AIRCRAFT VIA ADB_%date%_%time%_%appver% >> log.txt
 Echo ERROR CODE MSPK-1 UNABLE TO REACH AIRCRAFT VIA ADB 
 echo.
 echo HEY! WOAH! Sorry! There was an issue with that last step. 
