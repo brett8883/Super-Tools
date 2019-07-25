@@ -147,6 +147,14 @@ Call jkson_verify.bat
 
 :error2
 adb kill-server
+cd ..
+cd ..
+echo ERROR_CODE_P4VFY-2_UNABLE_TO REACH_AIRCRAFT_VIA_ADB_AT_BIND_STEP >> log.txt
+echo %DATE%_%TIME% >> log.txt
+echo ERROR_CODE_P4VFY-2_UNABLE_TO REACH_AIRCRAFT_VIA_ADB_AT_BIND_STEP >> errorlog.txt
+echo %DATE%_%TIME% >> errorlog.txt
+cd Super-Tools-%branch%
+cd tools
 cls 
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
@@ -154,7 +162,7 @@ ECHO SUPER-PATCHER Error handling Wizard %appver%
 echo By Brett8883
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
-echo ERROR CODE P4VFY-2 UNABLE TO REACH AIRCRAFT VIA ADB AT BIND STEP
+echo ERROR_CODE_P4VFY-2_UNABLE_TO REACH_AIRCRAFT_VIA_ADB_AT_BIND_STEP
 echo.
 echo HEY! WOAH! Sorry! There was an issue with that last step. 
 echo. 
@@ -167,6 +175,14 @@ pause
 goto bind 
 :error1
 adb kill-server
+cd ..
+cd ..
+echo ERROR_P4VFY-1_UNABLE_TO_REACH_AIRCRAFT_VIA_ADB_%appver%_PTHVFY >> log.txt
+echo %DATE%_%TIME% >> log.txt
+echo ERROR_P4VFY-1_UNABLE_TO_REACH_AIRCRAFT_VIA_ADB_%appver%_PTHVFY >> errorlog.txt
+echo %DATE%_%TIME% >> errorlog.txt
+cd Super-Tools-%branch%
+cd tools
 cls 
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
