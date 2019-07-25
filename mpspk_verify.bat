@@ -183,9 +183,11 @@ ECHO SUPER-PATCHER Error handling Wizard %appver%
 echo By Brett8883
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
-echo ERROR CODE MSPK-1 UNABLE TO REACH AIRCRAFT VIA ADB_%date%_%time%_%appver% >> log.txt
-echo ERROR CODE MSPK-1 UNABLE TO REACH AIRCRAFT VIA ADB_%date%_%time%_%appver% >> errorlog.txt
-Echo ERROR CODE MSPK-1 UNABLE TO REACH AIRCRAFT VIA ADB 
+echo ERROR_CODE_MSPK-2_UNABLE_TO_REACH_AIRCRAFT_VIA_AD_AT_DUMMY_STEP_%appver% >> log.txt
+echo %DATE%_%TIME% >> log.txt
+echo ERROR_CODE_MSPK-2_UNABLE_TO_REACH_AIRCRAFT_VIA_AD_AT_DUMMY_STEP_%appver% >> errorlog.txt
+echo %DATE%_%TIME% >> errorlog.txt
+Echo ERROR CODE MSPK-1 UNABLE TO REACH %AC% VIA ADB at upload dummy_verify Step
 echo.
 echo HEY! WOAH! Sorry! There was an issue with that last step. 
 echo. 
