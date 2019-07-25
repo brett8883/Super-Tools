@@ -33,7 +33,9 @@ ECHO By Brett8883
 ECHO -------------------------------------------------------------------------------------------
 Echo So Sorry! :(
 Echo.
-ECHO Super-Patcher does not support your aircraft just yet but check back soon becasue it is almost ready!
+ECHO Super-Patcher does not yet support Inspire 2. I am working on it but require a file from someone who has an Inspire 2. Please see my GitHub repo called Capture_I2_0306.unsig
+ECHO.
+ECHO https://github.com/brett8883/DJI_Super-Capture_I2_0306.unsig  
 ECHO.
 ECHO See you soon! 
 pause 
@@ -49,7 +51,7 @@ set vt=1
 set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/MavicPro_MPP_super_patcher_03.02.44.10_dji_system.bin
 set fw2=MavicPro_MPP_super_patcher_03.02.44.10_dji_system.bin
 cls
-wget %fw%
+wget %fw% || goto error
 copy *.bin ..
 del *.bin
 cd ..
@@ -70,7 +72,7 @@ set vt=1
 set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/Spark_Super_Patcher_FC/Spark_Super-Patcher_306_03.02.43.09_dji_system.bin
 set fw2=Spark_Super-Patcher_306_03.02.43.09_dji_system.bin
 cls
-wget %fw%
+wget %fw% || goto error
 copy *.bin ..
 del *.bin
 cd ..
@@ -91,7 +93,7 @@ set vt=2
 set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/P4P_Super-Patcher_FC/P4P_wm331_Super_Patcher_0306_03.02.44.31_dji_system.bin
 set fw2=P4P_wm331_Super_Patcher_0306_03.02.44.31_dji_system.bin
 cls
-wget %fw%
+wget %fw% || goto error
 copy *.bin ..
 del *.bin
 cd ..
@@ -112,7 +114,7 @@ set vt=2
 set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/P4Advanced_Super_Patcher_FC/P4Advanced_wm332_Super_Patcher_FC_0306_03.02.35.32_dji_system.bin
 set fw2=P4Advanced_wm332_Super_Patcher_FC_0306_03.02.35.32_dji_system.bin
 cls
-wget %fw%
+wget %fw% || goto error
 copy *.bin ..
 del *.bin
 cd ..
@@ -133,7 +135,7 @@ set vt=2
 set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/P4Standard_Super_Patcher_FC/P4Standard_wm330_0306_03.02.44.33_Super_Patcher_dji_system.bin
 set fw2=P4Standard_wm330_0306_03.02.44.33_Super_Patcher_dji_system_.bin
 cls
-wget %fw%
+wget %fw% || goto error
 copy *.bin ..
 del *.bin
 cd ..
@@ -153,7 +155,7 @@ set vt=2
 set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/P4Pv2_FLIGHT_CONTROLLERS/P4PV2_Super_Patcher_FC/P4PV2_wm335_Super_Patcher_0306_03.03.04.35_dji_system.bin
 set fw2=P4PV2_wm335_Super_Patcher_0306_03.03.04.35_dji_system.bin
 cls
-wget %fw%
+wget %fw% || goto error
 copy *.bin ..
 del *.bin
 cd ..
@@ -163,3 +165,46 @@ echo %AC%
 echo %stock%
 echo %fc%
 call phantom_verify.bat
+
+:Error
+cls
+Echo -----------------------------------------------------------------------------------------------------
+ECHO SUPER-PATCHER Set Up Widget
+echo By Brett8883
+Echo -----------------------------------------------------------------------------------------------------
+Echo -----------------------------------------------------------------------------------------------------
+ECHO ERROR CODE 
+echo %appver%-%ac%-%fw-%error%-whichAC
+echo %DATE%-%appver%-%ac%-%fw-%error%-whichAC>>errorlog.txt
+echo COULD NOT REACH ADDRESS TO DOWLOAD FC FOR %AC%
+ECHO.
+Echo Hey woah there's a problem...
+echo.
+echo Best I can tell it's because you don't have internet access. 
+ECHO.
+echo Keep in mind I am do NOT have the ability to dynamically diagnose errors but something isn't right
+echo. 
+echo Usually you will see this error when there is no internet access 
+echo. 
+echo Check your conntection and restart the Super-Patcher process
+echo. 
+echo If you are running windows in a VM 
+echo please ensure the VM has internet or just use a real windows machine
+echo. 
+echo If you are using a Mac be sure you are running it in Bootcamp mode to work properly with Super Patcher 
+echo. 
+echo If all else fails you can manually download the file from %fw% and then ignore this error
+echo. 
+echo Sorry there! 
+ECHO. 
+echo Would you like to ignore this error?
+ECHO	1) Yes ignore and continue
+ECHO	2) no, exit
+ECHO.
+choice /C 1234567 /D 1 /T 99 /M "Please select connected device"
+If Errorlevel 2 goto exit 
+If Errorlevel 1 goto errorloopback
+
+:errorloopback 
+if "%vt%"=="1" call mpspk_verify.bat
+if "%vt%"=="2" call call phantom_verify.bat
