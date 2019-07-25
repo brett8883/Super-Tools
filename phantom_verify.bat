@@ -1,7 +1,11 @@
 @Echo off
-cls
-cd Tools
 :main
+cls
+cd ..
+Echo STARTED-Phantm_Verify_for_%AC% >> log.txt
+echo %DATE%_%TIME% >> log.txt
+cd Super-Tools-%branch%
+cd tools
 cls
 Echo *****************************************************************************************************
 Echo Phantom Verify
@@ -42,7 +46,7 @@ echo.
 echo then close DUMLdore
 Echo. 
 Echo Continue once ADB has been enabled and DUMLdore is closed
-start DUMLdoreV3.exe
+start DUMLdoreV3.exe || goto errorduml
 Echo *****************************************************************************************************
 pause
 :P4verify
@@ -62,7 +66,7 @@ adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_veri
 adb shell mount -o remount,ro /vendor || goto error1
 adb kill-server
 if %errorlevel%==0 echo P4 dummy_verify.sh step success!
-timeout 5
+timeout 3
 cls
 Echo *****************************************************************************************************
 Echo Phantom Verify
@@ -86,7 +90,7 @@ echo By Brett8883
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
 echo click "Enable ADB" in DUMLdore and then close DUMLdore before proceeding
-start DUMLdoreV3.exe
+start DUMLdoreV3.exe || goto errorduml
 Echo *****************************************************************************************************
 Pause
 cls
@@ -97,11 +101,18 @@ ECHO SUPER-PATCHER %appver% for %AC%
 echo By Brett8883
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
+
 ECHO WORKING PLEASE WAIT...
 adb shell mount -o bind /vendor/bin/dummy_verify.sh /system/bin/dji_verify || goto error2
-if %errorlevel%==0 echo P4 BIND STEP success!
-timeout 5
+if %errorlevel%==0 echo %AC% BIND STEP SUCCESS!
+cd ..
+cd ..
+echo %AC% BIND STEP SUCCESS >> log.txt
+echo %DATE%_%TIME% >> log.txt
+cd Super-Tools-%branch%
+cd tools
 adb kill-server
+timeout 5
 cls
 Echo *****************************************************************************************************
 Echo Phantom Verify
@@ -128,7 +139,7 @@ Echo
 Echo.
 echo 6. Once aircraft has restarted fully and connected to PC. Please continue
 echo. 
-start DUMLdoreV3.exe
+start DUMLdoreV3.exe || goto errorduml
 Echo *****************************************************************************************************
 pause
 cls 
@@ -175,3 +186,41 @@ echo I'll take you back to DUMLdore and we'll give it another go
 echo.
 pause
 goto main 
+
+:errorduml
+cd ..
+cd ..
+echo ERROR_COULD_NOT_OPEN_DUMLDORE_%appver%_PTHVFY >> log.txt
+echo %DATE%_%TIME% >> log.txt
+echo ERROR_COULD_NOT_OPEN_DUMLDORE_%appver%_PTHVFY >> errorlog.txt
+echo %DATE%_%TIME% >> errorlog.txt
+cd Super-Tools-%branch%
+cd tools
+cls
+Echo *****************************************************************************************************
+Echo *****************************************************************************************************
+ECHO SUPER-PATCHER Error handling Wizard %appver% 
+echo By Brett8883
+Echo *****************************************************************************************************
+Echo *****************************************************************************************************
+Echo. 
+Echo ERROR ERROR ERROR
+echo.
+echo ERROR CODE PTH_VRFY_%AC%_COULD_NOT_OPEN_DUMLDORE
+ECHO. 
+ECHO Whoops! Something is not right. Sorry about this!
+echo. 
+echo Super-Patcher tried to open DUMLdore but couldn't.
+echo.  
+echo Sometimes this is because DUMLdore was already running in the background or 
+echo this computer is blocking it from opening.
+echo. 
+echo Check to make sure that DUMLdore is not already running by going to the task manager and end task for 
+echo DUMLdore if it is running and then continue. 
+echo. 
+echo If you are running Windows in a vertual machine then there is a good chance the VM is not set up properly
+echo. 
+echo When you think you have solved the problem please restart the Super-Patcher process
+pause
+exit
+
