@@ -56,10 +56,10 @@ Echo ***************************************************************************
 Echo *****************************************************************************************************
 Echo Start mpspk-upload_dummy %date%_%time% >> log.txt
 Echo WORKING PLEASE WAIT... 
-adb shell mount -o remount,rw /vendor || goto error1
+adb shell mount -o remount,rw /vendor
 adb shell mkdir /vendor/bin 
 adb push dummy_verify.sh /vendor/bin/ 
-adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /sbin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd / || >>log.txt
+adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /sbin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd /
 adb shell mount -o remount,ro /vendor || goto error1
 adb kill-server
 if %errorlevel%==0 echo dummy_verify.sh step success!
