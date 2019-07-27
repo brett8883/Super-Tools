@@ -23,6 +23,14 @@ choice /C 12 /D 1 /T 99 /M "Please select an option with your keyboard"
 If Errorlevel 2 goto skip
 If Errorlevel 1 goto intro
 
+:skip
+cls
+cd.. 
+Echo intro has been read don't show again > DontShowIntro
+echo %DATE%_%TIME% >> DontShowIntro
+cd Super-Tools-%branch%
+call startup.bat
+
 :intro
 cls 
 echo ===============================================================================================================================================================
@@ -41,12 +49,5 @@ ECHO ===========================================================================
 Echo.
 Echo In Super-Patcher 2.0 the first page you will see is the main menu
 pause
-goto starup.bat
+Call startup.bat
 
-:skip
-cls
-cd.. 
-Echo intro has been read don't show again > DontShowIntro
-echo %DATE%_%TIME% >> DontShowIntro
-cd Super-Tools-%branch%
-call startup.bat
