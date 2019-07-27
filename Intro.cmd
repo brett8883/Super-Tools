@@ -19,7 +19,7 @@ ECHO.
 echo         [1] Yes, show me the new features 
 echo         [2] No, skip this intro and don't ask me again
 ECHO. 
-choice /C 12 /D 1 /T 99 /M "Please select an option with you keyboard"
+choice /C 12 /D 1 /T 99 /M "Please select an option with your keyboard"
 If Errorlevel 2 goto skip
 If Errorlevel 1 goto intro
 
@@ -45,6 +45,8 @@ goto whichac.bat
 
 :skip
 cls
+cd.. 
 Echo intro has been read > introREAD.txt
 echo %DATE%_%TIME% >> introREAD.txt
+cd Super-Tools-%branch%
 call whichac.bat
