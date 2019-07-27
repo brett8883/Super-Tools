@@ -41,7 +41,7 @@ ECHO ===========================================================================
 Echo.
 Echo In Super-Patcher 2.0 the first page you will see is the main menu
 pause
-goto whichac.bat
+goto starup.bat
 
 :skip
 cls
@@ -49,4 +49,4 @@ cd..
 Echo intro has been read don't show again > DontShowIntro
 echo %DATE%_%TIME% >> DontShowIntro
 cd Super-Tools-%branch%
-call whichac.bat
+call startup.bat
