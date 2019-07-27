@@ -47,6 +47,6 @@ goto whichac.bat
 cls
 cd.. 
 Echo intro has been read don't show again > introREAD
-echo %DATE%_%TIME% >> introREAD.txt
+echo %DATE%_%TIME% >> introREAD
 cd Super-Tools-%branch%
 call whichac.bat
