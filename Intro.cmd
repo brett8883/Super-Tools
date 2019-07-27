@@ -46,7 +46,7 @@ goto whichac.bat
 :skip
 cls
 cd.. 
-Echo intro has been read don't show again > introREAD
-echo %DATE%_%TIME% >> introREAD
+Echo intro has been read don't show again > DontShowIntro
+echo %DATE%_%TIME% >> DontShowIntro
 cd Super-Tools-%branch%
 call whichac.bat
