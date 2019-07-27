@@ -145,11 +145,11 @@ echo "                    | $$               By Brett8883                       
 echo "                    |__/                                                                                                                                     ";
 ECHO ===============================================================================================================================================================
 ECHO WORKING. PLEASE WAIT...
-adb shell mount -o bind /vendor/bin/dummy_verify.sh /sbin/dji_verify || goto error2
+adb shell mount -o bind /vendor/bin/dummy_verify.sh /sbin/dji_verify
 if %errorlevel%==0 echo %AC% BIND STEP success!
 cd ..
 cd ..
-echo %AC% BIND STEP SUCCESS >> log.txt
+echo %AC% BIND STEP attempted >> log.txt
 echo %DATE%_%TIME% >> log.txt
 cd Super-Tools-%branch%
 cd tools
