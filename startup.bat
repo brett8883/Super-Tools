@@ -1,4 +1,5 @@
 @echo off
+mode con: cols=97 lines=40
 ECHO -------------------------------------------------------------------------------------------
 ECHO Super Patcher
 ECHO By Brett8883
