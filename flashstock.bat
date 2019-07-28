@@ -43,7 +43,7 @@ timeout 6
 call mainmenu.cmd
 
 :MP
-set stkfwadrs=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Mavic%20Pro%201%20-%20Incl%20Platinum%20and%20Alpine/V01.04.0300_Mavic_dji_system.bin
+set stkfwadrs=https://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Mavic%20Pro%201%20-%20Incl%20Platinum%20and%20Alpine/V01.04.0300_Mavic_dji_system.bin
 set stockfw=V01.04.0300_Mavic_dji_system.bin
 goto download
 
