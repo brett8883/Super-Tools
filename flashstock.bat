@@ -43,31 +43,26 @@ timeout 6
 call mainmenu.cmd
 
 :MP
-cd ..
 set stkfwadrs=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Mavic%20Pro%201%20-%20Incl%20Platinum%20and%20Alpine/V01.04.0300_Mavic_dji_system.bin
 set stockfw=V01.04.0300_Mavic_dji_system.bin
 goto download
 
 :SPK
-cd..
 set stkfwadrs=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Spark/V01.00.0900_Spark_dji_system.bin
 set stockfw=V01.00.0900_Spark_dji_system.bin
 goto download
 
 :p4p
-cd ..
 set stkfwadrs=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Phantom%204%20Professional/V01.05.0600_P4P_dji_system.tar
 set stockfw=V01.05.0600_P4P_dji_system.tar
 goto download
 
 :p4a
-cd ..
 set stkfwadrs=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Phantom%204%20Advanced/V01.00.0128_P4A_dji_system.bin
 set stockfw=V01.00.0128_P4A_dji_system.bin
 goto download
 
 :p4s
-cd ..
 stkfwadrs=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Phantom%204%20Standard/V02.00.0700_P4_dji_system.bin
 set stockfw=V02.00.0700_P4_dji_system.bin
 goto download
