@@ -162,4 +162,4 @@ echo %vt%
 echo %AC%
 echo %stock%
 echo %fc%
-call phantom_verify.bat
+call mpspk_verify.bat
