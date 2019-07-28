@@ -80,3 +80,7 @@ cd tools
 start dumldorev3.exe
 cd ..
 goto mainmenu
+
+:jkson
+cd tools
+call jkson.bat
