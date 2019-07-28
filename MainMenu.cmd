@@ -18,7 +18,7 @@ echo                   [] Launch DULMdore by Jezzeb
 echo                   [] Check Aircraft Firmware Attributes
 echo                   [] Launch jkson fcc mod (Mavic and P4Pv2 only)
 echo.
-Choice /c 123456 /D 1 /T 99 /M "Please make a section with keyboard"
+Choice /c 123456 /M "Please make a section with keyboard"
 If Errorlevel 6 goto jkson
 If Errorlevel 5 goto checkfc
 If Errorlevel 4 goto dumldore
@@ -32,7 +32,10 @@ call Whichac.bat
 
 :getDownloader
 cls
+cd tools
+if exist DankDroneDownloader.exe start DankDroneDownloader.exe & goto main
 call header.bat
+Echo Hold on just a sec...
 cd tools
 wget https://github.com/cs2000/DankDroneDownloader/archive/master.zip
 7za.exe e master.zip
