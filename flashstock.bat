@@ -90,7 +90,7 @@ goto flash
 
 :flash
 cls
-cd cd Super-Tools-%branch%
+cd Super-Tools-%branch%
 call header.bat
 Echo Please turn on your aircraft and connect it to this PC. Once the Aircraft is connected and has fully started up please continue...
 pause
