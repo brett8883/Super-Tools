@@ -147,11 +147,11 @@ call phantom_verify.bat
 :P4Pv2
 cls 
 set AC=P4Pv2
-set fc=3.03.04.35
+set fc=3.03.04.36
 set stock=1.00.1500
-set vt=2
-set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/P4Pv2_FLIGHT_CONTROLLERS/P4PV2_Super_Patcher_FC/P4PV2_wm335_Super_Patcher_0306_03.03.04.35_dji_system.bin
-set fw2=P4PV2_wm335_Super_Patcher_0306_03.03.04.35_dji_system.bin
+set vt=1
+set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/P4Pv2/P4PV2_V01.00.1500_Super_Patcher_FC/P4Pv2_V01.00.1500_SP_SBA_SRA_fly_limit_9000_03.03.04.36_dji_system.bin
+set fw2=P4Pv2_V01.00.1500_SP_SBA_SRA_fly_limit_9000_03.03.04.36_dji_system.bin
 cls
 wget %fw%
 copy *.bin ..
