@@ -32,7 +32,7 @@ echo                   [] Launch DULMdore by Jezzeb
 echo                   [] Check Aircraft Firmware Attributes
 echo                   [] Launch jkson fcc mod (Mavic and P4Pv2 only)
 echo.
-Choice /123456 /D 1 /T 99 /M "Please make a section with keyboard"
+Choice /c 123456 /D 1 /T 99 /M "Please make a section with keyboard"
 If Errorlevel 6 goto jkson
 If Errorlevel 5 goto checkfc
 If Errorlevel 4 goto dumldore
