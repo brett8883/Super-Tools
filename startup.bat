@@ -53,6 +53,7 @@ wget https://github.com/brett8883/DUMLdore/archive/master.zip
 7za.exe e master.zip
 del DUMLdore-*
 del master.zip
+del *.md
 rmdir dumldore-master
 cd ..
 cls
