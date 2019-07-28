@@ -46,7 +46,11 @@ call Whichac.bat
 
 :getDownloader
 cls
-call Dankdownloader.bat
+cd tools
+wget https://github.com/cs2000/DankDroneDownloader/archive/master.zip
+7za.exe e master.zip
+del master.zip
+pause
 
 :fcLibrary
 cls
