@@ -44,33 +44,33 @@ call mainmenu.cmd
 
 :MP
 cd ..
-wget http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Mavic%20Pro%201%20-%20Incl%20Platinum%20and%20Alpine/V01.04.0300_Mavic_dji_system.bin
+set stkfwadrs=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Mavic%20Pro%201%20-%20Incl%20Platinum%20and%20Alpine/V01.04.0300_Mavic_dji_system.bin
 set stockfw=V01.04.0300_Mavic_dji_system.bin
-goto flash
+goto download
 
 :SPK
 cd..
-wget http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Spark/V01.00.0900_Spark_dji_system.bin
+set stkfwadrs=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Spark/V01.00.0900_Spark_dji_system.bin
 set stockfw=V01.00.0900_Spark_dji_system.bin
-goto flash
+goto download
 
 :p4p
 cd ..
-wget http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Phantom%204%20Professional/V01.05.0600_P4P_dji_system.tar
+set stkfwadrs=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Phantom%204%20Professional/V01.05.0600_P4P_dji_system.tar
 set stockfw=V01.05.0600_P4P_dji_system.tar
-goto flash
+goto download
 
 :p4a
 cd ..
-wget http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Phantom%204%20Advanced/V01.00.0128_P4A_dji_system.bin
+set stkfwadrs=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Phantom%204%20Advanced/V01.00.0128_P4A_dji_system.bin
 set stockfw=V01.00.0128_P4A_dji_system.bin
-goto flash
+goto download
 
 :p4s
 cd ..
-wget http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Phantom%204%20Standard/V02.00.0700_P4_dji_system.bin
+stkfwadrs=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Phantom%204%20Standard/V02.00.0700_P4_dji_system.bin
 set stockfw=V02.00.0700_P4_dji_system.bin
-goto flash
+goto download
 
 
 :P4Pv2
@@ -84,13 +84,23 @@ ECHO.
 ECHO         [1]V01.00.1500
 ECHO         [2]V01.00.2200 *beta*
 choice /C 12 /D 1 /T 99 /M "Please the fw version"
-If Errorlevel 2 wget http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Phantom%204%20Pro%202.0/V01.00.2200_P4PV2_dji_system.bin & set stockfw=V01.00.2200_P4PV2_dji_system.bin
-If Errorlevel 1 wget http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Phantom%204%20Pro%202.0/V01.00.1500_P4PV2_dji_system.bin & set stockfw=V01.00.1500_P4PV2_dji_system.bin
+If Errorlevel 2 set stkfwadrs=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Phantom%204%20Pro%202.0/V01.00.2200_P4PV2_dji_system.bin & set stockfw=V01.00.2200_P4PV2_dji_system.bin 
+If Errorlevel 1 set stkfwadrs= http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Phantom%204%20Pro%202.0/V01.00.1500_P4PV2_dji_system.bin & set stockfw=V01.00.1500_P4PV2_dji_system.bin
+goto download
+
+:download
+cls
+call header.bat
+copy wget.exe ..
+cd..
+wget %stkfwadrs%
+del /f wget.exe
+del /f .wget-hsts
+cd Super-Tools-%branch%
 goto flash
 
 :flash
 cls
-cd Super-Tools-%branch%
 call header.bat
 Echo Please turn on your aircraft and connect it to this PC. Once the Aircraft is connected and has fully started up please continue...
 pause
@@ -120,26 +130,22 @@ echo By Brett8883
 Echo -----------------------------------------------------------------------------------------------------
 
 ECHO ERROR CODE 
-echo %appver%-%ac%-%fw-%error%-whichAC
-echo %DATE%-%appver%-%ac%-%fw-%error%-whichAC >> errorlog.txt
-echo COULD NOT REACH ADDRESS TO DOWLOAD FC FOR %AC%
+echo %appver%-%ac%-%fw-%error%-flash-StockFirmware
+echo %DATE%-%appver%-%ac%-%fw%-%error%-flashstock >> errorlog.txt
+echo COULD NOT REACH ADDRESS TO DOWLOAD 
 ECHO.
 Echo Hey woah there's a problem...
 echo.
-echo Best I can tell it's because you don't have internet access. 
-ECHO.
-echo Keep in mind I am do NOT have the ability to dynamically diagnose errors but something isn't right
+echo Best I can tell it's because you don't have internet access, but something isn't right
 echo. 
 echo Usually you will see this error when there is no internet access 
 echo. 
-echo Check your conntection and restart the Super-Patcher process
+echo Check your conntection and restart Super-Patcher
 echo. 
 echo If you are running windows in a VM 
 echo please ensure the VM has internet or just use a real windows machine
 echo. 
 echo If you are using a Mac be sure you are running it in Bootcamp mode to work properly with Super Patcher 
-echo. 
-echo If all else fails you can manually download the file from %fw% and then ignore this error
 echo. 
 echo Sorry there! 
 cd Super-Tools-%branch%
