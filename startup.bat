@@ -56,5 +56,5 @@ del master.zip
 rmdir dumldore-master
 cd ..
 cls
-call whichAC.bat
+call mainmenu.cmd
 
