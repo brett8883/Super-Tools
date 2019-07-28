@@ -89,8 +89,6 @@ call header.bat
 copy wget.exe ..
 cd..
 wget %stkfwadrs%
-del /f wget.exe
-del /f .wget-hsts
 cd Super-Tools-%branch%
 goto flash
 
