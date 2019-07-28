@@ -32,21 +32,21 @@ call Whichac.bat
 
 :getDownloader
 cls
-cd tools
-if exist DankDroneDownloader.exe start DankDroneDownloader.exe & goto main
 call header.bat
+cd tools
+if exist DankDroneDownloader.exe start DankDroneDownloader.exe & goto mainmenu
 Echo Hold on just a sec...
 cd tools
 wget https://github.com/cs2000/DankDroneDownloader/archive/master.zip
 7za.exe e master.zip
+start DankDroneDownloader.exe
 del master.zip
 del /f /q DankDroneDownloader-master
 del /f /q ISSUE_TEMPLATE
 del /f /q .wget-hsts
 del /f /q *.md
-start DankDroneDownloader.exe
 cd ..
-call mainmenu.cmd
+goto mainmenu
 
 :fcLibrary
 cls
@@ -79,5 +79,4 @@ Echo Ok, hold on while I open DUMLdore...
 cd tools 
 start dumldorev3.exe
 cd ..
-Echo Ok, hold on while I open DUMLdore
-call mainmenu.cmd
+goto mainmenu
