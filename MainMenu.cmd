@@ -34,7 +34,7 @@ call Whichac.bat
 cls
 call header.bat
 cd tools
-if exist DankDroneDownloader.exe start DankDroneDownloader.exe & goto mainmenu
+if exist DankDroneDownloader.exe start DankDroneDownloader.exe & cd .. & goto mainmenu
 Echo Hold on just a sec...
 cd tools
 wget https://github.com/cs2000/DankDroneDownloader/archive/master.zip
