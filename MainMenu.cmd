@@ -37,10 +37,10 @@ cd tools
 wget https://github.com/cs2000/DankDroneDownloader/archive/master.zip
 7za.exe e master.zip
 del master.zip
-del DankDroneDownloader-master
-del ISSUE_TEMPLATE
-del .wget-hsts
-del *.md
+del /f /q DankDroneDownloader-master
+del /f /q ISSUE_TEMPLATE
+del /f /q .wget-hsts
+del /f /q *.md
 start DankDroneDownloader.exe
 cd ..
 call mainmenu.cmd
