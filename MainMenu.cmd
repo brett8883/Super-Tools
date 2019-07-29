@@ -34,6 +34,7 @@ If Errorlevel 1 goto StartSP
 :startSP
 cls
 call Whichac.bat
+goto mainmenu
 
 :getDownloader
 cls
@@ -56,6 +57,7 @@ goto mainmenu
 :fcLibrary
 cls
 call fcLibrary.bat
+goto mainmenu
 
 :dumldore
 cd tools 
@@ -66,12 +68,15 @@ goto mainmenu
 :jkson
 cd tools
 call jkson.bat
+goto mainmenu
 
 :checkfc
 call checkfc.bat
+goto mainmenu
 
 :flashstock 
 call flashstock.bat
+goto mainmenu
 
 :Assistant
 cls
