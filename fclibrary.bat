@@ -12,12 +12,13 @@ pause
 cls 
 call header.bat
 wget https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/MavicPro/MavicProVariants/index_Mavicpro.txt
+cls
+call header.bat
 type index_Mavicpro.txt
 del /f index_Mavicpro.txt
 echo.
-
+echo.
 ECHO You can choose a flight controller to learn more about it and download a flight controller or return to the Main Menu
-ECHO. 
 Choice /c 1234 /m "Choose and option with your keyboard"
 if errorlevel 4 goto return
 if errorlevel 3 goto paramexvar
