@@ -20,7 +20,7 @@ echo                   [] Check Aircraft Firmware Attributes
 echo                   [] Launch jkson fcc mod (Mavic and P4Pv2 only)
 echo                   [] Install Assistant 2 1.1.2 and set up debug mode 
 echo.
-Choice /c 123456 /M "Please make a section with keyboard"
+Choice /c 12345678 /M "Please make a section with keyboard"
 If Errorlevel 8 goto Assistant
 If Errorlevel 7 goto getDownloader
 If Errorlevel 6 goto jkson
