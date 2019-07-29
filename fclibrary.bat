@@ -33,7 +33,7 @@ set variant=MavicPro_Parameters_Extended_variant
 cls 
 call header.bat
 echo Ok I am downloading that variant and it's documentation to your Super-Patcher folder. Be sure to read the documentation before using
-copy wget.exe cd..
+copy wget.exe ..
 cd .. 
 mkdir %variant%
 copy wget.exe %variant%
