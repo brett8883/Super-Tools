@@ -26,8 +26,8 @@ If Errorlevel 8 goto Assistant
 If Errorlevel 7 goto getDownloader
 If Errorlevel 6 goto jkson
 If Errorlevel 5 goto checkfc
-If Errorlevel 4 goto dumldore
-If Errorlevel 3 goto fcLibrary
+If Errorlevel 4 goto fcLibrary
+If Errorlevel 3 goto dumldore
 If Errorlevel 2 goto flashstock 
 If Errorlevel 1 goto StartSP
 
