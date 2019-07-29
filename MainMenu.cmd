@@ -12,8 +12,9 @@ ECHO.
 echo          WHAT DO YOU WANT TO DO?
 echo.
 echo                   [] *Start Super-Patcher
+echo.
 echo                   [] Flash stock firmware
-echo                   [] Get Stock fireware files by CS2000
+echo                   [] Open DankDroneDownloader by CS2000
 echo                   [] Browse Variant Library
 echo                   [] Launch DULMdore by Jezzeb
 echo                   [] Check Aircraft Firmware Attributes
