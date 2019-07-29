@@ -25,8 +25,7 @@ call header.bat
 Echo.
 Echo In Super-Patcher 2.0 the first page you will see is the main menu which will be home base for all things Super-Patcher
 echo.
-echo.
-echo.
+echo ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 echo "                                                    __ __  __  _ __  _   __ __ ___ __  _ _  _                                                                ";
 echo "                                                   |  V  |/  \| |  \| | |  V  | __|  \| | || |                                                               ";
 echo "                                                   | \_/ | /\ | | | ' | | \_/ | _|| | ' | \/ |                                                               ";
@@ -34,7 +33,7 @@ echo "                                                   |_| |_|_||_|_|_|\__| |_
 Echo "                                                                                                                                                             ";
 echo ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 ECHO.
-echo          WHAT DO YOU WANT TO DO?
+echo         WHAT DO YOU WANT TO DO?
 echo.
 echo                   [1] *Start Super-Patcher
 echo.
@@ -58,7 +57,7 @@ Echo "                                                                          
 echo ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 ECHO.
 echo          WHAT DO YOU WANT TO DO?
-echo                                            
+echo.                                            
 echo           [1] *Start Super-Patcher <============== Option#1 is to begin the Super-Patcher process. You'll do this once you AC is on the correct firmware
 echo.
 echo           [2] Flash Stock firmware 
@@ -82,7 +81,7 @@ ECHO.
 echo          WHAT DO YOU WANT TO DO?
 echo.
 echo                   [1] *Start Super-Patcher
-echo                                            
+echo.                                            
 echo                   [2] Flash Stock firmware <=======Option#2 will help you download the correct stock firmware needed for your AC and flash it with DUMLdore 
 echo                   [3] Browse Variant Library
 echo                   [4] Open DankDroneDownloader by CS2000
@@ -91,6 +90,7 @@ echo                   [5] Launch DULMdore by Jezzeb
 echo                   [6] Launch the free NoLimitDronez app
 echo                   [7] Launch jkson fcc mod (Mavic and P4Pv2 only)
 echo                   [8] Install Assistant 2 1.1.2 and set up debug mode
+echo.
 pause
 cls
 call header.bat
@@ -104,7 +104,7 @@ ECHO.
 echo          WHAT DO YOU WANT TO DO?
 echo.
 echo                   [1] *Start Super-Patcher
-echo                                            
+echo.                                            
 echo                   [2] Flash Stock firmware 
 echo                   [3] Browse Variant Library <=============== Option#3 Will take you to the flight controller library where you can learn more about 
 echo                   [4] Open DankDroneDownloader by CS2000                 the different flight controllers availible in Super-Patcher
@@ -113,6 +113,7 @@ echo                   [5] Launch DULMdore by Jezzeb
 echo                   [6] Launch the free NoLimitDronez app
 echo                   [7] Launch jkson fcc mod (Mavic and P4Pv2 only)
 echo                   [8] Install Assistant 2 1.1.2 and set up debug mode
+echo.
 pause
 cls
 call header.bat
@@ -126,11 +127,11 @@ ECHO.
 echo          WHAT DO YOU WANT TO DO?
 echo.
 echo                   [1] *Start Super-Patcher
-echo                                            
+echo.                                            
 echo                   [2] Flash Stock firmware 
 echo                   [3] Browse Variant Library 
 echo                   [4] Launch DankDroneDownloader by CS2000 <========== Option#4 Will download and launch DankDroneDownloader 
-echo                                                                                 so you can download any firmware you may need                 
+echo.                                                                                 so you can download any firmware you may need                 
 echo                   [5] Launch DULMdore by Jezzeb
 echo                   [6] Launch the free NoLimitDronez app
 echo                   [7] Launch jkson fcc mod (Mavic and P4Pv2 only)
@@ -148,7 +149,7 @@ ECHO.
 echo          WHAT DO YOU WANT TO DO?
 echo.
 echo                   [1] *Start Super-Patcher
-echo                                            
+echo.                                            
 echo                   [2] Flash Stock firmware 
 echo                   [3] Browse Variant Library 
 echo                   [4] Open DankDroneDownloader by CS2000 
@@ -170,7 +171,7 @@ ECHO.
 echo          WHAT DO YOU WANT TO DO?
 echo.
 echo                   [1] *Start Super-Patcher
-echo                                            
+echo.                                            
 echo                   [2] Flash Stock firmware 
 echo                   [3] Browse Variant Library 
 echo                   [4] Open DankDroneDownloader by CS2000 
@@ -191,7 +192,7 @@ ECHO.
 echo          WHAT DO YOU WANT TO DO?
 echo.
 echo                   [1] *Start Super-Patcher
-echo                                            
+echo.                                            
 echo                   [2] Flash Stock firmware 
 echo                   [3] Browse Variant Library 
 echo                   [4] Open DankDroneDownloader by CS2000 
@@ -212,7 +213,7 @@ ECHO.
 echo          WHAT DO YOU WANT TO DO?
 echo.
 echo                   [1] *Start Super-Patcher
-echo                                            
+echo.                                            
 echo                   [2] Flash Stock firmware 
 echo                   [3] Browse Variant Library 
 echo                   [4] Open DankDroneDownloader by CS2000 
