@@ -74,11 +74,29 @@ call flashstock.bat
 
 :Assistant
 cls
+call header.bat
+ECHO I can help you install DJI Assistant 2 1.1.2 in debug mode but first you will need to uninstall any other version of Assistant 2 
+Echo.
+echo Please uninstall any other version of Assistant 2 you already have installed and then continue 
+echo. 
+echo If you do not have any version of Assistant 2 install of this machine you may continue
+pause
+cls 
 call header.bat 
+Echo Assistant 2 1.1.2 is about 120MB would you like me to download it for you?
+ECHO. 
+choice /m "Please make a selction with your keyboard 
+If Errorlevel 2 goto mainmenu
+If Errorlevel 1 goto installAssistant
+
+:installAssistant
+cls
+call header.bat
 ECHO Please wait while I download Assistant 2 1.1.2 ...
 cd tools 
 copy wget.exe Assistant_2_files
 copy 7za.exe Assistant_2_files
 cd Assistant_2_files
 wget https://www.sekidorc.com/press/DJI_Assistant2_Installer_v1.1.2_20170527.zip
+7za.exe e DJI_Assistant2_Installer_v1.1.2_20170527.zip
 pause
