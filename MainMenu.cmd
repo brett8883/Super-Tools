@@ -18,8 +18,10 @@ echo                   [] Browse Variant Library
 echo                   [] Launch DULMdore by Jezzeb
 echo                   [] Check Aircraft Firmware Attributes
 echo                   [] Launch jkson fcc mod (Mavic and P4Pv2 only)
+echo                   [] Install Assistant 2 1.1.2 and set up debug mode 
 echo.
 Choice /c 123456 /M "Please make a section with keyboard"
+If Errorlevel 8 goto Assistant
 If Errorlevel 7 goto getDownloader
 If Errorlevel 6 goto jkson
 If Errorlevel 5 goto checkfc
@@ -69,3 +71,14 @@ call checkfc.bat
 
 :flashstock 
 call flashstock.bat
+
+:Assistant
+cls
+call header.bat 
+ECHO Please wait while I download Assistant 2 1.1.2 ...
+cd tools 
+copy wget.exe Assistant_2_files
+copy 7za.exe Assistant_2_files
+cd Assistant_2_files
+wget https://www.sekidorc.com/press/DJI_Assistant2_Installer_v1.1.2_20170527.zip
+pause
