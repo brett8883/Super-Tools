@@ -99,4 +99,35 @@ copy 7za.exe Assistant_2_files
 cd Assistant_2_files
 wget https://www.sekidorc.com/press/DJI_Assistant2_Installer_v1.1.2_20170527.zip
 7za.exe e DJI_Assistant2_Installer_v1.1.2_20170527.zip
+del /f DJI_Assistant2_Installer_v1.1.2_20170527.zip
+cls 
+cd ..
+cd ..
+call header.bat
+cd tools 
+cd Assistant_2_files
+Echo Ok I have downloaded Assistant 2 1.1.2
+ECHO I will now open the Assistant 2 1.1.2 installer and then you'll need to complete the installation 
+echo.
+echo But we wont't be done yet at that point. We still need to set up debug mode
+echo. 
+echo Once you have installed Assistant 2 1.1.2 please check back with Super-Patcher so we csn set up debug mod
+ECHO. 
+echo. 
+ECHO Continue once ready to install Assistant 1.1.2
+echo.
 pause
+start "DJI Assistant 2 1.1.2.573 2017_05_27 16_41_02 6e0216bf(b21de8d8).exe"
+copy main.js ..
+cd ..
+copy main.js ..
+del main.js
+cd ..
+copy main.js ..
+del main.js
+cd Super-Tools-%branch%
+cls
+call header.bat
+Once you have installed Assistant 2 1.1.2
+pause
+goto mainmenu
