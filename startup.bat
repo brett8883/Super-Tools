@@ -1,4 +1,5 @@
 @echo off
+mode con: cols=166 lines=45
 SETLOCAL EnableDelayedExpansion
 set appver=2.0
 cls
