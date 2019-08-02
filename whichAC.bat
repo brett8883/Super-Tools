@@ -1,4 +1,5 @@
-@echo off 
+@echo off
+mode con: cols=100 lines=40
 cls 
 ECHO -------------------------------------------------------------------------------------------
 ECHO Super Patcher %appver%
