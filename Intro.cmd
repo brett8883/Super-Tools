@@ -1,3 +1,6 @@
+@echo off
+cd ..
+if exists DontShowIntro goto skip
 cls
 call header.bat
 ECHO Welcome to Super-Patcher 2.0!
@@ -8,16 +11,8 @@ echo         [1] Yes, show me the new features
 echo         [2] No, skip this intro and don't ask me again
 ECHO. 
 choice /C 12 /D 1 /T 99 /M "Please select an option with your keyboard"
-If Errorlevel 2 goto skip
+If Errorlevel 2 goto skipthis
 If Errorlevel 1 goto intro
-
-:skip
-cls
-cd.. 
-Echo intro has been read don't show again > DontShowIntro
-echo %DATE%_%TIME% >> DontShowIntro
-cd Super-Tools-%branch%
-call startup.bat
 
 :intro
 cls 
@@ -230,3 +225,14 @@ Echo This is the end of the Super-Patcher Introduction. I will now take you to t
 timeout 8
 Call startup.bat
 
+:skipthis
+cls
+cd.. 
+Echo intro has been read, don't show again > DontShowIntro
+echo %DATE%_%TIME% >> DontShowIntro
+cd Super-Tools-%branch%
+call mainmenu.cmd
+
+:skip
+cls
+call mainmenu.cmd
