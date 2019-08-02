@@ -52,6 +52,10 @@ If Errorlevel 1 Goto jkson
 
 :nopatch
 @echo off
+copy errorlog.txt ..
+cd ..
+copy errorlog.txt ..
+del errorlog.txt
 cls 
 ECHO -------------------------------------------------------------------------------------------
 ECHO Super Patcher %appver%
@@ -73,6 +77,8 @@ echo Try using a Windows 10 PC if you haven't already.
 echo.
 echo try restarting your computer and shut down aircraft with the battery removed for 
 echo 10 minutes, then try again.
+echo.
+echo Checking the error log file may also help to figure out why Super-Patcher was not successful.
 ECHO -------------------------------------------------------------------------------------------
 echo Please continue to exit Super-Patcher
 pause 
