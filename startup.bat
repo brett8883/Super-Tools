@@ -13,10 +13,9 @@ unzip -o master.zip
 del DUMLdore-*
 del master.zip
 del *.md
+ren DUMLdore-master DUMLdore
 cd ..
 cd ..
-echo Start if
-pause
 if exist DontShowIntro cd Super-tools-%branch% && goto skip
 :askintro
 cd Super-tools-%branch%
