@@ -1,5 +1,5 @@
 @echo off
-mode con: cols=105 lines=40
+mode con: cols=100 lines=40
 adb kill-server
 cls
 SETLOCAL EnableDelayedExpansion
