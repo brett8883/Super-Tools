@@ -103,7 +103,7 @@ echo.
 echo                   [2] Flash Stock firmware ^<=======Option#2 will help you download the correct stock firmware needed for your AC and flash it with DUMLdore 
 echo                   [3] Browse Variant Library
 echo                   [4] Open DankDroneDownloader by CS2000
-echo                   
+echo.                   
 echo                   [5] Launch DULMdore by Jezzeb
 echo                   [6] Launch the free NoLimitDronez app
 echo                   [7] Launch jkson fcc mod (Mavic and P4Pv2 only)
@@ -182,7 +182,7 @@ echo                   [2] Flash Stock firmware
 echo                   [3] Browse Variant Library 
 echo                   [4] Open DankDroneDownloader by CS2000 
 echo.                   
-echo                   [5] Launch DULMdore by Jezzeb ^<========== Option#5 Will launch DUMLdore 
+echo                   [5] Launch DULMdore by Jezzeb ^<============================================================ Option#5 Will launch DUMLdore 
 echo                   [6] Launch the free NoLimitDronez app 
 echo                   [7] Launch jkson fcc mod by Jkson5 (Mavic and P4Pv2 only)
 echo                   [8] Install Assistant 2 1.1.2 and set up debug mode
@@ -209,7 +209,7 @@ echo                   [3] Browse Variant Library
 echo                   [4] Open DankDroneDownloader by CS2000 
 echo.                   
 echo                   [5] Launch DULMdore by Jezzeb  
-echo                   [6] Launch NoLimitDronez app ^<========== Option#6 Will launch the free NoLimitDronez desktop app 
+echo                   [6] Launch NoLimitDronez app ^<========================================== Option#6 Will launch the free NoLimitDronez desktop app 
 echo                   [7] Launch jkson fcc mod by Jkson5 (Mavic and P4Pv2 only)
 echo                   [8] Install Assistant 2 1.1.2 and set up debug mode
 echo.
@@ -263,7 +263,8 @@ echo.
 echo                   [5] Launch DULMdore by Jezzeb  
 echo                   [6] Launch NoLimitDronez app  
 echo                   [7] Launch jkson fcc mod by Jkson5 (Mavic and P4Pv2 only)
-echo                   [8] Install Assistant 2 1.1.2 and set up debug mode ^<===== Option#8 Will download and install Assistant 2 1.1.2 and help you set up debug mode
+echo                   [8] Install Assistant 2 1.1.2 and set up debug mode 
+echo                                                                  ^<===== Option#8 Will download and install Assistant 2 1.1.2 and help you set up debug mode
 echo.
 echo.
 echo please continue to finish the Super-Patcher 2.0 introduction presentation
