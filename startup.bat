@@ -15,8 +15,9 @@ del *.md
 rmdir dumldore-master
 cd ..
 cd ..
+echo Start if
+pause
 if exists DontShowIntro goto skip
-
 :askintro
 cls
 call header.bat
