@@ -2,12 +2,14 @@
 mode con: cols=160 lines=45
 SETLOCAL EnableDelayedExpansion
 set appver=2.0
+adb kill-server 2>> null
+del null
+cls
+cd tools
 cls
 call header.bat
-Echo Hang on a sec...
-adb kill-server > null
-del null
-cd tools
+echo Hang on one more sec...
+echo.
 wget https://github.com/brett8883/DUMLdore/archive/master.zip
 unzip -o master.zip
 del DUMLdore-*
