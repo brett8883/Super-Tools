@@ -19,6 +19,7 @@ echo Start if
 pause
 if exist DontShowIntro cd Super-tools-%branch% && goto skip
 :askintro
+cd Super-tools-%branch%
 cls
 call header.bat
 ECHO Welcome to Super-Patcher 2.0!
