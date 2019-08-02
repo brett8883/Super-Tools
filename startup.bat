@@ -237,12 +237,13 @@ echo                   [5] Launch DULMdore by Jezzeb
 echo                   [6] Launch NoLimitDronez app  
 echo                   [7] Launch jkson fcc mod by Jkson5 (Mavic and P4Pv2 only)
 echo                   [8] Install Assistant 2 1.1.2 and set up debug mode ^<===== Option#8 Will download and install Assistant 2 1.1.2 and help you set up debug mode
+echo.
 pause 
 cls 
 call header.bat
 Echo This is the end of the Super-Patcher Introduction. I will now take you to the main menu
 timeout 8
-Call startup.bat
+Call mainmenu.cmd
 
 :skipthis
 cls
