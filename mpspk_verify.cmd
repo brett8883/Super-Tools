@@ -58,11 +58,7 @@ adb push dummy_verify.sh /vendor/bin/ 2>> log.txt
 adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /sbin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd / 2>> log.txt
 adb shell mount -o remount,ro /vendor 2>> log.txt
 adb kill-server 2>> log.txt
-if %errorlevel%==0 echo dummy_verify.sh step success!
-cd ..
-cd ..
-echo DUMMY_VERIFY_STEP_SUCCESS >> log.txt
-echo %DATE%_%TIME% >> log.txt
+if %errorlevel%==0 echo dummy_verify.sh step success! && cd .. && cd .. && echo DUMMY_VERIFY_STEP_SUCCESS >> log.txt && echo %DATE%_%TIME% >> log.txt
 cd Super-Tools-%branch%
 cd tools
 cls
