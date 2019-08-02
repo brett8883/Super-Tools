@@ -14,10 +14,8 @@ del master.zip
 del *.md
 rmdir dumldore-master
 cd ..
-cls
 cd ..
 if exists DontShowIntro goto skip
-if not exists DontShowIntro goto askintro
 
 :askintro
 cls
@@ -254,7 +252,6 @@ cd Super-Tools-%branch%
 call mainmenu.cmd
 
 :skip
-cd Super-tools-%branch%
 cls
 call mainmenu.cmd
 
