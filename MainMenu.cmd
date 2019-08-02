@@ -60,10 +60,51 @@ call fcLibrary.bat
 goto mainmenu
 
 :dumldore
-cd tools 
-start dumldorev3.exe
+cd tools
+cd dumldore
+start dumldorev3.exe || goto errorduml
 cd ..
+cd..
 goto mainmenu
+
+:errorduml
+cd ..
+cd ..
+cd ..
+echo ERROR_COULD_NOT_OPEN_DUMLDORE_%appver%_MPSPK >> log.txt
+echo %DATE%_%TIME% >> log.txt
+echo ERROR_COULD_NOT_OPEN_DUMLDORE_%appver%_MPSPK >> errorlog.txt
+echo %DATE%_%TIME% >> errorlog.txt
+cd Super-Tools-%branch%
+cd tools
+cls
+Echo *****************************************************************************************************
+Echo *****************************************************************************************************
+ECHO SUPER-PATCHER Error handling Wizard %appver% 
+echo By Brett8883
+Echo *****************************************************************************************************
+Echo *****************************************************************************************************
+Echo. 
+Echo ERROR
+echo.
+echo ERROR CODE M_M_COULD_NOT_OPEN_DUMLDORE
+ECHO. 
+ECHO Whoops! Something is not right. Sorry about this!
+echo. 
+echo Super-Patcher tried to open DUMLdore but couldn't.
+echo.  
+echo Sometimes this is because DUMLdore was already running in the background or 
+echo this computer is blocking it from opening.
+echo. 
+echo Check to make sure that DUMLdore is not already running by going to the task manager and end task for 
+echo DUMLdore if it is running and then continue. 
+echo. 
+echo If you are running Windows in a vertual machine then there is a good chance the VM is not set up properly
+echo. 
+echo When you are ready to try again please continue
+echo.
+pause
+goto dumldore
 
 :jkson
 cd tools

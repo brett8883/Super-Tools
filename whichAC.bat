@@ -1,18 +1,6 @@
 @echo off 
 cls 
-echo ===============================================================================================================================================================
-echo "  /$$$$$$                                                  /$$$$$$$             /$$               /$$                                  /$$$$$$       /$$$$$$ ";
-echo " /$$__  $$                                                | $$__  $$           | $$              | $$                                 /$$__  $$     /$$$_  $$";
-echo "| $$  \__/ /$$   /$$  /$$$$$$   /$$$$$$   /$$$$$$         | $$  \ $$ /$$$$$$  /$$$$$$    /$$$$$$$| $$$$$$$   /$$$$$$   /$$$$$$       |__/  \ $$    | $$$$\ $$";
-echo "|  $$$$$$ | $$  | $$ /$$__  $$ /$$__  $$ /$$__  $$ /$$$$$$| $$$$$$$/|____  $$|_  $$_/   /$$_____/| $$__  $$ /$$__  $$ /$$__  $$        /$$$$$$/    | $$ $$ $$";
-echo " \____  $$| $$  | $$| $$  \ $$| $$$$$$$$| $$  \__/|______/| $$____/  /$$$$$$$  | $$    | $$      | $$  \ $$| $$$$$$$$| $$  \__/       /$$____/     | $$\ $$$$";
-echo " /$$  \ $$| $$  | $$| $$  | $$| $$_____/| $$              | $$      /$$__  $$  | $$ /$$| $$      | $$  | $$| $$_____/| $$            | $$          | $$ \ $$$";
-echo "|  $$$$$$/|  $$$$$$/| $$$$$$$/|  $$$$$$$| $$              | $$     |  $$$$$$$  |  $$$$/|  $$$$$$$| $$  | $$|  $$$$$$$| $$            | $$$$$$$$ /$$|  $$$$$$/";
-echo " \______/  \______/ | $$____/  \_______/|__/              |__/      \_______/   \___/   \_______/|__/  |__/ \_______/|__/            |________/|__/ \______/ ";
-echo "                    | $$                                                                                                                                     ";
-echo "                    | $$               By Brett8883                                                                                                          ";
-echo "                    |__/                                                                                                                                     ";
-ECHO ===============================================================================================================================================================
+call header.bat
 ECHO. 
 ECHO  Please choose your Aircraft
 ECHO.
@@ -36,19 +24,7 @@ If Errorlevel 1 goto MP
 
 :sorry
 cls
-echo ===============================================================================================================================================================
-echo "  /$$$$$$                                                  /$$$$$$$             /$$               /$$                                  /$$$$$$       /$$$$$$ ";
-echo " /$$__  $$                                                | $$__  $$           | $$              | $$                                 /$$__  $$     /$$$_  $$";
-echo "| $$  \__/ /$$   /$$  /$$$$$$   /$$$$$$   /$$$$$$         | $$  \ $$ /$$$$$$  /$$$$$$    /$$$$$$$| $$$$$$$   /$$$$$$   /$$$$$$       |__/  \ $$    | $$$$\ $$";
-echo "|  $$$$$$ | $$  | $$ /$$__  $$ /$$__  $$ /$$__  $$ /$$$$$$| $$$$$$$/|____  $$|_  $$_/   /$$_____/| $$__  $$ /$$__  $$ /$$__  $$        /$$$$$$/    | $$ $$ $$";
-echo " \____  $$| $$  | $$| $$  \ $$| $$$$$$$$| $$  \__/|______/| $$____/  /$$$$$$$  | $$    | $$      | $$  \ $$| $$$$$$$$| $$  \__/       /$$____/     | $$\ $$$$";
-echo " /$$  \ $$| $$  | $$| $$  | $$| $$_____/| $$              | $$      /$$__  $$  | $$ /$$| $$      | $$  | $$| $$_____/| $$            | $$          | $$ \ $$$";
-echo "|  $$$$$$/|  $$$$$$/| $$$$$$$/|  $$$$$$$| $$              | $$     |  $$$$$$$  |  $$$$/|  $$$$$$$| $$  | $$|  $$$$$$$| $$            | $$$$$$$$ /$$|  $$$$$$/";
-echo " \______/  \______/ | $$____/  \_______/|__/              |__/      \_______/   \___/   \_______/|__/  |__/ \_______/|__/            |________/|__/ \______/ ";
-echo "                    | $$                                                                                                                                     ";
-echo "                    | $$               By Brett8883                                                                                                          ";
-echo "                    |__/                                                                                                                                     ";
-ECHO ===============================================================================================================================================================
+call header.bat
 Echo So Sorry! :(
 Echo.
 ECHO Super-Patcher does not yet support Inspire 2. I am working on it but require a file from someone who has an Inspire 2. 
@@ -79,7 +55,7 @@ echo %vt%
 echo %AC%
 echo %stock%
 echo %fc%
-call mpspk_verify.bat
+call mpspk_verify.cmd
 
 :SPK
 @echo off
@@ -100,7 +76,7 @@ echo %vt%
 echo %AC%
 echo %stock%
 echo %fc%
-call mpspk_verify.bat
+call mpspk_verify.cmd
 
 :p4p
 @echo off
@@ -121,7 +97,7 @@ echo %vt%
 echo %AC%
 echo %stock%
 echo %fc%
-call phantom_verify.bat
+call phantom_verify.cmd
 
 :p4a
 @echo off
@@ -142,7 +118,7 @@ echo %vt%
 echo %AC%
 echo %stock%
 echo %fc%
-call phantom_verify.bat
+call phantom_verify.cmd
 
 :p4s
 @echo off
@@ -163,7 +139,7 @@ echo %vt%
 echo %AC%
 echo %stock%
 echo %fc%
-call phantom_verify.bat
+call phantom_verify.cmd
 
 :P4Pv2
 cls 
@@ -183,7 +159,7 @@ echo %vt%
 echo %AC%
 echo %stock%
 echo %fc%
-call phantom_verify.bat
+call phantom_verify.cmd
 
 :Error
 cls
@@ -222,10 +198,10 @@ echo Would you like to ignore this error?
 ECHO	1) Yes ignore and continue
 ECHO	2) no, exit
 ECHO.
-choice /C 1234567 /D 1 /T 99 /M "Please select connected device"
+choice /C 12 /D 1 /T 99 /M "Please select connected device"
 If Errorlevel 2 goto exit 
 If Errorlevel 1 goto errorloopback
 
 :errorloopback 
-if "%vt%"=="1" call mpspk_verify.bat
-if "%vt%"=="2" call call phantom_verify.bat
+if "%vt%"=="1" call mpspk_verify.cmd
+if "%vt%"=="2" call call phantom_verify.cmd
