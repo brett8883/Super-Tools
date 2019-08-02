@@ -87,10 +87,10 @@ echo 2. Choose the file %fw2%
 echo.  
 ECHO 3. Then click "Flash Firmware" in DUMLdore
 echo.
-Echo ******************************************************************************************************
+ECHO -------------------------------------------------------------------------------------------
 ECHO 4.	Please allow DUMLdore to flash to the aircraft 
 echo	Do not disconnect the %AC% until DUMLdore says it is ok to
-Echo ******************************************************************************************************
+ECHO -------------------------------------------------------------------------------------------
 echo. 
 echo 5. Once DUMLdore is finished please restart the aircraft
 Echo 
@@ -98,7 +98,7 @@ Echo.
 echo 6. Once aircraft has restarted fully and connected to PC. Please continue
 echo. 
 start DUMLdoreV3.exe
-Echo *****************************************************************************************************
+ECHO -------------------------------------------------------------------------------------------
 pause
 cls 
 Call jkson_verify.bat
