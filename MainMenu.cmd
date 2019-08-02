@@ -33,7 +33,7 @@ If Errorlevel 1 goto StartSP
 
 :startSP
 cls
-call Whichac.bat
+call Whichac.cmd
 goto mainmenu
 
 :getDownloader
