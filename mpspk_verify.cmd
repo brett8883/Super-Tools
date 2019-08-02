@@ -130,7 +130,7 @@ cd ..
 cd ..
 ECHO STARTED_LOAD_AND_FLASH >> log.txt
 echo %DATE%_%TIME% >> log.txt
-cd Super-Tools_%branch%
+cd Super-Tools-%branch%
 cd tools
 pause
 cls 
