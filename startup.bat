@@ -17,7 +17,7 @@ cd ..
 cd ..
 echo Start if
 pause
-if exists DontShowIntro goto skip
+if exist DontShowIntro cd Super-tools-%branch% && goto skip
 :askintro
 cls
 call header.bat
