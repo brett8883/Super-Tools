@@ -1,7 +1,8 @@
 @echo off
 title Super-Patcher 2.0 DownloadFC
 cls
-wget %fw% || goto error
+wget %fw%
+echo %errorlevel%
 copy *.bin ..
 del *.bin
 cd ..
@@ -10,6 +11,7 @@ echo %vt%
 echo %AC%
 echo %stock%
 echo %fc%
+pause
 if "%AC%"=="MavicPro" goto mpspk
 if "%AC%"=="Spark" goto mpspk
 if "%AC%"=="P4P" goto phantom
@@ -27,7 +29,7 @@ Echo ---------------------------------------------------------------------------
 
 ECHO ERROR CODE 
 echo %appver%-%ac%-%fw-%error%-whichAC
-echo %DATE%-%appver%-%ac%-%fw-%error%-whichAC >> errorlog.txt
+echo %DATE%-%appver%-%ac%-%fw%-%error%-whichAC >> errorlog.txt
 echo COULD NOT REACH ADDRESS TO DOWLOAD FC FOR %AC%
 ECHO.
 Echo Hey woah there's a problem...

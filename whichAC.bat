@@ -33,9 +33,10 @@ ECHO Please see my GitHub repo called Capture_I2_0306.unsig
 ECHO.
 ECHO https://github.com/brett8883/DJI_Super-Capture_I2_0306.unsig  
 ECHO.
-ECHO See you soon! 
-pause 
-exit 
+ECHO I will take you back to the main menu
+pause
+call mainmenu.cmd
+
 
 :MP 
 @Echo off
