@@ -1,5 +1,5 @@
 @Echo off
-title <Super-Patcher 2.0 dummy_verify for %AC%>
+title Super-Patcher 2.0 dummy_verify for %AC%
 :main
 mode con: cols=160 lines=45
 cls

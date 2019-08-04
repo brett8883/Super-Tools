@@ -1,5 +1,5 @@
 @echo off
-title <Super-Patcher 2.0 DownloadFC>
+title Super-Patcher 2.0 DownloadFC
 cls
 wget %fw% || goto error
 copy *.bin ..

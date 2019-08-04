@@ -1,5 +1,5 @@
 @echo off
-title <Super-Patcher 2.0 WhichAC?
+title Super-Patcher 2.0 WhichAC?
 cls 
 call header.bat
 ECHO. 
