@@ -9,43 +9,12 @@ echo %vt%
 echo %AC%
 echo %stock%
 echo %fc%
-if "%vt%==1" goto mpspk
-if "%vt%==2" goto phantom
-
-
-:mpspk
-cls
-wget %fw% || goto error
-copy *.bin ..
-del *.bin
-cd ..
-cd Super-Tools-%branch%
-echo %vt%
-echo %AC%
-echo %stock%
-echo %fc%
-call mpspk_verify.cmd
-
-:phantom
-cls
-wget %fw% || goto error
-copy *.bin ..
-del *.bin
-cd ..
-cd Super-Tools-%branch%
-echo %vt%
-echo %AC%
-echo %stock%
-echo %fc%
-call phantom_verify.cmd
-
-rem this is here for storage
-rem if "%AC%==MavicPro" goto mpspk
-rem if "%AC%==Spark" goto mpspk
-rem if "%AC%==P4P" goto phantom
-rem if "%AC%==P4A" goto phantom
-rem if "%AC%==P4Standard" goto phantom
-rem if "%AC%==P4Pv2 goto mpspk
+if "%AC%==MavicPro" goto mpspk
+if "%AC%==Spark" goto mpspk
+if "%AC%==P4P" goto phantom
+if "%AC%==P4A" goto phantom
+if "%AC%==P4Standard" goto phantom
+if "%AC%==P4Pv2 goto mpspk
 
 :Error
 cls
@@ -87,3 +56,30 @@ ECHO.
 choice /C 12 /D 1 /T 99 /M "Please select connected device"
 If Errorlevel 2 goto exit 
 If Errorlevel 1 goto errorloopback
+
+:mpspk
+cls
+wget %fw% || goto error
+copy *.bin ..
+del *.bin
+cd ..
+cd Super-Tools-%branch%
+echo %vt%
+echo %AC%
+echo %stock%
+echo %fc%
+call mpspk_verify.cmd
+
+:phantom
+cls
+wget %fw% || goto error
+copy *.bin ..
+del *.bin
+cd ..
+cd Super-Tools-%branch%
+echo %vt%
+echo %AC%
+echo %stock%
+echo %fc%
+call phantom_verify.cmd
+
