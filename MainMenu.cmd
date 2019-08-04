@@ -1,6 +1,7 @@
 @echo off
 title Super-Patcher 2.0 MainMenu
 :mainmenu
+echo enter mainmenu >> %sppath%\logs\log.txt
 cls
 call header.bat
 echo "                                                    __ __  __  _ __  _   __ __ ___ __  _ _  _                                                                ";
@@ -34,13 +35,14 @@ If Errorlevel 1 goto StartSP
 
 
 :getDownloader
+echo start getdownloaderMM >> %sppath%\logs\log.txt
 cls
 call header.bat
 cd tools
-if exist DankDroneDownloader.exe start DankDroneDownloader.exe & cd .. & goto mainmenu
+if exist DankDroneDownloader.exe start DankDroneDownloader.exe & cd .. & echo DDD exists >> %sppath%\logs\log.txt & goto mainmenu
 Echo Hold on just a sec...
 cd tools
-wget https://github.com/cs2000/DankDroneDownloader/archive/master.zip
+wget https://github.com/cs2000/DankDroneDownloader/archive/master.zip 2> %sppath%\logs\log.txt
 7za.exe e master.zip
 start DankDroneDownloader.exe
 del master.zip
@@ -290,7 +292,7 @@ goto downloadfc
 title Super-Patcher 2.0 DownloadFC
 cls
 call header.bat
-wget %fw%
+wget %fw% 2> %sppath%\logs\log.txt
 copy *.bin ..
 del *.bin
 cd ..
