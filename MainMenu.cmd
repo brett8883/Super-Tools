@@ -1,5 +1,5 @@
 @echo off
-title <Super-Patcher 2.0 MainMenu>
+title Super-Patcher 2.0 MainMenu
 :mainmenu
 cls
 call header.bat

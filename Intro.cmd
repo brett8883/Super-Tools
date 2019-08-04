@@ -1,4 +1,5 @@
 @echo off
+title Super-Patcher 2.0 intro
 cd ..
 if exists DontShowIntro goto skip
 cls
