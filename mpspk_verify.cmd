@@ -8,6 +8,11 @@ Echo STARTED-mpspk_for_%AC% >> log.txt
 echo %DATE%_%TIME% >> log.txt
 cd Super-Tools-%branch%
 cd tools
+set tlspath=%cd%
+echo %tlspath%
+echo %sppath%
+echo %stpath%
+pause
 cls
 echo ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 echo mpspk_verify for %AC%

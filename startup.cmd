@@ -1,7 +1,10 @@
 @echo off
 title Super-Patcher 2.0 Start Up
 mode con: cols=160 lines=45
-SETLOCAL EnableDelayedExpansion
+set stpath=%cd%
+echo %stpath%
+echo %sppath%
+pause
 set appver=2.0
 adb kill-server 2>> null
 del null
