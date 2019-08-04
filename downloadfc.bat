@@ -2,7 +2,6 @@
 title Super-Patcher 2.0 DownloadFC
 cls
 wget %fw%
-echo %errorlevel%
 copy *.bin ..
 del *.bin
 cd ..
@@ -12,12 +11,8 @@ echo %AC%
 echo %stock%
 echo %fc%
 pause
-if "%AC%"=="MavicPro" goto mpspk
-if "%AC%"=="Spark" goto mpspk
-if "%AC%"=="P4P" goto phantom
-if "%AC%"=="P4A" goto phantom
-if "%AC%"=="P4Standard" goto phantom
-if "%AC%"=="P4Pv2" goto mpspk
+if "%vt%"=="1" call mpspk_verify.cmd else call phantom_verify.cmd
+
 
 :Error
 cls
