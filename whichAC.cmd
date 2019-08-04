@@ -45,7 +45,7 @@ set stock=01.04.0300
 set vt=1
 set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/MavicPro_MPP_super_patcher_03.02.44.10_dji_system.bin
 set fw2=MavicPro_MPP_super_patcher_03.02.44.10_dji_system.bin
-exit
+
 
 
 :SPK
