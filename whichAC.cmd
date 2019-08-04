@@ -35,7 +35,7 @@ ECHO https://github.com/brett8883/DJI_Super-Capture_I2_0306.unsig
 ECHO.
 ECHO I will take you back to the main menu
 pause
-call mainmenu.cmd
+goto mainmenu
 
 
 :MP 
@@ -59,7 +59,7 @@ set stock=1.00.0900
 set vt=1
 set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/Spark_Super_Patcher_FC/Spark_Super-Patcher_306_03.02.43.09_dji_system.bin
 set fw2=Spark_Super-Patcher_306_03.02.43.09_dji_system.bin
-exit
+
 
 
 :p4p
@@ -71,7 +71,7 @@ set stock=1.05.0600
 set vt=2
 set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/P4P_Super-Patcher_FC/P4P_wm331_Super_Patcher_0306_03.02.44.31_dji_system.bin
 set fw2=P4P_wm331_Super_Patcher_0306_03.02.44.31_dji_system.bin
-exit
+
 
 
 :p4a
@@ -83,7 +83,7 @@ set stock=01.00.0128
 set vt=2
 set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/P4Advanced_Super_Patcher_FC/P4Advanced_wm332_Super_Patcher_FC_0306_03.02.35.32_dji_system.bin
 set fw2=P4Advanced_wm332_Super_Patcher_FC_0306_03.02.35.32_dji_system.bin
-exit
+
 
 
 :p4s
@@ -95,7 +95,7 @@ set stock=2.00.0700
 set vt=2
 set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/P4Standard_Super_Patcher_FC/P4Standard_wm330_0306_03.02.44.33_Super_Patcher_dji_system.bin
 set fw2=P4Standard_wm330_0306_03.02.44.33_Super_Patcher_dji_system_.bin
-exit
+
 
 
 :P4Pv2
@@ -106,6 +106,6 @@ set stock=1.00.1500
 set vt=2
 set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/P4Pv2_FLIGHT_CONTROLLERS/P4PV2_Super_Patcher_FC/P4PV2_wm335_Super_Patcher_0306_03.03.04.35_dji_system.bin
 set fw2=P4PV2_wm335_Super_Patcher_0306_03.03.04.35_dji_system.bin
-exit
+
 
 
