@@ -289,6 +289,7 @@ goto downloadfc
 :downloadfc
 title Super-Patcher 2.0 DownloadFC
 cls
+call header.bat
 wget %fw%
 copy *.bin ..
 del *.bin
