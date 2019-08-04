@@ -34,6 +34,7 @@ If Errorlevel 1 goto StartSP
 :startSP
 cls
 call Whichac.cmd
+call downloadfc.cmd
 goto mainmenu
 
 :getDownloader

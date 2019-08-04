@@ -45,17 +45,8 @@ set stock=01.04.0300
 set vt=1
 set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/MavicPro_MPP_super_patcher_03.02.44.10_dji_system.bin
 set fw2=MavicPro_MPP_super_patcher_03.02.44.10_dji_system.bin
-cls
-wget %fw% || goto error
-copy *.bin ..
-del *.bin
-cd ..
-cd Super-Tools-%branch%
-echo %vt%
-echo %AC%
-echo %stock%
-echo %fc%
-call mpspk_verify.cmd
+exit
+
 
 :SPK
 @echo off
@@ -66,17 +57,8 @@ set stock=1.00.0900
 set vt=1
 set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/Spark_Super_Patcher_FC/Spark_Super-Patcher_306_03.02.43.09_dji_system.bin
 set fw2=Spark_Super-Patcher_306_03.02.43.09_dji_system.bin
-cls
-wget %fw% || goto error
-copy *.bin ..
-del *.bin
-cd ..
-cd Super-Tools-%branch%
-echo %vt%
-echo %AC%
-echo %stock%
-echo %fc%
-call mpspk_verify.cmd
+exit
+
 
 :p4p
 @echo off
@@ -87,17 +69,8 @@ set stock=1.05.0600
 set vt=2
 set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/P4P_Super-Patcher_FC/P4P_wm331_Super_Patcher_0306_03.02.44.31_dji_system.bin
 set fw2=P4P_wm331_Super_Patcher_0306_03.02.44.31_dji_system.bin
-cls
-wget %fw% || goto error
-copy *.bin ..
-del *.bin
-cd ..
-cd Super-Tools-%branch%
-echo %vt%
-echo %AC%
-echo %stock%
-echo %fc%
-call phantom_verify.cmd
+exit
+
 
 :p4a
 @echo off
@@ -108,17 +81,8 @@ set stock=01.00.0128
 set vt=2
 set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/P4Advanced_Super_Patcher_FC/P4Advanced_wm332_Super_Patcher_FC_0306_03.02.35.32_dji_system.bin
 set fw2=P4Advanced_wm332_Super_Patcher_FC_0306_03.02.35.32_dji_system.bin
-cls
-wget %fw% || goto error
-copy *.bin ..
-del *.bin
-cd ..
-cd Super-Tools-%branch%
-echo %vt%
-echo %AC%
-echo %stock%
-echo %fc%
-call phantom_verify.cmd
+exit
+
 
 :p4s
 @echo off
@@ -129,17 +93,8 @@ set stock=2.00.0700
 set vt=2
 set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/P4Standard_Super_Patcher_FC/P4Standard_wm330_0306_03.02.44.33_Super_Patcher_dji_system.bin
 set fw2=P4Standard_wm330_0306_03.02.44.33_Super_Patcher_dji_system_.bin
-cls
-wget %fw% || goto error
-copy *.bin ..
-del *.bin
-cd ..
-cd Super-Tools-%branch%
-echo %vt%
-echo %AC%
-echo %stock%
-echo %fc%
-call phantom_verify.cmd
+exit
+
 
 :P4Pv2
 cls 
@@ -149,59 +104,6 @@ set stock=1.00.1500
 set vt=2
 set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/P4Pv2_FLIGHT_CONTROLLERS/P4PV2_Super_Patcher_FC/P4PV2_wm335_Super_Patcher_0306_03.03.04.35_dji_system.bin
 set fw2=P4PV2_wm335_Super_Patcher_0306_03.03.04.35_dji_system.bin
-cls
-wget %fw% || goto error
-copy *.bin ..
-del *.bin
-cd ..
-cd Super-Tools-%branch%
-echo %vt%
-echo %AC%
-echo %stock%
-echo %fc%
-call phantom_verify.cmd
+exit
 
-:Error
-cls
-cd ..
-Echo -----------------------------------------------------------------------------------------------------
-ECHO SUPER-PATCHER Error Handling Wizard %appver%
-echo By Brett8883
-Echo -----------------------------------------------------------------------------------------------------
 
-ECHO ERROR CODE 
-echo %appver%-%ac%-%fw-%error%-whichAC
-echo %DATE%-%appver%-%ac%-%fw-%error%-whichAC >> errorlog.txt
-echo COULD NOT REACH ADDRESS TO DOWLOAD FC FOR %AC%
-ECHO.
-Echo Hey woah there's a problem...
-echo.
-echo Best I can tell it's because you don't have internet access. 
-ECHO.
-echo Keep in mind I am do NOT have the ability to dynamically diagnose errors but something isn't right
-echo. 
-echo Usually you will see this error when there is no internet access 
-echo. 
-echo Check your conntection and restart the Super-Patcher process
-echo. 
-echo If you are running windows in a VM 
-echo please ensure the VM has internet or just use a real windows machine
-echo. 
-echo If you are using a Mac be sure you are running it in Bootcamp mode to work properly with Super Patcher 
-echo. 
-echo If all else fails you can manually download the file from %fw% and then ignore this error
-echo. 
-echo Sorry there! 
-cd Super-Tools-%branch%
-ECHO. 
-echo Would you like to ignore this error?
-ECHO	1) Yes ignore and continue
-ECHO	2) no, exit
-ECHO.
-choice /C 12 /D 1 /T 99 /M "Please select connected device"
-If Errorlevel 2 goto exit 
-If Errorlevel 1 goto errorloopback
-
-:errorloopback 
-if "%vt%"=="1" call mpspk_verify.cmd
-if "%vt%"=="2" call call phantom_verify.cmd
