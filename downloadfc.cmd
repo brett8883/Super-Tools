@@ -9,12 +9,12 @@ echo %vt%
 echo %AC%
 echo %stock%
 echo %fc%
-if "%AC%==MavicPro" goto mpspk
-if "%AC%==Spark" goto mpspk
-if "%AC%==P4P" goto phantom
-if "%AC%==P4A" goto phantom
-if "%AC%==P4Standard" goto phantom
-if "%AC%==P4Pv2 goto mpspk
+if "%AC%"=="MavicPro" goto mpspk
+if "%AC%"=="Spark" goto mpspk
+if "%AC%"=="P4P" goto phantom
+if "%AC%"=="P4A" goto phantom
+if "%AC%"=="P4Standard" goto phantom
+if "%AC%"=="P4Pv2" goto mpspk
 
 :Error
 cls
