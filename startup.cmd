@@ -1,4 +1,5 @@
 @echo off
+title <Super-Patcher 2.0(start_up)>
 mode con: cols=160 lines=45
 SETLOCAL EnableDelayedExpansion
 set appver=2.0
