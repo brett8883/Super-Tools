@@ -130,7 +130,7 @@ call header.bat
 cd %sppath%
 wget http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Mavic%20Pro%201%20-%20Incl%20Platinum%20and%20Alpine/V01.04.0300_Mavic_dji_system.bin
 cd %stpath%
-cls
+pause
 call header.bat
 Echo Please turn on your aircraft and connect it to this PC. Once the Aircraft is connected and has fully started up please continue...
 cls
