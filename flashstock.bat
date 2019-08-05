@@ -34,6 +34,47 @@ If Errorlevel 3 goto p4p
 If Errorlevel 2 goto SPK
 If Errorlevel 1 goto MP
 
+:Error
+cls
+cd ..
+Echo -----------------------------------------------------------------------------------------------------
+ECHO SUPER-PATCHER Error Handling Wizard %appver%
+echo By Brett8883
+Echo -----------------------------------------------------------------------------------------------------
+
+ECHO ERROR CODE 
+echo %appver%-%ac%-%fw-%error%-flash-StockFirmware
+echo %DATE%-%appver%-%ac%-%fw%-%error%-flashstock >> errorlog.txt
+echo COULD NOT REACH ADDRESS TO DOWLOAD 
+ECHO.
+Echo Hey woah there's a problem...
+echo.
+echo Best I can tell it's because you don't have internet access, but something isn't right
+echo. 
+echo Usually you will see this error when there is no internet access 
+echo. 
+echo Check your conntection and restart Super-Patcher
+echo. 
+echo If you are running windows in a VM 
+echo please ensure the VM has internet or just use a real windows machine
+echo. 
+echo If you are using a Mac be sure you are running it in Bootcamp mode to work properly with Super Patcher 
+echo. 
+echo Sorry there! 
+cd Super-Tools-%branch%
+ECHO. 
+echo Would you like to ignore this error?
+ECHO	1) Yes ignore and continue
+ECHO	2) no, exit
+ECHO.
+choice /C 1234567 /D 1 /T 99 /M "Please select connected device"
+If Errorlevel 2 goto exit 
+If Errorlevel 1 goto errorloopback
+
+:errorloopback 
+if "%vt%"=="1" call mpspk_verify.bat
+if "%vt%"=="2" call phantom_verify.bat
+
 :i2
 cls
 call header.bat 
@@ -89,9 +130,6 @@ call header.bat
 cd..
 wget http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Mavic%20Pro%201%20-%20Incl%20Platinum%20and%20Alpine/V01.04.0300_Mavic_dji_system.bin
 cd Super-Tools-%branch%
-goto flash
-
-:flash
 cls
 call header.bat
 Echo Please turn on your aircraft and connect it to this PC. Once the Aircraft is connected and has fully started up please continue...
@@ -115,43 +153,3 @@ cls
 call mainmenu.bat
 
 
-:Error
-cls
-cd ..
-Echo -----------------------------------------------------------------------------------------------------
-ECHO SUPER-PATCHER Error Handling Wizard %appver%
-echo By Brett8883
-Echo -----------------------------------------------------------------------------------------------------
-
-ECHO ERROR CODE 
-echo %appver%-%ac%-%fw-%error%-flash-StockFirmware
-echo %DATE%-%appver%-%ac%-%fw%-%error%-flashstock >> errorlog.txt
-echo COULD NOT REACH ADDRESS TO DOWLOAD 
-ECHO.
-Echo Hey woah there's a problem...
-echo.
-echo Best I can tell it's because you don't have internet access, but something isn't right
-echo. 
-echo Usually you will see this error when there is no internet access 
-echo. 
-echo Check your conntection and restart Super-Patcher
-echo. 
-echo If you are running windows in a VM 
-echo please ensure the VM has internet or just use a real windows machine
-echo. 
-echo If you are using a Mac be sure you are running it in Bootcamp mode to work properly with Super Patcher 
-echo. 
-echo Sorry there! 
-cd Super-Tools-%branch%
-ECHO. 
-echo Would you like to ignore this error?
-ECHO	1) Yes ignore and continue
-ECHO	2) no, exit
-ECHO.
-choice /C 1234567 /D 1 /T 99 /M "Please select connected device"
-If Errorlevel 2 goto exit 
-If Errorlevel 1 goto errorloopback
-
-:errorloopback 
-if "%vt%"=="1" call mpspk_verify.bat
-if "%vt%"=="2" call phantom_verify.bat
