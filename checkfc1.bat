@@ -8,5 +8,5 @@ echo Firmware=%cfw%
 adb shell grep -i '0306' /data/upgrade/backup/*.cfg.sig > FCtmp.txt
 for /f "tokens=2-4" %%A in (fctmp.txt) do (set curFC=%%B)
 echo FC %curFC%
-del *tmp.txt
+del /f /q *tmp.txt
 pause
