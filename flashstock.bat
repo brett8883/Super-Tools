@@ -127,17 +127,15 @@ goto download
 :download
 cls
 call header.bat
-cd..
+cd %sppath%
 wget http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Mavic%20Pro%201%20-%20Incl%20Platinum%20and%20Alpine/V01.04.0300_Mavic_dji_system.bin
-cd Super-Tools-%branch%
+cd %stpath%
 cls
 call header.bat
 Echo Please turn on your aircraft and connect it to this PC. Once the Aircraft is connected and has fully started up please continue...
-pause
 cls
 call header.bat
-cd tools
-cd dumldore
+cd %ddpath%
 start dumldorev3.exe
 In DULMdore please press "LOAD FIRMWARE" and navigate to the Super-Patcher folder where you will find the file %Stockfw%
 Echo Please select %Stockfw% and then click "FLASH FIRMWARE" in DUMLdore.
@@ -147,9 +145,8 @@ ECHO.
 ECHO You should repeat this process for a second time before starting Super-Patcher. 
 echo. 
 echo Pressing any key to continue once you have completed the flashing process and have closed DUMLdore to return to the Main Menu
-cd ..
-cd ..
+cd %stpath%
 cls
-call mainmenu.bat
+call mainmenu.cmd
 
 
