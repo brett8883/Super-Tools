@@ -1,12 +1,13 @@
 @echo off
 title Super-Patcher 2.0 Start Up
 mode con: cols=160 lines=45
-set stpath=%cd%
 set appver=2.0
 adb kill-server 2>> null
 del null
+set stpath=%cd%
 cls
 cd tools
+settpath=%cd%
 cls
 call header.bat
 echo Hang on one more sec...
@@ -17,11 +18,12 @@ del DUMLdore-*
 del master.zip
 del *.md
 ren DUMLdore-master DUMLdore
-cd ..
-cd ..
+cd DUMLdore
+set ddpath=%cd%
+cd %sppath%
 if exist DontShowIntro cd Super-tools-%branch% && goto skip
 :askintro
-cd Super-tools-%branch%
+cd %stpath%
 cls
 call header.bat
 ECHO Welcome to Super-Patcher 2.0!
@@ -281,10 +283,10 @@ Call mainmenu.cmd
 
 :skipthis
 cls
-cd.. 
+cd %sppath% 
 Echo intro has been read, don't show again > DontShowIntro
 echo %DATE%_%TIME% >> DontShowIntro
-cd Super-Tools-%branch%
+cd %stpath%
 call mainmenu.cmd
 
 :skip
