@@ -115,7 +115,7 @@ call checkfc.bat
 goto mainmenu
 
 :flashstock 
-call flashstock.bat
+call flashstock.cmd
 goto mainmenu
 
 :Assistant
