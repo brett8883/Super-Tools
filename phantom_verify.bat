@@ -2,7 +2,7 @@
 cls
 cd Tools
 Echo *******************************************************************************************
-Echo Phantom & I2 Verify
+Echo Phantom ^& I2 Verify
 ECHO -------------------------------------------------------------------------------------------
 ECHO Super Patcher %appver% for %AC%
 ECHO By Brett8883
@@ -14,7 +14,7 @@ Echo ***************************************************************************
 pause
 cls
 Echo *******************************************************************************************
-Echo Phantom & I2 Verify
+Echo Phantom ^& I2 Verify
 ECHO -------------------------------------------------------------------------------------------
 ECHO Super Patcher %appver% for %AC%
 ECHO By Brett8883
@@ -25,7 +25,7 @@ Echo ***************************************************************************
 Pause
 cls
 Echo *******************************************************************************************
-Echo Phantom & I2 Verify
+Echo Phantom ^& I2 Verify
 ECHO -------------------------------------------------------------------------------------------
 ECHO Super Patcher %appver% for %AC%
 ECHO By Brett8883
@@ -42,7 +42,7 @@ Echo ***************************************************************************
 pause
 cls
 Echo *******************************************************************************************
-Echo Phantom & I2 dummy_verify step
+Echo Phantom ^& I2 dummy_verify step
 ECHO -------------------------------------------------------------------------------------------
 ECHO Super Patcher %appver% for %AC%
 ECHO By Brett8883
@@ -56,7 +56,7 @@ adb shell mount -o remount,ro /vendor 2>> errorlog.txt
 adb kill-server
 cls
 Echo *******************************************************************************************
-Echo Phantom & I2 Verify dummy_verify step
+Echo Phantom ^& I2 Verify dummy_verify step
 ECHO -------------------------------------------------------------------------------------------
 ECHO Super Patcher %appver% for %AC%
 ECHO By Brett8883
@@ -68,7 +68,7 @@ pause
 Echo *******************************************************************************************
 cls
 Echo *******************************************************************************************
-Echo Phantom & I2 Verify bind step
+Echo Phantom ^& I2 Verify bind step
 ECHO -------------------------------------------------------------------------------------------
 ECHO Super Patcher %appver% for %AC%
 ECHO By Brett8883
@@ -79,7 +79,7 @@ Echo ***************************************************************************
 Pause
 cls
 Echo *******************************************************************************************
-Echo Phantom & I2 Verify bind step
+Echo Phantom ^& I2 Verify bind step
 ECHO -------------------------------------------------------------------------------------------
 ECHO Super Patcher %appver% for %AC%
 ECHO By Brett8883
@@ -89,7 +89,7 @@ adb shell mount -o bind /vendor/bin/dummy_verify.sh /system/bin/dji_verify 2>> e
 adb kill-server
 cls
 Echo *******************************************************************************************
-Echo Phantom & I2 Verify bind step 
+Echo Phantom ^& I2 Verify bind step 
 ECHO -------------------------------------------------------------------------------------------
 ECHO Super Patcher %appver% for %AC%
 ECHO By Brett8883
