@@ -2,9 +2,9 @@
 cls
 cd Tools
 Echo *******************************************************************************************
-Echo Phantom Verify
+Echo Phantom & I2 Verify
 ECHO -------------------------------------------------------------------------------------------
-ECHO Super Patcher %appver%
+ECHO Super Patcher %appver% for %AC%
 ECHO By Brett8883
 ECHO -------------------------------------------------------------------------------------------
 ECHO PLEASE TAKE CARE TO FOLLOW INSTRUCTIONS EXACTLY 
@@ -14,9 +14,9 @@ Echo ***************************************************************************
 pause
 cls
 Echo *******************************************************************************************
-Echo Phantom Verify
+Echo Phantom & I2 Verify
 ECHO -------------------------------------------------------------------------------------------
-ECHO Super Patcher %appver%
+ECHO Super Patcher %appver% for %AC%
 ECHO By Brett8883
 ECHO -------------------------------------------------------------------------------------------
 Echo Please turn on the %AC% and after it has fully started, connect to the PC
@@ -25,9 +25,9 @@ Echo ***************************************************************************
 Pause
 cls
 Echo *******************************************************************************************
-Echo Phantom
+Echo Phantom & I2 Verify
 ECHO -------------------------------------------------------------------------------------------
-ECHO Super Patcher %appver%
+ECHO Super Patcher %appver% for %AC%
 ECHO By Brett8883
 ECHO -------------------------------------------------------------------------------------------
 Echo Please ensure DUMLdore says you are on firmware %stock% and that this is stock version 
@@ -42,9 +42,9 @@ Echo ***************************************************************************
 pause
 cls
 Echo *******************************************************************************************
-Echo Phantom dummy_verify step
+Echo Phantom & I2 dummy_verify step
 ECHO -------------------------------------------------------------------------------------------
-ECHO Super Patcher %appver%
+ECHO Super Patcher %appver% for %AC%
 ECHO By Brett8883
 ECHO -------------------------------------------------------------------------------------------
 Echo WORKING PLEASE WAIT... 
@@ -56,9 +56,9 @@ adb shell mount -o remount,ro /vendor 2>> errorlog.txt
 adb kill-server
 cls
 Echo *******************************************************************************************
-Echo Phantom dummy_verify step
+Echo Phantom & I2 Verify dummy_verify step
 ECHO -------------------------------------------------------------------------------------------
-ECHO Super Patcher %appver%
+ECHO Super Patcher %appver% for %AC%
 ECHO By Brett8883
 ECHO -------------------------------------------------------------------------------------------
 Echo Please restart your aircraft
@@ -68,9 +68,9 @@ pause
 Echo *******************************************************************************************
 cls
 Echo *******************************************************************************************
-Echo Phantom bind step
+Echo Phantom & I2 Verify bind step
 ECHO -------------------------------------------------------------------------------------------
-ECHO Super Patcher %appver%
+ECHO Super Patcher %appver% for %AC%
 ECHO By Brett8883
 ECHO -------------------------------------------------------------------------------------------
 echo Click "Enable ADB" in DUMLdore and then close DUMLdore before proceeding
@@ -79,9 +79,9 @@ Echo ***************************************************************************
 Pause
 cls
 Echo *******************************************************************************************
-Echo Phantom bind step
+Echo Phantom & I2 Verify bind step
 ECHO -------------------------------------------------------------------------------------------
-ECHO Super Patcher %appver%
+ECHO Super Patcher %appver% for %AC%
 ECHO By Brett8883
 ECHO -------------------------------------------------------------------------------------------
 ECHO WORKING PLEASE WAIT...
@@ -89,9 +89,9 @@ adb shell mount -o bind /vendor/bin/dummy_verify.sh /system/bin/dji_verify 2>> e
 adb kill-server
 cls
 Echo *******************************************************************************************
-Echo Phantom bind step 
+Echo Phantom & I2 Verify bind step 
 ECHO -------------------------------------------------------------------------------------------
-ECHO Super Patcher %appver%
+ECHO Super Patcher %appver% for %AC%
 ECHO By Brett8883
 ECHO -------------------------------------------------------------------------------------------
 Echo *******************************************************************************************

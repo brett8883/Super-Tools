@@ -17,7 +17,7 @@ ECHO	6) Phantom 4 Pro V2
 ECHO	7) Inspire 2
 ECHO.
 choice /C 1234567 /D 1 /T 99 /M "Please select connected device"
-If Errorlevel 7 goto Sorry
+If Errorlevel 7 goto I2
 If Errorlevel 6 goto P4Pv2
 If Errorlevel 5 goto p4a
 If Errorlevel 4 goto p4s
@@ -25,19 +25,6 @@ If Errorlevel 3 goto p4p
 If Errorlevel 2 goto SPK
 If Errorlevel 1 goto MP
 
-:sorry
-cls
-ECHO -------------------------------------------------------------------------------------------
-ECHO Super Patcher %appver%
-ECHO By Brett8883
-ECHO -------------------------------------------------------------------------------------------
-Echo So Sorry! :(
-Echo.
-ECHO Super-Patcher does not support your aircraft just yet but check back soon becasue it is almost ready!
-ECHO.
-ECHO See you soon! 
-pause 
-exit 
 
 :MP 
 @Echo off
@@ -163,3 +150,22 @@ echo %AC%
 echo %stock%
 echo %fc%
 call mpspk_verify.bat
+
+:I2
+set AC=I2
+set fc=03.03.11.11
+set stock=1.02.0200
+set vt=2
+set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/I2/I2_SP_2.0_03.03.11.11_dji_system.bin
+set fw2=I2_SP_2.0_03.03.11.11_dji_system.bin
+cls
+wget %fw%
+copy *.bin ..
+del *.bin
+cd ..
+cd Super-Tools-master
+echo %vt%
+echo %AC%
+echo %stock%
+echo %fc%
+call phantom_verify.bat
