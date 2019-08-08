@@ -156,7 +156,7 @@ set AC=I2
 set fc=03.03.11.11
 set stock=1.02.0200
 set vt=2
-set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/I2/I2_SP_2.0_03.03.11.11_dji_system.bin
+set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/I2/I2_SP_2.0/I2_SP_2.0_03.03.11.11_dji_system.bin
 set fw2=I2_SP_2.0_03.03.11.11_dji_system.bin
 cls
 wget %fw%
