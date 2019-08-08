@@ -104,12 +104,12 @@ echo.
 ECHO 3. Then click "Flash Firmware" in DUMLdore
 echo.
 Echo *******************************************************************************************
-ECHO 4.	Please allow DUMLdore to flash to the aircraft 
-echo	Do not disconnect the %AC% until DUMLdore says it is ok to
+ECHO 4. Please allow DUMLdore to flash to the aircraft 
+echo Do not disconnect the %AC% until DUMLdore says it is ok to
 Echo *******************************************************************************************
 echo. 
 echo 5. Once DUMLdore is finished please restart the aircraft
-Echo 
+Echo.
 Echo.
 echo 6. Once aircraft has restarted fully and connected to PC. Please continue
 echo. 
