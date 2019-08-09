@@ -94,7 +94,6 @@ echo	Do not disconnect the %AC% until DUMLdore says it is ok to
 ECHO -------------------------------------------------------------------------------------------
 echo. 
 echo 5. Once DUMLdore is finished please restart the aircraft
-Echo 
 Echo.
 echo 6. Once aircraft has restarted fully and connected to PC. Please continue
 echo. 
