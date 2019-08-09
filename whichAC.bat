@@ -39,8 +39,6 @@ cls
 wget %fw%
 copy *.bin ..
 del *.bin
-cd ..
-cd Super-Tools-master
 echo %vt%
 echo %AC%
 echo %stock%
@@ -60,8 +58,6 @@ cls
 wget %fw%
 copy *.bin ..
 del *.bin
-cd ..
-cd Super-Tools-master
 echo %vt%
 echo %AC%
 echo %stock%
@@ -81,8 +77,6 @@ cls
 wget %fw%
 copy *.bin ..
 del *.bin
-cd ..
-cd Super-Tools-master
 echo %vt%
 echo %AC%
 echo %stock%
@@ -102,8 +96,6 @@ cls
 wget %fw%
 copy *.bin ..
 del *.bin
-cd ..
-cd Super-Tools-master
 echo %vt%
 echo %AC%
 echo %stock%
@@ -123,8 +115,6 @@ cls
 wget %fw%
 copy *.bin ..
 del *.bin
-cd ..
-cd Super-Tools-master
 echo %vt%
 echo %AC%
 echo %stock%
@@ -143,8 +133,6 @@ cls
 wget %fw%
 copy *.bin ..
 del *.bin
-cd ..
-cd Super-Tools-master
 echo %vt%
 echo %AC%
 echo %stock%
@@ -162,8 +150,6 @@ cls
 wget %fw%
 copy *.bin ..
 del *.bin
-cd ..
-cd Super-Tools-master
 echo %vt%
 echo %AC%
 echo %stock%
