@@ -2,6 +2,7 @@
 cls
 title Super-Patcher 
 cd Tools
+echo start Phantom verify >> %sp%\logs\log.txt
 Echo *******************************************************************************************
 Echo Phantom Verify
 ECHO -------------------------------------------------------------------------------------------
@@ -48,12 +49,13 @@ ECHO ---------------------------------------------------------------------------
 ECHO Super Patcher %appver% for %AC%
 ECHO By Brett8883
 ECHO -------------------------------------------------------------------------------------------
+echo start dummy_verify step >> %sp%\logs\log.txt
 Echo WORKING PLEASE WAIT... 
-adb shell mount -o remount,rw /vendor 2>> errorlog.txt
-adb shell mkdir /vendor/bin 2>> errorlog.txt
-adb push dummy_verify.sh /vendor/bin/ 2>> errorlog.txt
-adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /system/bin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd / 2>> errorlog.txt
-adb shell mount -o remount,ro /vendor 2>> errorlog.txt
+adb shell mount -o remount,rw /vendor 2>> %sp%\logs\errorlog.txt
+adb shell mkdir /vendor/bin 2>> %sp%\logs\errorlog.txt
+adb push dummy_verify.sh /vendor/bin/ 2>> %sp%\logs\errorlog.txt
+adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /system/bin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd / 2>> %sp%\logs\errorlog.txt
+adb shell mount -o remount,ro /vendor 2>> %sp%\logs\errorlog.txt
 adb kill-server
 cls
 Echo *******************************************************************************************
@@ -68,6 +70,7 @@ echo Once fully restarted and connected please continue
 pause
 Echo *******************************************************************************************
 cls
+echo start Phantom verify step >> %sp%\logs\log.txt
 Echo *******************************************************************************************
 Echo Phantom Verify bind step
 ECHO -------------------------------------------------------------------------------------------
@@ -86,8 +89,8 @@ ECHO Super Patcher %appver% for %AC%
 ECHO By Brett8883
 ECHO -------------------------------------------------------------------------------------------
 ECHO WORKING PLEASE WAIT...
-adb shell mount -o bind /vendor/bin/dummy_verify.sh /system/bin/dji_verify 2>> errorlog.txt
-adb kill-server
+adb shell mount -o bind /vendor/bin/dummy_verify.sh /system/bin/dji_verify 2>> %sp%\logs\errorlog.txt
+adb kill-server 2> %sp%\logs\errorlog.txt
 cls
 Echo *******************************************************************************************
 Echo Phantom Verify bind step 

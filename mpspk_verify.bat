@@ -41,12 +41,12 @@ ECHO ---------------------------------------------------------------------------
 ECHO Super Patcher %appver%
 ECHO By Brett8883
 ECHO -------------------------------------------------------------------------------------------
-Echo WORKING PLEASE WAIT... 
-adb shell mount -o remount,rw /vendor 2>> errorlog.txt
-adb shell mkdir /vendor/bin 2>> errorlog.txt
-adb push dummy_verify.sh /vendor/bin/ 2>> errorlog.txt
-adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /sbin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd / 2>> errorlog.txt
-adb shell mount -o remount,ro /vendor 2>> errorlog.txt
+Echo WORKING PLEASE WAIT...
+adb shell mount -o remount,rw /vendor 2>> %sp%\logs\errorlog.txt
+adb shell mkdir /vendor/bin 2>> %sp%\logs\errorlog.txt
+adb push dummy_verify.sh /vendor/bin/ 2>> %sp%\logs\errorlog.txt
+adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /sbin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd / 2>>  %sp%\logs\errorlog.txt
+adb shell mount -o remount,ro /vendor 2>>  %sp%\logs\errorlog.txt
 adb kill-server
 cls
 ECHO -------------------------------------------------------------------------------------------
@@ -73,7 +73,7 @@ ECHO Super Patcher %appver%
 ECHO By Brett8883
 ECHO -------------------------------------------------------------------------------------------
 ECHO WORKING. PLEASE WAIT...
-adb shell mount -o bind /vendor/bin/dummy_verify.sh /sbin/dji_verify 2>> errorlog.txt
+adb shell mount -o bind /vendor/bin/dummy_verify.sh /sbin/dji_verify 2>>  %sp%\logs\errorlog.txt
 adb kill-server
 cls
 ECHO -------------------------------------------------------------------------------------------
