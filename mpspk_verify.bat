@@ -1,6 +1,7 @@
 @Echo off
 cls
 cd tools
+title Super-Patcher
 ECHO -------------------------------------------------------------------------------------------
 ECHO Super Patcher %appver%
 ECHO By Brett8883
