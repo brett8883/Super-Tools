@@ -16,6 +16,12 @@ del master.zip
 del *.md
 ren DUMLdore-master DUMLdore
 call setpaths.bat
+echo %ddpath%
+echo %tpath%
+echo %stpath%
+echo %sppath%
+echo %cd%
+pause
 if exist DontShowIntro goto skip
 :askintro
 cd %stpath%
@@ -278,7 +284,7 @@ Call mainmenu.cmd
 
 :skipthis
 cls
-cd %sppath% 
+cd %sppath%
 Echo intro has been read, don't show again > DontShowIntro
 echo %DATE%_%TIME% >> DontShowIntro
 cd %stpath%
