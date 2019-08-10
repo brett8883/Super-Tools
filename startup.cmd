@@ -296,6 +296,6 @@ cd %stpath%
 call mainmenu.cmd
 
 :skip
-cls
+cd %stpath%
 call mainmenu.cmd
 
