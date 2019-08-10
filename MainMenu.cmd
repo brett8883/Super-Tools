@@ -1,6 +1,6 @@
 @echo off
-title Super-Patcher 2.0 MainMenu
 :mainmenu
+title Super-Patcher 2.0 MainMenu
 cls
 call header.bat
 echo "                                                    __ __  __  _ __  _   __ __ ___ __  _ _  _                                                                ";
@@ -19,6 +19,7 @@ echo                   UTILITIES
 echo                   [3] Open DankDroneDownloader by CS2000 to download any other firmware files
 echo                   [4] Launch DULMdore by Jezzeb
 echo                   [5] Launch jkson fcc mod (Mavic and P4Pv2 only)
+echo                   [6] Launch the free NoLimitDronez app
 echo.
 Choice /c 12345678 /M "Please make a section with keyboard[1,2,3,4,5,6,7,8]?"
 
@@ -32,14 +33,14 @@ call flashstock.cmd
 goto mainmenu
 
 :getDownloader
-echo start getdownloaderMM >> %sppath%\logs\log.txt
+echo start getdownloaderMM >> %sppath%\log.txt
 cls
 call header.bat
 cd tools
-if exist DankDroneDownloader.exe start DankDroneDownloader.exe & cd .. & echo DDD exists >> %sppath%\logs\log.txt & goto mainmenu
+if exist DankDroneDownloader.exe start DankDroneDownloader.exe & cd .. & echo DDD exists >> %sppath%\log.txt & goto mainmenu
 Echo Hold on just a sec...
 cd tools
-wget https://github.com/cs2000/DankDroneDownloader/archive/master.zip 2> %sppath%\logs\log.txt
+wget https://github.com/cs2000/DankDroneDownloader/archive/master.zip 2> %sppath%\log.txt
 7za.exe e master.zip
 start DankDroneDownloader.exe
 del master.zip
@@ -56,11 +57,9 @@ call fcLibrary.bat
 goto mainmenu
 
 :dumldore
-cd tools
-cd dumldore
+cd %ddpath%
 start dumldorev3.exe || goto errorduml
-cd ..
-cd..
+cd %stpath%
 goto mainmenu
 
 :errorduml
@@ -296,3 +295,9 @@ echo %stock%
 echo %fc%
 pause
 if "%vt%"=="1" call mpspk_verify.cmd else call phantom_verify.cmd
+
+:NLD
+cd %tpath%
+start nldapp.exe
+cd %stpath%
+goto mainmenu
