@@ -27,9 +27,6 @@ echo %ddpath%
 echo %tpath%
 echo %stpath%
 echo %sppath%
-set wget=%sppath%\wget.exe
-echo %wget%
-pause
 if exist DontShowIntro (goto skip) else (goto askintro)
 :askintro
 cd %stpath%

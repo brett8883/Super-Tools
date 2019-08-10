@@ -53,9 +53,15 @@ echo Turn on your aircraft and connect it to your PC. When it has fully started 
 pause
 cls
 call header.bat
-echo Please press "load firmware" in Dumldore and choose the %stockfw% file which is in your super patcher folder at %sppath%
+echo Please press "load firmware" in Dumldore and choose the %stockfw% file
+echo. 
+echo which is in your super patcher folder at %sppath%
 echo.
 echo Then press "flashfirmware" in Dumldore
+ECHO.
+ECHO.
+ECHO Once Dumldore says its ok to reboot, please reboot the aircraft and then continue to be taken back to the Main Menu
+ECHO.
 cd %ddpath%
 start dumldorev3.exe
 pause
