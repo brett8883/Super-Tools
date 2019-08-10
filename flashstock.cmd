@@ -35,7 +35,6 @@ If Errorlevel 2 goto SPK
 If Errorlevel 1 goto MP
 
 :MP
-@echo on
 cd %sppath%
 pause
 wget http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Mavic%%20Pro%201%%20-%20Incl%%20Platinum%%20and%%20Alpine/V01.04.0300_Mavic_dji_system.bin
