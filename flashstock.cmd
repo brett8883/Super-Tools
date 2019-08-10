@@ -54,7 +54,7 @@ cls
 call header.bat
 set stockdl=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Phantom%%204%%20Standard/V02.00.0700_P4_dji_system.bin
 set stockfw=V02.00.0700_P4_dji_system.bin
-cd %sppath%
+cd ..
 if exist %stockfw% (goto flash) else (goto download)
 
 :p4a
@@ -62,7 +62,7 @@ cls
 call header.bat
 set stockdl=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Phantom%%204%%20Advanced/V01.00.0128_P4A_dji_system.bin
 set stockfw=V01.00.0128_P4A_dji_system.bin
-cd %sppath%
+cd ..
 if exist %stockfw% (goto flash) else (goto download)
 
 :p4pv2
@@ -70,7 +70,7 @@ cls
 call header.bat
 set stockdl=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Phantom%%204%%20Pro%%202.0/V01.00.1500_P4PV2_dji_system.bin
 set stockfw=V01.00.1500_P4PV2_dji_system.bin
-cd %sppath%
+cd ..
 if exist %stockfw% (goto flash) else (goto download)
 
 :I2
@@ -78,7 +78,7 @@ cls
 call header.bat
 set stockdl=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Inspire%%202/V01.02.0200_I2_dji_system.bin
 set stockfw=V01.02.0200_I2_dji_system.bin
-cd %sppath%
+cd ..
 if exist %stockfw% (goto flash) else (goto download)
 
 :download
