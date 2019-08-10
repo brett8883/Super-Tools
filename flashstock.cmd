@@ -42,7 +42,11 @@ set stockfw=V01.04.0300_Mavic_dji_system.bin
 goto download
 
 :download
+echo Please Wait while I download %stockfw%. When it's ready it will be in 
+echo %sppath%
 wget %stockdl%
+copy *.bin ..
+del /f /s *.bin
 cls
 call header.bat
 echo Turn on your aircraft and connect it to your PC. When it has fully started and connected to this PC, please continue.
