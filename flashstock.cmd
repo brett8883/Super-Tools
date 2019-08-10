@@ -1,5 +1,7 @@
 @echo off 
 cls
+set stockdl=
+set stockfw=
 call header.bat
 ECHO. 
 ECHO  Please choose your Aircraft
