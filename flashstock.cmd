@@ -52,6 +52,7 @@ del /f /s *.bin
 goto flash
 
 :flash
+cd %stpath%
 cls
 call header.bat
 echo Turn on your aircraft and connect it to your PC. When it has fully started and connected to this PC, please continue.
