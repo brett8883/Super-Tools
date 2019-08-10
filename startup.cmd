@@ -9,7 +9,7 @@ call header.bat
 echo Hang on one more sec...
 echo.
 cd tools
-wget https://github.com/brett8883/DUMLdore/archive/master.zip
+wget https://github.com/jezzab/DUMLdore/archive/master.zip
 unzip -o master.zip
 del DUMLdore-*
 del master.zip
