@@ -1,18 +1,6 @@
 @echo off 
 cls
-echo ===============================================================================================================================================================
-echo "  /$$$$$$                                                  /$$$$$$$             /$$               /$$                                  /$$$$$$       /$$$$$$ ";
-echo " /$$__  $$                                                | $$__  $$           | $$              | $$                                 /$$__  $$     /$$$_  $$";
-echo "| $$  \__/ /$$   /$$  /$$$$$$   /$$$$$$   /$$$$$$         | $$  \ $$ /$$$$$$  /$$$$$$    /$$$$$$$| $$$$$$$   /$$$$$$   /$$$$$$       |__/  \ $$    | $$$$\ $$";
-echo "|  $$$$$$ | $$  | $$ /$$__  $$ /$$__  $$ /$$__  $$ /$$$$$$| $$$$$$$/|____  $$|_  $$_/   /$$_____/| $$__  $$ /$$__  $$ /$$__  $$        /$$$$$$/    | $$ $$ $$";
-echo " \____  $$| $$  | $$| $$  \ $$| $$$$$$$$| $$  \__/|______/| $$____/  /$$$$$$$  | $$    | $$      | $$  \ $$| $$$$$$$$| $$  \__/       /$$____/     | $$\ $$$$";
-echo " /$$  \ $$| $$  | $$| $$  | $$| $$_____/| $$              | $$      /$$__  $$  | $$ /$$| $$      | $$  | $$| $$_____/| $$            | $$          | $$ \ $$$";
-echo "|  $$$$$$/|  $$$$$$/| $$$$$$$/|  $$$$$$$| $$              | $$     |  $$$$$$$  |  $$$$/|  $$$$$$$| $$  | $$|  $$$$$$$| $$            | $$$$$$$$ /$$|  $$$$$$/";
-echo " \______/  \______/ | $$____/  \_______/|__/              |__/      \_______/   \___/   \_______/|__/  |__/ \_______/|__/            |________/|__/ \______/ ";
-echo "                    | $$                                                                                                                                     ";
-echo "                    | $$               By Brett8883                                                                                                          ";
-echo "                    |__/                                                                                                                                     ";
-ECHO ===============================================================================================================================================================
+call header.bat
 ECHO. 
 ECHO  Please choose your Aircraft
 ECHO.
@@ -39,7 +27,7 @@ cls
 call header.bat
 set stockdl=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Mavic%%20Pro%%201%%20-%%20Incl%%20Platinum%%20and%%20Alpine/V01.04.0300_Mavic_dji_system.bin
 set stockfw=V01.04.0300_Mavic_dji_system.bin
-cd %sppath%
+cd ..
 if exist %stockfw% (goto flash) else (goto download)
 
 :SPK
@@ -47,7 +35,7 @@ cls
 call header.bat
 set stockdl=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Spark/V01.00.0900_Spark_dji_system.bin
 set stockfw=V01.00.0900_Spark_dji_system.bin
-cd %sppath%
+cd ..
 if exist %stockfw% (goto flash) else (goto download)
 
 :p4p
@@ -56,7 +44,7 @@ call header.bat
 set stockdl=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Phantom%%204%%20Professional/V01.05.0600_P4P_dji_system.tar
 pause
 set stockfw=V01.05.0600_P4P_dji_system.tar
-cd %sppath%
+cd ..
 if exist %stockfw% (goto flash) else (goto download)
 
 :p4s
@@ -99,6 +87,7 @@ echo When it's ready it will be in %sppath%
 wget %stockdl%
 copy %stockfw% ..
 del %stockfw%
+cd ..
 goto flash
 
 :flash
