@@ -17,13 +17,13 @@ ECHO.
 ECHO  Please choose your Aircraft
 ECHO.
 ECHO ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-ECHO	1) Mavic Pro 1 / Mavic Platinum / Mavic Artic White
-ECHO	2) Spark
-ECHO	3) Phantom 4 Pro
-ECHO	4) Phantom 4 Standard
-ECHO	5) Phantom 4 Advanced
+ECHO    1) Mavic Pro 1 / Mavic Platinum / Mavic Artic White
+ECHO    2) Spark
+ECHO    3) Phantom 4 Pro
+ECHO    4) Phantom 4 Standard
+ECHO    5) Phantom 4 Advanced
 ECHO	6) Phantom 4 Pro V2
-ECHO    7) Inspire 2
+Echo    7) Inspire 2
 ECHO.
 choice /C 1234567 /D 1 /T 99 /M "Please select connected device"
 If Errorlevel 7 goto I2
@@ -37,13 +37,9 @@ If Errorlevel 1 goto MP
 :MP
 cls
 call header.bat
-wget.exe http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Mavic%%20Pro%201%%20-%20Incl%%20Platinum%%20and%%20Alpine/V01.04.0300_Mavic_dji_system.bin
+set stockdl=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Mavic%%20Pro%201%%20-%20Incl%%20Platinum%%20and%%20Alpine/V01.04.0300_Mavic_dji_system.bin
 set stockfw=V01.04.0300_Mavic_dji_system.bin
-copy *.bin ..
-del /f /s *.bin
-goto flash
-
-:flash
+wget %stockdl%
 cls
 call header.bat
 echo Turn on your aircraft and connect it to your PC. When it has fully started and connected to this PC, please continue.
