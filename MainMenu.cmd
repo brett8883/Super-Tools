@@ -12,21 +12,16 @@ echo ---------------------------------------------------------------------------
 ECHO.
 echo          WHAT DO YOU WANT TO DO?
 echo.
-echo                   [] *Start Super-Patcher
+echo                  *[1] Start Super-Patcher!
+echo                   [2] Download & Flash stock firmware needed for Super-Patcher
 echo.
-echo                   [] Flash stock firmware
-echo                   [] Open DankDroneDownloader by CS2000
-echo                   [] Browse Variant Library
-echo                   [] Launch DULMdore by Jezzeb
-echo                   [] Check Aircraft Firmware Attributes
-echo                   [] Launch jkson fcc mod (Mavic and P4Pv2 only)
-echo                   [] Install Assistant 2 1.1.2 and set up debug mode 
+echo                   UTILITIES
+echo                   [3] Open DankDroneDownloader by CS2000 to download any other firmware files
+echo                   [4] Launch DULMdore by Jezzeb
+echo                   [5] Launch jkson fcc mod (Mavic and P4Pv2 only)
 echo.
-Choice /c 12345678 /M "Please make a section with keyboard"
-If Errorlevel 8 goto Assistant
-If Errorlevel 7 goto getDownloader
-If Errorlevel 6 goto jkson
-If Errorlevel 5 goto checkfc
+Choice /c 12345678 /M "Please make a section with keyboard[1,2,3,4,5,6,7,8]?"
+
 If Errorlevel 4 goto fcLibrary
 If Errorlevel 3 goto dumldore
 If Errorlevel 2 goto flashstock 
