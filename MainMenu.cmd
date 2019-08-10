@@ -1,7 +1,6 @@
 @echo off
 title Super-Patcher 2.0 MainMenu
 :mainmenu
-echo enter mainmenu >> %sppath%\logs\log.txt
 cls
 call header.bat
 echo "                                                    __ __  __  _ __  _   __ __ ___ __  _ _  _                                                                ";
