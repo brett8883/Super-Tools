@@ -42,13 +42,63 @@ set stockfw=V01.04.0300_Mavic_dji_system.bin
 cd %sppath%
 if exist %stockfw% (goto flash) else (goto download)
 
+:SPK
+cls
+call header.bat
+set stockdl=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Spark/V01.00.0900_Spark_dji_system.bin
+set stockfw=V01.00.0900_Spark_dji_system.bin
+cd %sppath%
+if exist %stockfw% (goto flash) else (goto download)
+
+:p4p
+cls
+call header.bat
+set stockdl=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Phantom%%204%%20Professional/V01.05.0600_P4P_dji_system.tar
+set stockfw=
+cd %sppath%
+if exist %stockfw% (goto flash) else (goto download)
+
+:p4s
+cls
+call header.bat
+set stockdl=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Phantom%%204%%20Standard/V02.00.0700_P4_dji_system.bin
+set stockfw=V02.00.0700_P4_dji_system.bin
+cd %sppath%
+if exist %stockfw% (goto flash) else (goto download)
+
+:p4a
+cls
+call header.bat
+set stockdl=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Phantom%%204%%20Advanced/V01.00.0128_P4A_dji_system.bin
+set stockfw=V01.00.0128_P4A_dji_system.bin
+cd %sppath%
+if exist %stockfw% (goto flash) else (goto download)
+
+:p4pv2
+cls
+call header.bat
+set stockdl=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Phantom%%204%%20Pro%%202.0/V01.00.1500_P4PV2_dji_system.bin
+set stockfw=V01.00.1500_P4PV2_dji_system.bin
+cd %sppath%
+if exist %stockfw% (goto flash) else (goto download)
+
+:I2
+cls
+call header.bat
+set stockdl=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Inspire%%202/V01.02.0200_I2_dji_system.bin
+set stockfw=V01.02.0200_I2_dji_system.bin
+cd %sppath%
+if exist %stockfw% (goto flash) else (goto download)
+
 :download
 cd %stpath%
 echo Please Wait while I download %stockfw%. 
 Echo. When it's ready it will be in %sppath%
 wget %stockdl%
 copy *.bin ..
+copy *.tar
 del /f /s *.bin
+del /f /s *.tar
 goto flash
 
 :flash
