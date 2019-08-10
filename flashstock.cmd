@@ -22,7 +22,7 @@ ECHO    2) Spark
 ECHO    3) Phantom 4 Pro
 ECHO    4) Phantom 4 Standard
 ECHO    5) Phantom 4 Advanced
-ECHO	6) Phantom 4 Pro V2
+ECHO    6) Phantom 4 Pro V2
 Echo    7) Inspire 2
 ECHO.
 choice /C 1234567 /D 1 /T 99 /M "Please select connected device"
@@ -94,7 +94,8 @@ if exist %stockfw% (goto flash) else (goto download)
 :download
 cd %stpath%
 echo Please Wait while I download %stockfw%. 
-Echo. When it's ready it will be in %sppath%
+Echo.
+echo When it's ready it will be in %sppath%
 wget %stockdl%
 copy %stockfw% ..
 del %stockfw%
