@@ -95,10 +95,8 @@ cd %stpath%
 echo Please Wait while I download %stockfw%. 
 Echo. When it's ready it will be in %sppath%
 wget %stockdl%
-copy *.bin ..
-copy *.tar ..
-del /f /s *.bin
-del /f /s *.tar
+copy %stockfw% ..
+del %stockfw%
 goto flash
 
 :flash
