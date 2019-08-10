@@ -44,7 +44,6 @@ if exist %stockfw% (goto flash) else (goto download)
 cls
 call header.bat
 set stockdl=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Phantom%%204%%20Professional/V01.05.0600_P4P_dji_system.tar
-pause
 set stockfw=V01.05.0600_P4P_dji_system.tar
 cd ..
 if exist %stockfw% (goto flash) else (goto download)
