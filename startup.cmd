@@ -15,14 +15,20 @@ del DUMLdore-*
 del master.zip
 del *.md
 ren DUMLdore-master DUMLdore
-call setpaths.bat
+cd DUMLdore
+set ddpath=%cd%
+cd ..
+set tpath=%cd%
+cd ..
+set stpath=%cd%
+cd ..
+set sppath=%cd%
 echo %ddpath%
 echo %tpath%
 echo %stpath%
 echo %sppath%
-echo %cd%
 pause
-if exist DontShowIntro goto skip
+if exist DontShowIntro (goto skip) else (goto askintro)
 :askintro
 cd %stpath%
 cls
