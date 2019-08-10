@@ -4,24 +4,19 @@ mode con: cols=160 lines=45
 set appver=2.0
 adb kill-server 2>> null
 del null
-set stpath=%cd%
-cls
-cd tools
-settpath=%cd%
 cls
 call header.bat
 echo Hang on one more sec...
 echo.
+cd tools
 wget https://github.com/brett8883/DUMLdore/archive/master.zip
 unzip -o master.zip
 del DUMLdore-*
 del master.zip
 del *.md
 ren DUMLdore-master DUMLdore
-cd DUMLdore
-set ddpath=%cd%
-cd %sppath%
-if exist DontShowIntro cd Super-tools-%branch% && goto skip
+call setpaths.bat
+if exist DontShowIntro goto skip
 :askintro
 cd %stpath%
 cls
@@ -291,5 +286,6 @@ call mainmenu.cmd
 
 :skip
 cls
+cd %stpath%
 call mainmenu.cmd
 

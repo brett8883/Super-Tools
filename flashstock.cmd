@@ -23,8 +23,10 @@ ECHO	3) Phantom 4 Pro
 ECHO	4) Phantom 4 Standard
 ECHO	5) Phantom 4 Advanced
 ECHO	6) Phantom 4 Pro V2
+ECHO    7) Inspire 2
 ECHO.
-choice /C 123456 /D 1 /T 99 /M "Please select connected device"
+choice /C 1234567 /D 1 /T 99 /M "Please select connected device"
+If Errorlevel 7 goto I2
 If Errorlevel 6 goto P4Pv2
 If Errorlevel 5 goto p4a
 If Errorlevel 4 goto p4s
@@ -36,7 +38,7 @@ If Errorlevel 1 goto MP
 @echo on
 cd %sppath%
 pause
-wget http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Mavic%20Pro%201%20-%20Incl%20Platinum%20and%20Alpine/V01.04.0300_Mavic_dji_system.bin
+wget http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Mavic%%20Pro%201%%20-%20Incl%%20Platinum%%20and%%20Alpine/V01.04.0300_Mavic_dji_system.bin
 set stockfw=V01.04.0300_Mavic_dji_system.bin
 pause
 cls
@@ -54,6 +56,7 @@ echo.
 echo Then press "flashfirmware" in Dumldore
 cd %ddpath%
 start dumldorev3.exe
+pause
 cd %stpath%
 call mainmmenu.cmd
 
