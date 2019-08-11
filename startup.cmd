@@ -237,10 +237,10 @@ cls
 cd %sppath%
 Echo intro has been read, don't show again > DontShowIntro
 echo %DATE%_%TIME% >> DontShowIntro
-cd %stpath%
-call mainmenu.cmd
+goto skip
+
 
 :skip
 cd %stpath%
-call mainmenu.cmd
+call whichac.cmd
 

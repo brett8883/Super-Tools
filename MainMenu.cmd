@@ -1,6 +1,6 @@
 @echo off
 :mainmenu
-title Super-Patcher 2.0 MainMenu
+title Super-Patcher 2.0 MainMenu for %AC%
 cls
 call header.bat
 echo "                                                    __ __  __  _ __  _   __ __ ___ __  _ _  _                                                                ";

@@ -15,28 +15,13 @@ ECHO	6) Phantom 4 Pro V2
 ECHO	7) Inspire 2
 ECHO.
 choice /C 1234567 /D 1 /T 99 /M "Please select connected device"
-If Errorlevel 7 goto Sorry
+If Errorlevel 7 goto I2
 If Errorlevel 6 goto P4Pv2
 If Errorlevel 5 goto p4a
 If Errorlevel 4 goto p4s
 If Errorlevel 3 goto p4p
 If Errorlevel 2 goto SPK
 If Errorlevel 1 goto MP
-
-:sorry
-cls
-call header.bat
-Echo So Sorry! :(
-Echo.
-ECHO Super-Patcher does not yet support Inspire 2. I am working on it but require a file from someone who has an Inspire 2. 
-ECHO Please see my GitHub repo called Capture_I2_0306.unsig
-ECHO.
-ECHO https://github.com/brett8883/DJI_Super-Capture_I2_0306.unsig  
-ECHO.
-ECHO I will take you back to the main menu
-pause
-goto mainmenu
-
 
 :MP 
 @Echo off
@@ -107,5 +92,13 @@ set vt=2
 set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/P4Pv2_FLIGHT_CONTROLLERS/P4PV2_Super_Patcher_FC/P4PV2_wm335_Super_Patcher_0306_03.03.04.35_dji_system.bin
 set fw2=P4PV2_wm335_Super_Patcher_0306_03.03.04.35_dji_system.bin
 
+:I2
+cls 
+set AC=I2
+set fc=03.03.11.11
+set stock=V01.02.0200
+set vt=1
+set fw=
+set fw2=
 
 
