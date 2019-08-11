@@ -1,3 +1,4 @@
+rem this file is where the user sets the airccraft type variables. The rest of the batch files rely on these variables
 @echo off
 title Super-Patcher 2.0 WhichAC?
 cls 
@@ -23,82 +24,92 @@ If Errorlevel 3 goto p4p
 If Errorlevel 2 goto SPK
 If Errorlevel 1 goto MP
 
-:MP 
-@Echo off
-cls
+:MP
+rem ac=aircraft
 set AC=MavicPro
+rem fc=new SP flight controller#
 set fc=3.02.44.10
+rem stock is the stock firmware version for the selected aircraft
 set stock=01.04.0300
+rem vt=verify type. VT 1 is sbin/dji_verify aircraft vt2 is system/bin/dji_verify types
 set vt=1
+rem fw is url for sp fc to download
 set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/MavicPro_MPP_super_patcher_03.02.44.10_dji_system.bin
+rem fw2 is sp fc name
 set fw2=MavicPro_MPP_super_patcher_03.02.44.10_dji_system.bin
-
-
+rem stockdl=url to download stock firmware
+set stockdl=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Mavic%%20Pro%%201%%20-%%20Incl%%20Platinum%%20and%%20Alpine/V01.04.0300_Mavic_dji_system.bin
+rem stockfw is the name of the stock firmware file
+set stockfw=V01.04.0300_Mavic_dji_system.bin
+rem All subcripts merge back to mainmenu subscript to avoid the batch file continuing at an accidental exit code somewhere
+goto mainmenu
 
 :SPK
-@echo off
-cls
 set AC=Spark
 set fc=3.02.43.09
-set stock=1.00.0900 
+set stock=1.00.0900
 set vt=1
 set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/Spark_Super_Patcher_FC/Spark_Super-Patcher_306_03.02.43.09_dji_system.bin
 set fw2=Spark_Super-Patcher_306_03.02.43.09_dji_system.bin
-
-
+set stockdl=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Spark/V01.00.0900_Spark_dji_system.bin
+set stockfw=V01.00.0900_Spark_dji_system.bin
+goto mainmenu
 
 :p4p
-@echo off
-cls
 set AC=P4P
 set fc=3.02.44.31
-set stock=1.05.0600  
+set stock=1.05.0600
 set vt=2
 set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/P4P_Super-Patcher_FC/P4P_wm331_Super_Patcher_0306_03.02.44.31_dji_system.bin
 set fw2=P4P_wm331_Super_Patcher_0306_03.02.44.31_dji_system.bin
-
-
+set stockdl=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Phantom%%204%%20Professional/V01.05.0600_P4P_dji_system.tar
+set stockfw=V01.05.0600_P4P_dji_system.tar
+goto mainmenu
 
 :p4a
-@echo off
-cls
 set AC=P4A
 set fc=3.02.35.32
 set stock=01.00.0128
 set vt=2
 set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/P4Advanced_Super_Patcher_FC/P4Advanced_wm332_Super_Patcher_FC_0306_03.02.35.32_dji_system.bin
 set fw2=P4Advanced_wm332_Super_Patcher_FC_0306_03.02.35.32_dji_system.bin
-
-
+set stockdl=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Phantom%%204%%20Advanced/V01.00.0128_P4A_dji_system.bin
+set stockfw=V01.00.0128_P4A_dji_system.bin
+goto mainmenu
 
 :p4s
-@echo off
-cls
 set AC=P4Standard
 set fc=3.02.44.33
 set stock=2.00.0700 
 set vt=2
 set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/P4Standard_Super_Patcher_FC/P4Standard_wm330_0306_03.02.44.33_Super_Patcher_dji_system.bin
 set fw2=P4Standard_wm330_0306_03.02.44.33_Super_Patcher_dji_system_.bin
-
-
+set stockdl=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Phantom%%204%%20Standard/V02.00.0700_P4_dji_system.bin
+set stockfw=V02.00.0700_P4_dji_system.bin
+goto mainmenu
 
 :P4Pv2
-cls 
 set AC=P4Pv2
 set fc=3.03.04.35
 set stock=1.00.1500
 set vt=2
 set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/P4Pv2_FLIGHT_CONTROLLERS/P4PV2_Super_Patcher_FC/P4PV2_wm335_Super_Patcher_0306_03.03.04.35_dji_system.bin
 set fw2=P4PV2_wm335_Super_Patcher_0306_03.03.04.35_dji_system.bin
+set stockdl=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Phantom%%204%%20Pro%%202.0/V01.00.1500_P4PV2_dji_system.bin
+set stockfw=V01.00.1500_P4PV2_dji_system.bin
+goto mainmenu
 
 :I2
-cls 
 set AC=I2
 set fc=03.03.11.11
 set stock=V01.02.0200
 set vt=1
-set fw=
-set fw2=
+set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/I2/I2_SP_2.0/I2_SP_2.0_03.03.11.11_dji_system.bin
+set fw2=I2_SP_2.0_03.03.11.11_dji_system.bin
+set stockdl=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Inspire%%202/V01.02.0200_I2_dji_system.bin
+set stockfw=V01.02.0200_I2_dji_system.bin
+goto mainmenu
 
+:mainmenu
+call MainMenu.cmd
 
