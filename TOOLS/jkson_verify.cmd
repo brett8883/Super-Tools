@@ -3,7 +3,6 @@ cd ProgramFiles
 cls
 if "%AC%"=="MavicPro" goto askjkson
 if "%AC%"=="P4Pv2" goto askjkson
-
 :verify
 @echo off
 cls
@@ -68,14 +67,22 @@ Echo If your Flight Controller # is not %fc% then Super-Patcher was not successf
 ECHO You should read the readme.md on GitHub again and restart Super-Patcher from the begining  
 Echo *****************************************************************************************************
 Echo Some common reasons for Super-Patcher not being successful:
-echo 	-Not starting on a completely stock version of firmware %stock%
-echo	-Not following the directions exactly please ONLY do what Super-Patcher says ONLY 
-echo		when it says to do it 
-ECHO	-When doing the "enable ADB" steps not waiting until ABD has been enabled. 
-echo		Usually the front lights will turn on or off to indicate ADB has been enabled 
+echo.
+echo -Not starting on a completely stock version of firmware %stock%
+echo.
+echo -Not following the directions exactly please ONLY do what Super-Patcher says ONLY when it says to 
+echo.		 
+ECHO -When doing the "enable ADB" steps not waiting until ABD has been enabled. 
+echo        Usually the front lights will turn on or off to indicate ADB has been enabled
+echo.
+echo -Not using a Windows 10 PC. Windows 7 and 8 do not have to proper adb drivers Super-Patcher needs
+echo        This can be over come by manually installing the drivers but using Windows 10 is easier
 Echo *****************************************************************************************************
+echo.
+echo Continuing will take you back to the main menu
 pause 
-cd ..
+cd %stpath%
+call mainmenu.cmd
 exit 		
 
 :nofcc
@@ -87,38 +94,35 @@ Goto verify
 @echo off
 cd ..
 cls 
-Echo *****************************************************************************************************
-Echo *****************************************************************************************************
-ECHO SUPER-PATCHER %appver%
-echo By Brett8883
-Echo *****************************************************************************************************
-Echo *****************************************************************************************************
+call header.bat
 ECHO Congradulations! Super-Patcher was sucessfull
 ECHO *****************************************************************************************************
 ECHO You can optionally Connect to Assistant 2 or DJI Go 4 and use the simulator to ensure 
-Echo 		proper working order in the sim before testing outside.  
+Echo      proper working order in the sim before testing outside.
+echo.
 Echo 	-This is simply good practice any time firmware is updated or modified.
-echo(
+echo.
 Echo You may now also modify any paramters you'd like using Assistant 2 1.1.2 in debug mode
 echo ******************************************************************************************************
 Echo ******************************************************************************************************
 Echo You have completed the patching operation. Please note all settings and parameters are now reset
-Echo remember to check your RTH altitude and such.
+echo.
+Echo Remember to check your RTH altitude and such.
 echo(
 Echo Aircraft may ask you to recalibrate sensors but if it does not then it is not neccesary to calibrate
 echo(
-echo Thanks for using Super-Patcher!
+echo Thanks for using Super-Patcher! continue to go back to the main menu
 pause
 cls
-Echo Bye!
-exit
+cd %stpath%
+call mainmenu.cmd
 
 :jkson
 @echo off
 cls
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
-ECHO JKSON FCC MOD
+ECHO JKSON FCC MOD for %AC%
 echo On loan from JKSON5
 Echo *****************************************************************************************************
 Echo ***************************************************************************************************** 
@@ -128,27 +132,13 @@ start DUMLdoreV3.exe
 echo Please click "Enable ADB in DUMLdore
 Echo wait till ADB is enabled, then close DUMLdore
 echo( 
-echo Once ADB is enabled and DUMLdore is closed please continue
+echo Once ADB is enabled and DUMLdore is closed, please continue
 echo(
 Pause
-cls
-Echo *****************************************************************************************************
-Echo *****************************************************************************************************
-ECHO JKSON FCC MOD
-echo On loan from JKSON5
-Echo *****************************************************************************************************
-Echo *****************************************************************************************************
-echo 1 - Mavic PRO/Platinum (1.04.0300 and lower)
-echo 2 - Phantom 4PROv2 (1.00.22.00 and lower)
-echo 3 - Other
-echo(
-choice /C 123 /D 1 /T 99 /M "Please select your Aircraft"
-If Errorlevel 3 Goto Sorry
-If Errorlevel 2 Goto P4PV2
-If Errorlevel 1 Goto MP
+If "%AC%"=="MavicPro Goto mp
+If "%AC%"=="P4Pv2" Goto p4pv2
 
 :MP
-@echo off
 cls
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
@@ -236,12 +226,12 @@ Goto AdbSet
 
 :AdbSet
 dos2unix.exe check_1860_state.sh
-@echo off
 adb shell busybox mount -o remount,rw /vendor
 adb shell mkdir /vendor/bin
 adb shell chmod 755 /vendor/bin
 adb push check_1860_state.sh /vendor/bin/check_1860_state.sh
 adb shell chmod 755 /vendor/bin/check_1860_state.sh
+sleep 4
 cls
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
@@ -275,21 +265,6 @@ echo(
 echo Jkson Mod has been removed! Please restart your device.
 echo(
 Goto End
-
-:Sorry
-cls
-Echo *****************************************************************************************************
-Echo *****************************************************************************************************
-ECHO SUPER-PATCHER %appver% 
-echo By Brett8883
-Echo *****************************************************************************************************
-Echo *****************************************************************************************************
-echo Sorry, but jkson mod is only compatible MP1 and P4PV2... 
-echo(
-echo Lets skip to verifing Super Patcher has worked
-timeout 8
-Goto verify
-
 
 :Exit 
 exit
