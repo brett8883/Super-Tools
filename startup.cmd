@@ -1,33 +1,34 @@
 @echo off
-title Super-Patcher 2.0 Start Up
+title Super-Patcher 2.0
 mode con: cols=160 lines=45
 set appver=2.0
 call header.bat
 echo Hang on one more sec...
-adb kill-server 2> null
-del null
-cls
-call header.bat
-echo.
 cd tools
-wget https://github.com/jezzab/DUMLdore/archive/master.zip
-unzip -o master.zip
+%busybox% wget https://github.com/jezzab/DUMLdore/archive/master.zip
+%busybox% unzip -o master.zip
+title Super-Patcher 2.0
 del DUMLdore-*
 del master.zip
-del *.md
 ren DUMLdore-master DUMLdore
 cd DUMLdore
 set ddpath=%cd%
+set dumldore=%cd%\dumldorev3.exe
 cd ..
 set tpath=%cd%
 cd ..
 set stpath=%cd%
-cd ..
-set sppath=%cd%
 echo %ddpath%
 echo %tpath%
 echo %stpath%
 echo %sppath%
+echo %dumldore%
+echo %busybox%
+pause
+cd %stpath%
+goto skip
+
+rem j
 if exist DontShowIntro (goto skip) else (goto askintro)
 :askintro
 cd %stpath%
@@ -244,4 +245,3 @@ goto skip
 :skip
 cd %stpath%
 call whichac.cmd
-

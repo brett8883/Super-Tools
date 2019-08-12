@@ -27,7 +27,7 @@ call header.bat
 title Super-Patcher 2.0 for %AC%
 echo Wait just a moment...
 echo.
-echo %%variant%%
+echo !%variant%!
 %busybox% wget %%variant%%
 pause
 copy *.bin ..
