@@ -15,35 +15,22 @@ choice
 if errorlevel 2 set stealthmod=1
 if errorlevel 1 set stealthmod=2
 set varchoice=%batmod%%stealthmod%
-if "%varchoice%"=="11" set variant=standard
-if "%varchoice%"=="21" set variant=battmod
-if "%varchoice%"=="12" set variant=stealth
-if "%varchoice%"=="22" set variant=loaded
-set fw2=%AC%_SP_2.0_
-set fwcache=https://github.com/brett8883/Super-Firmware_Cache/raw
-set fwcachebranch=/2.0/
-rem https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/MavicPro/2.0/MavicPro_SP_2.0_standard/MavicPro_SP_2.0_03.02.44.11_dji_system.bin
-rem https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/MavicPro/2.0/MavicPro_SP_2.0_standard/MavicPro_SP_2.0_03.02.44.11_dji_system.bin
-set finalurl=%fwcache%%fwcachebranch%%AC%%fwcachebranch%%AC%_SP_2.0_%variant%/%AC%_SP_2.0_%fcbase%%varchoice%_dji_system.bin
-echo %finalurl%
+if "%varchoice%"=="11" set variant=%standard%
+if "%varchoice%"=="21" set variant=%battmod%
+if "%varchoice%"=="12" set variant=%stealth%
+if "%varchoice%"=="22" set variant=%battmodstealth%
+set fw2=%AC%_SP_2.0_%variant%_%fc%_dji_system.bin
+set fc=%fcbase%%varchoice%
 pause
 cls
 call header.bat
 title Super-Patcher 2.0 for %AC%
 echo Wait just a moment...
 echo.
-@echo on
-busybox wget %finalurl% 2>> errorlog.txt
+echo %%variant%%
+%busybox% wget %%variant%%
 pause
 copy *.bin ..
 del *.bin
-if "%vt%"=="1" goto mpspk
-if "%vt%"=="2" goto phantom
-
-:mpspk
-cls
-call mpspk_verify.cmd
-
-:phantom
-cls
-call phantom_verify.cmd
+if "%vt%"=="1" call mpspk_verify.cmd
+if "%vt%"=="2" call phantom_verify.cmd

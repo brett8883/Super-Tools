@@ -39,6 +39,10 @@ set fcbase=03.02.44.
 set stock=01.04.0300
 set vt=1
 set stockfw=V01.04.0300_Mavic_dji_system.bin
+set standard=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/MavicPro/FC_bin/MavicPro_SP_2.0_Standard_03.02.44.22_dji_system.bin
+set battmod=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/MavicPro/FC_bin/MavicPro_SP_2.0_battmod_03.02.44.21_dji_system.bin
+set stealth=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/MavicPro/FC_bin/MavicPro_SP_2.0_Stealth_03.02.44.12_dji_system.bin
+set battmodstealth=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/MavicPro/FC_bin/MavicPro_SP_2.0_battmodStealth_03.02.44.11_dji_system.bin
 goto mainmenu
 
 :SPK
@@ -50,6 +54,10 @@ set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/Spark_Super_
 set fw2=Spark_Super-Patcher_306_03.02.43.09_dji_system.bin
 set stockdl=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Spark/V01.00.0900_Spark_dji_system.bin
 set stockfw=V01.00.0900_Spark_dji_system.bin
+set standard=
+set battmod=
+set stealth=
+set loaded=
 goto mainmenu
 
 :p4p
