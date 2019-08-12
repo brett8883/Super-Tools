@@ -2,11 +2,11 @@
 title Super-Patcher 2.0 Start Up
 mode con: cols=160 lines=45
 set appver=2.0
-adb kill-server 2>> null
-del null
-cls
 call header.bat
 echo Hang on one more sec...
+adb kill-server 2> null
+del null
+call header.bat
 echo.
 cd tools
 wget https://github.com/jezzab/DUMLdore/archive/master.zip
