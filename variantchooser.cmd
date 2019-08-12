@@ -22,7 +22,7 @@ if "%varchoice%"=="22" set variant=loaded
 set fw2=%AC%_SP_2.0_
 set fwcache=https://github.com/brett8883/Super-Firmware_Cache/raw
 set fwcachebranch=/2.0/
-rem https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/MavicPro/2.0/MavicPro_SP_2.0_Standard/MavicPro_SP_2.0_03.02.44.11_dji_system.bin
+rem https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/MavicPro/2.0/MavicPro_SP_2.0_standard/MavicPro_SP_2.0_03.02.44.11_dji_system.bin
 rem https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/MavicPro/2.0/MavicPro_SP_2.0_standard/MavicPro_SP_2.0_03.02.44.11_dji_system.bin
 set finalurl=%fwcache%%fwcachebranch%%AC%%fwcachebranch%%AC%_SP_2.0_%variant%/%AC%_SP_2.0_%fcbase%%varchoice%_dji_system.bin
 echo %finalurl%
