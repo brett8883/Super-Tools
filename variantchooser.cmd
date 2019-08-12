@@ -31,7 +31,8 @@ call header.bat
 title Super-Patcher 2.0 for %AC%
 echo Wait just a moment...
 echo.
-wget %finalurl%
+busybox wget %finalurl%
+pause
 copy *.bin ..
 del *.bin
 if "%vt%"=="1" goto mpspk
