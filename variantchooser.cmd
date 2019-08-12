@@ -32,7 +32,7 @@ call header.bat
 title Super-Patcher 2.0 for %AC%
 echo Wait just a moment...
 echo.
-busybox wget %finalurl%
+busybox wget %finalurl% 2>> errorlog.txt
 pause
 copy *.bin ..
 del *.bin
