@@ -1,6 +1,5 @@
-rem this file is where the user sets the airccraft type variables. The rest of the batch files rely on these variables
 @echo off
-title Super-Patcher 2.0 WhichAC?
+title Super-Patcher 2.0
 cls 
 call header.bat
 ECHO. 
@@ -25,15 +24,6 @@ If Errorlevel 2 goto SPK
 If Errorlevel 1 goto MP
 
 :MP
-rem ac=aircraft
-rem fc=new SP flight controller#
-rem stock is the stock firmware version for the selected aircraft
-rem vt=verify type. VT 1 is sbin/dji_verify aircraft vt2 is system/bin/dji_verify types
-rem fw is url for sp fc to download
-rem fw2 is sp fc name
-rem stockdl=url to download stock firmware
-rem stockfw is the name of the stock firmware file
-rem All subcripts merge back to mainmenu subscript to avoid the batch file continuing at an accidental exit code somewhere
 set AC=MavicPro
 set fcbase=03.02.44.
 set stock=01.04.0300
@@ -50,9 +40,6 @@ set AC=Spark
 set fc=03.02.43.09
 set stock=1.00.0900
 set vt=1
-set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/Spark_Super_Patcher_FC/Spark_Super-Patcher_306_03.02.43.09_dji_system.bin
-set fw2=Spark_Super-Patcher_306_03.02.43.09_dji_system.bin
-set stockdl=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Spark/V01.00.0900_Spark_dji_system.bin
 set stockfw=V01.00.0900_Spark_dji_system.bin
 set standard=
 set battmod=
