@@ -35,7 +35,7 @@ rem stockdl=url to download stock firmware
 rem stockfw is the name of the stock firmware file
 rem All subcripts merge back to mainmenu subscript to avoid the batch file continuing at an accidental exit code somewhere
 set AC=MavicPro
-set fcbase=3.02.44.
+set fcbase=03.02.44.
 set stock=01.04.0300
 set vt=1
 set stockfw=V01.04.0300_Mavic_dji_system.bin
@@ -43,7 +43,7 @@ goto mainmenu
 
 :SPK
 set AC=Spark
-set fc=3.02.43.09
+set fc=03.02.43.09
 set stock=1.00.0900
 set vt=1
 set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/Spark_Super_Patcher_FC/Spark_Super-Patcher_306_03.02.43.09_dji_system.bin
