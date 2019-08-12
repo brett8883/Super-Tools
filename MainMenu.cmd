@@ -13,7 +13,7 @@ ECHO.
 echo          WHAT DO YOU WANT TO DO?
 echo.
 echo                  *[1] Start Super-Patcher!
-echo                   [2] Download & Flash stock firmware needed for Super-Patcher
+echo                   [2] Download ^& Flash stock firmware needed for Super-Patcher
 echo.
 echo                   UTILITIES
 echo                   [3] Open DankDroneDownloader by CS2000 to download any other firmware files

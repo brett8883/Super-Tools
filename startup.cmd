@@ -6,6 +6,7 @@ call header.bat
 echo Hang on one more sec...
 adb kill-server 2> null
 del null
+cls
 call header.bat
 echo.
 cd tools
