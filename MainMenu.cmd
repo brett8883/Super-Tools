@@ -70,7 +70,7 @@ goto mainmenu
 
 :startSp 
 cls
-call pickfc
+call variantchooser.cmd
 goto mainmenu
 
 :NLD

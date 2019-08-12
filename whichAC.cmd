@@ -26,22 +26,19 @@ If Errorlevel 1 goto MP
 
 :MP
 rem ac=aircraft
-set AC=MavicPro
 rem fc=new SP flight controller#
-set fc=3.02.44.10
 rem stock is the stock firmware version for the selected aircraft
-set stock=01.04.0300
 rem vt=verify type. VT 1 is sbin/dji_verify aircraft vt2 is system/bin/dji_verify types
-set vt=1
 rem fw is url for sp fc to download
-set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/MavicPro_MPP_super_patcher_03.02.44.10_dji_system.bin
 rem fw2 is sp fc name
-set fw2=MavicPro_MPP_super_patcher_03.02.44.10_dji_system.bin
 rem stockdl=url to download stock firmware
-set stockdl=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Mavic%%20Pro%%201%%20-%%20Incl%%20Platinum%%20and%%20Alpine/V01.04.0300_Mavic_dji_system.bin
 rem stockfw is the name of the stock firmware file
-set stockfw=V01.04.0300_Mavic_dji_system.bin
 rem All subcripts merge back to mainmenu subscript to avoid the batch file continuing at an accidental exit code somewhere
+set AC=MavicPro
+set fcbase=3.02.44.
+set stock=01.04.0300
+set vt=1
+set stockfw=V01.04.0300_Mavic_dji_system.bin
 goto mainmenu
 
 :SPK
