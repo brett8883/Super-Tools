@@ -21,15 +21,12 @@ if "%varchoice%"=="12" set variant=%stealth%
 if "%varchoice%"=="22" set variant=%battmodstealth%
 set fw2=%AC%_SP_2.0_%variant%_%fc%_dji_system.bin
 set fc=%fcbase%%varchoice%
-pause
 cls
 call header.bat
 title Super-Patcher 2.0 for %AC%
 echo Wait just a moment...
 echo.
-echo !%variant%!
 %busybox% wget %variant%
-pause
 copy *.bin ..
 del *.bin
 if "%vt%"=="1" call mpspk_verify.cmd
