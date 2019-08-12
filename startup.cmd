@@ -16,6 +16,10 @@ set ddpath=%cd%
 set dumldore=%cd%\dumldorev3.exe
 cd ..
 set tpath=%cd%
+set NLD=%cd%\NLDApp.exe
+set jksonbat=%cd%\jkson.bat
+set jksonrdme=%cd%\jkson_README.md
+set adb=%cd%\adb.exe
 cd ..
 set stpath=%cd%
 cd %stpath%

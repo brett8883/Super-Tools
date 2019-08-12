@@ -30,7 +30,7 @@ If Errorlevel 2 goto flashstock
 If Errorlevel 1 goto StartSP
 
 :flashstock
-call flashstock2.cmd
+call flashstock.cmd
 goto mainmenu
 
 :getDownloader
@@ -54,9 +54,7 @@ goto mainmenu
 
 
 :dumldore
-cd %ddpath%
-start dumldorev3.exe || goto errorduml
-cd %stpath%
+start %dumldore%
 goto mainmenu
 
 
