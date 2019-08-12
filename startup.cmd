@@ -18,13 +18,6 @@ cd ..
 set tpath=%cd%
 cd ..
 set stpath=%cd%
-echo %ddpath%
-echo %tpath%
-echo %stpath%
-echo %sppath%
-echo %dumldore%
-echo %busybox%
-pause
 cd %stpath%
 goto skip
 
