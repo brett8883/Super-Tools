@@ -32,6 +32,7 @@ call header.bat
 title Super-Patcher 2.0 for %AC%
 echo Wait just a moment...
 echo.
+@echo on
 busybox wget %finalurl% 2>> errorlog.txt
 pause
 copy *.bin ..
