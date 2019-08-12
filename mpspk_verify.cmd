@@ -40,13 +40,14 @@ pause
 cls
 call header.bat
 Echo WORKING PLEASE WAIT... 
-adb shell mount -o remount,rw /vendor && Echo Success making vendor read and write & sleep 1
-adb shell mkdir /vendor/bin && Echo Success making directory vendor/bin & sleep 1
-adb push dummy_verify.sh /vendor/bin/ && echo Success pushing dummy_verify to %ac% & sleep 1
-adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /sbin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd / && echo Success activating dummy_verify.sh & sleep 1
+adb shell mount -o remount,rw /vendor && Echo Success making vendor read and write & PING -n 2 127.0.0.1>nul
+adb shell mkdir /vendor/bin && Echo Success making directory vendor/bin & PING -n 2 127.0.0.1>nul
+adb push dummy_verify.sh /vendor/bin/ && echo Success pushing dummy_verify to %ac% & PING -n 2 127.0.0.1>nul
+if "%vt%"=="1" adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /sbin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd / && echo Success activating dummy_verify.sh & sleep 1
+if "%vt%"=="2" adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /system/bin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd /
 adb shell mount -o remount,ro /vendor && echo Success making vendor read only again. Aircraft requires reboot. Please wait to return to program
-adb kill-server 2>> errorlog.txt
-sleep 3
+adb kill-server 2>>nul
+PING -n 4 127.0.0.1>nul
 cls
 call header.bat
 Echo Please restart your aircraft
@@ -71,7 +72,8 @@ Pause
 cls
 call header.bat
 ECHO WORKING. PLEASE WAIT...
-adb shell mount -o bind /vendor/bin/dummy_verify.sh /sbin/dji_verify && echo Bind step completed successfully & sleep 2
+if "%vt%"=="1" adb shell mount -o bind /vendor/bin/dummy_verify.sh /sbin/dji_verify && echo Bind step completed successfully & PING -n 2 127.0.0.1>nul
+if "%vt%"=="2" adb shell mount -o bind /vendor/bin/dummy_verify.sh /system/bin/dji_verify && echo Bind step completed successfully & PING -n 2 127.0.0.1>nul
 adb kill-server 2>> null
 del /f /s null
 cls

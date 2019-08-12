@@ -1,5 +1,6 @@
 @echo off
 mode con: cols=160 lines=45
+title Super-Patcher 2.0
 cls
 call header.bat
 ECHO Would you like to enable the new smart battery mod?
@@ -29,5 +30,4 @@ echo.
 %busybox% wget %variant%
 copy *.bin ..
 del *.bin
-if "%vt%"=="1" call mpspk_verify.cmd
-if "%vt%"=="2" call phantom_verify.cmd
+call mpspk_verify.cmd
