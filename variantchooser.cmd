@@ -12,7 +12,7 @@ echo.
 echo [1] YES
 echo [2] No
 echo.
-choice /c 12 /m "Please make selection"
+choice /m "Please make selection"
 if errorlevel 2 set batmod=1
 if errorlevel 1 set batmod=2
 cls
@@ -22,33 +22,9 @@ echo.
 echo [1] YES
 echo [2] No
 echo.
-choice /c 12 /m "Please make selection"
+choice /m "Please make selection"
 if errorlevel 2 set stealthmod=1
 if errorlevel 1 set stealthmod=2
-cls
-call %header%
-Echo You have chosen the options:
-ECHO.
-echo %batmod%
-echo %stealthmod%
-if "%batmod%"=="2" (echo Smart Battery Mod NOT enabled) else (echo Smart Battery Mod ENABLED)
-if "%stealthmod%"=="2" (echo Stealth Mod NOT enabled) else (echo Stealth Mod ENABLED)
-Echo.
-echo Please confirm your selections or redo selections
-Echo.
-echo    **[Y] Yes, CONFIRM SELECTION **
-echo      [N] No, let me pick again. Redo
-choice
-if errorlevel 2 goto rechoosefc
-if errorlevel 1 goto getfc
-
-:rechoosefc
-cls
-color 40
-call %header%
-goto choosefc
-
-:getfc
 set varchoice=%batmod%%stealthmod%
 if "%varchoice%"=="11" set varianturl=%standard% & set variant=standard
 if "%varchoice%"=="21" set varianturl=%battmod% & set variant=battmod
