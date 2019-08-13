@@ -40,8 +40,6 @@ if errorlevel 1 goto getfc
 cls
 color 40
 call %header%
-set stealthmod=
-set batmod=
 goto choosefc
 
 :getfc
