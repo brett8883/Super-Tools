@@ -20,8 +20,10 @@ echo                   [3] Open DankDroneDownloader by CS2000 to download any ot
 echo                   [4] Launch DULMdore by Jezzeb
 echo                   [5] Launch jkson fcc mod (Mavic and P4Pv2 only)
 echo                   [6] Launch the free NoLimitDronez app
+echo                   [7] Enable ADB and open and adb prompt
 echo.
 Choice /c 123456 /M "Please make a section with keyboard"
+if errorlevel 7 goto adb
 If Errorlevel 6 goto NLD
 If Errorlevel 5 goto jkson
 If Errorlevel 4 goto dumldore
@@ -60,7 +62,9 @@ goto mainmenu
 
 
 :jkson
+cd %tpath%
 call %jksonbat%
+cd %stpath%
 goto mainmenu
 
 
@@ -71,4 +75,28 @@ goto mainmenu
 
 :NLD
 start %NLD%
+goto mainmenu
+
+:adb
+cls
+call %header%
+Echo Please turn on the %AC% and after it has fully started, connect to the PC, then continue
+echo.
+echo Continue when ready to begin
+Echo ****************************************************************************************************************************************************************
+Pause
+cls
+call %header%
+echo Then click "Enable ADB" in DUMLdore and wait for ADB to enable
+echo.
+Echo The front lights will sometimes flash, turn on, or turn off but not always 
+Echo. 
+Echo Continue once ADB has been enabled and DUMLdore is closed
+start %dumldore%
+echo.
+Echo ****************************************************************************************************************************************************************
+pause
+cd %tpath%
+start cmd /k adb shell
+cd %stpath%
 goto mainmenu
