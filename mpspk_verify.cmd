@@ -2,13 +2,8 @@
 title Super-Patcher 2.0 for %AC%
 :main
 cls
-Echo STARTED-mpspk_for_%AC% >> log.txt
-echo %DATE%_%TIME% >> log.txt
 cd %tpath%
 cls
-echo ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-echo mpspk for %AC%
-echo ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 call header.bat
 ECHO PLEASE TAKE CARE TO FOLLOW INSTRUCTIONS EXACTLY 
 ECHO GO SLOW AND READ INSTRUCTIONS CAREFULLY BEFORE ACTING 
@@ -32,9 +27,7 @@ echo.
 echo then close DUMLdore
 Echo. 
 Echo Continue once ADB has been enabled and DUMLdore is closed
-cd %ddpath%
-start DUMLdoreV3.exe
-cd %tpath%
+start %dumldore%
 Echo ***************************************************************************************************************************************************************
 pause
 cls
@@ -55,18 +48,18 @@ Echo.
 echo Allow the aircraft to fully restart then reconnect to the PC
 echo.
 echo Once fully restarted and connected please continue
+echo.
+Echo ****************************************************************************************************************************************************************
 pause
 cls
 :bind
 call header.bat
 echo Starting bind step...
-sleep 2
+PING -n 4 127.0.0.1>nul
 cls
 call header.bat
 echo click "Enable ADB" in DUMLdore and then close DUMLdore before proceeding
-cd %ddpath%
-start DUMLdoreV3.exe || goto errorduml
-cd %tpath%
+start %dumldore%
 Echo ***************************************************************************************************************************************************************
 Pause
 cls
@@ -100,9 +93,8 @@ Echo
 Echo.
 echo 6. Once aircraft has restarted fully and connected to PC. Please continue
 echo.
-cd %ddpath%
-start DUMLdoreV3.exe
-cd %tpath%
+start %dumldore%
+Echo ****************************************************************************************************************************************************************
 pause
 cls 
 Call jkson_verify.bat

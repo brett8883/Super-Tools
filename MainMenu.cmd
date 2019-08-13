@@ -1,6 +1,6 @@
 @echo off
 :mainmenu
-title Super-Patcher 2.0 MainMenu for %AC%
+title Super-Patcher 2.0
 cls
 call header.bat
 echo "                                                    __ __  __  _ __  _   __ __ ___ __  _ _  _                                                                ";
@@ -36,12 +36,12 @@ goto mainmenu
 :getDownloader
 echo start getdownloaderMM >> %sppath%\log.txt
 cls
-call header.bat
-cd tools
-if exist DankDroneDownloader.exe start DankDroneDownloader.exe & cd .. & echo DDD exists >> %sppath%\log.txt & goto mainmenu
+call %header%
+cd %tpath%
+if exist DankDroneDownloader.exe start DankDroneDownloader.exe & cd %stpath% & echo DDD exists >> %stpath%\log.txt & goto mainmenu
 Echo Hold on just a sec...
-cd tools
-wget https://github.com/cs2000/DankDroneDownloader/archive/master.zip 2> %sppath%\log.txt
+cd %tpath%
+%busybox% wget https://github.com/cs2000/DankDroneDownloader/archive/master.zip 2> %sppath%\errorlog.txt
 7za.exe e master.zip
 start DankDroneDownloader.exe
 del master.zip
@@ -49,7 +49,7 @@ del /f /q DankDroneDownloader-master
 del /f /q ISSUE_TEMPLATE
 del /f /q .wget-hsts
 del /f /q *.md
-cd ..
+cd %stpath%
 goto mainmenu
 
 
@@ -60,9 +60,7 @@ goto mainmenu
 
 
 :jkson
-cd %tpath%
-call jkson.bat
-cd %stpath%
+call %jksonbat%
 goto mainmenu
 
 
@@ -72,7 +70,5 @@ call variantchooser.cmd
 goto mainmenu
 
 :NLD
-cd %tpath%
-start nldapp.exe
-cd %stpath%
+start %NLD%
 goto mainmenu

@@ -1,36 +1,36 @@
 @echo off
+rem set envirnment variables and paths
 title Super-Patcher 2.0
 mode con: cols=160 lines=45
 set appver=2.0
-call header.bat
+set header=%cd%\header.bat
+call %header%
+set stpath=%cd%
+set mainmenu=%cd%\MainMenu.cmd
 echo Hang on one more sec...
 cd tools
+set tpath=%cd%
+set NLD=%cd%\NLDApp.exe
+set jksonbat=%cd%\jkson.bat
+set jksonrdme=%cd%\jkson_README.md
+set adb=%cd%\adb.exe
 %busybox% wget https://github.com/jezzab/DUMLdore/archive/master.zip
 %busybox% unzip -o master.zip
-title Super-Patcher 2.0
 del DUMLdore-*
 del master.zip
 ren DUMLdore-master DUMLdore
 cd DUMLdore
 set ddpath=%cd%
 set dumldore=%cd%\dumldorev3.exe
-cd ..
-set tpath=%cd%
-set NLD=%cd%\NLDApp.exe
-set jksonbat=%cd%\jkson.bat
-set jksonrdme=%cd%\jkson_README.md
-set adb=%cd%\adb.exe
-cd ..
-set stpath=%cd%
 cd %stpath%
 goto skip
 
-rem j
+rem This is here as storage
 if exist DontShowIntro (goto skip) else (goto askintro)
 :askintro
 cd %stpath%
 cls
-call header.bat
+call %header%
 ECHO Welcome to Super-Patcher 2.0!
 ECHO. 
 echo There have been some exciting changes around here, Can I show you around?
@@ -44,7 +44,7 @@ If Errorlevel 1 goto intro
 
 :intro
 cls 
-call header.bat
+call %header%
 Echo.
 Echo In Super-Patcher 2.0 the first page you will see is the main menu which will be home base for all things Super-Patcher
 echo.
@@ -69,7 +69,7 @@ echo.
 echo **please continue to see the rest of the Super-Patcher 2.0 introduction presentation**
 pause
 cls
-call header.bat
+call %header%
 echo "                                                    __ __  __  _ __  _   __ __ ___ __  _ _  _                                                                ";
 echo "                                                   |  V  |/  \| |  \| | |  V  | __|  \| | || |                                                               ";
 echo "                                                   | \_/ | /\ | | | ' | | \_/ | _|| | ' | \/ |                                                               ";
@@ -93,7 +93,7 @@ echo.
 echo please continue to see the rest of the Super-Patcher 2.0 introduction presentation
 pause
 cls
-call header.bat
+call %header%
 echo "                                                    __ __  __  _ __  _   __ __ ___ __  _ _  _                                                                ";
 echo "                                                   |  V  |/  \| |  \| | |  V  | __|  \| | || |                                                               ";
 echo "                                                   | \_/ | /\ | | | ' | | \_/ | _|| | ' | \/ |                                                               ";
@@ -117,7 +117,7 @@ echo.
 echo please continue to see the rest of the Super-Patcher 2.0 introduction presentation
 pause
 cls
-call header.bat
+call %header%
 echo "                                                    __ __  __  _ __  _   __ __ ___ __  _ _  _                                                                ";
 echo "                                                   |  V  |/  \| |  \| | |  V  | __|  \| | || |                                                               ";
 echo "                                                   | \_/ | /\ | | | ' | | \_/ | _|| | ' | \/ |                                                               ";
@@ -141,7 +141,7 @@ echo.
 echo please continue to see the rest of the Super-Patcher 2.0 introduction presentation
 pause
 cls
-call header.bat
+call %header%
 echo "                                                    __ __  __  _ __  _   __ __ ___ __  _ _  _                                                                ";
 echo "                                                   |  V  |/  \| |  \| | |  V  | __|  \| | || |                                                               ";
 echo "                                                   | \_/ | /\ | | | ' | | \_/ | _|| | ' | \/ |                                                               ";
@@ -164,7 +164,7 @@ echo                   [6] Launch the free NoLimitDronez app
 echo.
 echo please continue to see the rest of the Super-Patcher 2.0 introduction presentation
 pause
-call header.bat
+call %header%
 cls
 echo "                                                    __ __  __  _ __  _   __ __ ___ __  _ _  _                                                                ";
 echo "                                                   |  V  |/  \| |  \| | |  V  | __|  \| | || |                                                               ";
@@ -189,7 +189,7 @@ echo.
 echo please continue to see the rest of the Super-Patcher 2.0 introduction presentation
 pause
 cls
-call header.bat
+call %header%
 cls
 echo "                                                    __ __  __  _ __  _   __ __ ___ __  _ _  _                                                                ";
 echo "                                                   |  V  |/  \| |  \| | |  V  | __|  \| | || |                                                               ";
@@ -215,7 +215,7 @@ echo.
 echo please continue to see the rest of the Super-Patcher 2.0 introduction presentation
 pause
 cls
-call header.bat
+call %header%
 That concludes the Super-Patcher 2.0 introduction presentation. If you don't want to see this in the future you can choose option #2 when asked...
 echo
 echo There have been some exciting changes around here, Can I show you around?
