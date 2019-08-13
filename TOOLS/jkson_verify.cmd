@@ -1,5 +1,4 @@
-@echo off 
-cd ProgramFiles
+@echo off
 cls
 if "%AC%"=="MavicPro" goto askjkson
 if "%AC%"=="P4Pv2" goto askjkson
@@ -128,7 +127,7 @@ Echo ***************************************************************************
 Echo ***************************************************************************************************** 
 IF EXIST check_1860_state.sh DEL /F check_1860_state.sh
 echo(
-start DUMLdoreV3.exe
+start %dumldore%
 echo Please click "Enable ADB in DUMLdore
 Echo wait till ADB is enabled, then close DUMLdore
 echo( 
@@ -151,13 +150,11 @@ echo /system/bin/check_1860_state.sh^& >> check_1860_state.sh
 echo busybox ping -c 1 -w 1800 192.168.41.2 >> check_1860_state.sh
 echo sleep 5 >> check_1860_state.sh
 echo(
-echo 1 - Auto frequency (Default)
-echo 2 - Force frequency to 2.3G (not compatible with DJI Goggles)
-echo 3 - Force frequency to 2.5G (not compatible with DJI Goggles)
-echo 4 - DELETE this mod from DJI device
+echo 1 - **Auto frequency** (Choose this for best results in most cases)
+echo 2 -   Force frequency to 2.3G (not compatible with DJI Goggles)
+echo 3 -   Force frequency to 2.5G (not compatible with DJI Goggles)
 echo(
-choice /C 1234 /D 1 /T 99 /M "Please select frequency"
-If Errorlevel 4 Goto AdbRemove
+choice /C 123 /D 1 /T 99 /M "Please select frequency"
 echo while : >> check_1860_state.sh
 echo do >> check_1860_state.sh
 If Errorlevel 3 echo dji_mb_ctrl -S test -R local -g 9 -s 9 -c 27 00014600FFFF92040000 >> check_1860_state.sh
@@ -166,7 +163,7 @@ If Errorlevel 2 echo dji_mb_ctrl -S test -R local -g 9 -s 9 -c 27 00014600FFFFA2
 :EndFreq
 echo(
 echo 1 - Default power
-echo 2 - Default^>FCC^>Boost^>Reset loop selector by Remote controller
+echo 2 - Default^>FCC^>Boost^>Reset loop selector by Remote controller (loops power not frequency)
 echo 3 - Fixed FCC
 echo 4 - Fixed FCC and Boost
 echo(
@@ -199,13 +196,11 @@ echo /system/bin/check_1860_state.sh^& >> check_1860_state.sh
 echo busybox ping -c 1 -w 1800 192.168.41.2 >> check_1860_state.sh
 echo sleep 5 >> check_1860_state.sh
 echo(
-echo 1 - Auto frequency (Default)
-echo 2 - Force frequency to 2.3G
-echo 3 - Force frequency to 2.5G
-echo 4 - DELETE this mod from DJI device
+echo 1 - **Auto frequency** (Choose this for best results in most cases)
+echo 2 -   Force frequency to 2.3G
+echo 3 -   Force frequency to 2.5G
 echo(
-choice /C 1234 /D 1 /T 99 /M "Please select frequency"
-If Errorlevel 4 Goto AdbRemove
+choice /C 123 /D 1 /T 99 /M "Please select frequency"
 If Errorlevel 3 echo dji_mb_ctrl -S test -R local -g 9 -s 9 -c 27 00014600FFFF92040000 >> check_1860_state.sh
 If Errorlevel 3 Goto P4PV2EndFreq
 If Errorlevel 2 echo dji_mb_ctrl -S test -R local -g 9 -s 9 -c 27 00014600FFFFA2030000 >> check_1860_state.sh
@@ -231,7 +226,7 @@ adb shell mkdir /vendor/bin
 adb shell chmod 755 /vendor/bin
 adb push check_1860_state.sh /vendor/bin/check_1860_state.sh
 adb shell chmod 755 /vendor/bin/check_1860_state.sh
-sleep 4
+PING -n 4 127.0.0.1>nul
 cls
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
@@ -255,16 +250,6 @@ echo(
 Echo *****************************************************************************************************
 pause
 Goto verify
-
-:AdbRemove
-@echo on
-adb shell busybox mount -o remount,rw /vendor
-adb shell rm /vendor/bin/check_1860_state.sh
-@echo off
-echo(
-echo Jkson Mod has been removed! Please restart your device.
-echo(
-Goto End
 
 :Exit 
 exit
