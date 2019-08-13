@@ -9,7 +9,7 @@ choice
 if errorlevel 2 set batmod=1
 if errorlevel 1 set batmod=2
 cls
-call header.bat
+call %header%
 echo Would you like to enable the new stealth mod?
 ECHO.
 choice
@@ -23,11 +23,11 @@ if "%varchoice%"=="22" set varianturl=%battmodstealth% & set variant=battmodstea
 set fw2=%AC%_SP_2.0_%variant%_%fc%_dji_system.bin
 set fc=%fcbase%%varchoice%
 cls
-call header.bat
+call %header%
 title Super-Patcher 2.0 for %AC%
 echo Wait just a moment...
 echo.
+cd %sppath%
 %busybox% wget %varianturl%
-copy *.bin ..
-del *.bin
+cd %stpath%
 call mpspk_verify.cmd
