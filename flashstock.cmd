@@ -5,13 +5,10 @@ cd %sppath%
 if exist %stockfw% (goto flash) else (goto download)
 
 :download
-cd %stpath%
 echo Please Wait while I download %stockfw%. 
 Echo.
 echo When it's ready it will be in %sppath%
 %busybox% wget %stockdl%
-copy %stockfw% ..
-del %stockfw%
 goto flash
 
 :flash
@@ -31,6 +28,7 @@ ECHO.
 ECHO Once Dumldore says its ok to reboot, please reboot the aircraft and then continue to be taken back to the Main Menu
 ECHO.
 start %dumldore%
+cd %stpath%
 pause
 call mainmmenu.cmd
 
