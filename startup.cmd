@@ -13,6 +13,7 @@ set tpath=%cd%
 set NLD=%cd%\NLDApp.exe
 set jksonbat=%cd%\jkson.bat
 set jksonrdme=%cd%\jkson_README.md
+set jksonverify=%cd%\jkson_verify.cmd
 set adb=%cd%\adb.exe
 %busybox% wget https://github.com/jezzab/DUMLdore/archive/master.zip
 %busybox% unzip -o master.zip

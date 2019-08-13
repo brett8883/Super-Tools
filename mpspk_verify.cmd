@@ -4,7 +4,7 @@ title Super-Patcher 2.0 for %AC%
 cls
 cd %tpath%
 cls
-call header.bat
+call %header%
 ECHO PLEASE TAKE CARE TO FOLLOW INSTRUCTIONS EXACTLY 
 ECHO GO SLOW AND READ INSTRUCTIONS CAREFULLY BEFORE ACTING 
 ECHO DO NOT SKIP STEPS, DO NOT DO EXTRA STEPS
@@ -18,7 +18,7 @@ echo Continue when ready to begin
 Echo ****************************************************************************************************************************************************************
 Pause
 cls
-call header.bat
+call %header%
 Echo Please ensure DUMLdore says you are on firmware %stock% and that this is stock version 
 echo. 
 echo Then click "Enable ADB" in DUMLdore and wait for ADB to enable 
@@ -42,7 +42,7 @@ adb shell mount -o remount,ro /vendor && echo Success making vendor read only ag
 adb kill-server 2>>nul
 PING -n 4 127.0.0.1>nul
 cls
-call header.bat
+call %header%
 Echo Please restart your aircraft
 Echo.
 echo Allow the aircraft to fully restart then reconnect to the PC
@@ -57,20 +57,19 @@ call header.bat
 echo Starting bind step...
 PING -n 4 127.0.0.1>nul
 cls
-call header.bat
+call %header%
 echo click "Enable ADB" in DUMLdore and then close DUMLdore before proceeding
 start %dumldore%
 Echo ***************************************************************************************************************************************************************
 Pause
 cls
-call header.bat
+call %header%
 ECHO WORKING. PLEASE WAIT...
 if "%vt%"=="1" adb shell mount -o bind /vendor/bin/dummy_verify.sh /sbin/dji_verify && echo Bind step completed successfully & PING -n 2 127.0.0.1>nul
 if "%vt%"=="2" adb shell mount -o bind /vendor/bin/dummy_verify.sh /system/bin/dji_verify && echo Bind step completed successfully & PING -n 2 127.0.0.1>nul
-adb kill-server 2>> null
-del /f /s null
+adb kill-server 2>>nul
 cls
-call header.bat
+call %header%
 echo Starting flash step...
 sleep 2
 cls
@@ -97,4 +96,4 @@ start %dumldore%
 Echo ****************************************************************************************************************************************************************
 pause
 cls 
-Call jkson_verify.bat
+Call %jksonverify%
