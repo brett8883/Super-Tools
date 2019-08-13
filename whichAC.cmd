@@ -29,10 +29,12 @@ set fcbase=03.02.44.
 set stock=01.04.0300
 set vt=1
 set stockfw=V01.04.0300_Mavic_dji_system.bin
+set stockdl=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Mavic%%20Pro%%201%%20-%%20Incl%%20Platinum%%20and%%20Alpine/V01.04.0300_Mavic_dji_system.bin
 set standard=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/MavicPro/FC_bin/MavicPro_SP_2.0_Standard_03.02.44.22_dji_system.bin
 set battmod=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/MavicPro/FC_bin/MavicPro_SP_2.0_battmod_03.02.44.21_dji_system.bin
 set stealth=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/MavicPro/FC_bin/MavicPro_SP_2.0_Stealth_03.02.44.12_dji_system.bin
 set battmodstealth=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/MavicPro/FC_bin/MavicPro_SP_2.0_battmodStealth_03.02.44.11_dji_system.bin
+
 goto mainmenu
 
 :SPK
@@ -41,6 +43,7 @@ set fc=03.02.43.09
 set stock=1.00.0900
 set vt=1
 set stockfw=V01.00.0900_Spark_dji_system.bin
+set stockdl=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Spark/V01.00.0900_Spark_dji_system.bin
 set standard=
 set battmod=
 set stealth=
@@ -56,6 +59,11 @@ set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/P4P_Super-Pa
 set fw2=P4P_wm331_Super_Patcher_0306_03.02.44.31_dji_system.bin
 set stockdl=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Phantom%%204%%20Professional/V01.05.0600_P4P_dji_system.tar
 set stockfw=V01.05.0600_P4P_dji_system.tar
+set stockdl=
+set standard=
+set battmod=
+set stealth=
+set loaded=
 goto mainmenu
 
 :p4a
@@ -67,6 +75,11 @@ set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/P4Advanced_S
 set fw2=P4Advanced_wm332_Super_Patcher_FC_0306_03.02.35.32_dji_system.bin
 set stockdl=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Phantom%%204%%20Advanced/V01.00.0128_P4A_dji_system.bin
 set stockfw=V01.00.0128_P4A_dji_system.bin
+set stockdl=
+set standard=
+set battmod=
+set stealth=
+set loaded=
 goto mainmenu
 
 :p4s
@@ -78,6 +91,11 @@ set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/P4Standard_S
 set fw2=P4Standard_wm330_0306_03.02.44.33_Super_Patcher_dji_system_.bin
 set stockdl=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Phantom%%204%%20Standard/V02.00.0700_P4_dji_system.bin
 set stockfw=V02.00.0700_P4_dji_system.bin
+set stockdl=
+set standard=
+set battmod=
+set stealth=
+set loaded=
 goto mainmenu
 
 :P4Pv2
@@ -89,6 +107,11 @@ set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/P4Pv2_FLIGHT
 set fw2=P4PV2_wm335_Super_Patcher_0306_03.03.04.35_dji_system.bin
 set stockdl=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Phantom%%204%%20Pro%%202.0/V01.00.1500_P4PV2_dji_system.bin
 set stockfw=V01.00.1500_P4PV2_dji_system.bin
+set stockdl=
+set standard=
+set battmod=
+set stealth=
+set loaded=
 goto mainmenu
 
 :I2
@@ -100,6 +123,11 @@ set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/I2/I2_SP_2.0/I2
 set fw2=I2_SP_2.0_03.03.11.11_dji_system.bin
 set stockdl=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Inspire%%202/V01.02.0200_I2_dji_system.bin
 set stockfw=V01.02.0200_I2_dji_system.bin
+set stockdl=
+set standard=
+set battmod=
+set stealth=
+set loaded=
 goto mainmenu
 
 :mainmenu
