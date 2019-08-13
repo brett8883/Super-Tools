@@ -8,6 +8,7 @@ if exist %stockfw% (goto flash) else (goto download)
 echo Please Wait while I download %stockfw%. 
 Echo.
 echo When it's ready it will be in %sppath%
+cd %sppath%
 %busybox% wget %stockdl%
 goto flash
 
