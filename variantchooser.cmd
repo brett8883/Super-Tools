@@ -1,10 +1,11 @@
 @echo off
 mode con: cols=160 lines=45
-
 :choosefc
 title Super-Patcher 2.0
 color 0f
 cls
+set batmod=
+stealthmod=
 call header.bat
 ECHO Would you like to enable the new smart battery mod?
 echo.
@@ -22,8 +23,8 @@ cls
 call %header%
 Echo You have chosen the options:
 ECHO.
-if "%batmod%"=="2" (echo Smart Battery Mod ENABLED) else (echo Smart Battery Mod DISABLED)
-if "%stealthmod%"=="2" (echo Stealth Mod ENABLED) else (Stealth Mod DISABLED)
+if "%batmod%"=="1" (echo Smart Battery Mod DISABLED) else (echo Smart Battery Mod ENABLED)
+if "%stealthmod%"=="1" (echo Stealth Mod DISABLED) else (Stealth Mod ENABLED)
 Echo.
 echo Please confirm your selections or redo selections
 Echo.
@@ -32,7 +33,6 @@ echo      [N] No, let me pick again. Redo
 choice
 if errorlevel 2 goto rechoosefc
 if errorlevel 1 goto getfc
-
 
 :rechoosefc
 cls
