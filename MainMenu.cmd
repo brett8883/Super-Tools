@@ -12,15 +12,18 @@ echo ---------------------------------------------------------------------------
 ECHO.
 echo          WHAT DO YOU WANT TO DO?
 echo.
-echo                  *[1] Start Super-Patcher!
+echo                 **[1] Run Super-Patcher!**
+echo.
 echo                   [2] Download ^& Flash stock firmware needed for Super-Patcher
 echo.
-echo                   UTILITIES
+echo                 UTILITIES
 echo                   [3] Open DankDroneDownloader by CS2000 to download any other firmware files
 echo                   [4] Launch DULMdore by Jezzeb
 echo                   [5] Launch jkson fcc mod (Mavic and P4Pv2 only)
 echo                   [6] Launch the free NoLimitDronez app
-echo                   [7] Enable ADB and open and adb prompt
+echo.
+echo                 ADVANCED
+echo                   [7] Enable ADB and open an adb session
 echo.
 Choice /c 123456 /M "Please make a section with keyboard"
 if errorlevel 7 goto adb
