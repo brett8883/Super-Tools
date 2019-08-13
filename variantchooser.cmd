@@ -22,10 +22,8 @@ cls
 call %header%
 Echo You have chosen the options:
 ECHO.
-if "%batmod%"=="2" echo Smart Battery Mod ENABLED
-if "%batmod%"=="1" echo Smart Battery Mod DISABLED
-if "%stealthmod%"=="2" echo Stealth Mod ENABLED
-if "%stealthmod%"=="1" echo Stealth Mod DISABLED
+if "%batmod%"=="2" (echo Smart Battery Mod ENABLED) else (echo Smart Battery Mod DISABLED)
+if "%stealthmod%"=="2" (echo Stealth Mod ENABLED) else (Stealth Mod DISABLED)
 Echo.
 echo Please confirm your selections or redo selections
 Echo.
