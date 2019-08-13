@@ -1,16 +1,12 @@
 @echo off
 mode con: cols=160 lines=45
-:choosefc
 title Super-Patcher 2.0
-color 0f
 cls
-set "batmod="
-set "stealthmod="
 call header.bat
 ECHO Would you like to ENABLE the new smart battery mod?
 echo.
-echo [1] YES
-echo [2] No
+echo [Y] YES
+echo [N] No
 echo.
 choice /m "Please make selection"
 if errorlevel 2 set batmod=1
@@ -19,8 +15,8 @@ cls
 call %header%
 echo Would you like to ENABLE the new stealth mod?
 echo.
-echo [1] YES
-echo [2] No
+echo [Y] YES
+echo [N] No
 echo.
 choice /m "Please make selection"
 if errorlevel 2 set stealthmod=1
