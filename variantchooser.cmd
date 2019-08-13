@@ -5,18 +5,24 @@ title Super-Patcher 2.0
 color 0f
 cls
 set batmod=
-stealthmod=
+set stealthmod=
 call header.bat
-ECHO Would you like to enable the new smart battery mod?
+ECHO Would you like to ENABLE the new smart battery mod?
 echo.
-choice 
+echo [1] YES
+echo [2] No
+echo.
+choice /c 12 /m "Please make selection"
 if errorlevel 2 set batmod=1
 if errorlevel 1 set batmod=2
 cls
 call %header%
-echo Would you like to enable the new stealth mod?
-ECHO.
-choice
+echo Would you like to ENABLE the new stealth mod?
+echo.
+echo [1] YES
+echo [2] No
+echo.
+choice /c 12 /m "Please make selection"
 if errorlevel 2 set stealthmod=1
 if errorlevel 1 set stealthmod=2
 cls
@@ -25,8 +31,8 @@ Echo You have chosen the options:
 ECHO.
 echo %batmod%
 echo %stealthmod%
-if "%batmod%"=="1" (echo Smart Battery Mod DISABLED) else (echo Smart Battery Mod ENABLED)
-if "%stealthmod%"=="1" (echo Stealth Mod DISABLED) else (echo Stealth Mod ENABLED)
+if "%batmod%"=="2" (echo Smart Battery Mod NOT enabled) else (echo Smart Battery Mod ENABLED)
+if "%stealthmod%"=="2" (echo Stealth Mod NOT enabled) else (echo Stealth Mod ENABLED)
 Echo.
 echo Please confirm your selections or redo selections
 Echo.
