@@ -22,18 +22,18 @@ cls
 call %header%
 Echo You have chosen the options:
 ECHO.
-if "%batmod%"=="1" echo Smart Battery Mod ENABLED
-if "%batmod%"=="2" echo Smart Battery Mod DISABLED
-if "%stealthmod%"=="1" echo Stealth Mod ENABLED
-if "%stealthmod%"=="2" echo Stealth Mod DISABLED
+if "%batmod%"=="2" echo Smart Battery Mod ENABLED
+if "%batmod%"=="1" echo Smart Battery Mod DISABLED
+if "%stealthmod%"=="2" echo Stealth Mod ENABLED
+if "%stealthmod%"=="1" echo Stealth Mod DISABLED
 Echo.
 echo Please confirm your selections or redo selections
 Echo.
 echo    **[Y] Yes, CONFIRM SELECTION **
 echo      [N] No, let me pick again. Redo
 choice
-if errorlevel 2 goto getfc
-if errorlevel 1 goto rechoosefc
+if errorlevel 2 goto rechoosefc
+if errorlevel 1 goto getfc
 
 
 :rechoosefc
