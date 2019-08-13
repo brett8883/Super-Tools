@@ -4,8 +4,8 @@ mode con: cols=160 lines=45
 title Super-Patcher 2.0
 color 0f
 cls
-set batmod=
-set stealthmod=
+set "batmod="
+set "stealthmod="
 call header.bat
 ECHO Would you like to ENABLE the new smart battery mod?
 echo.
