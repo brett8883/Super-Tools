@@ -24,10 +24,10 @@ if errorlevel 1 set stealthmod=1
 echo %batmod% %stealthmod%
 set varchoice=%batmod%%stealthmod%
 echo %varchoice%
-if "%varchoice%"=="22" set varianturl=%standard% & set variant=standard
-if "%varchoice%"=="12" set varianturl=%battmod% & set variant=battmod
-if "%varchoice%"=="21" set varianturl=%stealth% & set variant=stealth
-if "%varchoice%"=="11" set varianturl=%battmodstealth% & set variant=batt-mod_stealth
+if "%varchoice%"=="22" set varianturl=%standard% & set variant=Standard
+if "%varchoice%"=="12" set varianturl=%battmod% & set variant=Batt-mod
+if "%varchoice%"=="21" set varianturl=%stealth% & set variant=Stealth
+if "%varchoice%"=="11" set varianturl=%fully-loaded% & set variant=FullyLoaded
 set fw2=%AC%_SP_2.0_%variant%_%fc%_dji_system.bin
 echo %fw2%
 set fc=%fcbase%%varchoice%
