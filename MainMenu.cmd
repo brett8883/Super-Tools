@@ -65,6 +65,22 @@ goto mainmenu
 
 
 :jkson
+cls
+call %header%
+Echo Please turn on the %AC% and after it has fully started, connect to the PC
+echo.
+echo Continue when ready to begin
+Echo ***************************************************************************************************************************************************************
+pause
+echo Click "Enable ADB" in DUMLdore and wait for ADB to enable 
+Echo The front lights will usually flash, turn on, or turn off but not always
+echo.
+echo Then close DUMLdore
+Echo. 
+Echo Continue once ADB has been enabled and DUMLdore is closed
+start %dumldore%
+Echo ***************************************************************************************************************************************************************
+pause
 cd %tpath%
 call %jksonbat%
 cd %stpath%
