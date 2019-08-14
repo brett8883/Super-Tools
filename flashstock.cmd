@@ -1,7 +1,7 @@
 @echo off
 cls
 call %header%
-cd %sppath%
+cd %sfpath%
 if exist %stockfw% (goto flash) else (goto download)
 
 :download
