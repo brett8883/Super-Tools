@@ -5,23 +5,13 @@ if "%AC%"=="P4Pv2" goto askjkson
 :verify
 @echo off
 cls
-Echo *****************************************************************************************************
-Echo *****************************************************************************************************
-ECHO ECHO SUPER-PATCHER %appver% for %AC%
-echo By Brett8883
-Echo *****************************************************************************************************
-Echo *****************************************************************************************************
+call %header%
 Echo To verify Super-Patcher was successful I will open NLD. Please allow it to open
 echo Please wait...
 timeout 6
 start NLDApp.exe
 cls
-Echo *****************************************************************************************************
-Echo *****************************************************************************************************
-ECHO ECHO SUPER-PATCHER %appver% for %AC%
-echo By Brett8883
-Echo *****************************************************************************************************
-Echo *****************************************************************************************************
+call %header%
 echo Please check the NLD app which will show your flight controller version #
 echo(
 Echo Please verify NLD app says your flight controller # is %FC% 
@@ -37,34 +27,32 @@ If Errorlevel 2 Goto nopatch
 If Errorlevel 1 Goto success
 
 :askjkson
-Echo *****************************************************************************************************
-Echo *****************************************************************************************************
-ECHO ECHO SUPER-PATCHER %appver% for %AC%
-echo By Brett8883
-Echo *****************************************************************************************************
-Echo *****************************************************************************************************
+cls
+call %header%
 Echo You have completed the Super-Patcher process!
-Echo *****************************************************************************************************
+echo ===============================================================================================================================================================
 ECHO Would you like to enable jkson fcc radio mod to enable fixed FCC or fixed Boost? 
 echo you can find out more about jkson fcc mod at http://github.com/jkson5/jkson_fcc_mod
 Echo [1] Yes 
 echo [2] No
-choice /C 12 /D 1 /T 99 /M "Enable jkson mod?"
+echo [3] I'd like more information on jkson fcc mod 
+choice /C 123 /D 1 /T 99 /M "Enable jkson mod?"
+If Errorlevel 3 Goto getjksoninfo
 If Errorlevel 2 Goto nofcc
 If Errorlevel 1 Goto jkson
 
 :nopatch
 @echo off
 cls 
-Echo *****************************************************************************************************
-Echo *****************************************************************************************************
-ECHO ECHO SUPER-PATCHER %appver%
-echo By Brett8883
-Echo *****************************************************************************************************
-Echo *****************************************************************************************************
+Call %Header%
 Echo If your Flight Controller # is not %fc% then Super-Patcher was not successful 
 ECHO You should read the readme.md on GitHub again and restart Super-Patcher from the begining  
-Echo *****************************************************************************************************
+echo ===============================================================================================================================================================
+echo I have generated a log file for you which can now be found at 
+echo %logpath%
+echo.
+echo This file can be helpful to determine what has gone wrong
+echo ===============================================================================================================================================================
 Echo Some common reasons for Super-Patcher not being successful:
 echo.
 echo -Not starting on a completely stock version of firmware %stock%
@@ -76,9 +64,9 @@ echo        Usually the front lights will turn on or off to indicate ADB has bee
 echo.
 echo -Not using a Windows 10 PC. Windows 7 and 8 do not have to proper adb drivers Super-Patcher needs
 echo        This can be over come by manually installing the drivers but using Windows 10 is easier
-Echo *****************************************************************************************************
-echo.
+echo ===============================================================================================================================================================
 echo Continuing will take you back to the main menu
+echo ===============================================================================================================================================================
 pause 
 cd %stpath%
 call mainmenu.cmd
@@ -89,27 +77,32 @@ exit
 cls
 Goto verify
 
+:getjksoninfo
+cls
+rundll32 url.dll,FileProtocolHandler https://github.com/jkson5/jkson_fcc_mod
+goto askjkson
+
 :success
 @echo off
 cd ..
 cls 
 call header.bat
 ECHO Congradulations! Super-Patcher was sucessfull
-ECHO *****************************************************************************************************
-ECHO You can optionally Connect to Assistant 2 or DJI Go 4 and use the simulator to ensure 
+echo ===============================================================================================================================================================
+ECHO -You can optionally Connect to Assistant 2 or DJI Go 4 and use the simulator to ensure 
 Echo      proper working order in the sim before testing outside.
 echo.
-Echo 	-This is simply good practice any time firmware is updated or modified.
+Echo -This is simply good practice any time firmware is updated or modified.
 echo.
-Echo You may now also modify any paramters you'd like using Assistant 2 1.1.2 in debug mode
-echo ******************************************************************************************************
-Echo ******************************************************************************************************
-Echo You have completed the patching operation. Please note all settings and parameters are now reset
+Echo -You may now also modify any paramters you'd like using Assistant 2 1.1.2 in debug mode
+echo ===============================================================================================================================================================
+echo ===============================================================================================================================================================
+Echo You have completed the patching operation. Please note most settings and all parameters are now reset
 echo.
 Echo Remember to check your RTH altitude and such.
-echo(
+echo.
 Echo Aircraft may ask you to recalibrate sensors but if it does not then it is not neccesary to calibrate
-echo(
+echo.
 echo Thanks for using Super-Patcher! continue to go back to the main menu
 pause
 cls
@@ -163,7 +156,7 @@ If Errorlevel 2 echo dji_mb_ctrl -S test -R local -g 9 -s 9 -c 27 00014600FFFFA2
 :EndFreq
 echo(
 echo 1 - Default power
-echo 2 - Default^>FCC^>Boost^>Reset loop selector by Remote controller (loops power not frequency)
+echo 2 - Default^>FCC^>Boost^>Reset loop selector by Remote controller (note: loops power not frequency)
 echo 3 - Fixed FCC
 echo 4 - Fixed FCC and Boost
 echo(
@@ -195,21 +188,21 @@ echo #!/system/bin/sh > check_1860_state.sh
 echo /system/bin/check_1860_state.sh^& >> check_1860_state.sh
 echo busybox ping -c 1 -w 1800 192.168.41.2 >> check_1860_state.sh
 echo sleep 5 >> check_1860_state.sh
-echo(
+echo.
 echo 1 - **Auto frequency** (Choose this for best results in most cases)
 echo 2 -   Force frequency to 2.3G
 echo 3 -   Force frequency to 2.5G
-echo(
+echo.
 choice /C 123 /D 1 /T 99 /M "Please select frequency"
 If Errorlevel 3 echo dji_mb_ctrl -S test -R local -g 9 -s 9 -c 27 00014600FFFF92040000 >> check_1860_state.sh
 If Errorlevel 3 Goto P4PV2EndFreq
 If Errorlevel 2 echo dji_mb_ctrl -S test -R local -g 9 -s 9 -c 27 00014600FFFFA2030000 >> check_1860_state.sh
 :P4PV2EndFreq
-echo(
+echo.
 echo 1 - Default power
 echo 2 - Fixed FCC
 echo 3 - Fixed FCC and Boost
-echo(
+echo.
 choice /C 123 /D 1 /T 99 /M "Please select mod"
 If Errorlevel 3 echo dji_mb_ctrl -S test -R local -g 9 -s 9 -c 27 00024800FFFF0200000000 >> check_1860_state.sh
 If Errorlevel 3 echo dji_mb_ctrl -S test -R local -g 9 -s 9 -c 3c >> check_1860_state.sh
@@ -235,7 +228,7 @@ echo On loan from JKSON5
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
 Echo Radio Power and frequency settings sent to aircraft!
-timeout 5
+PING -n 3 127.0.0.1>nul
 cls
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
@@ -244,12 +237,8 @@ echo On loan from JKSON5
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
 echo Restart your aircraft and reconnect to this PC
-Echo Once it has fully restarted and connected
-echo Please continue  
-echo(
+echo.
+Echo Once it has fully restarted and reconnected to this PC, please continue  
 Echo *****************************************************************************************************
 pause
 Goto verify
-
-:Exit 
-exit
