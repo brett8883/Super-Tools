@@ -21,7 +21,8 @@ echo.
 choice /m "Please make selection with keyboard"
 if errorlevel 2 set stealthmod=2
 if errorlevel 1 set stealthmod=1
-echo %batmod% %stealthmod%
+echo %batmod%%stealthmod%
+pause
 set varchoice=%batmod%%stealthmod%
 echo %varchoice%
 if "%varchoice%"=="22" set varianturl=%standard% & set variant=Standard
