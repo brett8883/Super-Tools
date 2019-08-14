@@ -33,14 +33,15 @@ pause
 cls
 call header.bat
 Echo WORKING PLEASE WAIT... 
-adb shell mount -o remount,rw /vendor && Echo Success making vendor read and write & PING -n 2 127.0.0.1>nul
-adb shell mkdir /vendor/bin && Echo Success making directory vendor/bin & PING -n 2 127.0.0.1>nul
-adb push dummy_verify.sh /vendor/bin/ && echo Success pushing dummy_verify to %ac% & PING -n 2 127.0.0.1>nul
-if "%vt%"=="1" adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /sbin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd / && echo Success activating dummy_verify.sh & sleep 1
+adb shell mount -o remount,rw /vendor && Echo Success making vendor read and write
+adb shell mkdir /vendor/bin && Echo Success making directory vendor/bin
+adb push dummy_verify.sh /vendor/bin/ && echo Success pushing dummy_verify to %ac%
+if "%vt%"=="1" adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /sbin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd / && echo Success activating dummy_verify.sh
 if "%vt%"=="2" adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /system/bin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd /
 adb shell mount -o remount,ro /vendor && echo Success making vendor read only again. Aircraft requires reboot. Please wait to return to program
 adb kill-server 2>>nul
-PING -n 4 127.0.0.1>nul
+echo STILL WORKING...
+PING -n 5 127.0.0.1>nul
 cls
 call %header%
 Echo Please restart your aircraft
