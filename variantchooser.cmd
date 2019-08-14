@@ -8,7 +8,7 @@ echo.
 echo [Y] YES
 echo [N] No
 echo.
-choice /m "Please make selection"
+choice /m "Please make selection with keyboard"
 if errorlevel 2 set batmod=2
 if errorlevel 1 set batmod=1
 cls
@@ -18,16 +18,21 @@ echo.
 echo [Y] YES
 echo [N] No
 echo.
-choice /m "Please make selection"
+choice /m "Please make selection with keyboard"
 if errorlevel 2 set stealthmod=2
 if errorlevel 1 set stealthmod=1
+echo %batmod% %stealthmod%
 set varchoice=%batmod%%stealthmod%
+echo %varchoice%
 if "%varchoice%"=="22" set varianturl=%standard% & set variant=standard
 if "%varchoice%"=="12" set varianturl=%battmod% & set variant=battmod
 if "%varchoice%"=="21" set varianturl=%stealth% & set variant=stealth
-if "%varchoice%"=="11" set varianturl=%battmodstealth% & set variant=battmodstealth
+if "%varchoice%"=="11" set varianturl=%battmodstealth% & set variant=batt-mod_stealth
 set fw2=%AC%_SP_2.0_%variant%_%fc%_dji_system.bin
+echo %fw2%
 set fc=%fcbase%%varchoice%
+echo %fc%
+pause
 cls
 call %header%
 title Super-Patcher 2.0 for %AC%
