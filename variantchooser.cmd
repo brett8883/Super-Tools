@@ -29,8 +29,8 @@ echo [Y] YES
 echo [N] No
 echo.
 choice /m "Please make selection with keyboard"
-if errorlevel 2 
-if errorlevel 1 set stealthmod=1
+if errorlevel 2 goto stealthmod2
+if errorlevel 1 goto stealthmod1
 
 :stealthmod1
 set stealthmod=1
