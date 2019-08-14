@@ -72,6 +72,8 @@ echo.
 echo Continue when ready to begin
 Echo ***************************************************************************************************************************************************************
 pause
+cls
+call %header%
 echo Click "Enable ADB" in DUMLdore and wait for ADB to enable 
 Echo The front lights will usually flash, turn on, or turn off but not always
 echo.
@@ -81,6 +83,7 @@ Echo Continue once ADB has been enabled and DUMLdore is closed
 start %dumldore%
 Echo ***************************************************************************************************************************************************************
 pause
+cls
 cd %tpath%
 call %jksonbat%
 cd %stpath%
