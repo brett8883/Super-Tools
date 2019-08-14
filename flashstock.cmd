@@ -1,13 +1,16 @@
 @echo off
 cls
 call %header%
-cd %sfpath%
+cd %Sppath%
+md Stock_Firmware 2>>nul
+cd Stock_Firmware
+set sfwpath=%cd%
 if exist %stockfw% (goto flash) else (goto download)
 
 :download
 echo Please Wait while I download %stockfw%. 
 Echo.
-echo When it's ready it will be in %sppath%
+echo When it's ready it will be in %sfwpath%
 %busybox% wget %stockdl%
 goto flash
 
