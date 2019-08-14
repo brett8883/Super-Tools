@@ -23,7 +23,7 @@ echo                                           [5] Launch jkson fcc mod (Mavic a
 echo                                           [6] Launch the free NoLimitDronez app
 echo.
 echo                                        ADVANCED
-echo                                           [7] Enable ADB and open an adb session
+echo                                           [7] Enable ADB and open a new CMD Prompt into ADB
 echo.
 Choice /c 1234567 /M "Please make a section with keyboard"
 if errorlevel 7 goto adb
@@ -63,7 +63,6 @@ start %dumldore%
 goto mainmenu
 
 
-
 :jkson
 cls
 call %header%
@@ -86,6 +85,8 @@ pause
 cls
 cd %tpath%
 call %jksonbat%
+taskkill /im adb.exe 2>>nul
+adb kill-server 2>>nul
 cd %stpath%
 goto mainmenu
 
@@ -121,4 +122,9 @@ pause
 cd %tpath%
 start cmd /k adb shell
 cd %stpath%
+echo Continue to be taken back to the main menu
+echo.
+pause
+taskkill /im adb.exe 2>>nul
+adb kill-server 2>>nul
 goto mainmenu
