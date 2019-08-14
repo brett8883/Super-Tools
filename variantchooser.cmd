@@ -25,14 +25,11 @@ echo %batmod% %stealthmod%
 set varchoice=%batmod%%stealthmod%
 echo %varchoice%
 if "%varchoice%"=="22" set varianturl=%standard% & set variant=Standard
-if "%varchoice%"=="12" set varianturl=%battmod% & set variant=Batt-mod
+if "%varchoice%"=="12" set varianturl=%battmod% & set variant=BattMod
 if "%varchoice%"=="21" set varianturl=%stealth% & set variant=Stealth
 if "%varchoice%"=="11" set varianturl=%fully-loaded% & set variant=FullyLoaded
 set fw2=%AC%_SP_2.0_%variant%_%fc%_dji_system.bin
-echo %fw2%
 set fc=%fcbase%%varchoice%
-echo %fc%
-pause
 cls
 call %header%
 title Super-Patcher 2.0 for %AC%
