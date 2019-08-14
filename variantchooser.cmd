@@ -9,8 +9,8 @@ echo [Y] YES
 echo [N] No
 echo.
 choice /m "Please make selection"
-if errorlevel 2 set batmod=1
-if errorlevel 1 set batmod=2
+if errorlevel 2 set batmod=2
+if errorlevel 1 set batmod=1
 cls
 call %header%
 echo Would you like to ENABLE the new stealth mod?
@@ -19,13 +19,13 @@ echo [Y] YES
 echo [N] No
 echo.
 choice /m "Please make selection"
-if errorlevel 2 set stealthmod=1
-if errorlevel 1 set stealthmod=2
+if errorlevel 2 set stealthmod=2
+if errorlevel 1 set stealthmod=1
 set varchoice=%batmod%%stealthmod%
-if "%varchoice%"=="11" set varianturl=%standard% & set variant=standard
-if "%varchoice%"=="21" set varianturl=%battmod% & set variant=battmod
-if "%varchoice%"=="12" set varianturl=%stealth% & set variant=stealth
-if "%varchoice%"=="22" set varianturl=%battmodstealth% & set variant=battmodstealth
+if "%varchoice%"=="22" set varianturl=%standard% & set variant=standard
+if "%varchoice%"=="12" set varianturl=%battmod% & set variant=battmod
+if "%varchoice%"=="21" set varianturl=%stealth% & set variant=stealth
+if "%varchoice%"=="11" set varianturl=%battmodstealth% & set variant=battmodstealth
 set fw2=%AC%_SP_2.0_%variant%_%fc%_dji_system.bin
 set fc=%fcbase%%varchoice%
 cls
