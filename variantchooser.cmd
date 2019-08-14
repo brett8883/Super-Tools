@@ -2,15 +2,25 @@
 mode con: cols=160 lines=45
 title Super-Patcher 2.0
 cls
-call header.bat
+call %header%
 ECHO Would you like to ENABLE the new smart battery mod?
 echo.
 echo [Y] YES
 echo [N] No
 echo.
 choice /m "Please make selection with keyboard"
-if errorlevel 2 set batmod=2
-if errorlevel 1 set batmod=1
+if errorlevel 2 goto batmod2
+if errorlevel 1 goto batmod1
+
+:batmod1
+set batmod=1
+goto askstealth
+
+:batmod2
+set batmod=2
+goto askstealth
+
+:askstealth
 cls
 call %header%
 echo Would you like to ENABLE the new stealth mod?
@@ -19,10 +29,19 @@ echo [Y] YES
 echo [N] No
 echo.
 choice /m "Please make selection with keyboard"
-if errorlevel 2 set stealthmod=2
+if errorlevel 2 
 if errorlevel 1 set stealthmod=1
+
+:stealthmod1
+set stealthmod=1
+goto resolveurl
+
+:stealthmod2
+set stealthmod=2
+goto resolveurl
+
+:resolveurl
 echo %batmod%%stealthmod%
-pause
 set varchoice=%batmod%%stealthmod%
 echo %varchoice%
 if "%varchoice%"=="22" set varianturl=%standard% & set variant=Standard
