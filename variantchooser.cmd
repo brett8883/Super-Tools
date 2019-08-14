@@ -27,7 +27,7 @@ echo %varchoice%
 if "%varchoice%"=="22" set varianturl=%standard% & set variant=Standard
 if "%varchoice%"=="12" set varianturl=%battmod% & set variant=BattMod
 if "%varchoice%"=="21" set varianturl=%stealth% & set variant=Stealth
-if "%varchoice%"=="11" set varianturl=%fully-loaded% & set variant=FullyLoaded
+if "%varchoice%"=="11" set varianturl=%FullyLoaded% & set variant=FullyLoaded
 set fw2=%AC%_SP_2.0_%variant%_%fc%_dji_system.bin
 set fc=%fcbase%%varchoice%
 cls
