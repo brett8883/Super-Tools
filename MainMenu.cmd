@@ -12,7 +12,7 @@ echo ---------------------------------------------------------------------------
 ECHO.
 echo                             WHAT DO YOU WANT TO DO?
 echo.
-echo                                        Super-Patcher
+echo                                        SUPER-PATCHER
 echo                                         **[1] Run Super-Patcher!**
 echo                                           [2] Download ^& Flash stock firmware needed for Super-Patcher
 echo.
