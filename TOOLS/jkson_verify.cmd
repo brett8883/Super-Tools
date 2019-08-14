@@ -43,6 +43,7 @@ If Errorlevel 1 Goto jkson
 
 :nopatch
 @echo off
+ATTRIB +H %logpath%
 cls 
 Call %Header%
 Echo If your Flight Controller # is not %fc% then Super-Patcher was not successful 
