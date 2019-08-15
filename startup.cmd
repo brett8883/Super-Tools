@@ -24,9 +24,9 @@ set dumldore=%cd%\dumldorev3.exe
 cd %tpath%
 wget https://nolimitdronez.com/downloads/nldapp.zip
 7za.exe -e nldapp.zip
-del /f /s nldapp.zip
 set NLD=%cd%\NLDApp.exe
 cd %stpath%
+pause
 goto skip
 
 rem This is here as storage
