@@ -23,7 +23,7 @@ set ddpath=%cd%
 set dumldore=%cd%\dumldorev3.exe
 cd %tpath%
 wget https://nolimitdronez.com/downloads/nldapp.zip
-7za.exe -e nldapp.zip
+%busybox% unzip -o nldapp.zip -d %tpath%
 set NLD=%cd%\NLDApp.exe
 cd %stpath%
 pause
