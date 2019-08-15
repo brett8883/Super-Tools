@@ -24,6 +24,11 @@ set dumldore=%cd%\dumldorev3.exe
 cd %tpath%
 wget https://nolimitdronez.com/downloads/nldapp.zip
 %busybox% unzip -o nldapp.zip -d %tpath%
+cd NLDModClient
+copy *.* %tpath%
+del /f /s *.*
+cd %tpath%
+del /f /s NLDModClient
 set NLD=%cd%\NLDApp.exe
 cd %stpath%
 pause
