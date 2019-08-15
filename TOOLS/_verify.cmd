@@ -1,6 +1,7 @@
 @echo off
 :verify
 cls
+echo _verify.cmd starting >> %log%
 call %header%
 Echo To verify Super-Patcher was successful I will open NLD. Please allow it to open
 echo Please wait...
@@ -24,7 +25,8 @@ If Errorlevel 1 Goto success
 
 :nopatch
 @echo off
-ATTRIB +H %logpath%
+echo User Indicated patch not successful. Showing log file >> %log%
+ATTRIB +H %log%
 cls 
 Call %Header%
 Echo If your Flight Controller # is not %fc% then Super-Patcher was not successful 
@@ -51,13 +53,12 @@ echo Continuing will take you back to the main menu
 echo ===============================================================================================================================================================
 pause 
 cd %stpath%
-call mainmenu.cmd
+goto end
 
 :success
 @echo off
-cd ..
 cls 
-call header.bat
+call %header%
 ECHO Congradulations! Super-Patcher was sucessfull
 echo ===============================================================================================================================================================
 ECHO -You can optionally Connect to Assistant 2 or DJI Go 4 and use the simulator to ensure 
@@ -78,4 +79,7 @@ echo Thanks for using Super-Patcher! continue to go back to the main menu
 pause
 cls
 cd %stpath%
+goto end
+
+:end
 call mainmenu.cmd
