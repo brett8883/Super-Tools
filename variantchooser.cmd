@@ -3,7 +3,7 @@ mode con: cols=160 lines=45
 title Super-Patcher 2.0
 cls
 call %header%
-ECHO Would you like to ENABLE the new smart battery mod?
+ECHO Would you like to ENABLE the new Smart Battery mod?
 echo.
 echo [Y] YES
 echo [N] No

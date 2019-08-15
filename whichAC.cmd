@@ -38,7 +38,7 @@ goto mainmenu
 
 :SPK
 set AC=Spark
-set fc=03.02.43.09
+set fcbase=03.02.43.
 set stock=1.00.0900
 set vt=1
 set stockfw=V01.00.0900_Spark_dji_system.bin
@@ -51,7 +51,7 @@ goto mainmenu
 
 :p4p
 set AC=P4P
-set fc=3.02.44.31
+set fcbase=3.02.44.
 set stock=1.05.0600
 set vt=2
 set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/P4P_Super-Patcher_FC/P4P_wm331_Super_Patcher_0306_03.02.44.31_dji_system.bin
@@ -67,7 +67,7 @@ goto mainmenu
 
 :p4a
 set AC=P4A
-set fc=3.02.35.32
+set fcbase=3.02.35.
 set stock=01.00.0128
 set vt=2
 set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/P4Advanced_Super_Patcher_FC/P4Advanced_wm332_Super_Patcher_FC_0306_03.02.35.32_dji_system.bin
@@ -83,7 +83,7 @@ goto mainmenu
 
 :p4s
 set AC=P4Standard
-set fc=3.02.44.33
+set fcbase=3.02.44.
 set stock=2.00.0700 
 set vt=2
 set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/P4Standard_Super_Patcher_FC/P4Standard_wm330_0306_03.02.44.33_Super_Patcher_dji_system.bin
@@ -99,7 +99,7 @@ goto mainmenu
 
 :P4Pv2
 set AC=P4Pv2
-set fc=3.03.04.35
+set fcbase=3.03.04.
 set stock=1.00.1500
 set vt=2
 set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/master/P4Pv2_FLIGHT_CONTROLLERS/P4PV2_Super_Patcher_FC/P4PV2_wm335_Super_Patcher_0306_03.03.04.35_dji_system.bin
@@ -115,7 +115,7 @@ goto mainmenu
 
 :I2
 set AC=I2
-set fc=03.03.11.11
+set fcbase=03.03.11.
 set stock=V01.02.0200
 set vt=1
 set fw=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/I2/I2_SP_2.0/I2_SP_2.0_03.03.11.11_dji_system.bin
