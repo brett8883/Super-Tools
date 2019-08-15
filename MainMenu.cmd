@@ -68,7 +68,7 @@ cls
 if "%AC%=="MavicPro" goto startjkson
 if "%AC%"=="P4PV2" (goto startjkson) else (goto sorryjkson)
 
-:start jkson
+:startjkson
 call %header%
 Echo Please turn on the %AC% and after it has fully started, connect to the PC
 echo.
