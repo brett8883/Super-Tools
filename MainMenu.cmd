@@ -65,8 +65,9 @@ goto mainmenu
 
 :jkson
 cls
-if "%AC%=="MavicPro" goto startjkson
-if "%AC%"=="P4PV2" (goto startjkson) else (goto sorryjkson)
+if "%AC%"=="MavicPro" goto startjkson
+if "%AC%"=="P4PV2" goto startjkson
+goto sorryjkson
 
 :startjkson
 call %header%
