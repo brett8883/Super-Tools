@@ -65,6 +65,10 @@ goto mainmenu
 
 :jkson
 cls
+if "%AC%=="MavicPro" goto startjkson
+if "%AC%"=="P4PV2" (goto startjkson) else (goto sorryjkson)
+
+:start jkson
 call %header%
 Echo Please turn on the %AC% and after it has fully started, connect to the PC
 echo.
@@ -84,12 +88,21 @@ Echo ***************************************************************************
 pause
 cls
 cd %tpath%
-call %jksonbat%
-taskkill /im adb.exe 2>>nul
+call jkson_standalone.bat
 adb kill-server 2>>nul
+taskkill /im adb.exe 2>>nul
 cd %stpath%
 goto mainmenu
 
+:sorryjkson
+cls
+call %header%
+echo So sorry! 
+echo Jkson FCC Mod is only availible for MavicPro and P4Pv2 right now
+echo.
+echo I will take you back to the main menu. Continue when ready
+pause
+goto mainmenu
 
 :startSp 
 cls

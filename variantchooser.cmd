@@ -58,4 +58,4 @@ echo.
 cd %sppath%
 %busybox% wget %varianturl%
 cd %stpath%
-call mpspk_verify.cmd
+call dummy_bind.cmd
