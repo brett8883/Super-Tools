@@ -1,5 +1,6 @@
 @echo off
 cls
+echo Start jkson >> %log%
 if "%AC%"=="MavicPro" goto askjkson
 if "%AC%"=="P4Pv2" goto askjkson
 if "%AC%"=="Spark" goto Spark
@@ -21,17 +22,18 @@ If Errorlevel 2 Goto nofcc
 If Errorlevel 1 Goto jkson
 
 :nofcc
-@echo off
+echo User declined FCC mod >> %log%
 cls
-Goto verify
+Goto startverify
 
 :getjksoninfo
+echo User requested info on jkson >> %log%
 cls
-rundll32 url.dll,FileProtocolHandler https://github.com/jkson5/jkson_fcc_mod
+rundll32 url.dll,FileProtocolHandler https://github.com/jkson5/jkson_fcc_mod >2 %log%
 goto askjkson
 
 :jkson
-@echo off
+echo User requests jkson fcc mod, starting now >> %log%
 cls
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
@@ -52,6 +54,7 @@ If "%AC%"=="MavicPro Goto mp
 If "%AC%"=="P4Pv2" Goto p4pv2
 
 :MP
+echo start jkson mod for MP ac is %AC%
 cls
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
@@ -105,6 +108,7 @@ echo done >> check_1860_state.sh
 Goto AdbSet
 
 :P4PV2
+echo start jkson mod for P4Pv2 ac is %AC%
 echo #!/system/bin/sh > check_1860_state.sh
 echo /system/bin/check_1860_state.sh^& >> check_1860_state.sh
 echo busybox ping -c 1 -w 1800 192.168.41.2 >> check_1860_state.sh
@@ -134,7 +138,7 @@ If Errorlevel 2 echo dji_mb_ctrl -S test -R local -g 9 -s 9 -c 27 00024800FFFF02
 Goto AdbSet
 
 :spark
-@echo off
+echo start jkson mod for Spark ac is %AC%
 cls
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
@@ -181,8 +185,6 @@ adb shell mkdir /vendor/bin
 adb shell chmod 755 /vendor/bin
 adb push check_1860_state.sh /vendor/bin/check_1860_state.sh 2> %logpsth%\fccerrorlog.txt
 adb shell chmod 755 /vendor/bin/check_1860_state.sh
-
-
 PING -n 4 127.0.0.1>nul
 cls
 Echo *****************************************************************************************************
@@ -206,7 +208,9 @@ echo Restart your aircraft and reconnect to this PC
 echo.
 Echo Once it has fully restarted and reconnected to this PC, please continue  
 Echo *****************************************************************************************************
+echo jkson mod complete >> %log%
 pause
 :startverify
+echo going to _verify >> %log%
 cls
 call _verify.cmd
