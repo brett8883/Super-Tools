@@ -21,7 +21,7 @@ Echo To verify Super-Patcher was successful I will open NLD. Please allow it to 
 echo Please wait...
 timeout 4
 :startnld
-start NLDApp.exe
+start %NLD%
 cls
 call %header%
 echo Please check the NLD app which will show your flight controller version #
