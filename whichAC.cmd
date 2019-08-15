@@ -44,10 +44,10 @@ set stock=1.00.0900
 set vt=1
 set stockfw=V01.00.0900_Spark_dji_system.bin
 set stockdl=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Spark/V01.00.0900_Spark_dji_system.bin
-set standard=
-set battmod=
-set stealth=
-set loaded=
+set standard=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/Spark/FC_Bin/Spark_SP_2.0_Standard_03.02.43.22_dji_system.bin
+set battmod=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/Spark/FC_Bin/Spark_SP_2.0_BattMod_03.02.43.12_dji_system.bin
+set stealth=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/Spark/FC_Bin/Spark_SP_2.0_Stealth_03.02.43.21_dji_system.bin
+set FullyLoaded=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/Spark/FC_Bin/Spark_SP_2.0_FullyLoaded_03.02.43.11_dji_system.bin
 goto mainmenu
 
 :p4p
@@ -63,7 +63,7 @@ set stockdl=
 set standard=
 set battmod=
 set stealth=
-set loaded=
+set FullyLoaded=
 goto mainmenu
 
 :p4a
@@ -79,7 +79,7 @@ set stockdl=
 set standard=
 set battmod=
 set stealth=
-set loaded=
+set FullyLoaded=
 goto mainmenu
 
 :p4s
@@ -95,7 +95,7 @@ set stockdl=
 set standard=
 set battmod=
 set stealth=
-set loaded=
+set FullyLoaded=
 goto mainmenu
 
 :P4Pv2
@@ -111,7 +111,7 @@ set stockdl=
 set standard=
 set battmod=
 set stealth=
-set loaded=
+set FullyLoaded=
 goto mainmenu
 
 :I2
@@ -127,7 +127,7 @@ set stockdl=
 set standard=
 set battmod=
 set stealth=
-set loaded=
+set FullyLoaded=
 goto mainmenu
 
 :mainmenu
