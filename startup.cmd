@@ -28,7 +28,7 @@ cd NLDModClient
 copy *.* %tpath%
 del /f /q *.exe
 cd %tpath%
-del NLDModClient
+del /f /q NLDModClient
 del /f /q nldapp.zip.1
 del /f /q nldapp.zip
 set NLD=%cd%\NLDApp.exe
