@@ -34,7 +34,6 @@ set standard=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/MavicPro/
 set battmod=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/MavicPro/FC_bin/MavicPro_SP_2.0_BattMod_03.02.44.12_dji_system.bin
 set stealth=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/MavicPro/FC_bin/MavicPro_SP_2.0_Stealth_03.02.44.21_dji_system.bin
 set FullyLoaded=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/MavicPro/FC_bin/MavicPro_SP_2.0_FullyLoaded_03.02.44.11_dji_system.bin
-
 goto mainmenu
 
 :SPK
