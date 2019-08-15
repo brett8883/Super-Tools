@@ -1,7 +1,7 @@
 @echo off
 cls 
 call %header%
-echo PLEASE WAIT just a moment so I can catch up
+echo PLEASE WAIT just a moment..
 echo.
 cd %tpath%
 if exist NLDapp.exe (goto verify) else (goto downloadNLD)
@@ -10,7 +10,7 @@ if exist NLDapp.exe (goto verify) else (goto downloadNLD)
 %busybox% wget https://nolimitdronez.com/downloads/nldapp.zip
 7za.exe -e nldapp.zip
 %busybox% unzip nldapp.zip
-set %NLD%=nldapp.zip
+set %NLD%=nldapp.exe
 goto verify
 
 :verify

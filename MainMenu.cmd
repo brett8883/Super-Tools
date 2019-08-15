@@ -110,8 +110,25 @@ call variantchooser.cmd
 goto mainmenu
 
 :NLD
+@echo off
+cls 
+call %header%
+echo PLEASE WAIT just a moment..
+echo.
+cd %tpath%
+if exist NLDapp.exe (goto startNLD) else (goto downloadNLD)
+
+:downloadNLD
+%busybox% wget https://nolimitdronez.com/downloads/nldapp.zip
+7za.exe -e nldapp.zip
+%busybox% unzip nldapp.zip
+set %NLD%=nldapp.exe
+
+:startNLD
 start %NLD%
+cd %stpath%
 goto mainmenu
+
 
 :adb
 cls
