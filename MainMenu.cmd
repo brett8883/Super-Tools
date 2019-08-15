@@ -119,9 +119,8 @@ cd %tpath%
 if exist NLDapp.exe (goto startNLD) else (goto downloadNLD)
 
 :downloadNLD
-%busybox% wget https://nolimitdronez.com/downloads/nldapp.zip
+wget https://nolimitdronez.com/downloads/nldapp.zip
 7za.exe -e nldapp.zip
-%busybox% unzip nldapp.zip
 set %NLD%=nldapp.exe
 
 :startNLD

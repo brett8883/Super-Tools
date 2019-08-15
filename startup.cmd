@@ -10,10 +10,8 @@ set mainmenu=%cd%\MainMenu.cmd
 echo Hang on one more sec...
 cd tools
 set tpath=%cd%
-set NLD=%cd%\NLDApp.exe
 set jksonbat=%cd%\jkson.bat
 set jksonrdme=%cd%\jkson_README.md
-set jksonverify=%cd%\jkson_verify.cmd
 set adb=%cd%\adb.exe
 %busybox% wget https://github.com/jezzab/DUMLdore/archive/master.zip
 %busybox% unzip -o master.zip
@@ -23,6 +21,11 @@ ren DUMLdore-master DUMLdore
 cd DUMLdore
 set ddpath=%cd%
 set dumldore=%cd%\dumldorev3.exe
+cd %tpath%
+wget https://nolimitdronez.com/downloads/nldapp.zip
+7za.exe -e nldapp.zip
+del /f /s nldapp.zip
+set NLD=%cd%\NLDApp.exe
 cd %stpath%
 goto skip
 
