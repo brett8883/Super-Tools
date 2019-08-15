@@ -1,11 +1,26 @@
 @echo off
+cls 
+call %header%
+echo PLEASE WAIT just a moment so I can catch up
+echo.
+cd %tpath%
+if exist NLDapp.exe (goto verify) else (goto downloadNLD)
+
+:downloadNLD
+%busybox% wget https://nolimitdronez.com/downloads/nldapp.zip
+7za.exe -e nldapp.zip
+%busybox% unzip nldapp.zip
+set %NLD%=nldapp.zip
+goto verify
+
 :verify
 cls
 echo _verify.cmd starting >> %log%
 call %header%
 Echo To verify Super-Patcher was successful I will open NLD. Please allow it to open
 echo Please wait...
-timeout 6
+timeout 4
+:startnld
 start NLDApp.exe
 cls
 call %header%
@@ -18,8 +33,8 @@ Echo(
 Echo [1] Yes 
 Echo [2] no 
 ECho [3] Open NLD app again
-choice /C 123 /D 1 /T 99 /M "correct FC number indicated?"
-If Errorlevel 3 Goto verify
+choice /C 123 /M "correct FC number indicated?"
+If Errorlevel 3 Goto startnld
 If Errorlevel 2 Goto nopatch
 If Errorlevel 1 Goto success
 
