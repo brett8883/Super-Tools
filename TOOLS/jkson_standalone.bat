@@ -126,7 +126,9 @@ Goto End
 :Sorry
 echo Sorry, but this mod compatible only with listed devices... 
 echo(
+echo I will take you back to the main menu. When ready please continue
+pause
+goto end
+
 :End
-Pause
-cd ..
-call mainmenu.cmd
+cls
