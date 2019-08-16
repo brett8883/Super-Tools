@@ -3,7 +3,14 @@ mode con: cols=160 lines=45
 title Super-Patcher 2.0
 cls
 call %header%
-Echo Super-Patcher 2.0 features some optional new Smart Battery modifications.
+Echo Super-Patcher 2.0 features some new optional modifications.
+echo.
+echo The new modifications will each be discribed and then you will asked if you'd like to enable them.
+echo.
+echo Continue when ready...
+echo ---------------------------------------------------------------------------------------------------------------------------------------------------------------
+pause
+call %header%
 echo.
 echo SMART BATTERY MODIFICATION
 echo.
@@ -44,8 +51,8 @@ goto askstealth
 :askstealth
 cls
 call %header%
+echo.
 echo STEALTH
-Echo Super-Patcher 2.0 also features the new Stealth modification
 echo.
 echo The new Stealth modification will disable the rear LED lights on the aircraft which will remain OFF during flight for Super Stealthy flight.
 echo.
