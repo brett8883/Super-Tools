@@ -31,8 +31,6 @@ Echo Continue once ADB has been enabled and DUMLdore is closed
 start %dumldore%
 Echo ***************************************************************************************************************************************************************
 pause
-call theGoldenOne.bat
-if "%exitdummystep%"=="1" goto exit
 cls
 call header.bat
 Echo WORKING PLEASE WAIT... 
