@@ -44,6 +44,19 @@ goto askstealth
 :askstealth
 cls
 call %header%
+echo STEALTH
+Echo Super-Patcher 2.0 also features the new Stealth modification
+echo.
+echo The new Stealth modification will disable the rear LED lights on the aircraft which will remain OFF during flight for Super Stealthy flight.
+echo.
+echo The Stealth modification is optional but it is hard-coded into the firmware and cannot be changed by the user in flight or with Assistant 2 1.1.2 in debug mode
+echo   NOTE: To undo the Stealth mod, simply run Super-Patcher again without the Stealth mod selected or download and flash stock firmware from the main menu
+echo.
+echo If "YES" is indicated below the Stealth option will be enabled and there would be nothing additional the user needs to do to enable it
+echo.
+echo If "NO" is indicated below the factory defualt will remain and the rear LED light will function as normal
+echo ---------------------------------------------------------------------------------------------------------------------------------------------------------------
+echo.
 echo Would you like to ENABLE the new stealth mod?
 echo.
 echo [Y] YES

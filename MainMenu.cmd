@@ -26,7 +26,7 @@ echo                                        ADVANCED
 echo                                           [7] Enable ADB and open a new CMD Prompt into ADB
 echo.
 echo ---------------------------------------------------------------------------------------------------------------------------------------------------------------
-Choice /c 1234567 /D 1 /M "Please make a section with keyboard"
+Choice /c 1234567 /M "Please make a section with keyboard"
 if errorlevel 7 goto adb
 If Errorlevel 6 goto NLD
 If Errorlevel 5 goto jkson
