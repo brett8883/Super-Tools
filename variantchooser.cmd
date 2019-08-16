@@ -3,7 +3,28 @@ mode con: cols=160 lines=45
 title Super-Patcher 2.0
 cls
 call %header%
-ECHO Would you like to ENABLE the new Smart Battery mod?
+Echo Super-Patcher 2.0 features some optional new Smart Battery modifications.
+echo.
+echo SMART BATTERY MODIFICATION
+echo.
+echo - Disable Forced Auto-Landing due to Smart Battery low battery
+echo     NOTE: Aircraft will still force auto-land at emergency voltage level at 3.0v per cell (well below the safe voltage for flight)
+echo.
+echo - Calibrated Smart Battery "Only enough battery remaining to return to the home point" calculation to be more accurate
+echo.
+echo - Disabled low battery warning when using DJI Smart Battery
+echo - Disabled critical low battery warning when using DJI Smart Battery
+echo.
+echo These are OPTIONAL
+echo.
+echo These options can be enabled in Assistant 2 1.1.2 OR they can be enabled by AUTOMATICALLY by indicating "YES" below. 
+echo.
+echo ---------------------------------------------------------------------------------------------------------------------------------------------------------------
+echo If "YES" is indicated below the Smart Battery options will be enabled and there would be nothing additional the user needs to do to enable them
+echo.
+echo If "NO" is indicated below the factory defualts will remain default but can be enabled later by the user in Assistant 2 1.1.2 in debug mode
+echo ---------------------------------------------------------------------------------------------------------------------------------------------------------------
+ECHO Would you like to ENABLE the new Smart Battery modification by default?
 echo.
 echo [Y] YES
 echo [N] No

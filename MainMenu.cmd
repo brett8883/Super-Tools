@@ -3,10 +3,10 @@
 title Super-Patcher 2.0
 cls
 call header.bat
-echo "                                                    _  __  __  _ __  _   __ __ ___ __  _ _  _                                                                ";
-echo "                                                   |  V  |/  \| |  \| | |  V  | __|  \| | || |                                                               ";
-echo "                                                   | \_/ | /\ | | | ' | | \_/ | _|| | ' | \/ |                                                               ";
-echo "                                                   |_| |_|_||_|_|_|\__| |_| |_|___|_|\__|\__/                                                                ";
+echo " _  __  __  _ __  _   __ __ ___ __  _ _  _                                                                                                                   ";
+echo "|  V  |/  \| |  \| | |  V  | __|  \| | || |                                                                                                                  ";
+echo "| \_/ | /\ | | | ' | | \_/ | _|| | ' | \/ |                                                                                                                  ";
+echo "|_| |_|_||_|_|_|\__| |_| |_|___|_|\__|\__/                                                                                                                   ";
 Echo "                                                                                                                                                             ";
 echo ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 ECHO.
@@ -14,7 +14,7 @@ echo                             WHAT DO YOU WANT TO DO?
 echo.
 echo                                        SUPER-PATCHER
 echo                                         **[1] Run Super-Patcher!**
-echo                                           [2] Download ^& Flash stock firmware needed for Super-Patcher
+echo                                           [2] Download ^& Flash the correct stock firmware needed for Super-Patcher
 echo.
 echo                                        UTILITIES
 echo                                           [3] Open DankDroneDownloader by CS2000 to download any other firmware files
@@ -25,7 +25,8 @@ echo.
 echo                                        ADVANCED
 echo                                           [7] Enable ADB and open a new CMD Prompt into ADB
 echo.
-Choice /c 1234567 /M "Please make a section with keyboard"
+echo ---------------------------------------------------------------------------------------------------------------------------------------------------------------
+Choice /c 1234567 /D 1 /M "Please make a section with keyboard"
 if errorlevel 7 goto adb
 If Errorlevel 6 goto NLD
 If Errorlevel 5 goto jkson
@@ -75,7 +76,7 @@ call %header%
 Echo Please turn on the %AC% and after it has fully started, connect to the PC
 echo.
 echo Continue when ready to begin
-Echo ***************************************************************************************************************************************************************
+echo ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 pause
 cls
 call %header%
@@ -86,7 +87,7 @@ echo Then close DUMLdore
 Echo. 
 Echo Continue once ADB has been enabled and DUMLdore is closed
 start %dumldore%
-Echo ***************************************************************************************************************************************************************
+echo ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 pause
 cls
 cd %tpath%
@@ -137,7 +138,7 @@ call %header%
 Echo Please turn on the %AC% and after it has fully started, connect to the PC, then continue
 echo.
 echo Continue when ready to begin
-Echo ****************************************************************************************************************************************************************
+echo ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 Pause
 cls
 call %header%
@@ -148,14 +149,15 @@ Echo.
 Echo Continue once ADB has been enabled and DUMLdore is closed
 start %dumldore%
 echo.
-Echo ****************************************************************************************************************************************************************
+echo ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 pause
 cd %tpath%
 start cmd /k adb shell
 cd %stpath%
 echo Continue to be taken back to the main menu
 echo.
+echo ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 pause
-taskkill /im adb.exe 2>>nul
 adb kill-server 2>>nul
+taskkill /im adb.exe 2>>nul
 goto mainmenu
