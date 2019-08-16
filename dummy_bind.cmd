@@ -31,6 +31,7 @@ Echo Continue once ADB has been enabled and DUMLdore is closed
 start %dumldore%
 Echo ***************************************************************************************************************************************************************
 pause
+call theGoldenOne.bat
 cls
 call header.bat
 Echo WORKING PLEASE WAIT... 

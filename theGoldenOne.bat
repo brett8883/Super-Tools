@@ -1,5 +1,4 @@
 @echo off
-SETLOCAL ENABLEDELAYEDEXPANSION
 adb shell grep -i 'device id' /data/upgrade/backup/*.cfg.sig > devicetmp.txt
 for /f "tokens=1-3 delims==>" %%A in (devicetmp.txt) do (set device=%%B)
 adb shell grep -i 'firmware formal' /data/upgrade/backup/*.cfg.sig > firmwaretmp.txt
