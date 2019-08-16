@@ -59,10 +59,10 @@ set ofc=03.02.44.07
 set vt=2
 set stockfw=V01.05.0600_P4P_dji_system.tar
 set stockdl=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Phantom%%204%%20Professional/V01.05.0600_P4P_dji_system.tar
-set standard=
-set battmod=
-set stealth=
-set FullyLoaded=
+set standard=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/P4P/FC_bin/P4P_SP_2.0_Standard_03.02.44.22_dji_system.bin
+set battmod=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/P4P/FC_bin/P4P_SP_2.0_BattMod_03.02.44.12_dji_system.bin
+set stealth=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/P4P/FC_bin/P4P_SP_2.0_Stealth_03.02.44.21_dji_system.bin
+set FullyLoaded=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/P4P/FC_bin/P4P_SP_2.0_FullyLoaded_03.02.44.11_dji_system.bin
 goto mainmenu
 
 :p4a
@@ -115,10 +115,10 @@ set ofc=03.03.09.09
 set vt=1
 set stockfw=V01.02.0200_I2_dji_system.bin
 set stockdl=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Inspire%%202/V01.02.0200_I2_dji_system.bin
-set standard=
-set battmod=
-set stealth=
-set FullyLoaded=
+set standard=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/I2/I2_SP_2.0/2.0/FC_bin/I2_SP_2.0_Standard_03.03.22.22_dji_system.bin
+set battmod=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/I2/I2_SP_2.0/2.0/FC_bin/I2_SP_2.0_BattMod_03.03.12.12_dji_system.bin
+set stealth=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/I2/I2_SP_2.0/2.0/FC_bin/I2_SP_2.0_Stealth_03.03.21.21_dji_system.bin
+set FullyLoaded=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/I2/I2_SP_2.0/2.0/FC_bin/I2_SP_2.0_FullyLoaded_03.03.11.11_dji_system.bin
 goto mainmenu
 
 :mainmenu
