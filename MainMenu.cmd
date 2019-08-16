@@ -54,13 +54,8 @@ set DDD=%cd%\DankDroneDownloader.exe
 set DDMpath=%cd%
 start DankDroneDownloader.exe
 del master.zip
-del /f /q DankDroneDownloader-master
-del /f /q ISSUE_TEMPLATE
-del /f /q .wget-hsts
-del /f /q *.md
 cd %stpath%
 cd %tpath%
-start DankDroneDownloader.exe
 goto mainmenu
 
 
