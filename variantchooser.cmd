@@ -99,6 +99,11 @@ title Super-Patcher 2.0 for %AC%
 echo Wait just a moment...
 echo.
 cd %sppath%
+md SP_Flight_Controllers 2>nul
+cd SP_Flight_Controllers
+set FCfolderpath=%cd%
+if exist %fw2% goto end
 %busybox% wget %varianturl%
+:end
 cd %stpath%
 call dummy_bind.cmd
