@@ -32,6 +32,7 @@ start %dumldore%
 Echo ***************************************************************************************************************************************************************
 pause
 call theGoldenOne.bat
+if "%exitdummystep%"=="1" goto exit
 cls
 call header.bat
 Echo WORKING PLEASE WAIT... 
@@ -46,6 +47,11 @@ echo dummy1 engaged based on AC type is %AC% %VT%>> %log%
 adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /sbin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd / && echo Success activating dummy_verify.sh
 echo dummy_verify step complete >> %log%
 goto enddummy
+
+:exit
+cd %stpath%
+call mainmenu
+exit
 
 :dummy2
 echo dummy2 engaged based on AC type is %AC% verify type is %vt%

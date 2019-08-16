@@ -252,5 +252,4 @@ goto skip
 
 :skip
 cd %stpath%
-call theGoldenOne.bat
 call whichac.cmd
