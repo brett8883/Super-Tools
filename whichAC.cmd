@@ -14,7 +14,7 @@ ECHO	5) Phantom 4 Advanced
 ECHO	6) Phantom 4 Pro V2
 ECHO	7) Inspire 2
 ECHO.
-choice /C 1234567 /D 1 /T 99 /M "Please select connected device"
+choice /C 1234567 /M "Please select connected device"
 If Errorlevel 7 goto I2
 If Errorlevel 6 goto P4Pv2
 If Errorlevel 5 goto p4a
