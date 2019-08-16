@@ -10,6 +10,7 @@ echo.
 echo Continue when ready...
 echo ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 pause
+cls
 call %header%
 echo.
 echo SMART BATTERY MODIFICATION
