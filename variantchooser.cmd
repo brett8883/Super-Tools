@@ -18,13 +18,13 @@ echo - Disable Forced Auto-Landing due to Smart Battery low battery
 echo     NOTE: Aircraft will still force auto-land at emergency voltage level at 3.0v per cell (well below the safe voltage for flight)
 echo.
 echo - Calibrated Smart Battery "Only enough battery remaining to return to the home point" calculation to be more accurate
-echo.
 echo - Disabled low battery warning when using DJI Smart Battery
 echo - Disabled critical low battery warning when using DJI Smart Battery
 echo.
 echo These are OPTIONAL
 echo.
-echo These options can be enabled in Assistant 2 1.1.2 OR they can be enabled by AUTOMATICALLY by indicating "YES" below. 
+echo These options can be enabled in Assistant 2 1.1.2 OR they can be enabled by AUTOMATICALLY by indicating "YES" below.
+echo   NOTTE: The Smart Battery modifications can also be disabled or tweaked to user preference in Assistant 2 1.1.2 in debug mode
 echo.
 echo ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 echo If "YES" is indicated below the Smart Battery options will be enabled and there would be nothing additional the user needs to do to enable them
@@ -59,6 +59,7 @@ echo.
 echo The Stealth modification is optional but it is hard-coded into the firmware and cannot be changed by the user in flight or with Assistant 2 1.1.2 in debug mode
 echo   NOTE: To undo the Stealth mod, simply run Super-Patcher again without the Stealth mod selected or download and flash stock firmware from the main menu
 echo.
+echo ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 echo If "YES" is indicated below the Stealth option will be enabled and there would be nothing additional the user needs to do to enable it
 echo.
 echo If "NO" is indicated below the factory defualt will remain and the rear LED light will function as normal
