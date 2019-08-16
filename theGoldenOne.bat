@@ -25,7 +25,6 @@ echo %cfirmware%
    SET curFC=%curFC:###=%
 echo %curFC%
 del /f /q *tmp.txt
-
 :checkfw
 Echo Expecting firmware version #: %stock%
 PING -n 3 127.0.0.1>nul
