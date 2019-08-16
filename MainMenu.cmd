@@ -39,15 +39,19 @@ call flashstock.cmd
 goto mainmenu
 
 :getDownloader
-echo start getdownloaderMM >> %log%
+echo start getdankdownloaderMM >> %log%
 cls
 call %header%
 cd %tpath%
+cd %DDMpath% 2>>nul
 if exist DankDroneDownloader.exe start DankDroneDownloader.exe & echo DDD exists >> %log% & goto mainmenu
 Echo Hold on just a sec...
 cd %tpath%
 %busybox% wget https://github.com/cs2000/DankDroneDownloader/archive/master.zip 2> %log%
-7za.exe e master.zip
+%busybox% unzip master.zip
+cd DankDroneDownloader-master
+set DDD=%cd%\DankDroneDownloader.exe
+set DDMpath=%cd%
 start DankDroneDownloader.exe
 del master.zip
 del /f /q DankDroneDownloader-master
@@ -55,6 +59,8 @@ del /f /q ISSUE_TEMPLATE
 del /f /q .wget-hsts
 del /f /q *.md
 cd %stpath%
+cd %tpath%
+start DankDroneDownloader.exe
 goto mainmenu
 
 
