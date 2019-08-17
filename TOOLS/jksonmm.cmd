@@ -4,7 +4,6 @@ echo Start jkson >> %log%
 :askjkson
 cls
 call %header%
-Echo You have completed the Super-Patcher process!
 echo ===============================================================================================================================================================
 ECHO Would you like to enable jkson fcc radio mod to enable fixed FCC or fixed Boost? 
 echo you can find out more about jkson fcc mod at http://github.com/jkson5/jkson_fcc_mod
