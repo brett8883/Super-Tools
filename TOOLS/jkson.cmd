@@ -55,11 +55,11 @@ If "%AC%"=="P4Pv2" Goto p4pv2
 If "%AC%"=="Spark" Goto spark
 
 :MP
-echo start jkson mod for MP ac is %AC%
 cls
+echo Starting jkson FCC mod for MavicPro since AC is %AC%
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
-ECHO JKSON FCC MOD
+ECHO JKSON FCC MOD for MavicPro
 echo On loan from JKSON5
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
@@ -109,7 +109,7 @@ echo done >> check_1860_state.sh
 Goto AdbSet
 
 :P4PV2
-echo start jkson mod for P4Pv2 ac is %AC%
+echo Starting jkson FCC mod for P4Pv2 since AC is %AC%
 echo #!/system/bin/sh > check_1860_state.sh
 echo /system/bin/check_1860_state.sh^& >> check_1860_state.sh
 echo busybox ping -c 1 -w 1800 192.168.41.2 >> check_1860_state.sh
@@ -139,11 +139,10 @@ If Errorlevel 2 echo dji_mb_ctrl -S test -R local -g 9 -s 9 -c 27 00024800FFFF02
 Goto AdbSet
 
 :spark
-echo start jkson mod for Spark ac is %AC%
-cls
+echo Starting jkson mod for Spark since AC is %AC%
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
-ECHO jkson FCC MOD by jkson5
+ECHO jkson FCC MOD by jkson5 for Spark
 echo Optimized for Spark by BorisPlintovic
 Echo *****************************************************************************************************
 Echo ***************************************************************************************************** 
@@ -159,11 +158,11 @@ echo while : >> check_1860_state.sh
 echo do >> check_1860_state.sh
 :EndFreqSpark
 echo.
-echo 1 - Default
+echo 1 - Default power
 echo 2 - Force FCC
-echo 3 - Force FCC+TX POWER
+echo 3 - Force FCC and Boost
 echo.
-choice /C 123 /D 1 /T 99 /M "Please select"
+choice /C 123 /M "Please select"
 If Errorlevel 3 echo dji_mb_ctrl -S test -R local -g 9 -s 9 -c 27 00024800FFFF0200000000 >> check_1860_state.sh
 If Errorlevel 3 echo sleep 10 >> check_1860_state.sh
 If Errorlevel 3 echo iw phy phy0 set txpower limit 3500 >> check_1860_state.sh
@@ -184,24 +183,26 @@ dos2unix.exe check_1860_state.sh
 adb shell mount -o remount,rw /vendor
 adb shell mkdir /vendor/bin
 adb shell chmod 755 /vendor/bin
-adb push check_1860_state.sh /vendor/bin/check_1860_state.sh 2> %logpsth%\fccerrorlog.txt
+adb push check_1860_state.sh /vendor/bin/check_1860_state.sh 
 adb shell chmod 755 /vendor/bin/check_1860_state.sh
-PING -n 4 127.0.0.1>nul
+adb shell mount -o remount,ro /vendor
+echo.
+echo 
 cls
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
-ECHO JKSON FCC MOD
-echo On loan from JKSON5
+ECHO JKSON FCC MOD by jkson5 for %AC%
 if "%AC%"=="Spark" echo Optimized for Spark by BorisPlintovic
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
 Echo Radio Power and frequency settings sent to aircraft!
+echo.
+echo PLEASE WAIT...
 PING -n 3 127.0.0.1>nul
 cls
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
-ECHO JKSON FCC MOD
-echo On loan from JKSON5
+ECHO JKSON FCC MOD by jkson5 for %AC%
 if "%AC%"=="Spark" echo Optimized for Spark by BorisPlintovic
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
