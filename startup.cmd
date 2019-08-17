@@ -17,8 +17,7 @@ set adb=%cd%\adb.exe
 %busybox% unzip -o master.zip
 del DUMLdore-*
 del master.zip
-ren DUMLdore-master DUMLdore
-cd DUMLdore
+cd DUMLdore-master
 set ddpath=%cd%
 set dumldore=%cd%\dumldorev3.exe
 cd %tpath%
