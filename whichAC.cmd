@@ -80,7 +80,7 @@ set FullyLoaded=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/P4A/2.
 goto mainmenu
 
 :p4s
-set AC=P4S
+set AC=P4
 set fcbase=03.02.44.
 set stock=2.00.0700
 set ofc=03.02.44.31
