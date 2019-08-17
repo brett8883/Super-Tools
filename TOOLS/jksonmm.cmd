@@ -29,23 +29,7 @@ goto askjkson
 
 :jkson
 echo User requests jkson fcc mod, starting now >> %log%
-cls
-Echo *****************************************************************************************************
-Echo *****************************************************************************************************
-ECHO JKSON FCC MOD for %AC%
-echo On loan from JKSON5
-Echo *****************************************************************************************************
-Echo ***************************************************************************************************** 
-IF EXIST check_1860_state.sh DEL /F check_1860_state.sh
-echo(
-start %dumldore%
-echo Please click "Enable ADB in DUMLdore
-Echo wait till ADB is enabled, then close DUMLdore
-echo( 
-echo Once ADB is enabled and DUMLdore is closed, please continue
-echo(
-Pause
-If "%AC%"=="MavicPro Goto mp
+If "%AC%"=="MavicPro" Goto mp
 If "%AC%"=="P4Pv2" Goto p4pv2
 If "%AC%"=="Spark" Goto Spark
 

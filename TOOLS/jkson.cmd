@@ -50,7 +50,7 @@ echo(
 echo Once ADB is enabled and DUMLdore is closed, please continue
 echo(
 Pause
-If "%AC%"=="MavicPro Goto mp
+If "%AC%"=="MavicPro" Goto mp
 If "%AC%"=="P4Pv2" Goto p4pv2
 If "%AC%"=="Spark" Goto spark
 
