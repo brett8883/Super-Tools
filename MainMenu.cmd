@@ -69,6 +69,7 @@ goto mainmenu
 cls
 if "%AC%"=="MavicPro" goto startjkson
 if "%AC%"=="P4PV2" goto startjkson
+if "%AC%"=="Spark" goto startjkson
 goto sorryjkson
 
 :startjkson
@@ -91,7 +92,7 @@ echo ---------------------------------------------------------------------------
 pause
 cls
 cd %tpath%
-call jkson_standalone.bat
+call jksonmm.cmd
 adb kill-server 2>>nul
 taskkill /im adb.exe 2>>nul
 cd %stpath%

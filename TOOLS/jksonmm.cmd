@@ -1,11 +1,6 @@
 @echo off
 cls
 echo Start jkson >> %log%
-if "%AC%"=="MavicPro" goto askjkson
-if "%AC%"=="P4Pv2" goto askjkson
-if "%AC%"=="Spark" goto askjkson
-goto startverify
-
 :askjkson
 cls
 call %header%
@@ -24,7 +19,7 @@ If Errorlevel 1 Goto jkson
 :nofcc
 echo User declined FCC mod >> %log%
 cls
-Goto startverify
+Goto end
 
 :getjksoninfo
 echo User requested info on jkson >> %log%
@@ -184,9 +179,9 @@ dos2unix.exe check_1860_state.sh
 adb shell mount -o remount,rw /vendor
 adb shell mkdir /vendor/bin
 adb shell chmod 755 /vendor/bin
-adb push check_1860_state.sh /vendor/bin/check_1860_state.sh 2> %logpsth%\fccerrorlog.txt
+adb push check_1860_state.sh /vendor/bin/check_1860_state.sh
 adb shell chmod 755 /vendor/bin/check_1860_state.sh
-PING -n 4 127.0.0.1>nul
+PING -n 6 127.0.0.1>nul
 cls
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
@@ -211,7 +206,7 @@ Echo Once it has fully restarted and reconnected to this PC, please continue
 Echo *****************************************************************************************************
 echo jkson mod complete >> %log%
 pause
-:startverify
-echo going to _verify >> %log%
+goto end
+
+:End
 cls
-call _verify.cmd
