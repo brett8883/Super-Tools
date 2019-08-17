@@ -87,10 +87,10 @@ set ofc=03.02.44.31
 set vt=2
 set stockfw=V02.00.0700_P4_dji_system.bin
 set stockdl=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Phantom%%204%%20Standard/V02.00.0700_P4_dji_system.bin
-set standard=
-set battmod=
-set stealth=
-set FullyLoaded=
+set standard=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/P4S/2.0/FC_bin/P4_SP_2.0_Standard_03.02.44.22_dji_system.bin
+set battmod=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/P4S/2.0/FC_bin/P4_SP_2.0_BattMod_03.02.44.12_dji_system.bin
+set stealth=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/P4S/2.0/FC_bin/P4_SP_2.0_Stealth_03.02.44.21_dji_system.bin
+set FullyLoaded=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/P4S/2.0/FC_bin/P4_SP_2.0_FullyLoaded_03.02.44.11_dji_system.bin
 goto mainmenu
 
 :P4Pv2
