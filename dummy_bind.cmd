@@ -32,7 +32,7 @@ start %dumldore%
 Echo ***************************************************************************************************************************************************************
 pause
 cls
-call header.bat
+call %header%
 Echo WORKING PLEASE WAIT... 
 adb shell mount -o remount,rw /vendor && Echo Success making vendor read and write
 adb shell mkdir /vendor/bin && Echo Success making directory vendor/bin
