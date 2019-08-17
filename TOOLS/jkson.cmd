@@ -29,7 +29,7 @@ Goto startverify
 :getjksoninfo
 echo User requested info on jkson >> %log%
 cls
-rundll32 url.dll,FileProtocolHandler https://github.com/jkson5/jkson_fcc_mod >2 %log%
+rundll32 url.dll,FileProtocolHandler https://github.com/jkson5/jkson_fcc_mod
 goto askjkson
 
 :jkson
