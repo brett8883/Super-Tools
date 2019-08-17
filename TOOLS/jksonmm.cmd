@@ -47,7 +47,7 @@ echo(
 Pause
 If "%AC%"=="MavicPro Goto mp
 If "%AC%"=="P4Pv2" Goto p4pv2
-If "%AC%"=="Spark" Goto spark
+If "%AC%"=="Spark" Goto Spark
 
 :MP
 echo start jkson mod for MP ac is %AC%
@@ -133,8 +133,8 @@ If Errorlevel 2 echo dji_mb_ctrl -S test -R local -g 9 -s 9 -c 27 00024800FFFF02
 :P4PV2EndMod
 Goto AdbSet
 
-:spark
-echo start jkson mod for Spark ac is %AC%
+:Spark
+echo start jkson mod for Spark, AC is %AC%
 cls
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
@@ -158,7 +158,7 @@ echo 1 - Default
 echo 2 - Force FCC
 echo 3 - Force FCC+TX POWER
 echo.
-choice /C 123 /D 1 /T 99 /M "Please select"
+choice /C 123 /M "Please select"
 If Errorlevel 3 echo dji_mb_ctrl -S test -R local -g 9 -s 9 -c 27 00024800FFFF0200000000 >> check_1860_state.sh
 If Errorlevel 3 echo sleep 10 >> check_1860_state.sh
 If Errorlevel 3 echo iw phy phy0 set txpower limit 3500 >> check_1860_state.sh
@@ -168,7 +168,6 @@ If Errorlevel 2 echo dji_mb_ctrl -S test -R local -g 9 -s 9 -c 27 00024800FFFF02
 If Errorlevel 2 echo break >> check_1860_state.sh
 If Errorlevel 2 Goto EndModSpark
 If Errorlevel 1 echo break >> check_1860_state.sh
-
 :EndModSpark
 echo done >> check_1860_state.sh
 Goto AdbSet
