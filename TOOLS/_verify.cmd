@@ -40,7 +40,7 @@ If Errorlevel 1 Goto success
 :nopatch
 @echo off
 echo User Indicated patch not successful. Showing log file >> %log%
-ATTRIB -H %log%
+ATTRIB -H %logpath%
 cls 
 Call %Header%
 Echo If your Flight Controller # is not %fc% then Super-Patcher was not successful 
