@@ -12,7 +12,7 @@ ECHO DO NOT SKIP STEPS, DO NOT DO EXTRA STEPS
 Echo ****************************************************************************************************************************************************************
 pause
 cls
-call header.bat
+call %header%
 Echo Please turn on the %AC% and after it has fully started, connect to the PC
 echo.
 echo Continue when ready to begin
