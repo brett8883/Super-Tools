@@ -34,9 +34,9 @@ pause
 cls
 call %header%
 Echo WORKING PLEASE WAIT... 
-adb shell mount -o remount,rw /vendor && Echo Success making vendor read and write
-adb shell mkdir /vendor/bin && Echo Success making directory vendor/bin
-adb push dummy_verify.sh /vendor/bin/ && echo Success pushing dummy_verify to %ac%
+adb shell mount -o remount,rw /vendor 2>> %log%
+adb shell mkdir /vendor/bin 2>> %log%
+adb push dummy_verify.sh /vendor/bin/ 2>> %log%
 if "%vt%"=="1" (goto dummy1) else (goto dummy2)
 
 :dummy1
@@ -53,7 +53,7 @@ exit
 
 :dummy2
 echo dummy2 engaged based on AC type is %AC% verify type is %vt%
-echo dummy2 engaged based on AC type is %AC% verify type is %VT%>> %log%
+echo dummy2 engaged based on AC type is %AC% verify type is %VT% >> %log%
 adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /system/bin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd / && echo Success activating dummy_verify.sh
 echo phantom dummy_verify step complete >> %log%
 goto enddummy
@@ -61,8 +61,8 @@ goto enddummy
 :enddummy
 adb shell mount -o remount,ro /vendor && echo Success making vendor read only again. Aircraft requires reboot. Please wait to return to program
 echo STILL WORKING... Just a sec
-adb kill-server 2>>nul
-PING -n 5 127.0.0.1>nul
+adb kill-server 2> nul
+PING -n 5 127.0.0.1 > nul
 cls
 call %header%
 Echo Please restart your aircraft
@@ -79,7 +79,7 @@ cls
 call %header%
 echo Starting bind step... >> %log%
 echo Starting bind step...
-PING -n 3 127.0.0.1>nul
+PING -n 2 127.0.0.1>nul
 cls
 call %header%
 echo click "Enable ADB" in DUMLdore and then close DUMLdore before proceeding
@@ -94,18 +94,17 @@ if "%vt%"=="1" (goto bind1) else (goto bind2)
 :bind1
 echo bind1 engaged based on AC type is %AC%, verify type is %vt%
 echo bind1 engaged based on AC type is %AC%, verify type is %vt% >> %log%
-adb shell mount -o bind /vendor/bin/dummy_verify.sh /sbin/dji_verify && echo Bind step completed successfully & PING -n 2 127.0.0.1>nul
+adb shell mount -o bind /vendor/bin/dummy_verify.sh /sbin/dji_verify 2>> %log%
 goto endbind
 
 :bind2
 echo bind2 engaged based on AC type is %AC%, verify type is %vt%
 echo bind2 engaged based on AC type is %AC%, verify type is %vt% >> %log%
-adb shell mount -o bind /vendor/bin/dummy_verify.sh /system/bin/dji_verify && echo Bind step completed successfully & PING -n 2 127.0.0.1>nul
-goto endbind
-
+adb shell mount -o bind /vendor/bin/dummy_verify.sh /system/bin/dji_verify 2>> %log%
 :endbind
-PING -n 3 127.0.0.1>nul
-adb kill-server 2>>nul
+Echo Still working please wait...
+adb kill-server > nul
+PING -n 4 127.0.0.1 > nul
 echo Start flash step >> %log%
 cls
 call %header%
