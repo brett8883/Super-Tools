@@ -19,7 +19,7 @@ echo.
 echo                                        UTILITIES
 echo                                           [3] Open DankDroneDownloader by CS2000 to download any other firmware files
 echo                                           [4] Launch DULMdore by Jezzeb
-echo                                           [5] Launch jkson fcc mod (Mavic and P4Pv2 only)
+echo                                           [5] Launch jkson fcc mod (Mavic, Spark, and P4Pv2 only)
 echo                                           [6] Launch the free NoLimitDronez app
 echo.
 echo                                        ADVANCED
@@ -48,7 +48,7 @@ cd %DDMpath% 2>>nul
 if exist DankDroneDownloader.exe start DankDroneDownloader.exe & echo DDD exists >> %log% & goto mainmenu
 Echo Hold on just a sec...
 cd %tpath%
-%busybox% wget https://github.com/cs2000/DankDroneDownloader/archive/master.zip 2> %log%
+%busybox% wget https://github.com/cs2000/DankDroneDownloader/archive/master.zip 2>> %log%
 %busybox% unzip master.zip
 cd DankDroneDownloader-master
 set DDD=%cd%\DankDroneDownloader.exe
