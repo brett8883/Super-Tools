@@ -96,6 +96,7 @@ goto dumend
 :dummy2
 Echo dummy2 activated, verify type should be 2.
 echo Verify type is actually %vt%, because AC is %AC%
+echo.
 Echo dummy2 activated, verify type is %vt%. AC is %AC% >> errorlog.txt
 adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /system/bin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd / 2> errorlog4.txt
 echo adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /system/bin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd /
@@ -159,6 +160,7 @@ if "%vt%"=="2" (goto bind2) ELSE (goto bind1)
 :bind2
 Echo Bind2 activated, verify type should be 2
 echo Verify type is actually %vt% because AC is %AC%
+echo.
 Echo Bind1 activated, verify type should be 2 >> errorlog.txt
 echo Verify type is actually %vt% because AC is %AC% >> errorlog.txt
 echo adb shell mount -o bind /vendor/bin/dummy_verify.sh /system/bin/dji_verify
@@ -176,6 +178,7 @@ goto bindend
 ::Declare verify bind selection and why with vt and AC. Add to errorlog
 Echo Bind1 activated, verify type should be 1
 echo Verify type is actually %vt% because AC is %AC%
+echo.
 Echo Bind1 activated, verify type should be 1 >> errorlog.txt
 echo Verify type is actually %vt% because AC is %AC% >> errorlog.txt
 adb shell mount -o bind /vendor/bin/dummy_verify.sh /sbin/dji_verify 2> errorlog6.txt
