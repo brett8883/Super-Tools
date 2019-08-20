@@ -116,10 +116,8 @@ echo Hold on just a sec...
 wget %fw%
 copy *.bin ..
 del *.bin
-cd ..
 echo %vt%
 echo %AC%
 echo %stock%
 echo %fc%
-cd Super-Tools-%branch%
 call _verify.bat
