@@ -42,20 +42,26 @@ ECHO Super Patcher %appver%
 ECHO By Brett8883
 ECHO -------------------------------------------------------------------------------------------
 Echo WORKING PLEASE WAIT...
-@echo ON
-adb shell mount -o remount,rw /vendor 2>> errorlog1.txt
-adb shell mkdir /vendor/bin 2>> errorlog2.txt
-adb push dummy_verify.sh /vendor/bin/ 2>> errorlog3.txt
-adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /sbin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd / 2>> errorlog4.txt
-adb shell mount -o remount,ro /vendor 2>> errorlog5.txt
+adb shell mount -o remount,rw /vendor 2> errorlog1.txt
+type errorlog1.txt
+adb shell mkdir /vendor/bin 2> errorlog2.txt
+type errorlog2.txt
+adb push dummy_verify.sh /vendor/bin/ 2> errorlog3.txt
+type errorlog3.txt
+adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /sbin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd / 2> errorlog4.txt
+type errorlog4.txt
+adb shell mount -o remount,ro /vendor 2> errorlog5.txt
 echo DUMMY_VERIFY STEPS >> errorlog.txt
-echo Command:adb shell mount -o remount,rw /vendor >> errorlog.txt
+echo adb shell mount -o remount,rw /vendor >> errorlog.txt
 type errorlog1.txt >>errorlog.txt
-echo Command:adb shell mkdir /vendor/bin >> errorlog.txt
+echo adb shell mkdir /vendor/bin >> errorlog.txt
 type errorlog2.txt >> errorlog.txt
+echo adb push dummy_verify.sh /vendor/bin/ >>errorlog.txt
 type errorlog3.txt >> errorlog.txt
+echo adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /sbin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd / >> errorlog.txt
 type errorlog4.txt >> errorlog.txt
-set adberrorlog1= < errorlog1.txt
+echo adb shell mount -o remount,ro /vendor >> errorlog.txt
+type errorlog5.txt >> errorlog.txt
 echo %adberrorlog1%
 echo pause here
 pause
@@ -85,9 +91,12 @@ ECHO Super Patcher %appver%
 ECHO By Brett8883
 ECHO -------------------------------------------------------------------------------------------
 ECHO WORKING. PLEASE WAIT...
-adb shell mount -o bind /vendor/bin/dummy_verify.sh /sbin/dji_verify 2>> errorlog5.txt
+adb shell mount -o bind /vendor/bin/dummy_verify.sh /sbin/dji_verify 2> errorlog5.txt
+type errorlog5.txt
+echo adb shell mount -o bind /vendor/bin/dummy_verify.sh /sbin/dji_verify >> errorlog.txt
 type errorlog5.txt >> errorlog.txt
 adb kill-server
+Pause
 cls
 ECHO -------------------------------------------------------------------------------------------
 ECHO Super Patcher %appver%
