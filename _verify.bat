@@ -41,6 +41,7 @@ ECHO ---------------------------------------------------------------------------
 ECHO Super Patcher %appver%
 ECHO By Brett8883
 ECHO -------------------------------------------------------------------------------------------
+:: Start Dummy Veify steps
 Echo WORKING PLEASE WAIT...
 ::adb command 1
 adb shell mount -o remount,rw /vendor 2> errorlog1.txt
@@ -52,6 +53,7 @@ echo.
 echo DUMMY_VERIFY STEPS >> errorlog.txt
 echo adb shell mount -o remount,rw /vendor >> errorlog.txt
 type errorlog1.txt >>errorlog.txt
+echo. >>errorlog.txt
 ::command2
 adb shell mkdir /vendor/bin 2> errorlog2.txt
 echo adb shell mkdir /vendor/bin
@@ -61,6 +63,7 @@ PING -n 3 127.0.0.1>nul
 echo.
 echo adb shell mkdir /vendor/bin >> errorlog.txt
 type errorlog2.txt >> errorlog.txt
+echo. >>errorlog.txt
 ::command3
 echo adb push dummy_verify.sh /vendor/bin/
 adb push dummy_verify.sh /vendor/bin/ 2> errorlog3.txt
@@ -70,9 +73,10 @@ PING -n 3 127.0.0.1>nul
 echo.
 echo adb push dummy_verify.sh /vendor/bin/ >>errorlog.txt
 type errorlog3.txt >> errorlog.txt
+echo. >>errorlog.txt
 ::command4
+::This command splits on verify type or %vt%. Verify type is based on AC type so more specifically command 4 splits based of AC type
 if "%vt%"=="1" (goto dummy1) ELSE (goto dummy2)
-
 :dummy1
 Echo dummy1 activated, verify type is %vt%. AC is %AC%
 Echo dummy1 activated, verify type is %vt%. AC is %AC% >> Errorlog.txt
@@ -83,6 +87,7 @@ type errorlog4.txt
 PING -n 3 127.0.0.1>nul
 echo adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /sbin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd / >> errorlog.txt
 type errorlog4.txt >> errorlog.txt
+echo. >>errorlog.txt
 goto dumend
 
 :dummy2
@@ -97,8 +102,10 @@ PING -n 3 127.0.0.1>nul
 echo.
 echo adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /system/bin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd / >> errorlog.txt
 type errorlog4.txt >> errorlog.txt
+echo. >>errorlog.txt
 goto dumend
 
+::both command 4 subscripts merge back for command 5
 :dumend
 ::command5
 adb shell mount -o remount,ro /vendor 2> errorlog5.txt
@@ -111,6 +118,7 @@ echo adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy
 type errorlog4.txt >> errorlog.txt
 echo adb shell mount -o remount,ro /vendor >> errorlog.txt
 type errorlog5.txt >> errorlog.txt
+echo. >>errorlog.txt
 echo.
 adb kill-server 2>>nul
 echo Continue when ready
