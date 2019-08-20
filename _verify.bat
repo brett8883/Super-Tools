@@ -3,7 +3,7 @@ cls
 cd tools
 title Super-Patcher
 ECHO -------------------------------------------------------------------------------------------
-ECHO Super Patcher %appver%
+ECHO Super Patcher %appver% for %AC%
 ECHO By Brett8883
 ECHO -------------------------------------------------------------------------------------------
 ECHO PLEASE TAKE CARE TO FOLLOW INSTRUCTIONS EXACTLY
@@ -13,7 +13,7 @@ Echo ***************************************************************************
 pause
 cls
 ECHO -------------------------------------------------------------------------------------------
-ECHO Super Patcher %appver%
+ECHO Super Patcher %appver% for %AC%
 ECHO By Brett8883
 ECHO -------------------------------------------------------------------------------------------
 Echo Please turn on the %AC% and after it has fully started, connect to the PC
@@ -22,7 +22,7 @@ Echo ***************************************************************************
 Pause
 cls
 ECHO -------------------------------------------------------------------------------------------
-ECHO Super Patcher %appver%
+ECHO Super Patcher %appver% for %AC%
 ECHO By Brett8883
 ECHO -------------------------------------------------------------------------------------------
 Echo Please ensure DUMLdore says you are on firmware %stock% and that this is stock version
@@ -38,7 +38,7 @@ Echo ***************************************************************************
 pause
 cls
 ECHO -------------------------------------------------------------------------------------------
-ECHO Super Patcher %appver%
+ECHO Super Patcher %appver% for %AC%
 ECHO By Brett8883
 ECHO -------------------------------------------------------------------------------------------
 :: Start Dummy Veify steps
@@ -75,7 +75,7 @@ echo adb push dummy_verify.sh /vendor/bin/ >>errorlog.txt
 type errorlog3.txt >> errorlog.txt
 echo. >>errorlog.txt
 ::command4
-::This command splits on verify type or %vt%. Verify type is based on AC type so more specifically command 4 splits based of AC type
+::This command splits on verify type or %vt%. Verify type is based on AC type so more specifically command 4 splits based on AC type
 if "%vt%"=="1" (goto dummy1) ELSE (goto dummy2)
 :dummy1
 Echo dummy1 activated, verify type is %vt%. AC is %AC%
@@ -126,7 +126,7 @@ echo.
 pause
 cls
 ECHO -------------------------------------------------------------------------------------------
-ECHO Super Patcher %appver%
+ECHO Super Patcher %appver% for %AC%
 ECHO By Brett8883
 ECHO -------------------------------------------------------------------------------------------
 Echo please restart your aircraft
@@ -136,7 +136,7 @@ Echo ***************************************************************************
 pause
 cls
 ECHO -------------------------------------------------------------------------------------------
-ECHO Super Patcher %appver%
+ECHO Super Patcher %appver% for %AC%
 ECHO By Brett8883
 ECHO -------------------------------------------------------------------------------------------
 echo click "Enable ADB" in DUMLdore and then close DUMLdore before proceeding
@@ -144,12 +144,30 @@ start DUMLdoreV3.exe
 Echo *******************************************************************************************
 Pause
 cls
+::Start Bind Step
 ECHO -------------------------------------------------------------------------------------------
-ECHO Super Patcher %appver%
+ECHO Super Patcher %appver% for %AC%
 ECHO By Brett8883
 ECHO -------------------------------------------------------------------------------------------
 ECHO WORKING. PLEASE WAIT...
-if "%vt%"=="1" (goto bind1) ELSE (goto bind2)
+if "%vt%"=="2" (goto bind2) ELSE (goto bind1)
+
+::bind step splits based on verify type or %vt%. Verify type is based on AC type so more specifically bind step splits based on AC type
+:bind2
+Echo Bind2 activated, verify type should be 2
+echo Verify type is actually %vt% because AC is %AC%
+Echo Bind1 activated, verify type should be 2 >> errorlog.txt
+echo Verify type is actually %vt% because AC is %AC% >> errorlog.txt
+echo adb shell mount -o bind /vendor/bin/dummy_verify.sh /system/bin/dji_verify
+adb shell mount -o bind /vendor/bin/dummy_verify.sh /system/bin/dji_verify 2> errorlog6.txt
+echo adb shell mount -o bind /vendor/bin/dummy_verify.sh /system/bin/dji_verify >> errorlog6.txt
+PING -n 3 127.0.0.1>nul
+type errorlog6.txt
+PING -n 3 127.0.0.1>nul
+type errorlog6.txt >> errorlog.txt
+adb kill-server 2>>nul
+echo.
+goto bindend
 
 :bind1
 ::Declare verify bind selection and why with vt and AC. Add to errorlog
@@ -168,29 +186,14 @@ adb kill-server 2>>nul
 echo.
 goto bindend
 
-:bind2
-Echo Bind1 activated, verify type should be 1
-echo Verify type is actually %vt% because AC is %AC%
-Echo Bind1 activated, verify type should be 1 >> errorlog.txt
-echo Verify type is actually %vt% because AC is %AC% >> errorlog.txt
-echo adb shell mount -o bind /vendor/bin/dummy_verify.sh /system/bin/dji_verify
-adb shell mount -o bind /vendor/bin/dummy_verify.sh /system/bin/dji_verify 2> errorlog6.txt
-echo adb shell mount -o bind /vendor/bin/dummy_verify.sh /system/bin/dji_verify >> errorlog6.txt
-PING -n 3 127.0.0.1>nul
-type errorlog6.txt
-PING -n 3 127.0.0.1>nul
-type errorlog6.txt >> errorlog.txt
-adb kill-server 2>>nul
-echo.
-goto bindend
-
 :bindend
+
 Echo continue when ready
 echo.
 Pause
 cls
 ECHO -------------------------------------------------------------------------------------------
-ECHO Super Patcher %appver%
+ECHO Super Patcher %appver% for %AC%
 ECHO By Brett8883
 ECHO -------------------------------------------------------------------------------------------
 echo DO NOT TURN OFF AIRCRAFT!
@@ -204,11 +207,25 @@ echo.
 ECHO -------------------------------------------------------------------------------------------
 ECHO 4.	Please allow DUMLdore to flash to the aircraft
 echo	Do not disconnect the %AC% until DUMLdore says it is ok to
+echo.
+echo NOTE: The progress bar in DUMLdore might be irratic.
+echo    Progress bar may go past 100 or seem like it hangs at 100
+echo.
+echo NOTE: Aircraft will restart automatically at least once during the process if the proceeding
+echo   steps where successful.
+echo.
+echo NOTE: The flashing process should take at least 1 minute and at most 5 minutes
+echo.
+echo NOTE: If dumldore gets stuck at the "transfering" stage for more than a minute
+echo  close DUMLdore turn of Aircraft remove battery for 5 minutes and resater Super-Patcher
 ECHO -------------------------------------------------------------------------------------------
 echo.
-echo 5. Once DUMLdore is finished please restart the aircraft
+echo 5. Once DUMLdore is finished please close DUMLdore and then restart the aircraft
+echo.
+echo NOTE: It is still neccessary to restart the Aircraft manually
+echo  even though it rebooted automatically during the flashing process
 Echo.
-echo 6. Once aircraft has restarted fully and connected to PC. Please continue
+echo 6. Once aircraft has rebooted fully and connected to this PC. Please continue
 echo.
 start DUMLdoreV3.exe
 ECHO -------------------------------------------------------------------------------------------
