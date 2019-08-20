@@ -1,7 +1,7 @@
 @echo off
 mode con: cols=92 lines=40
 SETLOCAL EnableDelayedExpansion
-set appver=1.7.6
+set appver=1.9
 cls
 ECHO -------------------------------------------------------------------------------------------
 ECHO Super Patcher %appver%
