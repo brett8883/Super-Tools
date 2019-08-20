@@ -122,4 +122,4 @@ echo %AC%
 echo %stock%
 echo %fc%
 cd Super-Tools-%branch%
-call %whichverify%
+call _verify.bat
