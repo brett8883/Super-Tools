@@ -205,6 +205,7 @@ Echo ***************************************************************************
 echo 1. Please click "Load Firmware" button in DUMLdore
 echo.
 echo 2. Choose the file %fw2%
+echo  NOTE: I put this file in your Super-Patcher folder next to the auto_install.bat
 echo.
 ECHO 3. Then click "Flash Firmware" in DUMLdore
 echo.
