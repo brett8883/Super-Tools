@@ -57,8 +57,8 @@ type errorlog2.txt
 PING -n 3 127.0.0.1>nul
 echo.
 ::command3
-adb push dummy_verify.sh /vendor/bin/ 2> errorlog3.txt
 echo adb push dummy_verify.sh /vendor/bin/
+adb push dummy_verify.sh /vendor/bin/ 2> errorlog3.txt
 PING -n 3 127.0.0.1>nul
 type errorlog3.txt
 PING -n 3 127.0.0.1>nul
