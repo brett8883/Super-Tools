@@ -25,7 +25,6 @@ If Errorlevel 3 goto p4p
 If Errorlevel 2 goto SPK
 If Errorlevel 1 goto MP
 
-
 :MP
 @Echo off
 cls
@@ -122,5 +121,5 @@ echo %vt%
 echo %AC%
 echo %stock%
 echo %fc%
-cd Super-Tools-master
+cd Super-Tools-%branch%
 call %whichverify%
