@@ -56,7 +56,7 @@ echo Command:adb shell mkdir /vendor/bin >> errorlog.txt
 type errorlog2.txt >> errorlog.txt
 type errorlog3.txt >> errorlog.txt
 type errorlog4.txt >> errorlog.txt
-set adberrorlog1=< errorlog1.txt
+set adberrorlog1= < errorlog1.txt
 echo %adberrorlog1%
 echo pause here
 pause
