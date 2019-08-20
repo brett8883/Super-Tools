@@ -48,7 +48,6 @@ adb shell mkdir /vendor/bin 2>> errorlog2.txt
 adb push dummy_verify.sh /vendor/bin/ 2>> errorlog3.txt
 adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /sbin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd / 2>> errorlog4.txt
 adb shell mount -o remount,ro /vendor 2>> errorlog5.txt
-@echo OFF
 echo DUMMY_VERIFY STEPS >> errorlog.txt
 echo Command:adb shell mount -o remount,rw /vendor >> errorlog.txt
 type errorlog1.txt >>errorlog.txt
