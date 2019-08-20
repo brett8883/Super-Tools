@@ -43,6 +43,7 @@ ECHO By Brett8883
 ECHO -------------------------------------------------------------------------------------------
 :: Start Dummy Veify steps
 Echo WORKING PLEASE WAIT...
+echo.
 ::adb command 1
 adb shell mount -o remount,rw /vendor 2> errorlog1.txt
 echo adb shell mount -o remount,rw /vendor
@@ -152,6 +153,7 @@ ECHO Super Patcher %appver% for %AC%
 ECHO By Brett8883
 ECHO -------------------------------------------------------------------------------------------
 ECHO WORKING. PLEASE WAIT...
+echo.
 if "%vt%"=="2" (goto bind2) ELSE (goto bind1)
 
 ::bind step splits based on verify type or %vt%. Verify type is based on AC type so more specifically bind step splits based on AC type
