@@ -30,6 +30,11 @@ Echo I have detected that your Windows version is Windows %winver% ...
 echo.
 echo Super-Patcher works best with Windows 10.
 echo.
+echo Some people have experienced an issue where Windows 7 and 8
+echo  do not recognize the DJI ADB driver's certificate not allowing Super-Patcher to
+echo comunicate 
+echo.
+echo.
 echo If you have any issues running Super-Patcher please try again on a Windows 10 PC.
 echo.
 ECHO Please continue when ready
