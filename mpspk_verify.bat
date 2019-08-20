@@ -42,31 +42,41 @@ ECHO Super Patcher %appver%
 ECHO By Brett8883
 ECHO -------------------------------------------------------------------------------------------
 Echo WORKING PLEASE WAIT...
+::adb command 1
 adb shell mount -o remount,rw /vendor 2> errorlog1.txt
 echo adb shell mount -o remount,rw /vendor
 PING -n 3 127.0.0.1>nul
 type errorlog1.txt
 PING -n 3 127.0.0.1>nul
+echo.
+::command2
 adb shell mkdir /vendor/bin 2> errorlog2.txt
 echo adb shell mkdir /vendor/bin
 PING -n 3 127.0.0.1>nul
 type errorlog2.txt
 PING -n 3 127.0.0.1>nul
+echo.
+::command3
 adb push dummy_verify.sh /vendor/bin/ 2> errorlog3.txt
 echo adb push dummy_verify.sh /vendor/bin/
 PING -n 3 127.0.0.1>nul
 type errorlog3.txt
 PING -n 3 127.0.0.1>nul
+echo.
+::command4
 adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /sbin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd / 2> errorlog4.txt
 echo adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /sbin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd /
 PING -n 3 127.0.0.1>nul
 type errorlog4.txt
 PING -n 3 127.0.0.1>nul
+echo.
+::command5
 adb shell mount -o remount,ro /vendor 2> errorlog5.txt
 echo adb shell mount -o remount,ro /vendor
 PING -n 3 127.0.0.1>nul
 type errorlog5.txt
 PING -n 3 127.0.0.1>nul
+echo.
 echo DUMMY_VERIFY STEPS >> errorlog.txt
 echo adb shell mount -o remount,rw /vendor >> errorlog.txt
 type errorlog1.txt >>errorlog.txt
@@ -108,13 +118,13 @@ ECHO Super Patcher %appver%
 ECHO By Brett8883
 ECHO -------------------------------------------------------------------------------------------
 ECHO WORKING. PLEASE WAIT...
-adb shell mount -o bind /vendor/bin/dummy_verify.sh /sbin/dji_verify 2> errorlog5.txt
+adb shell mount -o bind /vendor/bin/dummy_verify.sh /sbin/dji_verify 2> errorlog6.txt
 echo adb shell mount -o bind /vendor/bin/dummy_verify.sh /sbin/dji_verify
 PING -n 3 127.0.0.1>nul
-type errorlog5.txt
+type errorlog6.txt
 PING -n 3 127.0.0.1>nul
 echo adb shell mount -o bind /vendor/bin/dummy_verify.sh /sbin/dji_verify >> errorlog.txt
-type errorlog5.txt >> errorlog.txt
+type errorlog6.txt >> errorlog.txt
 adb kill-server 2>>nul
 echo.
 echo Continue when ready
