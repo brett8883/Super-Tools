@@ -49,6 +49,9 @@ PING -n 3 127.0.0.1>nul
 type errorlog1.txt
 PING -n 3 127.0.0.1>nul
 echo.
+echo DUMMY_VERIFY STEPS >> errorlog.txt
+echo adb shell mount -o remount,rw /vendor >> errorlog.txt
+type errorlog1.txt >>errorlog.txt
 ::command2
 adb shell mkdir /vendor/bin 2> errorlog2.txt
 echo adb shell mkdir /vendor/bin
@@ -56,6 +59,8 @@ PING -n 3 127.0.0.1>nul
 type errorlog2.txt
 PING -n 3 127.0.0.1>nul
 echo.
+echo adb shell mkdir /vendor/bin >> errorlog.txt
+type errorlog2.txt >> errorlog.txt
 ::command3
 echo adb push dummy_verify.sh /vendor/bin/
 adb push dummy_verify.sh /vendor/bin/ 2> errorlog3.txt
@@ -63,13 +68,38 @@ PING -n 3 127.0.0.1>nul
 type errorlog3.txt
 PING -n 3 127.0.0.1>nul
 echo.
+echo adb push dummy_verify.sh /vendor/bin/ >>errorlog.txt
+type errorlog3.txt >> errorlog.txt
 ::command4
+if "%vt%"=="1" (goto dummy1) ELSE (goto dummy2)
+
+:dummy1
+Echo dummy1 activated, verify type is %vt%. AC is %AC%
+Echo dummy1 activated, verify type is %vt%. AC is %AC% >> Errorlog.txt
 adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /sbin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd / 2> errorlog4.txt
 echo adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /sbin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd /
 PING -n 3 127.0.0.1>nul
 type errorlog4.txt
 PING -n 3 127.0.0.1>nul
+echo adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /sbin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd / >> errorlog.txt
+type errorlog4.txt >> errorlog.txt
+goto dumend
+
+:dummy2
+Echo dummy2 activated, verify type should be 2.
+echo Verify type is actually %vt%, because AC is %AC%
+Echo dummy2 activated, verify type is %vt%. AC is %AC% >> errorlog.txt
+adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /system/bin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd / 2> errorlog4.txt
+echo adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /system/bin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd /
+PING -n 3 127.0.0.1>nul
+type errorlog4.txt
+PING -n 3 127.0.0.1>nul
 echo.
+echo adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /system/bin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd / >> errorlog.txt
+type errorlog4.txt >> errorlog.txt
+goto dumend
+
+:dumend
 ::command5
 adb shell mount -o remount,ro /vendor 2> errorlog5.txt
 echo adb shell mount -o remount,ro /vendor
@@ -77,13 +107,6 @@ PING -n 3 127.0.0.1>nul
 type errorlog5.txt
 PING -n 3 127.0.0.1>nul
 echo.
-echo DUMMY_VERIFY STEPS >> errorlog.txt
-echo adb shell mount -o remount,rw /vendor >> errorlog.txt
-type errorlog1.txt >>errorlog.txt
-echo adb shell mkdir /vendor/bin >> errorlog.txt
-type errorlog2.txt >> errorlog.txt
-echo adb push dummy_verify.sh /vendor/bin/ >>errorlog.txt
-type errorlog3.txt >> errorlog.txt
 echo adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /sbin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd / >> errorlog.txt
 type errorlog4.txt >> errorlog.txt
 echo adb shell mount -o remount,ro /vendor >> errorlog.txt
@@ -118,16 +141,43 @@ ECHO Super Patcher %appver%
 ECHO By Brett8883
 ECHO -------------------------------------------------------------------------------------------
 ECHO WORKING. PLEASE WAIT...
+if "%vt%"=="1" (goto bind1) ELSE (goto bind2)
+
+:bind1
+::Declare verify bind selection and why with vt and AC. Add to errorlog
+Echo Bind1 activated, verify type should be 1
+echo Verify type is actually %vt% because AC is %AC%
+Echo Bind1 activated, verify type should be 1 >> errorlog.txt
+echo Verify type is actually %vt% because AC is %AC% >> errorlog.txt
 adb shell mount -o bind /vendor/bin/dummy_verify.sh /sbin/dji_verify 2> errorlog6.txt
+echo adb shell mount -o bind /vendor/bin/dummy_verify.sh /sbin/dji_verify >> errorlog6.txt
 echo adb shell mount -o bind /vendor/bin/dummy_verify.sh /sbin/dji_verify
 PING -n 3 127.0.0.1>nul
 type errorlog6.txt
 PING -n 3 127.0.0.1>nul
-echo adb shell mount -o bind /vendor/bin/dummy_verify.sh /sbin/dji_verify >> errorlog.txt
 type errorlog6.txt >> errorlog.txt
 adb kill-server 2>>nul
 echo.
-echo Continue when ready
+goto bindend
+
+:bind2
+Echo Bind1 activated, verify type should be 1
+echo Verify type is actually %vt% because AC is %AC%
+Echo Bind1 activated, verify type should be 1 >> errorlog.txt
+echo Verify type is actually %vt% because AC is %AC% >> errorlog.txt
+echo adb shell mount -o bind /vendor/bin/dummy_verify.sh /system/bin/dji_verify
+adb shell mount -o bind /vendor/bin/dummy_verify.sh /system/bin/dji_verify 2> errorlog6.txt
+echo adb shell mount -o bind /vendor/bin/dummy_verify.sh /system/bin/dji_verify >> errorlog6.txt
+PING -n 3 127.0.0.1>nul
+type errorlog6.txt
+PING -n 3 127.0.0.1>nul
+type errorlog6.txt >> errorlog.txt
+adb kill-server 2>>nul
+echo.
+goto bindend
+
+:bindend
+Echo continue when ready
 echo.
 Pause
 cls
