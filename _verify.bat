@@ -112,17 +112,15 @@ goto dumend
 ::both command 4 subscripts merge back for command 5
 :dumend
 ::command5
+echo.
 adb shell mount -o remount,ro /vendor 2> errorlog5.txt
 echo adb shell mount -o remount,ro /vendor
 PING -n 3 127.0.0.1>nul
 type errorlog5.txt
 PING -n 3 127.0.0.1>nul
 echo.
-echo adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /sbin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd / >> errorlog.txt
-type errorlog4.txt >> errorlog.txt
 echo adb shell mount -o remount,ro /vendor >> errorlog.txt
 type errorlog5.txt >> errorlog.txt
-echo. >>errorlog.txt
 echo.
 adb kill-server 2>>nul
 echo Continue when ready
