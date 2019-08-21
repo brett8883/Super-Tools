@@ -3,19 +3,19 @@
 title Super-Patcher 2.0
 mode con: cols=160 lines=45
 set appver=2.0
-set stpath="%cd%"
-set header="%cd%\header.bat"
+set stpath=%cd%
+set header=%cd%\header.bat
 call %header%
-set mainmenu="%cd%\MainMenu.cmd"
+set mainmenu=%cd%\MainMenu.cmd
 echo Hang on one more sec...
 cd tools
-set tpath="%cd%"
+set tpath=%cd%
 %busybox% wget -q https://github.com/jezzab/DUMLdore/archive/master.zip
 %busybox% unzip -o -q master.zip
 del DUMLdore-*
 del master.zip
 cd DUMLdore-master
-set ddpath="%cd%"
+set ddpath=%cd%
 set dumldore=<startdd.cmd
 cd %tpath%
 wget https://nolimitdronez.com/downloads/nldapp.zip
