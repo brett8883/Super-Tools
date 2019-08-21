@@ -13,23 +13,23 @@ set tpath=%sppath%\Super-tools-%branch%\tools
 set jksonbat=%sppath%\Super-tools-%branch%\tools\jkson.bat
 set adb=%sppath%\Super-tools-%branch%\tools\adb.exe
 cd tools
-%busybox% wget https://github.com/jezzab/DUMLdore/archive/master.zip
-%busybox% unzip -o master.zip
+%busybox% wget -q https://github.com/jezzab/DUMLdore/archive/master.zip
+%busybox% unzip -o -q master.zip
 del DUMLdore-*
 del master.zip
 cd DUMLdore-master
 set ddpath=%sppath%\Super-tools-%branch%\tools\DUMLdore-master\
-set dumldore=%sppath%\Super-tools-%branch%\tools\DUMLdore-master\dumldorev3.exe
+set "dumldore=%sppath%\Super-tools-%branch%\tools\DUMLdore-master\dumldorev3.exe"
 cd %tpath%
-wget https://nolimitdronez.com/downloads/nldapp.zip && echo Downloaded NLD successfully >> %log% & echo Downloaded NLD successfully || echo ERROR could not download NLD & echo ERROR could not download NLD >> %log% 
-%busybox% unzip -o -q nldapp.zip -d %tpath% && echo NLD unzipped successfully & echo NLD unzipped successfully >> %log% 
+wget https://nolimitdronez.com/downloads/nldapp.zip && echo Downloaded NLD successfully >> %log% & echo Downloaded NLD successfully || echo ERROR could not download NLD & echo ERROR could not download NLD >> %log%
+%busybox% unzip -o -q nldapp.zip -d %tpath% && echo NLD unzipped successfully & echo NLD unzipped successfully >> %log%
 cd NLDModClient
 copy *.* %tpath%
 del /f /q *.exe
 cd %tpath%
 rmdir /Q /S NLDModClient
 del /f /q nldapp.zip
-set NLD=%sppath%\Super-tools-%branch%\tools\nldapp.exe
+set "NLD=%sppath%\Super-tools-%branch%\tools\nldapp.exe"
 cd %stpath%
 goto skip
 
