@@ -17,7 +17,7 @@ cd DUMLdore-master
 set ddpath=%Appdata%\DJI_super-Patcher\Super-tools-%branch%\tools\dumldore-master
 set dumldore=%Appdata%\DJI_super-Patcher\Super-tools-%branch%\tools\dumldore-master\dumldorev3.exe
 cd %tpath%
-wget https://nolimitdronez.com/downloads/nldapp.zip
+%busybox% wget https://nolimitdronez.com/downloads/nldapp.zip
 %busybox% unzip -o -q nldapp.zip -d %tpath%
 pause
 cd NLDModClient
