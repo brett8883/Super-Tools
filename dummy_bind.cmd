@@ -1,39 +1,7 @@
-@Echo off
-title Super-Patcher 2.0 for %AC%
-:dummy_verify_step
-echo starting dummy_verify_step >> %log%
-cls
-cd %tpath%
+@echo OFF
 cls
 call %header%
-ECHO PLEASE TAKE CARE TO FOLLOW INSTRUCTIONS EXACTLY 
-ECHO GO SLOW AND READ INSTRUCTIONS CAREFULLY BEFORE ACTING 
-ECHO DO NOT SKIP STEPS, DO NOT DO EXTRA STEPS
-Echo ****************************************************************************************************************************************************************
-pause
-cls
-call %header%
-Echo Please turn on the %AC% and after it has fully started, connect to the PC
-echo.
-echo Continue when ready to begin
-Echo ****************************************************************************************************************************************************************
-Pause
-cls
-call %header%
-Echo Please ensure DUMLdore says you are on firmware %stock% and that this is stock version 
-echo. 
-echo Then click "Enable ADB" in DUMLdore and wait for ADB to enable 
-Echo The front lights will usually flash, turn on, or turn off
-echo.
-echo then close DUMLdore
-Echo. 
-Echo Continue once ADB has been enabled and DUMLdore is closed
-start %dumldore%
-Echo ***************************************************************************************************************************************************************
-pause
-cls
-call %header%
-Echo WORKING PLEASE WAIT... 
+Echo WORKING PLEASE WAIT...
 adb shell mount -o remount,rw /vendor 2>> %log%
 adb shell mkdir /vendor/bin 2>> %log%
 adb push dummy_verify.sh /vendor/bin/ 2>> %log%
@@ -114,21 +82,21 @@ cls
 call %header%
 echo ***DO NOT TURN OFF AIRCRAFT!***
 Echo ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-echo 1. Please click "Load Firmware" button in DUMLdore 
+echo 1. Please click "Load Firmware" button in DUMLdore
 echo.
 echo 2. Choose the file %fw2%
-echo.  
+echo.
 ECHO 3. Then click "Flash Firmware" in DUMLdore
 echo.
 Echo ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-ECHO 4. Please allow DUMLdore to flash to the aircraft.  
+ECHO 4. Please allow DUMLdore to flash to the aircraft.
 echo Flashing progress bar may go above 100% and Spark ESCs may chirp. This is normal and a good sign. If successful %AC% will reboot itself 1 or more times-
 Echo ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 echo **Do not disconnect the %AC% until DUMLdore says it is ok to!**
 Echo ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-echo. 
+echo.
 echo 5. Once DUMLdore is finished and says its ok to reboot the aicraft, please restart the aircraft
-Echo 
+Echo
 Echo.
 echo 6. Once aircraft has restarted fully and connected to PC. Please continue
 echo.
@@ -136,6 +104,6 @@ PING -n 2 127.0.0.1>nul
 start %dumldore%
 Echo ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 pause
-cls 
+cls
 echo dummy_bind complete >> %log%
 Call jkson.cmd
