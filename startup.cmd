@@ -5,6 +5,7 @@ mode con: cols=160 lines=45
 set appver=2.0
 set stpath=%cd%
 set header=%stpath%\header.bat
+set adb=%cd%\adb.exe
 call %header%
 echo Hang on one more sec...
 cd tools
