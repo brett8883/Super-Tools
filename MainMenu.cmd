@@ -1,5 +1,6 @@
 @echo off
 :mainmenu
+cd %stpath%
 title Super-Patcher 2.0
 cls
 call header.bat
