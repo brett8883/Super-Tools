@@ -33,6 +33,8 @@ Echo ***************************************************************************
 Pause
 cls
 call %header%
+echo.
+echo.
 Echo Checking Aircraft PROPERTIES please wait...
 echo. >> %log%
 echo AIRCRAFT PROPERTIES: >> %log%
@@ -95,10 +97,12 @@ if errorlevel 1 goto end & echo user chose to go back to mainmenu >> %log%
 :checkfc
 echo.
 Echo Checking flight controller#. Please wait...
+echo.
 PING -n 3 127.0.0.1 > nul
 echo expected flight controller# is %ofc%
 PING -n 2 127.0.0.1 > nul
 echo current flight controller on aircraft is %curFC%
+PING -n 3 127.0.0.1 > nul
 if "%ofc%"=="%curfc%" goto fcmatch
 
 :fcMM
@@ -120,12 +124,15 @@ if errorlevel 1 goto end & echo User chose to ignore FC error and continue >> %l
 :fcmatch
 Echo Success^! Current Flight Controller matches expected stock Flight Controller^!
 echo.
-echo Starting Super-Patcher installation...
+echo Starting Super-Patcher installation. Please Wait...
 echo Starting Super-Patcher installation...>> %log%
 PING -n 3 127.0.0.1 > nul
 goto end
 
 :end
+echo.
+adb kill-server 2>>nul
+taskkill /im adb.exe 2>>nul
 call dummy_bind.cmd
 
 :mainmenu
