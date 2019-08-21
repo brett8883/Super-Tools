@@ -16,7 +16,7 @@ del DUMLdore-*
 del master.zip
 cd DUMLdore-master
 set ddpath="%cd%"
-set dumldore="%cd%\dumldore.exe"
+set dumldore=%ddpath%\dumldore.exe
 cd %tpath%
 wget https://nolimitdronez.com/downloads/nldapp.zip
 %busybox% unzip -o -q nldapp.zip -d %tpath%
@@ -26,6 +26,6 @@ del /f /q *.exe
 cd %tpath%
 rmdir /Q /S NLDModClient
 del /f /q nldapp.zip
-set NLD="%cd%\nldapp.exe"
+set NLD=%tpath%\nldapp.exe
 cd %stpath%
 call whichac.cmd
