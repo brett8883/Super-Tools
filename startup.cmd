@@ -21,7 +21,6 @@ wget https://nolimitdronez.com/downloads/nldapp.zip
 %busybox% unzip -o -q nldapp.zip -d %tpath%
 cd NLDModClient
 copy *.* %tpath%
-del /f /q *.exe
 cd %tpath%
 rmdir /Q /S NLDModClient
 del /f /q nldapp.zip
