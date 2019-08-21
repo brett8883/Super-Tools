@@ -36,6 +36,7 @@ call %header%
 echo.
 echo.
 Echo Checking Aircraft PROPERTIES please wait...
+ECHO.
 echo. >> %log%
 echo AIRCRAFT PROPERTIES: >> %log%
 echo.
