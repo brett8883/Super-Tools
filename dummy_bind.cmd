@@ -85,7 +85,8 @@ echo ***DO NOT TURN OFF AIRCRAFT!***
 Echo ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 echo 1. Please click "Load Firmware" button in DUMLdore
 echo.
-echo 2. Choose the file %fw2%
+echo 2. Choose the file %fw2% it is in your SP_Flight_Controllers folder which is at:
+echo %FCfolderpath%
 echo.
 ECHO 3. Then click "Flash Firmware" in DUMLdore
 echo.
