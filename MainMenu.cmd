@@ -32,7 +32,7 @@ If Errorlevel 6 goto NLD
 If Errorlevel 5 goto jkson
 If Errorlevel 4 goto dumldore
 If Errorlevel 3 goto getDownloader
-If Errorlevel 2 goto flashstock 
+If Errorlevel 2 goto flashstock
 If Errorlevel 1 goto StartSP
 
 :flashstock
@@ -61,7 +61,7 @@ goto mainmenu
 
 
 :dumldore
-start %dumldore%
+start "%dumldore%"
 goto mainmenu
 
 
@@ -81,13 +81,13 @@ echo ---------------------------------------------------------------------------
 pause
 cls
 call %header%
-echo Click "Enable ADB" in DUMLdore and wait for ADB to enable 
+echo Click "Enable ADB" in DUMLdore and wait for ADB to enable
 Echo The front lights will usually flash, turn on, or turn off but not always
 echo.
 echo Then close DUMLdore
-Echo. 
+Echo.
 Echo Continue once ADB has been enabled and DUMLdore is closed
-start %dumldore%
+start "%dumldore%"
 echo ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 pause
 cls
@@ -101,21 +101,21 @@ goto mainmenu
 :sorryjkson
 cls
 call %header%
-echo So sorry! 
+echo So sorry!
 echo Jkson FCC Mod is only availible for MavicPro and P4Pv2 right now
 echo.
 echo I will take you back to the main menu. Continue when ready
 pause
 goto mainmenu
 
-:startSp 
+:startSp
 cls
 call variantchooser.cmd
 goto mainmenu
 
 :NLD
 @echo off
-cls 
+cls
 call %header%
 echo PLEASE WAIT just a moment..
 echo.
@@ -126,7 +126,6 @@ if exist NLDapp.exe (goto startNLD) else (goto downloadNLD)
 wget https://nolimitdronez.com/downloads/nldapp.zip
 7za.exe -e nldapp.zip
 set %NLD%=nldapp.exe
-
 :startNLD
 start %NLD%
 cd %stpath%
@@ -145,8 +144,8 @@ cls
 call %header%
 echo Then click "Enable ADB" in DUMLdore and wait for ADB to enable
 echo.
-Echo The front lights will sometimes flash, turn on, or turn off but not always 
-Echo. 
+Echo The front lights will sometimes flash, turn on, or turn off but not always
+Echo.
 Echo Continue once ADB has been enabled and DUMLdore is closed
 start %dumldore%
 echo.
