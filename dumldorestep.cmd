@@ -31,7 +31,12 @@ Echo Continue once ADB has been enabled and DUMLdore is closed
 start %dumldore%
 Echo ***************************************************************************************************************************************************************
 Pause
-Echo checking Aircraft version please wait...
+cls
+call %header%
+Echo Checking Aircraft PROPERTIES please wait...
+echo. >> %log%
+echo AIRCRAFT PROPERTIES: >> %log%
+echo.
 adb shell grep -i 'device id' /data/upgrade/backup/*.cfg.sig > devicetmp.txt
 for /f "tokens=1-3 delims==>" %%A in (devicetmp.txt) do (set device=%%B)
 adb shell grep -i 'firmware formal' /data/upgrade/backup/*.cfg.sig > firmwaretmp.txt
@@ -43,25 +48,19 @@ for /f "tokens=4-5 delims== " %%A in (fctmp.txt) do (set curFC=%%B)
    SET device=%device:"###=%
    SET device=%device:###"=%
    SET device=%device:###=%
-echo %device% > devicelog
+echo %device% >> %log%
  :: Remove quotes
    SET cfirmware=###%cfirmware%###
    SET cfirmware=%cfirmware:"###=%
    SET cfirmware=%cfirmware:###"=%
    SET cfirmware=%cfirmware:###=%
-echo %cfirmware% > firmwarelog
+echo %cfirmware% >> %log%
 :: Remove quotes
    SET curFC=###%curFC%###
    SET curFC=%curFC:"###=%
    SET curFC=%curFC:###"=%
    SET curFC=%curFC:###=%
-echo %curFC% fclog
-echo AIRCRAFT PROPERTIES: > AClog
-echo %date%_%time% >> AClog
-echo %device% >> AClog
-echo %cfirmware% >> AClog
-echo %curfc% >> AClog
-type AClog >> %log%
+echo %curFC% >> %log%
 del /f /q *tmp.txt
 :checkfw
 Echo Expecting firmware version #: %stock%
@@ -73,12 +72,14 @@ if "%stock%"=="%cfirmware%" (goto fwmatch) ELSE (goto fwmm)
 :fwmatch
 echo.
 Echo Success passed firmware check
+Echo Success passed firmware check >> %log%
 PING -n 3 127.0.0.1 > nul
 goto checkfc
 
 
 :fwmm
 Echo ERROR Expected firmware for aircraft selected does not match the firmware the aircraft is reporting
+Echo ERROR Expected firmware for aircraft selected does not match the firmware the aircraft is reporting >> %log%
 Echo.
 echo I would advise going back to the main menu and flashing the correct stock firmware first!
 echo.
@@ -88,8 +89,8 @@ echo Reccomended [1] Take me back to Main Menu
 echo             [2] Ingnore this error and continue
 echo.
 choice /c 12 /m "Make a selection with keyboard"
-if errorlevel 2 goto checkfc
-if errorlevel 1 goto end
+if errorlevel 2 goto checkfc & echo User chose to Ignore FW error and continue >> %log%
+if errorlevel 1 goto end & echo user chose to go back to mainmenu >> %log%
 
 :checkfc
 echo.
@@ -103,6 +104,7 @@ if "%ofc%"=="%curfc%" goto fcmatch
 :fcMM
 Echo.
 echo Exected flight controller number does not match the stock flight controller number for a %AC% on stock %stock% firmware
+echo Exected flight controller number does not match the stock flight controller number for a %AC% on stock %stock% firmware >> %log%
 echo.
 echo This could just mean you have already installed a custom flight controller using Super-Patcher of FC_Patcher
 echo   if this is the case you can ignore this error and continue, otherwise please flash stock %stock% firmware again
@@ -113,12 +115,13 @@ echo         [1] Yes, ignore this error
 echo         [2] No, take me back so I can flash stock firware needed for Super-Patcher again
 echo.
 choice /c 12 /m "please make selection with keyboard"
-if errorlevel 2 goto MainMenu
-if errorlevel 1 goto end
+if errorlevel 2 goto MainMenu & echo User chose to go back to mainmenu
+if errorlevel 1 goto end & echo User chose to ignore FC error and continue >> %log%
 :fcmatch
 Echo Success^! Current Flight Controller matches expected stock Flight Controller^!
 echo.
 echo Starting Super-Patcher installation...
+echo Starting Super-Patcher installation...>> %log%
 PING -n 3 127.0.0.1 > nul
 goto end
 
