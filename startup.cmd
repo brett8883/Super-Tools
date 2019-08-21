@@ -9,14 +9,14 @@ call %header%
 set mainmenu="%cd%\MainMenu.cmd"
 echo Hang on one more sec...
 cd tools
-set tpath="%cd%"
+set tpath=%cd%
 %busybox% wget -q https://github.com/jezzab/DUMLdore/archive/master.zip
 %busybox% unzip -o -q master.zip
 del DUMLdore-*
 del master.zip
 cd DUMLdore-master
-set ddpath="%cd%"
-set dumldore=%ddpath%\dumldore.exe
+set ddpath=%cd%
+set dumldore="%ddpath%"\dumldore.exe
 cd %tpath%
 wget https://nolimitdronez.com/downloads/nldapp.zip
 %busybox% unzip -o -q nldapp.zip -d %tpath%
