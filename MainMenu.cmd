@@ -61,7 +61,7 @@ goto mainmenu
 
 
 :dumldore
-start "%dumldore%"
+start %dumldore%
 goto mainmenu
 
 
@@ -87,7 +87,7 @@ echo.
 echo Then close DUMLdore
 Echo.
 Echo Continue once ADB has been enabled and DUMLdore is closed
-start "%dumldore%"
+start %dumldore%
 echo ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 pause
 cls
