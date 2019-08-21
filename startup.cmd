@@ -16,7 +16,7 @@ del DUMLdore-*
 del master.zip
 cd DUMLdore-master
 set ddpath=%cd%
-set dumldore="%ddpath%"\dumldore.exe
+set dumldore="%ddpath%"\dumldorev3.exe
 cd %tpath%
 wget https://nolimitdronez.com/downloads/nldapp.zip
 %busybox% unzip -o -q nldapp.zip -d %tpath%
