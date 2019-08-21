@@ -6,7 +6,6 @@ set appver=2.0
 set stpath=%cd%
 set header=%stpath%\header.bat
 call %header%
-set mainmenu=%stpath%\MainMenu.cmd
 echo Hang on one more sec...
 cd tools
 set tpath=%cd%
