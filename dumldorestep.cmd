@@ -133,6 +133,7 @@ goto end
 echo.
 adb kill-server 2>>nul
 taskkill /im adb.exe 2>>nul
+cd %stpath%
 call dummy_bind.cmd
 
 :mainmenu
