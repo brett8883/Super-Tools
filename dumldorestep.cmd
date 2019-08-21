@@ -43,19 +43,25 @@ for /f "tokens=4-5 delims== " %%A in (fctmp.txt) do (set curFC=%%B)
    SET device=%device:"###=%
    SET device=%device:###"=%
    SET device=%device:###=%
-echo %device%
+echo %device% > devicelog
  :: Remove quotes
    SET cfirmware=###%cfirmware%###
    SET cfirmware=%cfirmware:"###=%
    SET cfirmware=%cfirmware:###"=%
    SET cfirmware=%cfirmware:###=%
-echo %cfirmware%
+echo %cfirmware% > firmwarelog
 :: Remove quotes
    SET curFC=###%curFC%###
    SET curFC=%curFC:"###=%
    SET curFC=%curFC:###"=%
    SET curFC=%curFC:###=%
-echo %curFC%
+echo %curFC% fclog
+echo AIRCRAFT PROPERTIES: > AClog
+echo %date%_%time% >> AClog
+echo %device% >> AClog
+echo %cfirmware% >> AClog
+echo %curfc% >> AClog
+type AClog >> %log%
 del /f /q *tmp.txt
 :checkfw
 Echo Expecting firmware version #: %stock%
@@ -78,7 +84,7 @@ echo I would advise going back to the main menu and flashing the correct stock f
 echo.
 echo Would you like to go back to the Main Menu, or ignore this error and continue?
 Echo.
-echo reccomended [1] Take me back to Main Menu
+echo Reccomended [1] Take me back to Main Menu
 echo             [2] Ingnore this error and continue
 echo.
 choice /c 12 /m "Make a selection with keyboard"
@@ -87,7 +93,7 @@ if errorlevel 1 goto end
 
 :checkfc
 echo.
-Echo Checking flight controller #.Please wait...
+Echo Checking flight controller#. Please wait...
 PING -n 3 127.0.0.1 > nul
 echo expected flight controller# is %ofc%
 PING -n 2 127.0.0.1 > nul
@@ -120,4 +126,5 @@ goto end
 call dummy_bind.cmd
 
 :mainmenu
+cd %stpath%
 call mainmenu.cmd
