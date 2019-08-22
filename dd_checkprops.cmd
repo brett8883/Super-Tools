@@ -1,6 +1,7 @@
 @Echo off
 title Super-Patcher 2.0 for %AC%
 :dummy_verify_step
+set fork=0
 echo starting dummy_verify_step >> %log%
 cls
 cd %tpath%
@@ -81,6 +82,7 @@ goto checkfc
 
 
 :fwmm
+echo.
 Echo ERROR Expected firmware for aircraft selected does not match the firmware the aircraft is reporting
 Echo ERROR Expected firmware for aircraft selected does not match the firmware the aircraft is reporting >> %log%
 Echo.
@@ -93,7 +95,7 @@ echo             [2] Ingnore this error and continue
 echo.
 choice /c 12 /m "Make a selection with keyboard"
 if errorlevel 2 goto checkfc & echo User chose to Ignore FW error and continue >> %log%
-if errorlevel 1 goto end & echo user chose to go back to mainmenu >> %log%
+if errorlevel 1 goto mainmenu
 
 :checkfc
 echo.
@@ -108,20 +110,20 @@ if "%ofc%"=="%curfc%" goto fcmatch
 
 :fcMM
 Echo.
-echo Exected flight controller number does not match the stock flight controller number for a %AC% on stock %stock% firmware
-echo Exected flight controller number does not match the stock flight controller number for a %AC% on stock %stock% firmware >> %log%
+echo Expected flight controller number does not match the stock flight controller number for a %AC% on stock %stock% firmware
+echo Expected flight controller number does not match the stock flight controller number for a %AC% on stock %stock% firmware >> %log%
 echo.
 echo This could just mean you have already installed a custom flight controller using Super-Patcher of FC_Patcher
 echo   if this is the case you can ignore this error and continue, otherwise please flash stock %stock% firmware again
 echo.
 echo Did you use Super-Patcher or FC_Patcher to install your current flight controller?
 echo.
-echo         [1] Yes, ignore this error
-echo         [2] No, take me back so I can flash stock firware needed for Super-Patcher again
+echo         [Y] Yes, ignore this error
+echo         [N] No, take me back so I can flash stock firware needed for Super-Patcher again
 echo.
-choice /c 12 /m "please make selection with keyboard"
+choice  /m "please make selection with keyboard"
 if errorlevel 2 goto MainMenu & echo User chose to go back to mainmenu
-if errorlevel 1 goto end & echo User chose to ignore FC error and continue >> %log%
+if errorlevel 1 goto continue
 :fcmatch
 Echo Success^! Current Flight Controller matches expected stock Flight Controller^!
 echo.
@@ -130,13 +132,17 @@ echo Starting Super-Patcher installation...>> %log%
 PING -n 3 127.0.0.1 > nul
 goto end
 
-:end
+:continue
 echo.
 adb kill-server 2>>nul
 taskkill /im adb.exe 2>>nul
 cd %stpath%
-call dummy_bind.cmd
+goto end
 
 :mainmenu
+set fork=1
 cd %stpath%
 call mainmenu.cmd
+
+:end
+if "%fork%"=="1" (cd %stpath% & call mainmenu.cmd) ELSE (call dummy_bind.cmd)

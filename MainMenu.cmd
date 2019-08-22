@@ -60,11 +60,9 @@ cd %stpath%
 cd %tpath%
 goto mainmenu
 
-
 :dumldore
 start %dumldore%
 goto mainmenu
-
 
 :jkson
 cls
@@ -131,7 +129,6 @@ set %NLD%=nldapp.exe
 start %NLD%
 cd %stpath%
 goto mainmenu
-
 
 :adb
 cls
