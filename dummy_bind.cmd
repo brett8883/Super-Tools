@@ -12,7 +12,6 @@ if "%vt%"=="1" (goto dummy1) else (goto dummy2)
 echo dummy1 engaged based on verify type is %AC% %vt%
 echo dummy1 engaged based on AC type is %AC% %VT%>> %log%
 adb shell cd /vendor/bin/; chown root:root dummy_verify.sh; chmod 755 dummy_verify.sh; cp /sbin/dji_verify /vendor/bin/original_dji_verify_copy; sync; cd / && echo Success activating dummy_verify.sh
-echo dummy_verify step complete >> %log%
 goto enddummy
 
 :exit
@@ -29,6 +28,7 @@ goto enddummy
 
 :enddummy
 adb shell mount -o remount,ro /vendor && echo Success making vendor read only again. Aircraft requires reboot. Please wait to return to program
+echo dummy_verify step complete >> %log%
 echo STILL WORKING... Just a sec
 adb kill-server 2> nul
 PING -n 5 127.0.0.1 > nul
