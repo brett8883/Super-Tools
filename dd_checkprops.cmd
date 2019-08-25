@@ -5,6 +5,7 @@ set fork=0
 echo starting dummy_verify_step >> %log%
 cls
 cd %tpath%
+del /f /s *.txt 2>nul
 cls
 call %header%
 ECHO PLEASE TAKE CARE TO FOLLOW INSTRUCTIONS EXACTLY
