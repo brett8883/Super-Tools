@@ -179,7 +179,7 @@ PING -n 3 127.0.0.1>nul
 type log6.txt
 type log6.txt >> %log%
 :endbind
-del /f /s *.txt
+del /f /q *.txt
 echo.
 Echo Still working please wait...
 adb kill-server > nul
