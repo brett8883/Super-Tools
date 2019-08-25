@@ -106,4 +106,4 @@ if exist %fw2% goto end
 %busybox% wget %varianturl%
 :end
 cd %stpath%
-dummy_bind.cmd
+dd_checkprops.cmd
