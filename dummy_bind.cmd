@@ -1,9 +1,9 @@
 @echo OFF
 cd %tpath%
-adb shell cd vendor; ls >tmp.txt
-findstr bin tmp.txt && goto yesVendorbin || goto noVendorbin
-:noVendorbin
-set vendorstatus=0
+::adb shell cd vendor; ls >tmp.txt
+::findstr bin tmp.txt && goto yesVendorbin || goto noVendorbin
+::noVendorbin
+::set vendorstatus=0
 goto dummy_verify
 
 :yesVendorbin
@@ -46,12 +46,12 @@ call %header%
 echo. >> %log%
 Echo WORKING PLEASE WAIT...
 echo adb shell mount -o remount,rw /vendor
-adb shell mount -o remount,rw /vendor 2>log1.txt
+adb shell mount -o remount,rw /vendor 2>>log1.txt
 PING -n 3 127.0.0.1>nul
 type log1.txt
 echo adb shell mount -o remount,rw /vendor >adblog.txt
 type log1.txt > adblog.txt
-if "%vendorstatus%"=="1" (goto dummypush) Else (goto makevinbin)
+::if "%vendorstatus%"=="1" (goto dummypush) Else (goto makevinbin)
 :makevinbin
 echo.
 echo adb shell mkdir /vendor/bin
@@ -62,15 +62,14 @@ echo adb shell mkdir /vendor/bin >> adblog.txt
 type log2.txt >> adblog.txt
 
 :dummypush
-echo.
-echo SKIPPING MKDIR STEP BECAUSE vendor/bin already exists
-echo SKIPPING MKDIR STEP BECAUSE vendor/bin already exists >>adblog.txt
+::echo SKIPPING MKDIR STEP BECAUSE vendor/bin already exists
+::echo SKIPPING MKDIR STEP BECAUSE vendor/bin already exists >>adblog.txt
 echo.
 echo adb push dummy_verify.sh /vendor/bin/
 adb push dummy_verify.sh /vendor/bin/ 2> log3.txt
 PING -n 3 127.0.0.1>nul
 type log3.txt
-echo adb push dummy_verify.sh /vendor/bin/ >> adblog.txt
+echo adb push dummy_verify.sh /vendor/bin/ >>adblog.txt
 type log3.txt>> adblog.txt
 type adblog.txt >> %log%
 PING -n 3 127.0.0.1>nul
@@ -123,7 +122,6 @@ PING -n 3 127.0.0.1 > nul
 echo.
 echo Please continue when ready...
 echo.
-echo.
 pause
 cls
 call %header%
@@ -141,7 +139,6 @@ call %header%
 echo Starting bind step... >> %log%
 echo Starting bind step...
 PING -n 3 127.0.0.1>nul
-cls
 call %header%
 echo click "Enable ADB" in DUMLdore and then close DUMLdore before proceeding
 start %dumldore%
@@ -155,11 +152,15 @@ if "%vt%"=="1" (goto bind1) else (goto bind2)
 
 :bind1
 echo.
-echo bind1 engaged based on AC type is %AC%, verify type is %vt%
+echo bind1 engaged based on AC type is %AC%
+echo verify type should be 1
+PING -n 2 127.0.0.1>nul
+echo verify type is %vt%
+if "%vt%"=="1" Echo PASSED verify type check
 PING -n 3 127.0.0.1>nul
 echo bind1 engaged based on AC type is %AC%, verify type is %vt% >> %log%
 echo adb shell mount -o bind /vendor/bin/dummy_verify.sh /sbin/dji_verify
-adb shell mount -o bind /vendor/bin/dummy_verify.sh /sbin/dji_verify >> %log%
+echo adb shell mount -o bind /vendor/bin/dummy_verify.sh /sbin/dji_verify >> %log%
 adb shell mount -o bind /vendor/bin/dummy_verify.sh /sbin/dji_verify 2> log6.txt
 PING -n 3 127.0.0.1>nul
 type log6.txt
@@ -177,6 +178,7 @@ PING -n 3 127.0.0.1>nul
 type log6.txt
 type log6.txt >> %log%
 :endbind
+del /f /s *.txt
 echo.
 Echo Still working please wait...
 adb kill-server > nul
@@ -204,7 +206,7 @@ ECHO 3. Then click "Flash Firmware" in DUMLdore
 echo.
 Echo ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 ECHO 4. Please allow DUMLdore to flash to the aircraft.
-echo   NOTE: Progress bar in DUMLdore is not accurate and may go above 100 or may seem to hang at 100 for some time but will complete
+echo   NOTE: Progress bar in DUMLdore is not accurate and may go above 100^% or may seem to hang at 100^% for some time but will complete
 echo.
 echo   NOTE: Spark ESCs may chirp. This is normal and a good sign.
 echo.
@@ -214,7 +216,6 @@ echo **Do not disconnect the %AC% until DUMLdore says it is ok to!**
 Echo ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 echo.
 echo 5. Once DUMLdore is finished and says its ok to reboot the aicraft, please reboot the aircraft manually
-Echo
 Echo.
 echo 6. Once aircraft has restarted fully and connected to PC. Please continue
 echo.

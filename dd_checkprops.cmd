@@ -124,6 +124,7 @@ echo.
 choice  /m "please make selection with keyboard"
 if errorlevel 2 goto MainMenu & echo User chose to go back to mainmenu
 if errorlevel 1 goto continue
+
 :fcmatch
 Echo Success^! Current Flight Controller matches expected stock Flight Controller^!
 echo.
@@ -145,4 +146,4 @@ cd %stpath%
 call mainmenu.cmd
 
 :end
-if "%fork%"=="1" (cd %stpath% & call mainmenu.cmd) ELSE (call dummy_bind.cmd)
+if "%fork%"=="1" (call mainmenu.cmd) ELSE (call dummy_bind.cmd)
