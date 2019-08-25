@@ -106,4 +106,4 @@ if exist %fw2% goto end
 %busybox% wget %varianturl%
 :end
 cd %stpath%
-call dd_checkprops.cmd
+call _verify.cmd
