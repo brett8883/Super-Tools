@@ -107,7 +107,7 @@ goto enddummy
 :enddummy
 echo.
 echo adb shell mount -o remount,ro /vendor
-adb shell mount -o remount,ro /vendor >> %log%
+echo adb shell mount -o remount,ro /vendor >> %log%
 adb shell mount -o remount,ro /vendor 2>> log5.txt
 PING -n 3 127.0.0.1>nul
 type log5.txt
@@ -139,6 +139,7 @@ call %header%
 echo Starting bind step... >> %log%
 echo Starting bind step...
 PING -n 3 127.0.0.1>nul
+cls
 call %header%
 echo click "Enable ADB" in DUMLdore and then close DUMLdore before proceeding
 start %dumldore%
