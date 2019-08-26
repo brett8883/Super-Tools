@@ -77,7 +77,8 @@ echo Model:%device%
 echo Firmware: %cfirmware%
 echo Flight Controller#: %curFC%
 PING -n 4 127.0.0.1>nul
-goto end
+:end
+call dummy_bind.cmd
 
 REM :checkfw
 REM Echo Expecting firmware version #: %stock%
@@ -160,5 +161,3 @@ REM call mainmenu.cmd
 
 REM :end
 REM if "%fork%"=="1" (call mainmenu.cmd) ELSE (call dummy_bind.cmd)
-:end
-call dummy_bind.cmd
