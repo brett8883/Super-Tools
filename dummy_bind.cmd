@@ -1,4 +1,6 @@
 @echo OFF
+cls
+call %header%
 cd %tpath%
 ::adb shell cd vendor; ls >tmp.txt
 ::findstr bin tmp.txt && goto yesVendorbin || goto noVendorbin
@@ -6,48 +8,48 @@ cd %tpath%
 ::set vendorstatus=0
 goto dummy_verify
 
-:yesVendorbin
-set vendorstatus=1
-echo /vendor/bin exists no need to mkdir
-echo /vendor/bin exists no need to mkdir >> %log%
-echo.
-echo Checking for vendor/bin/dummy_verify.sh please wait...
-PING -n 3 127.0.0.1>nul
-goto checkdummy
+REM :yesVendorbin
+REM set vendorstatus=1
+REM echo /vendor/bin exists no need to mkdir
+REM echo /vendor/bin exists no need to mkdir >> %log%
+REM echo.
+REM echo Checking for vendor/bin/dummy_verify.sh please wait...
+REM PING -n 3 127.0.0.1>nul
+REM goto checkdummy
 
-:checkdummy
-echo.
-adb shell cd vendor/bin; ls >tmp.txt
-findstr dummy_verify.sh tmp.txt && goto present || goto noDummy
-:yesDummy
-echo /vendor/bin contents >> %log%
-type tmp.txt >> %log%
-ECHO. >> %log%
-echo dummy_verify is already in /vendor/bin skipping to bind step
-echo dummy_verify is already in /vendor/bin skipping to bind step >> %log%
-echo. >> %log%
-PING -n 4 127.0.0.1>nul
-set bindstatus=1
-del /f /q tmp.txt
-goto bind
+REM :checkdummy
+REM echo.
+REM adb shell cd vendor/bin; ls >tmp.txt
+REM findstr dummy_verify.sh tmp.txt && goto present || goto noDummy
+REM :yesDummy
+REM echo /vendor/bin contents >> %log%
+REM type tmp.txt >> %log%
+REM ECHO. >> %log%
+REM echo dummy_verify is already in /vendor/bin skipping to bind step
+REM echo dummy_verify is already in /vendor/bin skipping to bind step >> %log%
+REM echo. >> %log%
+REM PING -n 3 127.0.0.1>nul
+REM set bindstatus=1
+REM del /f /q tmp.txt
+REM goto bind
 
-:noDummy
-echo
-set bindstatus=0
-echo vendor/bin/dummy_verify.sh does NOT exist already. Starting create dummy_verify.sh step
-echo PLEASE WAIT..
-PING -n 4 127.0.0.1>nul
-del /f /q tmp.txt
-goto dummy_verify
+REM :noDummy
+REM echo
+REM set bindstatus=0
+REM echo vendor/bin/dummy_verify.sh does NOT exist already. Starting create dummy_verify.sh step
+REM echo PLEASE WAIT..
+REM PING -n 4 127.0.0.1>nul
+REM del /f /q tmp.txt
+REM goto dummy_verify
 
 :dummy_verify
 cls
 call %header%
 echo. >> %log%
 Echo WORKING PLEASE WAIT...
-echo adb shell mount -o remount,rw /vendor
 adb shell mount -o remount,rw /vendor 2>>log1.txt
-PING -n 3 127.0.0.1>nul
+echo adb shell mount -o remount,rw /vendor
+PING -n 2 127.0.0.1>nul
 type log1.txt
 echo adb shell mount -o remount,rw /vendor >adblog.txt
 type log1.txt > adblog.txt
@@ -118,7 +120,9 @@ echo STILL WORKING... Just a sec
 adb kill-server 2> nul
 echo dummy_verify step complete
 echo.
-PING -n 3 127.0.0.1 > nul
+PING -n 3 127.0.0.1 >nul
+Echo ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+echo.
 echo.
 echo Please continue when ready...
 echo.
@@ -220,7 +224,7 @@ echo 5. Once DUMLdore is finished and says its ok to reboot the aicraft, please 
 Echo.
 echo 6. Once aircraft has restarted fully and connected to PC. Please continue
 echo.
-PING -n 4 127.0.0.1>nul
+PING -n 3 127.0.0.1>nul
 start %dumldore%
 Echo ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 pause
