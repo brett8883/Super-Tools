@@ -68,6 +68,7 @@ echo %cfirmware%
    SET curFC=%curFC:###=%
 echo %curFC%
 del /f /q *.txt
+cd %stpath%
 call dummy_bind.cmd
 REM if "%curFC%"=="" (goto end) ELSE (goto declareprops)
 
