@@ -41,7 +41,6 @@ REM echo PLEASE WAIT..
 REM PING -n 4 127.0.0.1>nul
 REM del /f /q tmp.txt
 REM goto dummy_verify
-
 :dummy_verify
 cls
 call %header%
@@ -62,7 +61,6 @@ PING -n 3 127.0.0.1>nul
 type log2.txt
 echo adb shell mkdir /vendor/bin >> adblog.txt
 type log2.txt >> adblog.txt
-
 :dummypush
 ::echo SKIPPING MKDIR STEP BECAUSE vendor/bin already exists
 ::echo SKIPPING MKDIR STEP BECAUSE vendor/bin already exists >>adblog.txt

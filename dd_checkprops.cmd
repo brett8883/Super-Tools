@@ -54,31 +54,32 @@ for /f "tokens=4-5 delims== " %%A in (fctmp.txt) do (set curFC=%%B)
    SET device=%device:"###=%
    SET device=%device:###"=%
    SET device=%device:###=%
-echo %device% >> %log%
+echo %device%
  :: Remove quotes
    SET cfirmware=###%cfirmware%###
    SET cfirmware=%cfirmware:"###=%
    SET cfirmware=%cfirmware:###"=%
    SET cfirmware=%cfirmware:###=%
-echo %cfirmware% >> %log%
+echo %cfirmware%
  :: Remove quotes
    SET curFC=###%curFC%###
    SET curFC=%curFC:"###=%
    SET curFC=%curFC:###"=%
    SET curFC=%curFC:###=%
-echo %curFC% >> %log%
-del /f /q *tmp.txt
-if "%curFC%"=="" (goto end) ELSE (goto declareprops)
-
-:declareprops
-ECHO AIRCRAFT PROPERTIES
-echo.
-echo Model:%device%
-echo Firmware: %cfirmware%
-echo Flight Controller#: %curFC%
-PING -n 4 127.0.0.1>nul
-:end
+echo %curFC%
+del /f /q *.txt
 call dummy_bind.cmd
+REM if "%curFC%"=="" (goto end) ELSE (goto declareprops)
+
+REM :declareprops
+REM ECHO AIRCRAFT PROPERTIES
+REM echo.
+REM echo Model:%device%
+REM echo Firmware: %cfirmware%
+REM echo Flight Controller#: %curFC%
+REM PING -n 4 127.0.0.1>nul
+REM :end
+REM call dummy_bind.cmd
 
 REM :checkfw
 REM Echo Expecting firmware version #: %stock%
