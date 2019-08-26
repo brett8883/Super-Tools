@@ -6,7 +6,7 @@ cd %tpath%
 ::findstr bin tmp.txt && goto yesVendorbin || goto noVendorbin
 ::noVendorbin
 ::set vendorstatus=0
-goto dummy_verify
+::goto dummy_verify
 
 REM :yesVendorbin
 REM set vendorstatus=1
