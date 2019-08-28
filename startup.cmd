@@ -19,7 +19,7 @@ set dumldore=%Appdata%\DJI_super-Patcher\Super-tools-%branch%\tools\dumldore-mas
 cd %tpath%
 Echo. >> %log%
 Echo Download NLD app >> %log%
-wget https://nolimitdronez.com/downloads/nldapp.zip 2>> %log%
+wget https://nolimitdronez.com/downloads/nldapp.zip --no-check-certificate 2>> %log%
 %busybox% unzip -o -q nldapp.zip -d %tpath%
 cd NLDModClient
 copy *.* %tpath%
