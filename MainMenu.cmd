@@ -19,8 +19,8 @@ echo                                           [2] Download ^& Flash the correct
 echo.
 echo                                        UTILITIES
 echo                                           [3] Open DankDroneDownloader by CS2000 to download any other firmware files
-echo                                           [4] Launch DULMdore by Jezzeb
-echo                                           [5] Launch jkson fcc mod (Mavic, Spark, and P4Pv2 only)
+echo                                           [4] Launch DUMLdore by Jezzeb
+echo                                           [5] Launch jkson fcc mod (Mavic, Spark, and P4Pv2 only) by jkson5
 echo                                           [6] Launch the free NoLimitDronez app
 echo.
 echo                                        ADVANCED
