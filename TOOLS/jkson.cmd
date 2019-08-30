@@ -160,7 +160,7 @@ echo do >> check_1860_state.sh
 echo.
 echo 1 - Default power
 echo 2 - Force FCC
-echo 3 - Force FCC and Boost (Use with caution)
+echo 3 - Force FCC and Boost (Avoid excessive heat to RC when in use as a precaution)
 echo.
 choice /C 123 /M "Please select"
 If Errorlevel 3 echo dji_mb_ctrl -S test -R local -g 9 -s 9 -c 27 00024800FFFF0200000000 >> check_1860_state.sh
@@ -177,15 +177,28 @@ If Errorlevel 1 echo break >> check_1860_state.sh
 echo done >> check_1860_state.sh
 Goto AdbSet
 
+:AdbRemove
+@echo on
+adb shell busybox mount -o remount,rw /vendor
+adb shell rm /vendor/bin/check_1860_state.sh
+@echo off
+echo(
+echo Jkson Mod has been removed! Please restart your device.
+echo(
+Goto End
+
 :AdbSet
 echo WORKING PLESE WAIT...
+@echo on
 dos2unix.exe check_1860_state.sh
 adb shell mount -o remount,rw /vendor
 adb shell mkdir /vendor/bin
 adb shell chmod 755 /vendor/bin
-adb push check_1860_state.sh /vendor/bin/check_1860_state.sh 
+adb push check_1860_state.sh /vendor/bin/check_1860_state.sh
 adb shell chmod 755 /vendor/bin/check_1860_state.sh
 adb shell mount -o remount,ro /vendor
+@echo off
+PING -n 4 127.0.0.1>nul
 echo.
 echo 
 cls
