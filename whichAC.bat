@@ -120,4 +120,8 @@ echo %vt%
 echo %AC%
 echo %stock%
 echo %fc%
+
+rem Bird Specific messages
+IF [%AC%]==[Spark] ECHO SuperPatcher firmware sets the transmit power on the Sparks remote to 1.5 watts. This can under certain circumstances cause degraded performance and under extreme conditions potentially even damage to the remote controller. Please be mindful of the temperature of your remote control if operating in a hot climate.
+
 call _verify.bat
