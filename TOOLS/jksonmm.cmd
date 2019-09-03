@@ -1,19 +1,49 @@
 @echo off
 cls
-echo Start jkson >> %log%
+echo Start jksonMM >> %log%
 :askjkson
 cls
-call %header%
-echo ===============================================================================================================================================================
-ECHO Would you like to enable jkson fcc radio mod to enable fixed FCC or fixed Boost? 
-echo you can find out more about jkson fcc mod at http://github.com/jkson5/jkson_fcc_mod
-Echo [1] Yes 
-echo [2] No
-echo [3] I'd like more information on jkson fcc mod 
-choice /C 123 /D 1 /T 99 /M "Enable jkson mod?"
-If Errorlevel 3 Goto getjksoninfo
-If Errorlevel 2 Goto nofcc
+Echo *****************************************************************************************************
+Echo *****************************************************************************************************
+ECHO JKSON FCC MOD
+echo On loan from Jkson5
+Echo *****************************************************************************************************
+Echo *****************************************************************************************************
+ECHO What would you like to do?
+echo. 
+Echo **[1] Start jkson_fcc_mod so I can ENABLE jkson_fcc_mod to configure radio power settings**
+echo.
+echo [2] I want to DELETE the jkson_fcc_mod settings I already have (not neccessary to delete and reapply. New settings overwrite old ones
+echo [3] I'd like more information on jkson fcc mod
+echo [4] Take me back to the MainMenu.
+echo.
+choice /C 1234 /D 1 /T 99 /M "Enable jkson mod?"
+if errorlevel 4 Goto getjksoninfo
+If Errorlevel 3 Goto nofcc
+If Errorlevel 2 Goto AdbRemove
 If Errorlevel 1 Goto jkson
+
+:AdbRemove
+echo User has indicated to remove jkson_fcc_mod. Starting removal process... >> %log%
+cls
+Echo *****************************************************************************************************
+Echo *****************************************************************************************************
+ECHO JKSON FCC MOD
+echo On loan from Jkson5
+Echo *****************************************************************************************************
+Echo *****************************************************************************************************
+Echo REMOVING jkson_fcc_mod settings PLEASE WAIT...
+echo.
+@echo on
+adb shell busybox mount -o remount,rw /vendor
+adb shell rm /vendor/bin/check_1860_state.sh
+@echo off
+echo.
+echo Jkson Mod has been removed! Please restart your aircraft.
+echo.
+echo Once it has fully restarted and connected to this PC, please continue
+pause
+Goto End
 
 :nofcc
 echo User declined FCC mod >> %log%
