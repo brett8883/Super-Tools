@@ -26,8 +26,12 @@ echo.
 echo                                        ADVANCED
 echo                                           [7] Enable ADB and open a new CMD Prompt into ADB
 echo.
+echo                                        EXIT
+echo                                           [8] Exit DJI Super-Patcher
+echo.
 echo ---------------------------------------------------------------------------------------------------------------------------------------------------------------
-Choice /c 1234567 /M "Please make a section with keyboard"
+Choice /c 12345678 /M "Please make a section with keyboard"
+if errorlevel 8 goto exit
 if errorlevel 7 goto adb
 If Errorlevel 6 goto NLD
 If Errorlevel 5 goto jkson
@@ -159,3 +163,6 @@ pause
 adb kill-server 2>>nul
 taskkill /im adb.exe 2>>nul
 goto mainmenu
+
+:exit
+exit
