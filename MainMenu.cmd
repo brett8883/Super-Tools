@@ -71,7 +71,7 @@ goto mainmenu
 :jkson
 cls
 if "%AC%"=="MavicPro" goto startjkson
-if "%AC%"=="P4PV2" goto startjkson
+if "%AC%"=="P4Pv2" goto startjkson
 if "%AC%"=="Spark" goto startjkson
 goto sorryjkson
 
