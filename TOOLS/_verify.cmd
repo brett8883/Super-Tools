@@ -73,27 +73,38 @@ goto end
 @echo off
 cls 
 call %header%
-ECHO Congradulations! Super-Patcher was sucessfull
+ECHO Congradulations! Super-Patcher was sucessful
 echo ===============================================================================================================================================================
-ECHO -You can optionally Connect to Assistant 2 or DJI Go 4 and use the simulator to ensure 
-Echo      proper working order in the sim before testing outside.
-echo.
-Echo -This is simply good practice any time firmware is updated or modified.
-echo.
-Echo -You may now also modify any paramters you'd like using Assistant 2 1.1.2 in debug mode
-echo ===============================================================================================================================================================
+Echo You may now also modify any paramters you'd like using Assistant 2 1.1.2 in debug mode
 echo ===============================================================================================================================================================
 Echo You have completed the patching operation. Please note most settings and all parameters are now reset
 echo.
-Echo Remember to check your RTH altitude and such.
+Echo -Remember to check your RTH altitude and such.
+echo ===============================================================================================================================================================
 echo.
-Echo Aircraft may ask you to recalibrate sensors but if it does not then it is not neccesary to calibrate
+echo If you have found that this program has been helpful please consider donating on PayPal.
 echo.
-echo Thanks for using Super-Patcher! continue to go back to the main menu
-pause
-cls
+echo Super-Patcher has always been free to use but the continued development has been financed by users like you. 
+echo -The average donation has been about $10-$20 USD
+echo.
+echo Any amount is greatly appreciated but there is no obligation
+echo ===============================================================================================================================================================
+echo.
+echo [1] Yes take me to the PayPal page!
+echo [2] Not now, take me back to the MainMenu
+echo [3] Shut down Super-Patcher
+choice /c 123 /m "Please make selection with keyboard"
+If Errorlevel 3 Goto exitsp
+If Errorlevel 2 Goto end
+If Errorlevel 1 Goto donate
+
+:donate
+rundll32 url.dll,FileProtocolHandle https://www.paypal.me/brett8883
 cd %stpath%
 goto end
+
+:exitsp
+exit
 
 :end
 call mainmenu.cmd
