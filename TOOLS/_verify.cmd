@@ -99,7 +99,7 @@ If Errorlevel 2 Goto end
 If Errorlevel 1 Goto donate
 
 :donate
-rundll32 url.dll,FileProtocolHandle https://www.paypal.me/brett8883
+rundll32 url.dll,FileProtocolHandler https://www.paypal.me/brett8883
 cd %stpath%
 goto end
 
