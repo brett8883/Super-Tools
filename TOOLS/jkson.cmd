@@ -1,4 +1,5 @@
 @echo off
+SETLOCAL DisableDelayedExpansion
 cls
 echo Start jkson >> %log%
 if "%AC%"=="MavicPro" goto askjkson
@@ -214,5 +215,6 @@ echo jkson mod complete >> %log%
 pause
 :startverify
 echo going to _verify >> %log%
+SETLOCAL EnableDelayedExpansion
 cls
 call _verify.cmd
