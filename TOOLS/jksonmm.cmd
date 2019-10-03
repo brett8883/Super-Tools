@@ -71,7 +71,7 @@ ECHO JKSON FCC MOD
 echo On loan from JKSON5
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
-echo #!/system/bin/sh > check_1860_state.sh
+echo #^!/system/bin/sh > check_1860_state.sh
 echo /system/bin/check_1860_state.sh^& >> check_1860_state.sh
 echo busybox ping -c 1 -w 1800 192.168.41.2 >> check_1860_state.sh
 echo sleep 5 >> check_1860_state.sh
