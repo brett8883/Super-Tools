@@ -149,32 +149,19 @@ Echo ***************************************************************************
 echo #!/system/bin/sh > check_1860_state.sh
 echo /system/bin/check_1860_state.sh^& >> check_1860_state.sh
 echo.
-echo 1 - Set the mod 
+echo 1 - Set boost mod for Spark 
 echo 2 - DELETE this mod from DJI device
 echo.
 choice /C 12 /M "Please select"
 If Errorlevel 2 Goto AdbRemove
-echo while : >> check_1860_state.sh
-echo do >> check_1860_state.sh
 :EndFreqSpark
 echo.
-echo 1 - Default power
-echo 2 - Force FCC
-echo 3 - Force FCC and Boost (Avoid excessive heat to RC when in use as a precaution)
-echo.
-choice /C 123 /M "Please select"
-If Errorlevel 3 echo dji_mb_ctrl -S test -R local -g 9 -s 9 -c 27 00024800FFFF0200000000 >> check_1860_state.sh
-If Errorlevel 3 echo sleep 10 >> check_1860_state.sh
-If Errorlevel 3 echo iw phy phy0 set txpower limit 3500 >> check_1860_state.sh
-If Errorlevel 3 echo break >> check_1860_state.sh
-If Errorlevel 3 Goto EndModSpark
-If Errorlevel 2 echo dji_mb_ctrl -S test -R local -g 9 -s 9 -c 27 00024800FFFF0200000000 >> check_1860_state.sh
-If Errorlevel 2 echo break >> check_1860_state.sh
-If Errorlevel 2 Goto EndModSpark
-If Errorlevel 1 echo break >> check_1860_state.sh
+echo iw reg set US >> check_1860_state.sh
+echo sleep 10 >> check_1860_state.sh
+echo iw phy phy0 set txpower limit 3500 >> check_1860_state.sh
+Goto EndModSpark
 
 :EndModSpark
-echo done >> check_1860_state.sh
 Goto AdbSet
 
 :AdbRemove
