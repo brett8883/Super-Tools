@@ -1,4 +1,5 @@
 @echo off
+SETLOCAL DisableDelayedExpansion
 cls
 echo Start jksonMM >> %log%
 :askjkson
@@ -221,4 +222,5 @@ pause
 goto end
 
 :End
+SETLOCAL EnableDelayedExpansion
 cls
