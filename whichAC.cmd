@@ -35,6 +35,10 @@ set standard=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/MavicPro/
 set battmod=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/MavicPro/FC_bin/MavicPro_SP_2.0_BattMod_03.02.44.12_dji_system.bin
 set stealth=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/MavicPro/FC_bin/MavicPro_SP_2.0_Stealth_03.02.44.21_dji_system.bin
 set FullyLoaded=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/MavicPro/FC_bin/MavicPro_SP_2.0_FullyLoaded_03.02.44.11_dji_system.bin
+set standard_NoGal=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/MavicPro/FC_bin/No_gal/MavicPro_Standard_NoGal_03.02.44.44_dji_system.bin
+set battmod_NoGal=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/MavicPro/FC_bin/No_gal/MavicPro_Batt-mod_no_gal_03.02.44.34_dji_system.bin
+set stealth_NoGal=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/MavicPro/FC_bin/No_gal/MavicPro_stealth_no_gal_03.02.44.43_dji_system.bin
+set FullyLoaded_NoGal=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/MavicPro/FC_bin/No_gal/MavicPro_FullyLoaded_no_gal_03.02.44.33_dji_system.bin
 goto mainmenu
 
 :SPK
