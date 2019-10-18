@@ -101,10 +101,10 @@ set ofc=03.03.13.05
 set vt=1
 set stockfw=V01.00.1500_P4PV2_dji_system.bin
 set stockdl=http://dji.polybotes.feralhosting.com/DJI-Firmware/BIN/Phantom%%204%%20Pro%%202.0/V01.00.1500_P4PV2_dji_system.bin
-set standard=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/P4Pv2/2.0/FC_bin/P4PV2_SP_2.0_Standard_03.03.04.22_dji_system.bin
-set battmod=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/P4Pv2/2.0/FC_bin/P4PV2_SP_2.0_BattMod_03.03.04.12_dji_system.bin
-set stealth=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/P4Pv2/2.0/FC_bin/P4PV2_SP_2.0_Stealth_03.03.04.21_dji_system.bin
-set FullyLoaded=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/P4Pv2/2.0/FC_bin/P4PV2_SP_2.0_FullyLoaded_03.03.04.11_dji_system.bin
+set standard=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/P4Pv2/2.0/FC_bin/2.1/P4PV2_Standard_YesGal_03.03.04.22_dji_system.bin
+set battmod=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/P4Pv2/2.0/FC_bin/2.1/P4PV2_Batt-Mod_YesGal_03.03.04.12_dji_system.bin
+set stealth=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/P4Pv2/2.0/FC_bin/2.1/P4PV2_Stealth_YesGal_03.03.04.21_dji_system.bin
+set FullyLoaded=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/P4Pv2/2.0/FC_bin/2.1/P4PV2_FullyLoaded_YesGal_03.03.04.11_dji_system.bin
 goto mainmenu
 
 :I2
