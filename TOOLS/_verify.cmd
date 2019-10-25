@@ -9,7 +9,6 @@ if exist NLDapp.exe (goto verify) else (goto downloadNLD)
 :downloadNLD
 wget https://nolimitdronez.com/downloads/nldapp.zip
 7za.exe -e nldapp.zip
-set %NLD%=nldapp.exe
 goto verify
 
 :verify
@@ -20,7 +19,7 @@ Echo To verify Super-Patcher was successful I will open NLD. Please allow it to 
 echo Please wait...
 timeout 4
 :startnld
-start %NLD%
+call %NLD%
 cls
 call %header%
 echo Please check the NLD app which will show your flight controller version #
@@ -40,7 +39,6 @@ If Errorlevel 1 Goto success
 :nopatch
 @echo off
 echo User Indicated patch not successful. Showing log file >> %log%
-ATTRIB -H %logpath%
 cls 
 Call %Header%
 Echo If your Flight Controller # is not %fc% then Super-Patcher was not successful 

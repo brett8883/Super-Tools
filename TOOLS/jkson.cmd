@@ -44,7 +44,7 @@ Echo ***************************************************************************
 Echo ***************************************************************************************************** 
 IF EXIST check_1860_state.sh DEL /F check_1860_state.sh
 echo(
-start %dumldore%
+call %dumldore%
 echo Please click "Enable ADB in DUMLdore
 Echo wait till ADB is enabled, then close DUMLdore
 echo( 
