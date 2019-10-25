@@ -11,7 +11,7 @@ cd tools
 set tpath="%Appdata%\DJI_super-Patcher\Super-tools-%branch%\tools"
 set PATH=%path%;%tpath%
 %busybox% wget -q https://github.com/jezzab/DUMLdore/raw/master/DUMLdoreV3.exe && echo downloaded DUMLdore sucessfully >> %log%
-set dumldore=%Appdata%\DJI_super-Patcher\Super-tools-%branch%\tools\dumldore-master\DUMLdoreV3.exe
+set dumldore=%Appdata%\DJI_super-Patcher\Super-tools-%branch%\tools\DUMLdoreV3.exe
 Echo. >> %log%
 cls
 call %header%
@@ -23,6 +23,6 @@ copy *.* %tpath%
 cd %tpath%
 rmdir /Q /S NLDModClient
 del /f /q nldapp.zip
-set NLD=%Appdata%\DJI_super-Patcher\Super-tools-%branch%\tools\nldapp.exe
+set NLD="Appdata%\DJI_super-Patcher\Super-tools-%branch%\tools\nldapp.exe
 cd %stpath%
 call whichac.cmd
