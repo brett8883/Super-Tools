@@ -6,21 +6,17 @@ set appver=2.0
 set stpath="%Appdata%\DJI_super-Patcher\Super-tools-%branch%"
 set header="%Appdata%\DJI_super-Patcher\Super-tools-%branch%\header.bat"
 call %header%
-echo Hang on one more sec...
+echo Downloading the latest version of DUMLdore. Please wait...
 cd tools
 set tpath="%Appdata%\DJI_super-Patcher\Super-tools-%branch%\tools"
 set PATH=%path%;%tpath%
-%busybox% wget -q https://github.com/jezzab/DUMLdore/archive/master.zip
-%busybox% unzip -o -q master.zip
-del DUMLdore-*
-del master.zip
-cd DUMLdore-master
-set ddpath=%Appdata%\DJI_super-Patcher\Super-tools-%branch%\tools\dumldore-master
-set dumldore=%Appdata%\DJI_super-Patcher\Super-tools-%branch%\tools\dumldore-master\dumldoreV3.exe
-cd %tpath%
+%busybox% wget -q https://github.com/jezzab/DUMLdore/raw/master/DUMLdoreV3.exe && echo downloaded DUMLdore sucessfully >> %log%
+set dumldore=%Appdata%\DJI_super-Patcher\Super-tools-%branch%\tools\dumldore-master\DUMLdoreV3.exe
 Echo. >> %log%
-Echo Download NLD app >> %log%
-wget https://nolimitdronez.com/downloads/nldapp.zip --no-check-certificate 2>> %log%
+cls
+call %header%
+Echo Downloading the latest NLDapp. Please wait...
+wget https://nolimitdronez.com/downloads/nldapp.zip --no-check-certificate && Echo Downloaded NLD app >> %log%
 %busybox% unzip -o -q nldapp.zip -d %tpath%
 cd NLDModClient
 copy *.* %tpath%
