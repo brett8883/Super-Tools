@@ -11,7 +11,7 @@ cd tools
 set tpath="%Appdata%\DJI_super-Patcher\Super-tools-%branch%\tools"
 set PATH=%path%;%tpath%
 wget https://github.com/jezzab/DUMLdore/raw/master/DUMLdoreV3.exe && echo downloaded DUMLdore sucessfully >> %log%
-set dumldore=%Appdata%\DJI_super-Patcher\Super-tools-%branch%\tools\DUMLdoreV3.exe
+set dumldore="%Appdata%\DJI_super-Patcher\Super-tools-%branch%\tools\DUMLdoreV3.exe"
 Echo. >> %log%
 cls
 call %header%
