@@ -65,7 +65,7 @@ cd %tpath%
 goto mainmenu
 
 :dumldore
-start %dumldore%
+call %dumldore%
 goto mainmenu
 
 :jkson
@@ -90,7 +90,7 @@ echo.
 echo Then close DUMLdore
 Echo.
 Echo Continue once ADB has been enabled and DUMLdore is closed
-start %dumldore%
+call %dumldore%
 echo ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 pause
 cls
