@@ -128,7 +128,6 @@ if exist NLDapp.exe (goto startNLD) else (goto downloadNLD)
 :downloadNLD
 wget https://nolimitdronez.com/downloads/nldapp.zip
 7za.exe -e nldapp.zip
-set %NLD%=nldapp.exe
 :startNLD
 call %NLD%
 cd %stpath%
