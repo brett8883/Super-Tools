@@ -23,6 +23,6 @@ copy *.* %tpath%
 cd %tpath%
 rmdir /Q /S NLDModClient
 del /f /q nldapp.zip
-set NLD="Appdata%\DJI_super-Patcher\Super-tools-%branch%\tools\nldapp.exe
+set NLD=%Appdata%\DJI_super-Patcher\Super-tools-%branch%\tools\nldapp.exe
 cd %stpath%
 call whichac.cmd
