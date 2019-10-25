@@ -30,7 +30,7 @@ echo.
 echo then close DUMLdore
 Echo.
 Echo Continue once ADB has been enabled and DUMLdore is closed
-start %dumldore%
+call %dumldore%
 Echo ***************************************************************************************************************************************************************
 Pause
 :: Start check props

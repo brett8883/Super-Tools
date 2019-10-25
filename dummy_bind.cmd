@@ -144,7 +144,7 @@ PING -n 3 127.0.0.1>nul
 cls
 call %header%
 echo click "Enable ADB" in DUMLdore and then close DUMLdore before proceeding
-start %dumldore%
+call %dumldore%
 Echo ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 Pause
 :bind
@@ -223,7 +223,7 @@ Echo.
 echo 6. Once aircraft has restarted fully and connected to PC. Please continue
 echo.
 PING -n 3 127.0.0.1>nul
-start %dumldore%
+call %dumldore%
 Echo ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 pause
 cls

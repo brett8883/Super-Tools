@@ -32,7 +32,7 @@ ECHO.
 ECHO.
 ECHO Once Dumldore says its ok to reboot, please reboot the aircraft and then continue
 ECHO.
-start %dumldore%
+call %dumldore%
 cd %stpath%
 pause
 cls
@@ -64,7 +64,7 @@ ECHO.
 ECHO.
 ECHO Once Dumldore says its ok to reboot, please reboot the aircraft and then continue
 ECHO.
-start %dumldore%
+call %dumldore%
 Pause
 :end
 call mainmmenu.cmd
