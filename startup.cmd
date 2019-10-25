@@ -16,7 +16,7 @@ del DUMLdore-*
 del master.zip
 cd DUMLdore-master
 set ddpath=%Appdata%\DJI_super-Patcher\Super-tools-%branch%\tools\dumldore-master
-set dumldore=dumldorev3.exe
+set dumldore=%Appdata%\DJI_super-Patcher\Super-tools-%branch%\tools\dumldore-master\dumldoreV3.exe
 cd %tpath%
 Echo. >> %log%
 Echo Download NLD app >> %log%
