@@ -105,7 +105,7 @@ goto mainmenu
 cls
 call %header%
 echo So sorry!
-echo Jkson FCC Mod is only availible for MavicPro and P4Pv2 right now
+echo Jkson FCC Mod is only availible for MavicPro,Spark and P4Pv2 right now
 echo.
 echo I will take you back to the main menu. Continue when ready
 pause

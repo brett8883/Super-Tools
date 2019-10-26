@@ -44,12 +44,12 @@ Echo ***************************************************************************
 Echo ***************************************************************************************************** 
 IF EXIST check_1860_state.sh DEL /F check_1860_state.sh
 echo(
-call %dumldore%
 echo Please click "Enable ADB in DUMLdore
 Echo wait till ADB is enabled, then close DUMLdore
 echo( 
 echo Once ADB is enabled and DUMLdore is closed, please continue
 echo(
+call %dumldore%
 Pause
 If "%AC%"=="MavicPro" Goto mp
 If "%AC%"=="P4Pv2" Goto p4pv2
@@ -140,7 +140,7 @@ If Errorlevel 2 echo dji_mb_ctrl -S test -R local -g 9 -s 9 -c 27 00024800FFFF02
 Goto AdbSet
 
 :spark
-echo Starting jkson mod for Spark since AC is %AC%
+echo Starting jkson mod for Spark >>%log%
 Echo *****************************************************************************************************
 Echo *****************************************************************************************************
 ECHO jkson FCC MOD by jkson5 for Spark
@@ -186,7 +186,7 @@ adb push check_1860_state.sh /vendor/bin/check_1860_state.sh
 adb shell chmod 755 /vendor/bin/check_1860_state.sh
 adb shell mount -o remount,ro /vendor
 @echo off
-PING -n 4 127.0.0.1>nul
+PING -n 2 127.0.0.1>nul
 echo.
 echo 
 cls
