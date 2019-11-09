@@ -1,6 +1,7 @@
 @echo off
 title Super-Patcher 2.0
-cls 
+cls
+pause
 call %header%
 ECHO. 
 ECHO  Please choose your Aircraft
