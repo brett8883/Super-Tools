@@ -1,7 +1,7 @@
 @echo off
 title Super-Patcher 2.0
 cls 
-call header.bat
+call %header%
 ECHO. 
 ECHO  Please choose your Aircraft
 ECHO.
