@@ -9,6 +9,8 @@ if exist %stockfw% (goto flash) else (goto download)
 
 :download
 echo Please Wait while I download %stockfw%.
+echo.
+echo Depending on your connection speed this could take several minutes
 Echo.
 echo When it's ready it will be in %sfwpath%
 Echo.
