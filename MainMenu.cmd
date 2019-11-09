@@ -1,7 +1,6 @@
 @echo off
 :mainmenu
 cd %stpath%
-title Super-Patcher 2.0
 cls
 call header.bat
 echo " _  __  __  _ __  _   __ __ ___ __  _ _  _                                                                                                                   ";
@@ -18,50 +17,26 @@ echo                                         **[1] Run Super-Patcher!**
 echo                                           [2] Download ^& Flash the correct stock firmware needed for Super-Patcher
 echo.
 echo                                        UTILITIES
-echo                                           [3] Open DankDroneDownloader by CS2000 to download any other firmware files
-echo                                           [4] Launch DUMLdore by Jezzeb
-echo                                           [5] Launch jkson fcc mod (Mavic, Spark, and P4Pv2 only) by jkson5
-echo                                           [6] Launch the free NoLimitDronez app
+echo                                           [3] Launch DUMLdore by Jezzeb
+echo                                           [4] Launch jkson fcc mod (Mavic, Spark, and P4Pv2 only) by jkson5
 echo.
 echo                                        ADVANCED
-echo                                           [7] Enable ADB and open a new CMD Prompt into ADB
+echo                                           [5] Enable ADB and open a new CMD Prompt into ADB
 echo.
 echo                                        EXIT
-echo                                           [8] Exit DJI Super-Patcher
+echo                                           [6] Exit DJI Super-Patcher
 echo.
 echo ---------------------------------------------------------------------------------------------------------------------------------------------------------------
-Choice /c 12345678 /M "Please make a section with keyboard"
-if errorlevel 8 goto exit
-if errorlevel 7 goto adb
-If Errorlevel 6 goto NLD
-If Errorlevel 5 goto jkson
-If Errorlevel 4 goto dumldore
-If Errorlevel 3 goto getDownloader
+Choice /c 123456 /M "Please make a section with keyboard"
+If Errorlevel 6 goto exit
+If Errorlevel 5 goto adb
+If Errorlevel 4 goto jkson
+If Errorlevel 3 goto dumldore
 If Errorlevel 2 goto flashstock
 If Errorlevel 1 goto StartSP
 
 :flashstock
 call flashstock.cmd
-goto mainmenu
-
-:getDownloader
-echo start getdankdownloaderMM >> %log%
-cls
-call %header%
-cd %tpath%
-cd %DDMpath% 2>>nul
-if exist DankDroneDownloader.exe start DankDroneDownloader.exe & echo DDD exists >> %log% & goto mainmenu
-Echo Hold on just a sec...
-cd %tpath%
-%busybox% wget https://github.com/cs2000/DankDroneDownloader/archive/master.zip 2>> %log%
-%busybox% unzip master.zip
-cd DankDroneDownloader-master
-set DDD=%cd%\DankDroneDownloader.exe
-set DDMpath=%cd%
-start DankDroneDownloader.exe
-del master.zip
-cd %stpath%
-cd %tpath%
 goto mainmenu
 
 :dumldore
@@ -114,23 +89,6 @@ goto mainmenu
 :startSp
 cls
 call variantchooser.cmd
-goto mainmenu
-
-:NLD
-@echo off
-cls
-call %header%
-echo PLEASE WAIT just a moment..
-echo.
-cd %tpath%
-if exist NLDapp.exe (goto startNLD) else (goto downloadNLD)
-
-:downloadNLD
-wget https://nolimitdronez.com/downloads/nldapp.zip
-7za.exe -e nldapp.zip
-:startNLD
-call %NLD%
-cd %stpath%
 goto mainmenu
 
 :adb

@@ -4,35 +4,25 @@ call %header%
 echo PLEASE WAIT just a moment..
 echo.
 cd %tpath%
-if exist NLDapp.exe (goto verify) else (goto downloadNLD)
-
-:downloadNLD
-wget https://nolimitdronez.com/downloads/nldapp.zip
-7za.exe -e nldapp.zip
-goto verify
 
 :verify
 cls
 echo _verify.cmd starting >> %log%
 call %header%
-Echo To verify Super-Patcher was successful I will open NLD. Please allow it to open
-echo Please wait...
-timeout 4
-:startnld
-call %NLD%
-cls
-call %header%
-echo Please check the NLD app which will show your flight controller version #
-echo(
-Echo Please verify NLD app says your flight controller # is %FC% 
+Echo To verify Super-Patcher was successful please connect the remote controller to the %AC% and start the DJI Go 4 app.
+echo.
+echo In the "about" page of the settings menu in DJI Go 4, check the aircraft firmware version
+echo.
+echo If Super-Patcher was successful the DJI Go 4 app will report the aircraft firmware version as 00.00.0000
+echo.
+echo This is normal and a sign that the patching process was successful.
+echo.
+echo.
+Echo Does the DJI Go 4 app report the firmware version as 00.00.0000? 
 Echo(
-Echo Does NLD app have say your flight controller number is correct? 
-Echo(
-Echo [1] Yes 
-Echo [2] no 
-ECho [3] Open NLD app again
-choice /C 123 /M "correct FC number indicated?"
-If Errorlevel 3 Goto startnld
+Echo [Y] Yes 
+Echo [N] no 
+choice
 If Errorlevel 2 Goto nopatch
 If Errorlevel 1 Goto success
 
@@ -41,7 +31,7 @@ If Errorlevel 1 Goto success
 echo User Indicated patch not successful. Showing log file >> %log%
 cls 
 Call %Header%
-Echo If your Flight Controller # is not %fc% then Super-Patcher was not successful 
+Echo If DJI Go 4 does not show the firmware version on the %AC% is 00.00.0000 then Super-Patcher was not successful 
 ECHO You should read the readme.md on GitHub again and restart Super-Patcher from the begining  
 echo ===============================================================================================================================================================
 echo I have generated a log file for you which can now be found at 
@@ -55,11 +45,11 @@ echo -Not starting on a completely stock version of firmware %stock%
 echo.
 echo -Not following the directions exactly please ONLY do what Super-Patcher says ONLY when it says to 
 echo.		 
-ECHO -When doing the "enable ADB" steps not waiting until ABD has been enabled. 
+ECHO -When doing the "enable ADB" steps, not waiting until ABD has been enabled. 
 echo        Usually the front lights will turn on or off to indicate ADB has been enabled
 echo.
 echo -Not using a Windows 10 PC. Windows 7 and 8 do not have to proper adb drivers Super-Patcher needs
-echo        This can be over come by manually installing the drivers but using Windows 10 is easier
+echo        This can be over come by manually installing the drivers but using Windows 10 is much easier
 echo ===============================================================================================================================================================
 echo Continuing will take you back to the main menu
 echo ===============================================================================================================================================================
@@ -71,7 +61,7 @@ goto end
 @echo off
 cls 
 call %header%
-ECHO Congradulations! Super-Patcher was sucessful
+ECHO Congradulations! Super-Patcher was sucessful^!
 echo ===============================================================================================================================================================
 Echo You may now also modify any paramters you'd like using Assistant 2 1.1.2 in debug mode
 echo ===============================================================================================================================================================
@@ -79,28 +69,13 @@ Echo You have completed the patching operation. Please note most settings and al
 echo.
 Echo -Remember to check your RTH altitude and such.
 echo ===============================================================================================================================================================
+echo Would you like to return to the main menu or exit Super-Patcher?
 echo.
-echo If you have found that this program has been helpful please consider donating on PayPal.
-echo.
-echo Super-Patcher has always been free to use but the continued development has been financed by users like you. 
-echo -The average donation has been about $10-$20 USD
-echo.
-echo Any amount is greatly appreciated but there is no obligation
-echo ===============================================================================================================================================================
-echo.
-echo [1] Yes take me to the PayPal page!
-echo [2] Not now, take me back to the MainMenu
-echo [3] Shut down Super-Patcher
-choice /c 123 /m "Please make selection with keyboard"
-If Errorlevel 3 Goto exitsp
-If Errorlevel 2 Goto end
-If Errorlevel 1 Goto donate
-
-:donate
-rundll32 url.dll,FileProtocolHandler https://www.paypal.me/brett8883
-cd %stpath%
-goto end
-
+echo [1] Take me back to the main menu
+echo [2] Exit Super-Patcher
+choice /c 12
+if errorlevel 2 goto exitsp
+if errorlevel 1 goto end
 :exitsp
 exit
 
