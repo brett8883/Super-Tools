@@ -13,4 +13,5 @@ set PATH=%path%;%tpath%
 wget https://github.com/jezzab/DUMLdore/raw/master/DUMLdoreV3.exe && echo downloaded DUMLdore sucessfully >> %log%
 set dumldore="%cd%\DUMLdoreV3.exe"
 Echo. >> %log%
+cd %stpath%
 call whichac.cmd
