@@ -6,7 +6,7 @@ ECHO  Please choose your Aircraft
 ECHO.
 ECHO ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 ECHO	1) Mavic Pro 1 / Mavic Platinum / Mavic Artic White
-ECHO	2) Spark
+ECHO	2) Spark 
 ECHO	3) Phantom 4 Pro
 ECHO	4) Phantom 4 Standard
 ECHO	5) Phantom 4 Advanced
