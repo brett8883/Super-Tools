@@ -37,6 +37,7 @@ set FullyLoaded=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/MavicP
 goto mainmenu
 
 :SPK
+pause
 set AC=Spark
 set fcbase=03.02.43.
 set stock=1.00.0900
@@ -48,6 +49,7 @@ set standard=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/Spark/FC_
 set battmod=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/Spark/FC_Bin/Spark_SP_2.0_BattMod_03.02.43.12_dji_system.bin
 set stealth=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/Spark/FC_Bin/Spark_SP_2.0_Stealth_03.02.43.21_dji_system.bin
 set FullyLoaded=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/Spark/FC_Bin/Spark_SP_2.0_FullyLoaded_03.02.43.11_dji_system.bin
+pause
 goto mainmenu
 
 :p4p
