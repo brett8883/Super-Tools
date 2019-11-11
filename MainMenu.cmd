@@ -2,7 +2,7 @@
 :mainmenu
 cd %stpath%
 cls
-call header.bat
+call %header%
 echo " _  __  __  _ __  _   __ __ ___ __  _ _  _                                                                                                                   ";
 echo "|  V  |/  \| |  \| | |  V  | __|  \| | || |                                                                                                                  ";
 echo "| \_/ | /\ | | | ' | | \_/ | _|| | ' | \/ |                                                                                                                  ";
