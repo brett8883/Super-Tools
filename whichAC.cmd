@@ -34,7 +34,7 @@ set standard=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/MavicPro/
 set battmod=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/MavicPro/FC_bin/MavicPro_SP_2.0_BattMod_03.02.44.12_dji_system.bin
 set stealth=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/MavicPro/FC_bin/MavicPro_SP_2.0_Stealth_03.02.44.21_dji_system.bin
 set FullyLoaded=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/MavicPro/FC_bin/MavicPro_SP_2.0_FullyLoaded_03.02.44.11_dji_system.bin
-goto mainmenu
+goto mm
 
 :SPK
 set AC=Spark
@@ -48,8 +48,7 @@ set standard=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/Spark/FC_
 set battmod=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/Spark/FC_Bin/Spark_SP_2.0_BattMod_03.02.43.12_dji_system.bin
 set stealth=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/Spark/FC_Bin/Spark_SP_2.0_Stealth_03.02.43.21_dji_system.bin
 set FullyLoaded=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/Spark/FC_Bin/Spark_SP_2.0_FullyLoaded_03.02.43.11_dji_system.bin
-pause
-goto mainmenu
+goto mm
 
 :p4p
 set AC=P4P
@@ -63,7 +62,7 @@ set standard=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/P4P/FC_bi
 set battmod=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/P4P/FC_bin/P4P_SP_2.0_BattMod_03.02.44.12_dji_system.bin
 set stealth=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/P4P/FC_bin/P4P_SP_2.0_Stealth_03.02.44.21_dji_system.bin
 set FullyLoaded=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/P4P/FC_bin/P4P_SP_2.0_FullyLoaded_03.02.44.11_dji_system.bin
-goto mainmenu
+goto mm
 
 :p4a
 set AC=P4A
@@ -77,7 +76,7 @@ set standard=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/P4A/2.0/F
 set battmod=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/P4A/2.0/FC_bin/P4A_SP_2.0_BattMod_03.02.35.12_dji_system.bin
 set stealth=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/P4A/2.0/FC_bin/P4A_SP_2.0_Stealth_03.02.35.21_dji_system.bin
 set FullyLoaded=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/P4A/2.0/FC_bin/P4A_SP_2.0_FullyLoaded_03.02.35.11_dji_system.bin
-goto mainmenu
+goto mm
 
 :p4s
 set AC=P4
@@ -91,7 +90,7 @@ set standard=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/P4S/2.0/F
 set battmod=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/P4S/2.0/FC_bin/P4_SP_2.0_BattMod_03.02.44.12_dji_system.bin
 set stealth=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/P4S/2.0/FC_bin/P4_SP_2.0_Stealth_03.02.44.21_dji_system.bin
 set FullyLoaded=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/P4S/2.0/FC_bin/P4_SP_2.0_FullyLoaded_03.02.44.11_dji_system.bin
-goto mainmenu
+goto mm
 
 :P4Pv2
 set AC=P4Pv2
@@ -105,7 +104,7 @@ set standard=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/P4Pv2/2.0
 set battmod=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/P4Pv2/2.0/FC_bin/2.1/P4PV2_Batt-Mod_YesGal_03.03.04.12_dji_system.bin
 set stealth=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/P4Pv2/2.0/FC_bin/2.1/P4PV2_Stealth_YesGal_03.03.04.21_dji_system.bin
 set FullyLoaded=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/P4Pv2/2.0/FC_bin/2.1/P4PV2_FullyLoaded_YesGal_03.03.04.11_dji_system.bin
-goto mainmenu
+goto mm
 
 :I2
 set AC=I2
@@ -119,9 +118,8 @@ set standard=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/I2/I2_SP_
 set battmod=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/I2/I2_SP_2.0/2.0/FC_bin/I2_SP_2.0_BattMod_03.03.12.12_dji_system.bin
 set stealth=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/I2/I2_SP_2.0/2.0/FC_bin/I2_SP_2.0_Stealth_03.03.21.21_dji_system.bin
 set FullyLoaded=https://github.com/brett8883/Super-Firmware_Cache/raw/2.0/I2/I2_SP_2.0/2.0/FC_bin/I2_SP_2.0_FullyLoaded_03.03.11.11_dji_system.bin
-goto mainmenu
+goto mm
 
-:mainmenu
-pause
+:mm
 call MainMenu.cmd
 
