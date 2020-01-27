@@ -84,7 +84,7 @@ echo.
 echo 1 - Default power
 echo 2 - Default^>FCC^>Boost^>Reset loop selector by Remote controller (note: loops power not frequency)
 echo 3 - Fixed FCC
-echo 4 - Fixed FCC and Boost
+echo 4 - Fixed Boost (maximum power)
 echo.
 choice /C 1234 /D 1 /T 99 /M "Please select mod"
 If Errorlevel 4 echo dji_mb_ctrl -S test -R local -g 9 -s 9 -c 27 00024800FFFF0200000000 >> check_1860_state.sh
@@ -128,7 +128,7 @@ If Errorlevel 2 echo dji_mb_ctrl -S test -R local -g 9 -s 9 -c 27 00014600FFFFA2
 echo.
 echo 1 - Default power
 echo 2 - Fixed FCC
-echo 3 - Fixed FCC and Boost
+echo 3 - Fixed Boost (most power)
 echo.
 choice /C 123 /D 1 /T 99 /M "Please select mod"
 If Errorlevel 3 echo dji_mb_ctrl -S test -R local -g 9 -s 9 -c 27 00024800FFFF0200000000 >> check_1860_state.sh
