@@ -15,23 +15,26 @@ echo In the "about" page of the settings menu in DJI Go 4, check the aircraft fi
 echo.
 echo If Super-Patcher was successful the DJI Go 4 app will report the aircraft firmware version as 00.00.0000
 echo.
+echo      NOTE: On some devices it may instead show N/A or could be blank altogether.
+echo          Most importantly the app will NOT show the aircraft firmware is %stock%
+echo.
 echo This is normal and a sign that the patching process was successful.
 echo.
 echo.
-Echo Does the DJI Go 4 app report the firmware version as 00.00.0000? 
+Echo Does the DJI Go 4 app report the firmware version as %stock%
 Echo(
 Echo [Y] Yes 
 Echo [N] no 
 choice
-If Errorlevel 2 Goto nopatch
-If Errorlevel 1 Goto success
+If Errorlevel 2 Goto success
+If Errorlevel 1 Goto nopatch
 
 :nopatch
 @echo off
 echo User Indicated patch not successful. Showing log file >> %log%
 cls 
 Call %Header%
-Echo If DJI Go 4 does not show the firmware version on the %AC% is 00.00.0000 then Super-Patcher was not successful 
+Echo If DJI Go 4 shows the firmware version on the %AC% is %stock% then Super-Patcher was not successful 
 ECHO You should read the readme.md on GitHub again and restart Super-Patcher from the begining  
 echo ===============================================================================================================================================================
 echo I have generated a log file for you which can now be found at 
